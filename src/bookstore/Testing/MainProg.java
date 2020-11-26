@@ -5,7 +5,8 @@
  */
 package bookstore.Testing;
 
-import bookstore.utils.DataSource;
+import bookstore.entities.Client;
+import bookstore.services.ClientService;
 
 /**
  *
@@ -13,7 +14,10 @@ import bookstore.utils.DataSource;
  */
 public class MainProg {
     public static void main(String[] args) {
-        DataSource d1 = DataSource.getInstance();
+        ClientService cs = new ClientService();
+        Client c1 = new Client( "qsdazdsqsdsqqfdsqfqss", "Ben qsqdqsd", "qsdqsdq", "qsdqdqsd.mohamed@esprit.tn","qsqdsqdqs", "C:/Users/Photo.jpg");
+        System.out.println(c1.toString()); 
+        cs.ajouterClientDB(c1);
         
     }
 }
