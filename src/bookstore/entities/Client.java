@@ -1,23 +1,47 @@
 package bookstore.entities;
-
-import java.io.File;
-
-public class Client extends User{
-
-    public Client(String username, String nom, String prenom, String email, String pwd, String Photo) {
-        super(username, nom, prenom, email, pwd, Photo);
-    }
-
-    public Client(int id, String username, String nom, String prenom, String email, String pwd, String Photo) {
-        super(id, username, nom, prenom, email, pwd, Photo);
-    }
+public class Client extends Utilisateur {
     
-  
-    
-    @Override
-    public void login(String username, String pwd) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-
+	
+	public Client() {
+		super();
+	}
+	public Client(int id_user, String nom ,String prenom ,String username,String email,String tel, 	String password,String photo ) {
+		super(id_user,nom,prenom,username,email,tel,password,photo);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	public void rechercheLivre( ) {
+		
+	}
+	public void passerCommande( ) {
+		
+	}
+	public void payerEnLigne( ) {
+		
+	}
+	public void afficherMonHistorique( ) {
+		
+	}
+	public void sélectionnerModePaiement( ) {
+		
+	}
+	public void inscrire() {
+		  
+	  }
+	@Override
+	public String toString() {
+		return "Client [getId_user()=" + getId_user() + ", getNom()=" + getNom() + ", getPrenom()=" + getPrenom()
+				+ ", getUsername()=" + getUsername() + ", getEmail()=" + getEmail() + ", getTel()=" + getTel()
+				+ ", getPassword()=" + getPassword() + ", getPhoto()=" + getPhoto() + ", toString()=" + super.toString()
+				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + "]";
+	}
+	
+	
+	
 }
