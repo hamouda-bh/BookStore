@@ -9,13 +9,7 @@ public class Client extends Utilisateur {
 		super(id_user,nom,prenom,username,email,tel,password,photo);
 	}
 	
-	
-	
-	
-	
-	
-	
-	
+
 	public void rechercheLivre( ) {
 		
 	}

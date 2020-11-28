@@ -6,7 +6,7 @@ public class Admin extends Utilisateur {
 	
 	
     Utilisateur util ;
-	Facture facture ;
+
 	
 	
 	public Admin() {
@@ -22,10 +22,10 @@ public class Admin extends Utilisateur {
 	public void retirerLivre( ) {
 		
 	}
-	public void consulterFacture(Facture facture) {
+	public void consulterFacture() {
 		
 	}
-	public void imprimerFacture(Facture facture) {
+	public void imprimerFacture() {
 		
 	}
 	public void ajouterUtilisateur(Utilisateur util) {

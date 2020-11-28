@@ -13,11 +13,7 @@ public class Utilisateur {
 	  private String password;
 	  private String photo ; // LE schéma des images 
 	  
-	  
-	  
-	  
-	  
-	  
+
 	  public Utilisateur() {
 		
 	}
@@ -110,11 +106,11 @@ public class Utilisateur {
 		return photo;
 	}
 
-	public void setPhoto(String photo) {
+	  public void setPhoto(String photo) {
 		this.photo = photo;
-	}
+	  }
 
-	public void modifierPrix() {
+	  public void modifierPrix() {
 		  
 	  }
 	  public void ajouterVente( ) {
