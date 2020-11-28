@@ -12,7 +12,14 @@ private String  prenomClient ;
 private ArrayList<Book> bookList = new ArrayList();
 private float prixtotal;
 
-    public Facture() {
+    public Facture(int idCommande, int id_client, String nomClient, String prenomClient, ArrayList<Book> bookList,
+    float prixtotal) {
+        this.idCommande = idCommande;
+        this.id_client = id_client;
+        this.nomClient = nomClient;
+        this.prenomClient = prenomClient;
+        this.bookList = bookList;
+        this.prixtotal = prixtotal;
     }
 
     public Facture(int idFacture, int idCommande, int id_client, String nomClient, String prenomClient, float prixtotal) {
@@ -122,4 +129,6 @@ private float prixtotal;
     {}
     public void envoyer()
     {}
+
+    
 }
