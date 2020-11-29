@@ -7,7 +7,7 @@ public class Panier{
 private int id_panier;
 private Client id_user;
 private Commande id_comm;
-private ArrayList<Book> list=new ArrayList<>();
+private ArrayList<Livre> list=new ArrayList<>();
 
     public Panier() {
     }
@@ -78,24 +78,24 @@ private ArrayList<Book> list=new ArrayList<>();
         this.id_comm = id_comm;
     }
 
-    public ArrayList<Book> getList() {
+    public ArrayList<Livre> getList() {
         return list;
     }
 
-    public void setList(ArrayList<Book> list) {
+    public void setList(ArrayList<Livre> list) {
         this.list = list;
     }
 
-    public void retirerLivre(Book b)
+    public void retirerLivre(Livre b)
     {
     }
     
-    public ArrayList ajouterLivre (Book b)
+    public ArrayList ajouterLivre (Livre b)
     {
         return list;
     }
     
-    public int modifierQuantité (ArrayList<Book> list)
+    public int modifierQuantité (ArrayList<Livre> list)
     {
         return 0;
     }

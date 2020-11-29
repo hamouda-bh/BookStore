@@ -9,7 +9,7 @@ public class Commande {
     private int id_commande; 
     private Date date_commande;
     private Client id_client;
-    private ArrayList<Book>  bookList = new ArrayList();
+    private ArrayList<Livre>  bookList = new ArrayList();
     private int prixTotale ;
 
     public Commande() {
@@ -46,11 +46,11 @@ public class Commande {
         this.id_client = id_client;
     }
 
-    public ArrayList<Book> getBookList() {
+    public ArrayList<Livre> getBookList() {
         return bookList;
     }
 
-    public void setBookList(ArrayList<Book> bookList) {
+    public void setBookList(ArrayList<Livre> bookList) {
         this.bookList = bookList;
     }
 

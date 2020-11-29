@@ -16,10 +16,10 @@ public class CategorieKids {
     
     private int idLivreKids;
     private String Description;
-    private File images;
-    private File video;
-    private File son;
-    ArrayList<Book> livres = new ArrayList<>();
+    private String images;
+    private String video;
+    private String son;
+    ArrayList<Livre> livres = new ArrayList<>();
 
     public CategorieKids() {
     }
@@ -28,7 +28,7 @@ public class CategorieKids {
         this.idLivreKids = idLivreKids;
     }
 
-    public CategorieKids(int idLivreKids, String Description, File images, File video, File son) {
+    public CategorieKids(int idLivreKids, String Description, String images, String video, String son) {
         this.idLivreKids = idLivreKids;
         this.Description = Description;
         this.images = images;
@@ -44,19 +44,19 @@ public class CategorieKids {
         return Description;
     }
 
-    public File getImages() {
+    public String getImages() {
         return images;
     }
 
-    public File getVideo() {
+    public String getVideo() {
         return video;
     }
 
-    public File getSon() {
+    public String getSon() {
         return son;
     }
 
-    public ArrayList<Book> getLivres() {
+    public ArrayList<Livre> getLivres() {
         return livres;
     }
     

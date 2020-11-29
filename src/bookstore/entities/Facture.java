@@ -9,10 +9,10 @@ private int idCommande ;
 private int id_client ;
 private String nomClient;
 private String  prenomClient ;
-private ArrayList<Book> bookList = new ArrayList();
+private ArrayList<Livre> bookList = new ArrayList();
 private float prixtotal;
 
-    public Facture(int idCommande, int id_client, String nomClient, String prenomClient, ArrayList<Book> bookList,
+    public Facture(int idCommande, int id_client, String nomClient, String prenomClient, ArrayList<Livre> bookList,
     float prixtotal) {
         this.idCommande = idCommande;
         this.id_client = id_client;
@@ -107,11 +107,11 @@ private float prixtotal;
         this.prenomClient = prenomClient;
     }
 
-    public ArrayList<Book> getBookList() {
+    public ArrayList<Livre> getBookList() {
         return bookList;
     }
 
-    public void setBookList(ArrayList<Book> bookList) {
+    public void setBookList(ArrayList<Livre> bookList) {
         this.bookList = bookList;
     }
 

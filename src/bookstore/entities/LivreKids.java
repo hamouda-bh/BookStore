@@ -5,8 +5,6 @@
  */
 package bookstore.entities;
 
-import java.io.FileInputStream;
-import java.nio.file.FileSystems;
 import java.util.Objects;
 
 /**
@@ -14,11 +12,11 @@ import java.util.Objects;
  * @author PC-Hamouda
  */
 public class LivreKids {
-    int idLivreKids;
-    String Description;
-    String Image;
-    String Video;
-    String Son;
+    private int idLivreKids;
+    private String Description;
+    private String Image;
+    private String Video;
+    private String Son;
 
     public LivreKids(String Description, String Image, String Video, String Son) {
         this.Description = Description;
