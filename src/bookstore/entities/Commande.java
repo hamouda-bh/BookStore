@@ -7,15 +7,15 @@ import java.util.logging.Logger;
 
 public class Commande {
     private int id_commande; 
-    private Date date_commande ;
-    private int id_client ;
+    private Date date_commande;
+    private Client id_client;
     private ArrayList<Book>  bookList = new ArrayList();
     private int prixTotale ;
 
     public Commande() {
     }
 
-    public Commande(int id_commande, Date date_commande, int id_client, int prixTotale) {
+    public Commande(int id_commande, Date date_commande, Client id_client, int prixTotale) {
         this.id_commande = id_commande;
         this.date_commande = date_commande;
         this.id_client = id_client;
@@ -38,11 +38,11 @@ public class Commande {
         this.date_commande = date_commande;
     }
 
-    public int getId_client() {
+    public Client getId_client() {
         return id_client;
     }
 
-    public void setId_client(int id_client) {
+    public void setId_client(Client id_client) {
         this.id_client = id_client;
     }
 

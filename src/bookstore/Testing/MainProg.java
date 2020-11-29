@@ -14,10 +14,11 @@ import bookstore.services.ClientService;
  */
 public class MainProg {
     public static void main(String[] args) {
-        ClientService cs = new ClientService();
-        Client c1 = new Client( "qsdazdsqsdsqqfdsqfqss", "Ben qsqdqsd", "qsdqsdq", "qsdqdqsd.mohamed@esprit.tn","qsqdsqdqs", "C:/Users/Photo.jpg");
-        System.out.println(c1.toString()); 
-        cs.ajouterClientDB(c1);
+        DBConnection.getInstance();
+        //ClientService cs = new ClientService();
+        //Client c1 = new Client( "qsdazdsqsdsqqfdsqfqss", "Ben qsqdqsd", "qsdqsdq", "qsdqdqsd.mohamed@esprit.tn","qsqdsqdqs", "C:/Users/Photo.jpg");
+        //System.out.println(c1.toString()); 
+        //cs.ajouterClientDB(c1);
         
     }
 }

@@ -23,12 +23,12 @@ public class ClientService {
         try {
             String sql = "INSERT INTO Client Values (?,?,?,?,?,?,?)";
             PreparedStatement st = cnx.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
-            st.setInt(1,c.getId());
+            st.setInt(1,c.getId_user());
             st.setString(2,c.getUsername());
             st.setString(3,c.getNom());
             st.setString(4,c.getPrenom());
             st.setString(5,c.getEmail());
-            st.setString(6,c.getPwd());
+            st.setString(6,c.getPassword());
             st.setString(7,c.getPhoto());
             //System.out.println("Insert Status" + (st.executeUpdate()>0));
             st.executeUpdate();
@@ -37,7 +37,6 @@ public class ClientService {
                 System.out.println(rs.getInt(1));
         } catch (SQLException e) {
             System.out.println("Client non ajouté");
-        }
-        
+        } 
     }
 }

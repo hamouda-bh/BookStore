@@ -5,14 +5,14 @@ import java.util.ArrayList;
 public class Panier{
 
 private int id_panier;
-private int id_user;
-private int id_comm;
+private Client id_user;
+private Commande id_comm;
 private ArrayList<Book> list=new ArrayList<>();
 
     public Panier() {
     }
 
-    public Panier(int id_panier, int id_user, int id_comm) {
+    public Panier(int id_panier, Client id_user, Commande id_comm) {
         this.id_panier = id_panier;
         this.id_user = id_user;
         this.id_comm = id_comm;
@@ -62,19 +62,19 @@ private ArrayList<Book> list=new ArrayList<>();
         this.id_panier = id_panier;
     }
 
-    public int getId_user() {
+    public Client getId_user() {
         return id_user;
     }
 
-    public void setId_user(int id_user) {
+    public void setId_user(Client id_user) {
         this.id_user = id_user;
     }
 
-    public int getId_comm() {
+    public Commande getId_comm() {
         return id_comm;
     }
 
-    public void setId_comm(int id_comm) {
+    public void setId_comm(Commande id_comm) {
         this.id_comm = id_comm;
     }
 

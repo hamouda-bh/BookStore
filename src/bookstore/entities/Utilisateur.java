@@ -11,14 +11,14 @@ public class Utilisateur {
 	  private String email;
 	  private String tel ;
 	  private String password;
-	  private String photo ; // LE schéma des images 
+	  private String photo ; // LE chemin des images 
 	  
 	  
 	  
 	  
 	  
 	  
-	  public Utilisateur() {
+	public Utilisateur() {
 		
 	}
 	  
@@ -141,6 +141,31 @@ public class Utilisateur {
 	public String toString() {
 		return "Utilisateur [id_user=" + id_user + ", nom=" + nom + ", prenom=" + prenom + ", username=" + username
 				+ ", email=" + email + ", tel=" + tel + ", password=" + password + ", photo=" + photo + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((email == null) ? 0 : email.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Utilisateur other = (Utilisateur) obj;
+		if (email == null) {
+			if (other.email != null)
+				return false;
+		} else if (!email.equals(other.email))
+			return false;
+		return true;
 	}
 
 	  

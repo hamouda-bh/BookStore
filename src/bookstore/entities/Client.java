@@ -9,13 +9,6 @@ public class Client extends Utilisateur {
 		super(id_user,nom,prenom,username,email,tel,password,photo);
 	}
 	
-	
-	
-	
-	
-	
-	
-	
 	public void rechercheLivre( ) {
 		
 	}
@@ -28,7 +21,7 @@ public class Client extends Utilisateur {
 	public void afficherMonHistorique( ) {
 		
 	}
-	public void sélectionnerModePaiement( ) {
+	public void selectionnerModePaiement( ) {
 		
 	}
 	public void inscrire() {
@@ -41,7 +34,6 @@ public class Client extends Utilisateur {
 				+ ", getPassword()=" + getPassword() + ", getPhoto()=" + getPhoto() + ", toString()=" + super.toString()
 				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + "]";
 	}
-	
 	
 	
 }

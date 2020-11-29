@@ -1,15 +1,15 @@
 package bookstore.entities;
 
 public class Blog {
-private int idCatégorie;
+private int idCategorie;
 private String Description;
 Publication[] pub;
 
-public int getIdCatégorie() {
-	return idCatégorie;
+public int getIdCategorie() {
+	return idCategorie;
 }
-public void setIdCatégorie(int idCatégorie) {
-	this.idCatégorie = idCatégorie;
+public void setIdCategorie(int idCategorie) {
+	this.idCategorie = idCategorie;
 }
 public String getDescription() {
 	return Description;
@@ -22,7 +22,7 @@ public int hashCode() {
 	final int prime = 31;
 	int result = 1;
 	result = prime * result + ((Description == null) ? 0 : Description.hashCode());
-	result = prime * result + idCatégorie;
+	result = prime * result + idCategorie;
 	return result;
 }
 @Override
@@ -39,13 +39,13 @@ public boolean equals(Object obj) {
 			return false;
 	} else if (!Description.equals(other.Description))
 		return false;
-	if (idCatégorie != other.idCatégorie)
+	if (idCategorie != other.idCategorie)
 		return false;
 	return true;
 }
 @Override
 public String toString() {
-	return "Blog [idCatégorie=" + idCatégorie + ", Description=" + Description + "]";
+	return "Blog [idCatï¿½gorie=" + idCategorie + ", Description=" + Description + "]";
 }
 
 }

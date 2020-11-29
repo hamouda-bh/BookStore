@@ -93,47 +93,35 @@ public class Livre {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 29 * hash + this.idLivre;
-        hash = 29 * hash + this.idCategorie;
-        hash = 29 * hash + Objects.hashCode(this.titre);
-        hash = 29 * hash + Objects.hashCode(this.nomAuteur);
-        hash = 29 * hash + Float.floatToIntBits(this.prix);
-        hash = 29 * hash + Objects.hashCode(this.Image);
-        return hash;
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((nomAuteur == null) ? 0 : nomAuteur.hashCode());
+        result = prime * result + ((titre == null) ? 0 : titre.hashCode());
+        return result;
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
+        if (this == obj)
             return true;
-        }
-        if (obj == null) {
+        if (obj == null)
             return false;
-        }
-        if (getClass() != obj.getClass()) {
+        if (getClass() != obj.getClass())
             return false;
-        }
-        final Livre other = (Livre) obj;
-        if (this.idLivre != other.idLivre) {
+        Livre other = (Livre) obj;
+        if (nomAuteur == null) {
+            if (other.nomAuteur != null)
+                return false;
+        } else if (!nomAuteur.equals(other.nomAuteur))
             return false;
-        }
-        if (this.idCategorie != other.idCategorie) {
+        if (titre == null) {
+            if (other.titre != null)
+                return false;
+        } else if (!titre.equals(other.titre))
             return false;
-        }
-        if (Float.floatToIntBits(this.prix) != Float.floatToIntBits(other.prix)) {
-            return false;
-        }
-        if (!Objects.equals(this.titre, other.titre)) {
-            return false;
-        }
-        if (!Objects.equals(this.nomAuteur, other.nomAuteur)) {
-            return false;
-        }
-        if (!Objects.equals(this.Image, other.Image)) {
-            return false;
-        }
         return true;
     }
+
+    
     
 }

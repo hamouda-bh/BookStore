@@ -4,7 +4,7 @@ public class Publication {
 private int idPublication;
 private String contenue ;
 private String commentaire ;
-livre [] livres;
+Livre [] livres;
 public int getIdPublication() {
 	return idPublication;
 }
