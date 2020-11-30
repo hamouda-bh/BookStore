@@ -7,6 +7,7 @@ package bookstore.entities;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  *
@@ -14,52 +15,68 @@ import java.util.ArrayList;
  */
 public class CategorieKids {
     
-    private int idLivreKids;
+    private int idCategorieKids;
     private String Description;
-    private String images;
-    private String video;
-    private String son;
-    ArrayList<Livre> livres = new ArrayList<>();
+
 
     public CategorieKids() {
     }
 
     public CategorieKids(int idLivreKids) {
-        this.idLivreKids = idLivreKids;
+        this.idCategorieKids = idLivreKids;
     }
 
-    public CategorieKids(int idLivreKids, String Description, String images, String video, String son) {
-        this.idLivreKids = idLivreKids;
+    public CategorieKids(int idLivreKids, String Description) {
+        this.idCategorieKids = idLivreKids;
         this.Description = Description;
-        this.images = images;
-        this.video = video;
-        this.son = son;
+
     }
 
-    public int getIdLivreKids() {
-        return idLivreKids;
+    public int getIdCategorieKids() {
+        return idCategorieKids;
+    }
+
+    public void setIdCategorieKids(int idCategorieKids) {
+        this.idCategorieKids = idCategorieKids;
     }
 
     public String getDescription() {
         return Description;
     }
 
-    public String getImages() {
-        return images;
-    }
-
-    public String getVideo() {
-        return video;
-    }
-
-    public String getSon() {
-        return son;
-    }
-
-    public ArrayList<Livre> getLivres() {
-        return livres;
+    public void setDescription(String Description) {
+        this.Description = Description;
     }
     
-    
-    
+
+    @Override
+    public String toString() {
+        return "CategorieKids{" + "idCategorieKids=" + idCategorieKids + ", Description=" + Description + '}';
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 13 * hash + this.idCategorieKids;
+        hash = 13 * hash + Objects.hashCode(this.Description);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final CategorieKids other = (CategorieKids) obj;
+        if (this.idCategorieKids != other.idCategorieKids) {
+            return false;
+        }
+        return true;
+    }
 }

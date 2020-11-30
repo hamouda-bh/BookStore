@@ -12,76 +12,94 @@ import java.util.Objects;
  * @author user
  */
 public class Livre {
-    private int idLivre;
-    private int idCategorie ;
+    private int id_livre;
+    private int id_categorie ;
     private String titre ;
-    private String nomAuteur ;
+    private String auteur ;
     private float prix ;
-    private String Image ;
+    private String genre;
+    private String image ;
 
     public Livre() {
     }
 
-    public Livre(int idLivre, int idCategorie, String titre, String nomAuteur, float prix, String Image) {
-        this.idLivre = idLivre;
-        this.idCategorie = idCategorie;
+    public Livre(int id_livre, int id_categorie, String titre, String auteur, float prix, String genre, String image) {
+        this.id_livre = id_livre;
+        this.id_categorie = id_categorie;
         this.titre = titre;
-        this.nomAuteur = nomAuteur;
+        this.auteur = auteur;
         this.prix = prix;
-        this.Image = Image;
+        this.genre=genre;
+        this.image = image;
+    }
+    public Livre(int id_categorie,String titre,String nom_auteur,float prix,String genre,String Image){
+        this.id_categorie = id_categorie;
+        this.titre=titre;
+        this.auteur=nom_auteur;
+        this.prix=prix;
+        this.genre=genre;
+        this.image=image;
     }
 
-    public int getIdLivre() {
-        return idLivre;
+    public int getId_livre() {
+        return id_livre;
     }
 
-    public int getIdCategorie() {
-        return idCategorie;
+    public void setId_livre(int id_livre) {
+        this.id_livre = id_livre;
+    }
+
+    public int getId_categorie() {
+        return id_categorie;
+    }
+
+    public void setId_categorie(int id_categorie) {
+        this.id_categorie = id_categorie;
     }
 
     public String getTitre() {
         return titre;
     }
 
-    public String getNomAuteur() {
-        return nomAuteur;
+    public void setTitre(String titre) {
+        this.titre = titre;
+    }
+
+    public String getAuteur() {
+        return auteur;
+    }
+
+    public void setAuteur(String auteur) {
+        this.auteur = auteur;
     }
 
     public float getPrix() {
         return prix;
     }
 
-    public String getImage() {
-        return Image;
-    }
-
-    public void setIdLivre(int idLivre) {
-        this.idLivre = idLivre;
-    }
-
-    public void setIdCategorie(int idCategorie) {
-        this.idCategorie = idCategorie;
-    }
-
-    public void setTitre(String titre) {
-        this.titre = titre;
-    }
-
-    public void setNomAuteur(String nomAuteur) {
-        this.nomAuteur = nomAuteur;
-    }
-
     public void setPrix(float prix) {
         this.prix = prix;
     }
 
-    public void setImage(String Image) {
-        this.Image = Image;
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     @Override
     public String toString() {
-        return "Livre{" + "idLivre=" + idLivre + ", idCategorie=" + idCategorie + ", titre=" + titre + ", nomAuteur=" + nomAuteur + ", prix=" + prix + ", Image=" + Image + '}';
+        return "Livre{" + "idLivre=" + id_livre + ", idCategorie=" + id_categorie + ", titre=" + titre + ", nomAuteur=" + auteur + ", prix=" + prix + ", Image=" + image + '}';
     }
     public void ajouterLivre(){
         
@@ -93,35 +111,45 @@ public class Livre {
 
     @Override
     public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((nomAuteur == null) ? 0 : nomAuteur.hashCode());
-        result = prime * result + ((titre == null) ? 0 : titre.hashCode());
-        return result;
+        int hash = 5;
+        hash = 41 * hash + this.id_livre;
+        hash = 41 * hash + Objects.hashCode(this.id_categorie);
+        hash = 41 * hash + Objects.hashCode(this.titre);
+        hash = 41 * hash + Objects.hashCode(this.auteur);
+        hash = 41 * hash + Float.floatToIntBits(this.prix);
+        return hash;
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj)
+        if (this == obj) {
             return true;
-        if (obj == null)
+        }
+        if (obj == null) {
             return false;
-        if (getClass() != obj.getClass())
+        }
+        if (getClass() != obj.getClass()) {
             return false;
-        Livre other = (Livre) obj;
-        if (nomAuteur == null) {
-            if (other.nomAuteur != null)
-                return false;
-        } else if (!nomAuteur.equals(other.nomAuteur))
+        }
+        final Livre other = (Livre) obj;
+        if (this.id_livre != other.id_livre) {
             return false;
-        if (titre == null) {
-            if (other.titre != null)
-                return false;
-        } else if (!titre.equals(other.titre))
+        }
+        if (!Objects.equals(this.titre, other.titre)) {
             return false;
+        }
+        if (!Objects.equals(this.auteur, other.auteur)) {
+            return false;
+        }
         return true;
     }
 
-    
-    
+
+
+  
+       
 }
+
+    
+    
+
