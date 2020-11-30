@@ -75,7 +75,7 @@ private String commentaire ;
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final publication other = (publication) obj;
+        final Publication other = (Publication) obj;
         if (this.id_publication != other.id_publication) {
             return false;
         }

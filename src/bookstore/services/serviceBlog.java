@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package bookstore.entities;
+package bookstore.services;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -12,13 +12,14 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import bookstore.entities.blog;
+import bookstore.entities.Blog;
 import bookstore.Testing.DBConnection;
+import bookstore.entities.Blog;
 
 public class  serviceBlog {
 Connection cnx = DBConnection.getInstance().getCnx();
 
-public void ajouter (blog b) {
+public void ajouter (Blog b) {
 	 String req ="INSERT INTO blog (id_blog, id_client,categorie_blog,description) VALUES ('"+b.getId_blog()+"', '"+b.getId_client()+"', '"+b.getCategorie_blog()+"', '"+b.getDescription()+"')"; 
 try {
 	
@@ -29,7 +30,7 @@ System.out.println("blog ajoutée");
 	e.printStackTrace();
 }
 }
-public void supprimer (blog b) {
+public void supprimer (Blog b) {
 	 String req ="DELETE From blog WHERE id="+b.getId_blog();
 try {
 	
@@ -40,7 +41,7 @@ System.out.println("blog supprimée");
 	e.printStackTrace();
 }
 }
-public void modifier (blog b) {
+public void modifier (Blog b) {
 	 String req ="UPDATE blog SET description='"+b.getDescription()+"' WHERE id="+b.getId_blog();
 try {
 	
@@ -52,15 +53,15 @@ System.out.println("blog modifiée");
 }
 }
 
-public List<blog> afficher ( ) {
-	List<blog> list= new ArrayList<>();
+public List<Blog> afficher ( ) {
+	List<Blog> list= new ArrayList<>();
 	 String req = "SELECT * from blog";
 try {
 	
 	Statement st = cnx.createStatement();
 ResultSet res =st.executeQuery(req);
 while (res.next()) {
-	list.add(new blog(res.getInt("id_blog"),res.getInt("id_client"),res.getString("categorie_blog"),res.getString("description")));
+	list.add(new Blog(res.getInt("id_blog"),res.getInt("id_client"),res.getString("categorie_blog"),res.getString("description")));
 }
 System.out.println("blog recupere");
 } catch (SQLException e) {

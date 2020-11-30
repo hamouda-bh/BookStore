@@ -2,9 +2,9 @@ package bookstore.entities;
 
 public class Blog {
     private int id_blog;
-private int id_client;
-private String categorie_blog;
-private String description;
+    private int id_client;
+    private String categorie_blog;
+    private String description;
 
     public int getId_blog() {
         return id_blog;
@@ -56,7 +56,7 @@ private String description;
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final blog other = (blog) obj;
+        final Blog other = (Blog) obj;
         return true;
     }
 
