@@ -1,6 +1,6 @@
 package bookstore.entities;
 
-public class blog {
+public class Blog {
     private int id_blog;
 private int id_client;
 private String categorie_blog;
@@ -65,10 +65,10 @@ private String description;
         return "Blog{" + "id_blog=" + id_blog + ", id_client=" + id_client + ", categorie_blog=" + categorie_blog + ", description=" + description + '}';
     }
 
-    public blog() {
+    public Blog() {
     }
 
-    public blog(int id_blog, int id_client, String categorie_blog, String description) {
+    public Blog(int id_blog, int id_client, String categorie_blog, String description) {
         this.id_blog = id_blog;
         this.id_client = id_client;
         this.categorie_blog = categorie_blog;

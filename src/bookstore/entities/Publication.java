@@ -1,16 +1,16 @@
 package bookstore.entities;
 
-public class publication {
+public class Publication {
 private int id_publication;
 private int id_blog;
 private int id_client;
 private String contenue ;
 private String commentaire ;
 
-    public publication() {
+    public Publication() {
     }
 
-    public publication(int id_publication, int id_blog, int id_client, String contenue, String commentaire) {
+    public Publication(int id_publication, int id_blog, int id_client, String contenue, String commentaire) {
         this.id_publication = id_publication;
         this.id_blog = id_blog;
         this.id_client = id_client;
