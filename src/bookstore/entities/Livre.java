@@ -15,19 +15,21 @@ public class Livre {
     private int idLivre;
     private int idCategorie ;
     private String titre ;
-    private String nomAuteur ;
+    private String auteur ;
     private float prix ;
+    private String genre ;
     private String Image ;
 
     public Livre() {
     }
 
-    public Livre(int idLivre, int idCategorie, String titre, String nomAuteur, float prix, String Image) {
+    public Livre(int idLivre, int idCategorie, String titre, String auteur, float prix,String genre , String Image) {
         this.idLivre = idLivre;
         this.idCategorie = idCategorie;
         this.titre = titre;
-        this.nomAuteur = nomAuteur;
+        this.auteur = auteur;
         this.prix = prix;
+        this.genre=genre ;
         this.Image = Image;
     }
 
@@ -43,8 +45,8 @@ public class Livre {
         return titre;
     }
 
-    public String getNomAuteur() {
-        return nomAuteur;
+    public String getAuteur() {
+        return auteur;
     }
 
     public float getPrix() {
@@ -54,6 +56,19 @@ public class Livre {
     public String getImage() {
         return Image;
     }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setAuteur(String auteur) {
+        this.auteur = auteur;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+    
 
     public void setIdLivre(int idLivre) {
         this.idLivre = idLivre;
@@ -68,7 +83,7 @@ public class Livre {
     }
 
     public void setNomAuteur(String nomAuteur) {
-        this.nomAuteur = nomAuteur;
+        this.auteur = nomAuteur;
     }
 
     public void setPrix(float prix) {
@@ -81,7 +96,7 @@ public class Livre {
 
     @Override
     public String toString() {
-        return "Livre{" + "idLivre=" + idLivre + ", idCategorie=" + idCategorie + ", titre=" + titre + ", nomAuteur=" + nomAuteur + ", prix=" + prix + ", Image=" + Image + '}';
+        return "Livre{" + "idLivre=" + idLivre + ", idCategorie=" + idCategorie + ", titre=" + titre + ", nomAuteur=" + auteur + ", prix=" + prix + ", Image=" + Image + '}';
     }
     public void ajouterLivre(){
         
@@ -95,33 +110,35 @@ public class Livre {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((nomAuteur == null) ? 0 : nomAuteur.hashCode());
+        result = prime * result + ((auteur == null) ? 0 : auteur.hashCode());
         result = prime * result + ((titre == null) ? 0 : titre.hashCode());
         return result;
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj)
+        if (this == obj) {
             return true;
-        if (obj == null)
+        }
+        if (obj == null) {
             return false;
-        if (getClass() != obj.getClass())
+        }
+        if (getClass() != obj.getClass()) {
             return false;
-        Livre other = (Livre) obj;
-        if (nomAuteur == null) {
-            if (other.nomAuteur != null)
-                return false;
-        } else if (!nomAuteur.equals(other.nomAuteur))
+        }
+        final Livre other = (Livre) obj;
+        if (this.idLivre != other.idLivre) {
             return false;
-        if (titre == null) {
-            if (other.titre != null)
-                return false;
-        } else if (!titre.equals(other.titre))
+        }
+        if (!Objects.equals(this.titre, other.titre)) {
             return false;
-        return true;
+        }
+        return Objects.equals(this.auteur, other.auteur);
     }
+  
+       
+}
 
     
     
-}
+
