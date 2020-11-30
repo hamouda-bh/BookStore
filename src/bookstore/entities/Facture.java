@@ -1,5 +1,6 @@
 package bookstore.entities;
 
+import java.sql.Date;
 import java.util.ArrayList;
 
 public class Facture {
@@ -7,34 +8,22 @@ public class Facture {
 private int idFacture ;
 private int idCommande ;
 private int id_client ;
-private String nomClient;
-private String  prenomClient ;
-private ArrayList<Livre> bookList = new ArrayList();
-private float prixtotal;
+private int id_livre;
+private Date date_fact ;
 
-    public Facture(int idCommande, int id_client, String nomClient, String prenomClient, ArrayList<Livre> bookList,
-    float prixtotal) {
-        this.idCommande = idCommande;
-        this.id_client = id_client;
-        this.nomClient = nomClient;
-        this.prenomClient = prenomClient;
-        this.bookList = bookList;
-        this.prixtotal = prixtotal;
-    }
-
-    public Facture(int idFacture, int idCommande, int id_client, String nomClient, String prenomClient, float prixtotal) {
+    public Facture(int idFacture, int idCommande, int id_client, int id_livre, Date date_fact) {
         this.idFacture = idFacture;
         this.idCommande = idCommande;
         this.id_client = id_client;
-        this.nomClient = nomClient;
-        this.prenomClient = prenomClient;
-        this.prixtotal = prixtotal;
+        this.id_livre = id_livre;
+        this.date_fact = date_fact;
     }
+
 
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 17 * hash + Float.floatToIntBits(this.prixtotal);
+        hash = 17 * hash + Float.floatToIntBits(this.idFacture);
         return hash;
     }
 
@@ -64,7 +53,7 @@ private float prixtotal;
 
     @Override
     public String toString() {
-        return "Facture{" + "idFacture=" + idFacture + ", idCommande=" + idCommande + ", id_client=" + id_client + ", nomClient=" + nomClient + ", prenomClient=" + prenomClient + ", bookList=" + bookList + ", prixtotal=" + prixtotal + '}';
+        return "Facture{" + "idFacture=" + idFacture + ", idCommande=" + idCommande + ", id_client=" + id_client + ", id_Livre=" + id_livre + ", date fact=" + date_fact + '}';
     }
 
     public int getIdFacture() {
@@ -91,37 +80,22 @@ private float prixtotal;
         this.id_client = id_client;
     }
 
-    public String getNomClient() {
-        return nomClient;
+    public int getId_livre() {
+        return id_livre;
     }
 
-    public void setNomClient(String nomClient) {
-        this.nomClient = nomClient;
+    public void setId_livre(int id_livre) {
+        this.id_livre = id_livre;
     }
 
-    public String getPrenomClient() {
-        return prenomClient;
+    public Date getDate_fact() {
+        return date_fact;
     }
 
-    public void setPrenomClient(String prenomClient) {
-        this.prenomClient = prenomClient;
+    public void setDate_fact(Date date_fact) {
+        this.date_fact = date_fact;
     }
 
-    public ArrayList<Livre> getBookList() {
-        return bookList;
-    }
-
-    public void setBookList(ArrayList<Livre> bookList) {
-        this.bookList = bookList;
-    }
-
-    public float getPrixtotal() {
-        return prixtotal;
-    }
-
-    public void setPrixtotal(float prixtotal) {
-        this.prixtotal = prixtotal;
-    }
 
     public void imprimer()
     {}
