@@ -44,7 +44,7 @@ public class LivreKidsService{
         try {
             String sql = "DELETE FROM livrekids where id_livre = ?";
             PreparedStatement st = cnx.prepareStatement(sql);
-            st.setInt(1,c.getIdLivre());
+            st.setInt(1,c.getId_livre());
             st.executeUpdate();
             System.out.println("Livre Supprimer");
         } catch (Exception e) {

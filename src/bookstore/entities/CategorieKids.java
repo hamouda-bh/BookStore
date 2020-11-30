@@ -32,6 +32,23 @@ public class CategorieKids {
 
     }
 
+    public int getIdCategorieKids() {
+        return idCategorieKids;
+    }
+
+    public void setIdCategorieKids(int idCategorieKids) {
+        this.idCategorieKids = idCategorieKids;
+    }
+
+    public String getDescription() {
+        return Description;
+    }
+
+    public void setDescription(String Description) {
+        this.Description = Description;
+    }
+    
+
     @Override
     public String toString() {
         return "CategorieKids{" + "idCategorieKids=" + idCategorieKids + ", Description=" + Description + '}';

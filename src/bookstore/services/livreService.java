@@ -11,7 +11,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-
 import bookstore.entities.Livre;
 import bookstore.Testing.DBConnection;
 
@@ -19,7 +18,7 @@ public class  livreService{
 Connection cnx = DBConnection.getInstance().getCnx();
 
 public void ajouter (Livre l) {
-	 String req ="INSERT INTO Livre (id_livre, id_categorie,titre,auteur,genre,prix,image) VALUES ('"+l.getIdLivre()+"', '"+l.getIdCategorie()+"', '"+l.getAuteur()+"', '"+l.getTitre()+"','"+l.getPrix()+"','"+l.getImage()+")"; 
+	 String req ="INSERT INTO Livre (id_livre, id_categorie,titre,auteur,genre,prix,image) VALUES ('"+l.getId_livre()+","+l.getId_categorie()+","+l.getTitre()+","+l.getAuteur()+","+l.getGenre()+","+l.getPrix()+","+l.getImage()+")";
 try {
 	
 	Statement st = cnx.createStatement();
@@ -29,7 +28,7 @@ System.out.println("Livre ajouté");
 }
 }
 public void supprimer (Livre l) {
-	 String req ="DELETE From Livre WHERE id="+l.getIdLivre();
+	 String req ="DELETE From Livre WHERE id="+l.getId_livre();
 try {
 	
 	Statement st = cnx.createStatement();
@@ -39,7 +38,7 @@ System.out.println("Livre");
 }
 }
 public void modifier (Livre l) {
-	 String req ="UPDATE Livre SET Prix='"+l.getPrix()+"' WHERE id="+l.getIdLivre();
+	 String req ="UPDATE Livre SET Prix='"+l.getPrix()+"' WHERE id="+l.getId_livre();
 try {
 	
 	Statement st = cnx.createStatement();
@@ -57,7 +56,7 @@ try {
 	Statement st = cnx.createStatement();
 ResultSet res =st.executeQuery(req);
 while (res.next()) {
-	list.add(new Livre(res.getInt("id_livre"),res.getInt("id_Categorie"),res.getString("titre"),res.getString("auteur"),res.getFloat("prix"),res.getString("genre"),res.getString("image")));
+	list.add(new Livre(res.getInt("id_livre"),res.getInt("id_categorie"),res.getString("titre"),res.getString("auteur"),res.getFloat("prix"),res.getString("genre"),res.getString("image")));
 }
 System.out.println("Livre recupere");
 } catch (SQLException e) {

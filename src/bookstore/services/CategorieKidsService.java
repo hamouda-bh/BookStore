@@ -50,11 +50,11 @@ public class CategorieKidsService {
             System.out.println(e.getMessage());
         }
     }
-    public void SupprimerLivreKids(Livre c){
+    public void SupprimerLivreKids(CategorieKids cat){
         try {
             String sql = "DELETE FROM categoriekids where id_categorie_kids = ?";
             PreparedStatement st = cnx.prepareStatement(sql);
-            st.setInt(1,c.getIdLivre());
+            st.setInt(1,cat.getIdCategorieKids());
             st.executeUpdate();
             System.out.println("Categorie Supprimer");
         } catch (Exception e) {

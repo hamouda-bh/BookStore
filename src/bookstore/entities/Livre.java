@@ -13,131 +13,93 @@ import java.util.Objects;
  */
 public class Livre {
     private int id_livre;
-    private Categorie id_categorie ;
+    private int id_categorie ;
     private String titre ;
-<<<<<<< HEAD
     private String auteur ;
     private float prix ;
-    private String genre ;
-    private String Image ;
-=======
-    private String nom_auteur ;
-    private float prix ;
+    private String genre;
     private String image ;
->>>>>>> medBh
 
     public Livre() {
     }
 
-<<<<<<< HEAD
-    public Livre(int idLivre, int idCategorie, String titre, String auteur, float prix,String genre , String Image) {
-        this.idLivre = idLivre;
-        this.idCategorie = idCategorie;
-        this.titre = titre;
-        this.auteur = auteur;
-        this.prix = prix;
-        this.genre=genre ;
-        this.Image = Image;
-=======
-    public Livre(int id_livre, Categorie id_categorie, String titre, String nom_auteur, float prix, String image) {
+    public Livre(int id_livre, int id_categorie, String titre, String auteur, float prix, String genre, String image) {
         this.id_livre = id_livre;
         this.id_categorie = id_categorie;
         this.titre = titre;
-        this.nom_auteur = nom_auteur;
+        this.auteur = auteur;
         this.prix = prix;
+        this.genre=genre;
         this.image = image;
     }
-    public Livre(Categorie id_categorie,String titre,String nom_auteur,float prix,String Image){
+    public Livre(int id_categorie,String titre,String nom_auteur,float prix,String genre,String Image){
         this.id_categorie = id_categorie;
         this.titre=titre;
-        this.nom_auteur=nom_auteur;
+        this.auteur=nom_auteur;
         this.prix=prix;
+        this.genre=genre;
         this.image=image;
->>>>>>> medBh
     }
 
-    public int getIdLivre() {
+    public int getId_livre() {
         return id_livre;
     }
 
-    public Categorie getIdCategorie() {
+    public void setId_livre(int id_livre) {
+        this.id_livre = id_livre;
+    }
+
+    public int getId_categorie() {
         return id_categorie;
+    }
+
+    public void setId_categorie(int id_categorie) {
+        this.id_categorie = id_categorie;
     }
 
     public String getTitre() {
         return titre;
     }
 
-<<<<<<< HEAD
+    public void setTitre(String titre) {
+        this.titre = titre;
+    }
+
     public String getAuteur() {
         return auteur;
-=======
-    public String getNomAuteur() {
-        return nom_auteur;
->>>>>>> medBh
-    }
-
-    public float getPrix() {
-        return prix;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-<<<<<<< HEAD
-    public String getGenre() {
-        return genre;
     }
 
     public void setAuteur(String auteur) {
         this.auteur = auteur;
     }
 
-    public void setGenre(String genre) {
-        this.genre = genre;
-    }
-    
-
-    public void setIdLivre(int idLivre) {
-        this.idLivre = idLivre;
-=======
-    public void setIdLivre(int id_ivre) {
-        this.id_livre = id_livre;
->>>>>>> medBh
-    }
-
-    public void setIdCategorie(Categorie idCategorie) {
-        this.id_categorie = id_categorie;
-    }
-
-    public void setTitre(String titre) {
-        this.titre = titre;
-    }
-
-    public void setNomAuteur(String nomAuteur) {
-<<<<<<< HEAD
-        this.auteur = nomAuteur;
-=======
-        this.nom_auteur = nom_auteur;
->>>>>>> medBh
+    public float getPrix() {
+        return prix;
     }
 
     public void setPrix(float prix) {
         this.prix = prix;
     }
 
-    public void setImage(String Image) {
-        this.image = Image;
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     @Override
     public String toString() {
-<<<<<<< HEAD
-        return "Livre{" + "idLivre=" + idLivre + ", idCategorie=" + idCategorie + ", titre=" + titre + ", nomAuteur=" + auteur + ", prix=" + prix + ", Image=" + Image + '}';
-=======
-        return "Livre{" + "idLivre=" + id_livre + ", idCategorie=" + id_categorie + ", titre=" + titre + ", nomAuteur=" + nom_auteur + ", prix=" + prix + ", Image=" + image + '}';
->>>>>>> medBh
+        return "Livre{" + "idLivre=" + id_livre + ", idCategorie=" + id_categorie + ", titre=" + titre + ", nomAuteur=" + auteur + ", prix=" + prix + ", Image=" + image + '}';
     }
     public void ajouterLivre(){
         
@@ -149,15 +111,13 @@ public class Livre {
 
     @Override
     public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-<<<<<<< HEAD
-        result = prime * result + ((auteur == null) ? 0 : auteur.hashCode());
-=======
-        result = prime * result + ((nom_auteur == null) ? 0 : nom_auteur.hashCode());
->>>>>>> medBh
-        result = prime * result + ((titre == null) ? 0 : titre.hashCode());
-        return result;
+        int hash = 5;
+        hash = 41 * hash + this.id_livre;
+        hash = 41 * hash + Objects.hashCode(this.id_categorie);
+        hash = 41 * hash + Objects.hashCode(this.titre);
+        hash = 41 * hash + Objects.hashCode(this.auteur);
+        hash = 41 * hash + Float.floatToIntBits(this.prix);
+        return hash;
     }
 
     @Override
@@ -170,24 +130,22 @@ public class Livre {
         }
         if (getClass() != obj.getClass()) {
             return false;
-<<<<<<< HEAD
         }
         final Livre other = (Livre) obj;
-        if (this.idLivre != other.idLivre) {
-=======
-        Livre other = (Livre) obj;
-        if (nom_auteur == null) {
-            if (other.nom_auteur != null)
-                return false;
-        } else if (!nom_auteur.equals(other.nom_auteur))
->>>>>>> medBh
+        if (this.id_livre != other.id_livre) {
             return false;
         }
         if (!Objects.equals(this.titre, other.titre)) {
             return false;
         }
-        return Objects.equals(this.auteur, other.auteur);
+        if (!Objects.equals(this.auteur, other.auteur)) {
+            return false;
+        }
+        return true;
     }
+
+
+
   
        
 }
