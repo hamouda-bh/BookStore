@@ -9,6 +9,7 @@ public class Admin extends Utilisateur {
 	Facture facture ;
 	
 	
+	
 	public Admin() {
 		super();
 	}
