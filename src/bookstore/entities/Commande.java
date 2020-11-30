@@ -8,14 +8,13 @@ import java.util.logging.Logger;
 public class Commande {
     private int id_commande; 
     private Date date_commande;
-    private Client id_client;
-    private ArrayList<Livre>  bookList = new ArrayList();
+    private int id_client;
     private int prixTotale ;
 
     public Commande() {
     }
 
-    public Commande(int id_commande, Date date_commande, Client id_client, int prixTotale) {
+    public Commande(int id_commande, Date date_commande, int id_client, int prixTotale) {
         this.id_commande = id_commande;
         this.date_commande = date_commande;
         this.id_client = id_client;
@@ -38,21 +37,14 @@ public class Commande {
         this.date_commande = date_commande;
     }
 
-    public Client getId_client() {
+    public int  getId_client() {
         return id_client;
     }
 
-    public void setId_client(Client id_client) {
+    public void setId_client(int id_client) {
         this.id_client = id_client;
     }
 
-    public ArrayList<Livre> getBookList() {
-        return bookList;
-    }
-
-    public void setBookList(ArrayList<Livre> bookList) {
-        this.bookList = bookList;
-    }
 
     public int getPrixTotale() {
         return prixTotale;
@@ -64,7 +56,7 @@ public class Commande {
 
     @Override
     public String toString() {
-        return "Commande{" + "id_commande=" + id_commande + ", date_commande=" + date_commande + ", id_client=" + id_client + ", bookList=" + bookList + ", prixTotale=" + prixTotale + '}';
+        return "Commande{" + "id_commande=" + id_commande + ", date_commande=" + date_commande + ", id_client=" + id_client +  ", prixTotale=" + prixTotale + '}';
     }
 
     @Override

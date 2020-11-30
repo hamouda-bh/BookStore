@@ -3,16 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Esprit/Alternance/Projet%20Java/BookStore/src/bookstore/entities/Facture.java</file>
-            <file>file:/D:/Esprit/Alternance/Projet%20Java/BookStore/bookstore.utils</file>
-            <file>file:/D:/Esprit/Alternance/Projet%20Java/BookStore/src/bookstore/entities/Categorie.java</file>
-            <file>file:/D:/Esprit/Alternance/Projet%20Java/BookStore/src/bookstore/entities/Admin.java</file>
-            <file>file:/D:/Esprit/Alternance/Projet%20Java/BookStore/src/bookstore/entities/Client.java</file>
-            <file>file:/D:/Esprit/Alternance/Projet%20Java/BookStore/src/bookstore/Testing/DBConnection.java</file>
-            <file>file:/D:/Esprit/Alternance/Projet%20Java/BookStore/src/bookstore/Testing/MainProg.java</file>
-            <file>file:/D:/Esprit/Alternance/Projet%20Java/BookStore/src/bookstore/entities/Blog.java</file>
-            <file>file:/D:/Esprit/Alternance/Projet%20Java/BookStore/src/bookstore/BookStore.java</file>
-            <file>file:/D:/Esprit/Alternance/Projet%20Java/BookStore/src/bookstore/entities/Panier.java</file>
+            <file>file:/C:/Users/nour/Desktop/giit/BookStore/src/bookstore/entities/Panier_livre.java</file>
+            <file>file:/C:/Users/nour/Desktop/giit/BookStore/src/bookstore/services/PanierService.java</file>
         </group>
     </open-files>
 </project-private>

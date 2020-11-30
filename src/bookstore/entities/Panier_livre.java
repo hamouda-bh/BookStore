@@ -2,20 +2,38 @@ package bookstore.entities;
 
 import java.util.ArrayList;
 
-public class Panier{
+public class Panier_livre{
 
 private int id_panier;
-private Client id_user;
-private Commande id_comm;
-private ArrayList<Livre> list=new ArrayList<>();
-
-    public Panier() {
+private int id_user;
+private int id_comm;
+private float somme_ajoute ;
+private int quantite_ajouter;
+  public Panier_livre() {
     }
 
-    public Panier(int id_panier, Client id_user, Commande id_comm) {
+    public float getSomme_ajoute() {
+        return somme_ajoute;
+    }
+
+    public void setSomme_ajouté(float somme_ajouté) {
+        this.somme_ajoute = somme_ajouté;
+    }
+
+    public int getQuantite_ajouter() {
+        return quantite_ajouter;
+    }
+
+    public void setQuantite_ajouter(int quantite_ajouter) {
+        this.quantite_ajouter = quantite_ajouter;
+    }
+
+    public Panier_livre(int id_panier, int id_user, int id_comm, float somme_ajouté, int quantite_ajouter) {
         this.id_panier = id_panier;
         this.id_user = id_user;
         this.id_comm = id_comm;
+        this.somme_ajoute = somme_ajouté;
+        this.quantite_ajouter = quantite_ajouter;
     }
 
     @Override
@@ -36,7 +54,7 @@ private ArrayList<Livre> list=new ArrayList<>();
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Panier other = (Panier) obj;
+        final Panier_livre other = (Panier_livre) obj;
         if (this.id_panier != other.id_panier) {
             return false;
         }
@@ -51,7 +69,7 @@ private ArrayList<Livre> list=new ArrayList<>();
 
     @Override
     public String toString() {
-        return "Panier{" + "id_panier=" + id_panier + ", id_user=" + id_user + ", id_comm=" + id_comm + ", list=" + list + '}';
+        return "Panier{" + "id_panier=" + id_panier + ", id_user=" + id_user + ", id_comm=" + id_comm + ", somme=" + somme_ajoute + ", quantité ajouté"+ quantite_ajouter+'}';
     }
 
     public int getId_panier() {
@@ -62,41 +80,22 @@ private ArrayList<Livre> list=new ArrayList<>();
         this.id_panier = id_panier;
     }
 
-    public Client getId_user() {
+    public int getId_user() {
         return id_user;
     }
 
-    public void setId_user(Client id_user) {
+    public void setId_user(int id_user) {
         this.id_user = id_user;
     }
 
-    public Commande getId_comm() {
+    public int getId_comm() {
         return id_comm;
     }
 
-    public void setId_comm(Commande id_comm) {
+    public void setId_comm(int id_comm) {
         this.id_comm = id_comm;
     }
 
-    public ArrayList<Livre> getList() {
-        return list;
-    }
+   
 
-    public void setList(ArrayList<Livre> list) {
-        this.list = list;
-    }
-
-    public void retirerLivre(Livre b)
-    {
-    }
-    
-    public ArrayList ajouterLivre (Livre b)
-    {
-        return list;
-    }
-    
-    public int modifierQuantité (ArrayList<Livre> list)
-    {
-        return 0;
-    }
 }
