@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author nour
  */
-public class PanierL {
+public class Panier {
     
     private int id_panier;
     private int id_client;
