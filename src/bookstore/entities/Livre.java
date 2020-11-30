@@ -12,31 +12,38 @@ import java.util.Objects;
  * @author user
  */
 public class Livre {
-    private int idLivre;
-    private int idCategorie ;
+    private int id_livre;
+    private Categorie id_categorie ;
     private String titre ;
-    private String nomAuteur ;
+    private String nom_auteur ;
     private float prix ;
-    private String Image ;
+    private String image ;
 
     public Livre() {
     }
 
-    public Livre(int idLivre, int idCategorie, String titre, String nomAuteur, float prix, String Image) {
-        this.idLivre = idLivre;
-        this.idCategorie = idCategorie;
+    public Livre(int id_livre, Categorie id_categorie, String titre, String nom_auteur, float prix, String image) {
+        this.id_livre = id_livre;
+        this.id_categorie = id_categorie;
         this.titre = titre;
-        this.nomAuteur = nomAuteur;
+        this.nom_auteur = nom_auteur;
         this.prix = prix;
-        this.Image = Image;
+        this.image = image;
+    }
+    public Livre(Categorie id_categorie,String titre,String nom_auteur,float prix,String Image){
+        this.id_categorie = id_categorie;
+        this.titre=titre;
+        this.nom_auteur=nom_auteur;
+        this.prix=prix;
+        this.image=image;
     }
 
     public int getIdLivre() {
-        return idLivre;
+        return id_livre;
     }
 
-    public int getIdCategorie() {
-        return idCategorie;
+    public Categorie getIdCategorie() {
+        return id_categorie;
     }
 
     public String getTitre() {
@@ -44,7 +51,7 @@ public class Livre {
     }
 
     public String getNomAuteur() {
-        return nomAuteur;
+        return nom_auteur;
     }
 
     public float getPrix() {
@@ -52,15 +59,15 @@ public class Livre {
     }
 
     public String getImage() {
-        return Image;
+        return image;
     }
 
-    public void setIdLivre(int idLivre) {
-        this.idLivre = idLivre;
+    public void setIdLivre(int id_ivre) {
+        this.id_livre = id_livre;
     }
 
-    public void setIdCategorie(int idCategorie) {
-        this.idCategorie = idCategorie;
+    public void setIdCategorie(Categorie idCategorie) {
+        this.id_categorie = id_categorie;
     }
 
     public void setTitre(String titre) {
@@ -68,7 +75,7 @@ public class Livre {
     }
 
     public void setNomAuteur(String nomAuteur) {
-        this.nomAuteur = nomAuteur;
+        this.nom_auteur = nom_auteur;
     }
 
     public void setPrix(float prix) {
@@ -76,12 +83,12 @@ public class Livre {
     }
 
     public void setImage(String Image) {
-        this.Image = Image;
+        this.image = Image;
     }
 
     @Override
     public String toString() {
-        return "Livre{" + "idLivre=" + idLivre + ", idCategorie=" + idCategorie + ", titre=" + titre + ", nomAuteur=" + nomAuteur + ", prix=" + prix + ", Image=" + Image + '}';
+        return "Livre{" + "idLivre=" + id_livre + ", idCategorie=" + id_categorie + ", titre=" + titre + ", nomAuteur=" + nom_auteur + ", prix=" + prix + ", Image=" + image + '}';
     }
     public void ajouterLivre(){
         
@@ -95,7 +102,7 @@ public class Livre {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((nomAuteur == null) ? 0 : nomAuteur.hashCode());
+        result = prime * result + ((nom_auteur == null) ? 0 : nom_auteur.hashCode());
         result = prime * result + ((titre == null) ? 0 : titre.hashCode());
         return result;
     }
@@ -109,10 +116,10 @@ public class Livre {
         if (getClass() != obj.getClass())
             return false;
         Livre other = (Livre) obj;
-        if (nomAuteur == null) {
-            if (other.nomAuteur != null)
+        if (nom_auteur == null) {
+            if (other.nom_auteur != null)
                 return false;
-        } else if (!nomAuteur.equals(other.nomAuteur))
+        } else if (!nom_auteur.equals(other.nom_auteur))
             return false;
         if (titre == null) {
             if (other.titre != null)

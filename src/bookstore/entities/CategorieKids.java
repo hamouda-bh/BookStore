@@ -19,7 +19,6 @@ public class CategorieKids {
     private String images;
     private String video;
     private String son;
-    ArrayList<Livre> livres = new ArrayList<>();
 
     public CategorieKids() {
     }
@@ -54,12 +53,7 @@ public class CategorieKids {
 
     public String getSon() {
         return son;
-    }
-
-    public ArrayList<Livre> getLivres() {
-        return livres;
-    }
-    
+    }   
     
     
 }
