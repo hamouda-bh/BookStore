@@ -13,10 +13,20 @@ import java.util.Objects;
  */
 public class LivreKids {
     private int idLivreKids;
+    private int idCategorie;
     private String Description;
     private String Image;
     private String Video;
     private String Son;
+
+    public LivreKids(int idLivreKids, int idCategorie, String Description, String Image, String Video, String Son) {
+        this.idLivreKids = idLivreKids;
+        this.idCategorie = idCategorie;
+        this.Description = Description;
+        this.Image = Image;
+        this.Video = Video;
+        this.Son = Son;
+    }
 
     public LivreKids(String Description, String Image, String Video, String Son) {
         this.Description = Description;
@@ -32,6 +42,8 @@ public class LivreKids {
         this.Video = Video;
         this.Son = Son;
     }
+
+   
 
     public int getIdLivreKids() {
         return idLivreKids;
