@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 public class LivreKidsService{
     Connection cnx = DBConnection.getInstance().getCnx();
+    
+    //methode qui permet de vérifier l'existence d'un livre en utilisant un titre en parametre
     public boolean rechercheTitre(String titre){
         try {
             String sql = "SELECT titre from livrekids where UPPER(?)=UPPER(titre)";
@@ -31,6 +33,8 @@ public class LivreKidsService{
         return false;
     }
     
+    
+    //methode qui permet d'jouter un livre à la BD
     public void ajouterLivreKids(LivreKids c) {
         try {
             String sql = "INSERT INTO livrekids () values (?,?,?,?) ";
@@ -50,6 +54,8 @@ public class LivreKidsService{
             System.out.println(e.getMessage());
         }
     }
+    
+    //methode qui permet d'afficher tous les livres ainsi que leur categorie
     public void afficherLesLivresKids(){
         //List<LivreKids> list = new ArrayList<>();
         try {
@@ -78,7 +84,9 @@ public class LivreKidsService{
         }
         //return list;
     }
-    public void afficherUnLivreParTitre(String titre){
+    
+    //methode d'afficher un livre en lisant son titre en parametre
+    public String afficherUnLivreParTitre(String titre){
         //List<LivreKids> list = new ArrayList<>();
         try {
             if(rechercheTitre(titre)){
@@ -102,7 +110,10 @@ public class LivreKidsService{
             System.out.println(e.getMessage());
         }
         //return list;
+        return null;
     }
+    
+    //methode permettant de supprimer un livre de BD
     public void SupprimerUnLivreKids(Livre c){
         try {
             String sql = "DELETE FROM livrekids where id_livre = ?";
