@@ -6,7 +6,9 @@
 package bookstore.views;
 
 import bookstore.entities.Blog;
+import bookstore.entities.Publication;
 import bookstore.services.serviceBlog;
+import bookstore.services.servicePublication;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -24,26 +26,23 @@ import javax.swing.JOptionPane;
  *
  * @author aziz
  */
-public class BlogviewController implements Initializable {
+public class PublicationviewController implements Initializable {
 
     @FXML
-    private TextField tfid;
-    
+    private TextField tfidp;
+    @FXML
+    private TextField tfidb;
     @FXML
     private TextField tfidc;
-    
     @FXML
-    private TextField tfcategorie;
-    
+    private TextField tfcontenue;
     @FXML
-    private TextField tfdescription;
+    private TextField tfcommentaire;
     @FXML
     private Button btn;
 
     /**
      * Initializes the controller class.
-     * @param url
-     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -51,26 +50,30 @@ public class BlogviewController implements Initializable {
     }    
 
     @FXML
-    private void ajouterBlog(ActionEvent event) throws IOException {
-        int a = Integer.parseInt(tfid.getText());
+    private void ajouterPublication(ActionEvent event) throws IOException {
+         int a = Integer.parseInt(tfidb.getText());
+                  int c = Integer.parseInt(tfidp.getText());
+
                 int b = Integer.parseInt(tfidc.getText());
 
-        serviceBlog sb = new serviceBlog();
-        sb.ajouter(new Blog(a,b,tfcategorie.getText(),tfdescription.getText()));
-        JOptionPane.showMessageDialog(null, "blog ajouté");
+        servicePublication sp = new servicePublication();
+        sp.ajouter(new Publication(a,b,c,tfcontenue.getText(),tfcommentaire.getText()));
+        JOptionPane.showMessageDialog(null, "Publication ajoutée !");
         
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("detailsBlog.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("detailsPublication.fxml"));
         
         Parent root = loader.load();
         
-        tfid.getScene().setRoot(root);
+        tfidb.getScene().setRoot(root);
         
-        DetailsBlogController dbc = loader.getController();
+        DetailsPublicationController dpc = loader.getController();
      
-        dbc.setLbid(a);
-        dbc.setLbidc(b);
-        dbc.setLbcategorie(tfcategorie.getText());
-        dbc.setLbdescription(tfdescription.getText());
+        dpc.setLbidb(a);
+        dpc.setLbidc(b);
+        dpc.setLbidp(c);
+
+        dpc.setLbcontenue(tfcontenue.getText());
+        dpc.setLbcommentaire(tfcommentaire.getText());
     }
     
 }

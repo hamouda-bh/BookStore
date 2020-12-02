@@ -3,8 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Esprit/Alternance/Projet%20Java/BookStore/src/bookstore/entities/Livre.java</file>
-            <file>file:/D:/Esprit/Alternance/Projet%20Java/BookStore/src/bookstore/entities/CategorieKids.java</file>
+            <file>file:/C:/Users/aziz/Desktop/projetgl/BookStore/src/bookstore/views/BlogviewController.java</file>
+            <file>file:/C:/Users/aziz/Desktop/projetgl/BookStore/src/bookstore/entities/Blog.java</file>
+            <file>file:/C:/Users/aziz/Desktop/projetgl/BookStore/src/bookstore/services/serviceBlog.java</file>
+            <file>file:/C:/Users/aziz/Desktop/projetgl/BookStore/src/bookstore/services/livreService.java</file>
         </group>
     </open-files>
 </project-private>
