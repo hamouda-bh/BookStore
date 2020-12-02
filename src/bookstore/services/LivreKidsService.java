@@ -33,27 +33,32 @@ public class LivreKidsService{
     public void afficherLesLivresKids(){
         //List<LivreKids> list = new ArrayList<>();
         try {
-            String sql = "SELECT * FROM livrekids l INNER join categoriekids c on l.id_categorie_kids = c.id_categorie_kids";
+            String sql = "SELECT l.titre,c.nom_categorie,l.description,l.image FROM livrekids l INNER join categoriekids c on l.id_categorie_kids = c.id_categorie_kids";
             PreparedStatement st = cnx.prepareStatement(sql);
             ResultSet rs = st.executeQuery();
             while(rs.next()){
+                String titreLivre = rs.getString(1);
+                String nom_categorie = rs.getString(2);
+                String description = rs.getString(3);
+                String image = rs.getString(4);
                 //list.add(new LivreKids(rs.getInt(1),rs.getInt(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6)));
-                int idlivrekids = rs.getInt(1);
-                int idcategoriekids = rs.getInt(2);
-                String descriptionLivreKids = rs.getString(3);
-                String Image = rs.getString(4);
-                String Video = rs.getString(5);
-                String Son = rs.getString(6);
-                int idcategoriekids2 = rs.getInt(7);
-                String descriptionCategorieKids = rs.getString(8);
-                System.out.println(idlivrekids + " " + idcategoriekids + " " + descriptionLivreKids + " " + Image + " " + Video + " " + Son + " " + idcategoriekids2 + " " + descriptionCategorieKids);
+                // int idlivrekids = rs.getInt(1);
+                // int idcategoriekids = rs.getInt(2);
+                // String descriptionLivreKids = rs.getString(3);
+                // String Image = rs.getString(4);
+                // String Video = rs.getString(5);
+                // String Son = rs.getString(6);
+                // int idcategoriekids2 = rs.getInt(7);
+                // String descriptionCategorieKids = rs.getString(8);
+                //System.out.println(idlivrekids + " " + idcategoriekids + " " + descriptionLivreKids + " " + Image + " " + Video + " " + Son + " " + idcategoriekids2 + " " + descriptionCategorieKids);
+                System.out.println(titreLivre +" "+ nom_categorie +" "+ description +" "+ image);
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
         //return list;
     }
-    public void afficherLesUnLivre(){
+    public void afficherUnLivre(){
         //List<LivreKids> list = new ArrayList<>();
         try {
             String sql = "SELECT * FROM livrekids l INNER join categoriekids c on l.id_categorie_kids = c.id_categorie_kids ";
