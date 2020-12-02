@@ -11,6 +11,25 @@ import java.util.ArrayList;
 import java.util.List;
 public class LivreKidsService{
     Connection cnx = DBConnection.getInstance().getCnx();
+    public boolean rechercheTitre(String titre){
+        try {
+            String sql = "SELECT titre from livrekids where UPPER(?)=UPPER(titre)";
+            PreparedStatement st = cnx.prepareStatement(sql);
+            st.setString(1, titre);
+            ResultSet rs = st.executeQuery();
+            while(rs.next()){
+                    if((rs.getString(1)).equals(titre)){
+                    System.out.println("Livre Trouvé");
+                    return true;
+                }
+            }
+            
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        
+        return false;
+    }
     public void ajouterLivreKids(LivreKids c) {
         try {
             String sql = "INSERT INTO livrekids () values (?,?,?,?) ";
@@ -58,29 +77,27 @@ public class LivreKidsService{
         }
         //return list;
     }
-    public void afficherUnLivre(){
+    public void afficherUnLivreParTitre(String titre){
         //List<LivreKids> list = new ArrayList<>();
         try {
-            String sql = "SELECT * FROM livrekids l INNER join categoriekids c on l.id_categorie_kids = c.id_categorie_kids ";
+            String sql = "SELECT l.titre,c.nom_categorie,l.description,l.image FROM livrekids FROM livrekids l INNER join categoriekids c on l.id_categorie_kids = c.id_categorie_kids WHERE UPPER('?') = UPPER(l.titre) ";
             PreparedStatement st = cnx.prepareStatement(sql);
             ResultSet rs = st.executeQuery();
+            st.setString(1, titre);
+
             while(rs.next()){
-                int idlivrekids = rs.getInt(1);
-                int idcategoriekids = rs.getInt(2);
-                String descriptionLivreKids = rs.getString(3);
-                String Image = rs.getString(4);
-                String Video = rs.getString(5);
-                String Son = rs.getString(6);
-                int idcategoriekids2 = rs.getInt(7);
-                String descriptionCategorieKids = rs.getString(8);
-                System.out.println(idlivrekids + " " + idcategoriekids + " " + descriptionLivreKids + " " + Image + " " + Video + " " + Son + " " + idcategoriekids2 + " " + descriptionCategorieKids);
+                String titreLivre = rs.getString(1);
+                String nom_categorie = rs.getString(2);
+                String description = rs.getString(3);
+                String image = rs.getString(4);
+                System.out.println(titreLivre + " " + nom_categorie + " " + description + " " + image );
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
         //return list;
     }
-    public void SupprimerLivreKids(Livre c){
+    public void SupprimerUnLivreKids(Livre c){
         try {
             String sql = "DELETE FROM livrekids where id_livre = ?";
             PreparedStatement st = cnx.prepareStatement(sql);

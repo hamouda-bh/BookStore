@@ -1,12 +1,23 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
 package bookstore.entities;
+
+/**
+ *
+ * @author PC-Hamouda
+ */
 public class Client extends Utilisateur {
     
 	
 	public Client() {
 		super();
 	}
-	public Client(int id_user, String nom ,String prenom ,String username,String email,String tel, 	String password,String photo ) {
-		super(id_user,nom,prenom,username,email,tel,password,photo);
+	public Client(int id_user, String nom ,String prenom ,String username,String email,String tel, 	String password,String photo,String adress ) {
+		super(id_user,nom,prenom,username,email,tel,password,photo,adress);
 	}
 	
 	public void rechercheLivre( ) {
@@ -31,9 +42,11 @@ public class Client extends Utilisateur {
 	public String toString() {
 		return "Client [getId_user()=" + getId_user() + ", getNom()=" + getNom() + ", getPrenom()=" + getPrenom()
 				+ ", getUsername()=" + getUsername() + ", getEmail()=" + getEmail() + ", getTel()=" + getTel()
-				+ ", getPassword()=" + getPassword() + ", getPhoto()=" + getPhoto() + ", toString()=" + super.toString()
-				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + "]";
+				+ ", getPassword()=" + getPassword() + ", getPhoto()=" + getPhoto() + ", getAdress()=" + getAdress()
+				+ ", toString()=" + super.toString() + ", hashCode()=" + hashCode() + ", getClass()=" + getClass()
+				+ "]";
 	}
+	
 	
 	
 }
