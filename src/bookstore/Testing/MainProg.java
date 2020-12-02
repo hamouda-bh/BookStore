@@ -7,6 +7,7 @@ package bookstore.Testing;
 
 import bookstore.entities.Client;
 import bookstore.services.ClientService;
+import bookstore.services.LivreKidsService;
 
 /**
  *
@@ -19,6 +20,8 @@ public class MainProg {
         //Client c1 = new Client( "qsdazdsqsdsqqfdsqfqss", "Ben qsqdqsd", "qsdqsdq", "qsdqdqsd.mohamed@esprit.tn","qsqdsqdqs", "C:/Users/Photo.jpg");
         //System.out.println(c1.toString()); 
         //cs.ajouterClientDB(c1);
+        LivreKidsService l = new LivreKidsService();
+        l.afficherLesLivresKids();
         
     }
 }

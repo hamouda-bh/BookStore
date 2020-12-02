@@ -101,13 +101,7 @@ public class Livre {
     public String toString() {
         return "Livre{" + "idLivre=" + id_livre + ", idCategorie=" + id_categorie + ", titre=" + titre + ", nomAuteur=" + auteur + ", prix=" + prix + ", Image=" + image + '}';
     }
-    public void ajouterLivre(){
-        
-    }
-    public void modifierLivre(){
-}
-    public void supprimerLivre(){
-    }
+    
 
     @Override
     public int hashCode() {
@@ -144,7 +138,15 @@ public class Livre {
         return true;
     }
 
+    public void ajouterLivre(){
+        
+    }
+    public void modifierLivre(){
 
+    }
+    public void supprimerLivre(){
+        
+    }
 
   
        
