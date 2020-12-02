@@ -30,6 +30,7 @@ public class LivreKidsService{
         
         return false;
     }
+    
     public void ajouterLivreKids(LivreKids c) {
         try {
             String sql = "INSERT INTO livrekids () values (?,?,?,?) ";
@@ -80,18 +81,23 @@ public class LivreKidsService{
     public void afficherUnLivreParTitre(String titre){
         //List<LivreKids> list = new ArrayList<>();
         try {
-            String sql = "SELECT l.titre,c.nom_categorie,l.description,l.image FROM livrekids FROM livrekids l INNER join categoriekids c on l.id_categorie_kids = c.id_categorie_kids WHERE UPPER('?') = UPPER(l.titre) ";
-            PreparedStatement st = cnx.prepareStatement(sql);
-            ResultSet rs = st.executeQuery();
-            st.setString(1, titre);
+            if(rechercheTitre(titre)){
+                String sql = "SELECT l.titre,c.nom_categorie,l.description,l.image FROM livrekids FROM livrekids l INNER join categoriekids c on l.id_categorie_kids = c.id_categorie_kids WHERE UPPER('?') = UPPER(l.titre) ";
+                PreparedStatement st = cnx.prepareStatement(sql);
+                ResultSet rs = st.executeQuery();
+                st.setString(1, titre);
 
-            while(rs.next()){
-                String titreLivre = rs.getString(1);
-                String nom_categorie = rs.getString(2);
-                String description = rs.getString(3);
-                String image = rs.getString(4);
-                System.out.println(titreLivre + " " + nom_categorie + " " + description + " " + image );
+                while(rs.next()){
+                    String titreLivre = rs.getString(1);
+                    String nom_categorie = rs.getString(2);
+                    String description = rs.getString(3);
+                    String image = rs.getString(4);
+                    System.out.println(titreLivre + " " + nom_categorie + " " + description + " " + image );
+                }
             }
+            else
+                return "Livre introuvable";
+            
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
