@@ -5,6 +5,7 @@
  */
 package bookstore.Testing;
 
+import bookstore.views.ViewFactory;
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -23,21 +24,25 @@ import javafx.scene.Parent;
  */
 public class MainProgGUI extends Application {
     
-    @Override
-    public void start(Stage primaryStage) throws IOException {
-       FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/blogview.fxml"));
-       Parent root =loader.load();
-		Scene scene = new Scene(root);
-		primaryStage.setTitle("interface blog");
-		primaryStage.setScene(scene);
-		primaryStage.show();
-    }
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        launch(args);
-    }
     
+
+	public static void main(String[] args) {
+		launch(args);
+	}
+
+	@Override
+	public void start(Stage stage)   {
+		try {    
+			ViewFactory vf = new ViewFactory();
+			vf.showLoginWindow();	
+		}catch(Exception e) {			
+			e.printStackTrace();
+        }	
+    }
 }
+
+
+
+
+    
+

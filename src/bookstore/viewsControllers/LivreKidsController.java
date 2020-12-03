@@ -25,15 +25,12 @@ public class LivreKidsController extends BaseController {
     public LivreKidsController(ViewFactory vf, String fxmlName) {
         super(vf, fxmlName);
     }
-    
-
     @FXML
     private JFXButton vgvg;
 
     @FXML
-    public void showCategoriesWindow() {
+    public void showCategoriesWindowFromLivre() {
         vf.showCategoriesWindowFromLivre();
     }
-
 }
 
