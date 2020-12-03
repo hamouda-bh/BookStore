@@ -21,8 +21,8 @@
       <TextField fx:id="emailField" layoutX="154.0" layoutY="127.0" prefHeight="26.0" prefWidth="250.0" style="-fx-background-color: CFD8DF;" />
       <PasswordField fx:id="passwordField" layoutX="154.0" layoutY="166.0" prefHeight="26.0" prefWidth="250.0" style="-fx-background-color: CFD8DF;" />
       <Button fx:id="loginField" layoutX="164.0" layoutY="211.0" minHeight="19.0" mnemonicParsing="false" onAction="#loginButton" prefHeight="33.0" prefWidth="103.0" style="-fx-background-color: CFD8DF;" text="Login" textFill="#161616" />
-      <Label layoutX="54.0" layoutY="128.0" prefHeight="26.0" prefWidth="66.0" text="Email" />
-      <Label layoutX="54.0" layoutY="166.0" prefHeight="26.0" prefWidth="66.0" text="Password" />
+      <Label layoutX="54.0" layoutY="128.0" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: CFD8DF;" text="   Email" />
+      <Label layoutX="54.0" layoutY="166.0" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: CFD8DF;" text="  Password" />
       <Button fx:id="registerField" layoutX="288.0" layoutY="211.0" minHeight="19.0" mnemonicParsing="false" onAction="#registerButtonAction" prefHeight="33.0" prefWidth="103.0" style="-fx-background-color: CFD8DF;" text="Register" textFill="#161616" />
    </children>
 </AnchorPane>

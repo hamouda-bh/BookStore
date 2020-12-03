@@ -7,6 +7,8 @@ package bookstore.viewsControllers;
 
 import bookstore.entities.Blog;
 import bookstore.services.serviceBlog;
+import bookstore.views.DetailsBlogController;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;

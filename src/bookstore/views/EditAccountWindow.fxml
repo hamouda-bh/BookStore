@@ -34,6 +34,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <Button fx:id="editButton" layoutX="359.0" layoutY="420.0" mnemonicParsing="false" onAction="#editButtonAction" prefHeight="26.0" prefWidth="80.0" style="-fx-background-color: CFD8DF;" text="Confirmer" />
+      <Button fx:id="editButton" layoutX="342.0" layoutY="420.0" mnemonicParsing="false" onAction="#editButtonAction" prefHeight="26.0" prefWidth="97.0" style="-fx-background-color: CFD8DF;" text="Confirmer" />
+      <Button fx:id="cancelButton" layoutX="232.0" layoutY="420.0" mnemonicParsing="false" onAction="#cancelButtonAction" prefHeight="26.0" prefWidth="97.0" style="-fx-background-color: CFD8DF;" text="Cancel" />
    </children>
 </AnchorPane>

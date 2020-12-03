@@ -6,6 +6,7 @@
 
 package bookstore.viewsControllers;
 
+import bookstore.Testing.Cache;
 import bookstore.Testing.DBConnection;
 import bookstore.views.ViewFactory;
 import java.sql.Connection;
@@ -34,7 +35,7 @@ public class AccountWindowController extends BaseController {
 	    @FXML
 	    void deleteButtonAction() {
 	    	Connection cnx = DBConnection.getInstance().getCnx();
-	    	String req = "DELETE from client WHERE id_client=52 ";
+	    	String req = "DELETE from client WHERE id_client="+Cache.client.getId_user() ;
 	    	try {
 	    		Statement st = cnx.createStatement();	  		  
 	  		    st.executeUpdate(req);
@@ -51,6 +52,8 @@ public class AccountWindowController extends BaseController {
 	    @FXML
 	    void editButttonAction() {
             vf.showAccountEditWindow();
+            Stage stage = (Stage) editButton.getScene().getWindow();
+      	    vf.closeStage(stage);
 	    }
 
 	

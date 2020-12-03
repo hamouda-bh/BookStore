@@ -1,4 +1,4 @@
-package com.org.services;
+package bookstore.services;
 
 import bookstore.Testing.DBConnection;
 import bookstore.entities.Client;
