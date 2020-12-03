@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1">
+   <children>
+      <Button layoutX="358.0" layoutY="128.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="152.0" text="Modifier une annonce" />
+      <Button layoutX="358.0" layoutY="185.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="152.0" text="Ajouter une annonce" />
+      <Button layoutX="358.0" layoutY="247.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="152.0" text="Supprimer une annonce" />
+      <ListView layoutX="74.0" layoutY="85.0" prefHeight="261.0" prefWidth="222.0" />
+      <Label layoutX="96.0" layoutY="14.0" prefHeight="59.0" prefWidth="200.0" text="Mes annonces :">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
