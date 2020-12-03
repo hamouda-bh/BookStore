@@ -5,11 +5,16 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="bookstore.views.BlogviewController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.views.BlogviewController">
    <children>
-      <Label layoutX="121.0" layoutY="93.0" text="nom_blog" />
-      <TextField fx:id="tfnom" layoutX="287.0" layoutY="89.0" />
-      <Button fx:id="btn" layoutX="287.0" layoutY="175.0" mnemonicParsing="false" onAction="#ajouterBlog" text="ajouter" />
+      <Label layoutX="107.0" layoutY="93.0" text="id_blog" />
+      <TextField fx:id="tfid" layoutX="287.0" layoutY="89.0" />
+      <Button fx:id="btn" layoutX="287.0" layoutY="316.0" mnemonicParsing="false" onAction="#ajouterBlog" text="ajouter_blog" />
+      <Label layoutX="113.0" layoutY="150.0" text="id_client" />
+      <Label layoutX="118.0" layoutY="253.0" text="description" />
+      <Label layoutX="107.0" layoutY="200.0" text="catégorie" />
+      <TextField fx:id="tfidc" layoutX="287.0" layoutY="146.0" />
+      <TextField fx:id="tfcategorie" layoutX="287.0" layoutY="205.0" />
+      <TextField fx:id="tfdescription" layoutX="287.0" layoutY="249.0" />
    </children>
 </AnchorPane>
