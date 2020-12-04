@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.views.DetailsLivreController">
+   <children>
+      <Label fx:id="lbId" layoutX="251.0" layoutY="62.0" text="Label" />
+      <Label fx:id="lbIdCategorie" layoutX="251.0" layoutY="107.0" text="Label" />
+      <Label fx:id="lbTitre" layoutX="251.0" layoutY="155.0" text="Label" />
+      <Label fx:id="lbAuteur" layoutX="251.0" layoutY="200.0" text="Label" />
+      <Label fx:id="lbGenre" layoutX="251.0" layoutY="242.0" text="Label" />
+      <Label fx:id="lbPrix" layoutX="251.0" layoutY="286.0" text="Label" />
+      <Label fx:id="lbImage" layoutX="251.0" layoutY="336.0" text="Label" />
+   </children>
+</AnchorPane>

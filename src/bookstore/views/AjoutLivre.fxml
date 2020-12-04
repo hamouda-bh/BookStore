@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.views.AjoutLivreController">
+   <children>
+      <Label layoutX="158.0" layoutY="92.0" prefHeight="17.0" prefWidth="94.0" text="id_livre" />
+      <Label layoutX="152.0" layoutY="127.0" text="id_categorie" />
+      <Label layoutX="163.0" layoutY="166.0" text="titre" />
+      <Label layoutX="163.0" layoutY="201.0" text="auteur" />
+      <Label layoutX="165.0" layoutY="239.0" text="genre" />
+      <Label layoutX="164.0" layoutY="275.0" text="prix" />
+      <Label layoutX="158.0" layoutY="313.0" text="image" />
+      <TextField fx:id="tfId" layoutX="294.0" layoutY="88.0" />
+      <TextField fx:id="tfIdCategorie" layoutX="294.0" layoutY="123.0" />
+      <TextField fx:id="tfTitre" layoutX="294.0" layoutY="162.0" />
+      <TextField fx:id="tfAuteur" layoutX="294.0" layoutY="197.0" />
+      <TextField fx:id="tfGenre" layoutX="294.0" layoutY="235.0" />
+      <TextField fx:id="tfPrix" layoutX="294.0" layoutY="271.0" />
+      <TextField fx:id="tfImage" layoutX="294.0" layoutY="309.0" />
+      <Button fx:id="tfENV" layoutX="268.0" layoutY="353.0" mnemonicParsing="false" onAction="#Ajouterunlivre" text="Envoyer" />
+   </children>
+</AnchorPane>
