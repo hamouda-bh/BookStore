@@ -3,21 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/user/Desktop/Projet/BookStore/src/bookstore/views/AjoutLivreController.java</file>
-            <file>file:/C:/Users/user/Desktop/Projet/BookStore/src/bookstore/Testing/ajoutLivreFXMain.java</file>
-            <file>file:/C:/Users/user/Desktop/Projet/BookStore/src/bookstore/views/AjoutCategorie.fxml</file>
-            <file>file:/C:/Users/user/Desktop/Projet/BookStore/src/bookstore/views/ModifierLivre.fxml</file>
-            <file>file:/C:/Users/user/Desktop/Projet/BookStore/src/bookstore/Testing/supprimerLivre.java</file>
-            <file>file:/C:/Users/user/Desktop/Projet/BookStore/src/bookstore/Testing/modifierLivre.java</file>
-            <file>file:/C:/Users/user/Desktop/Projet/BookStore/src/bookstore/Testing/ajoutCategorie.java</file>
-            <file>file:/C:/Users/user/Desktop/Projet/BookStore/src/bookstore/services/livreService.java</file>
-            <file>file:/C:/Users/user/Desktop/Projet/BookStore/src/bookstore/services/CategorieService.java</file>
-            <file>file:/C:/Users/user/Desktop/Projet/BookStore/src/bookstore/Testing/DBConnection.java</file>
-            <file>file:/C:/Users/user/Desktop/Projet/BookStore/src/bookstore/views/DetailsLivreController.java</file>
-            <file>file:/C:/Users/user/Desktop/Projet/BookStore/src/bookstore/views/ModifierLivreController.java</file>
-            <file>file:/C:/Users/user/Desktop/Projet/BookStore/src/bookstore/views/SupprimerLivreController.java</file>
-            <file>file:/C:/Users/user/Desktop/Projet/BookStore/src/bookstore/views/AjoutCategorieController.java</file>
-            <file>file:/C:/Users/user/Desktop/Projet/BookStore/src/bookstore/views/AjoutLivre.fxml</file>
+            <file>file:/D:/Esprit/Alternance/Projet%20Java/BookStore/src/bookstore/entities/LivreKids.java</file>
+            <file>file:/D:/Esprit/Alternance/Projet%20Java/BookStore/src/bookstore/services/LivreKidsService.java</file>
+            <file>file:/D:/Esprit/Alternance/Projet%20Java/BookStore/src/bookstore/Testing/MainProgGUI.java</file>
         </group>
     </open-files>
 </project-private>
