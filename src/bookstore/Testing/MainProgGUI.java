@@ -34,7 +34,8 @@ public class MainProgGUI extends Application {
 	public void start(Stage stage)   {
 		try {    
 			ViewFactory vf = new ViewFactory();
-			vf.showLoginWindow();	
+			vf.showLoginWindow();
+                        vf.showCategoriesWindowFromLivre();
 		}catch(Exception e) {			
 			e.printStackTrace();
         }	

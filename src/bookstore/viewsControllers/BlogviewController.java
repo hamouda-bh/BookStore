@@ -7,6 +7,7 @@ package bookstore.viewsControllers;
 
 import bookstore.entities.Blog;
 import bookstore.services.serviceBlog;
+import bookstore.views.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -24,7 +25,7 @@ import javax.swing.JOptionPane;
  *
  * @author aziz
  */
-public class BlogviewController implements Initializable {
+public class BlogviewController extends BaseController implements Initializable {
 
     @FXML
     private TextField tfid;
