@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.PointLight?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane id="AnchorPane" prefHeight="324.0" prefWidth="380.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.views.ModifierLivreController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#8fc3c3" height="178.0" layoutX="49.0" layoutY="66.0" stroke="#836f6f" strokeType="INSIDE" width="118.0" />
+      <Label alignment="CENTER" contentDisplay="TOP" graphicTextGap="5.0" layoutX="80.0" layoutY="125.0" prefHeight="41.0" prefWidth="57.0" text="Book" textFill="#07226b" textOverrun="CENTER_WORD_ELLIPSIS" />
+     
+      <PointLight color="CHARTREUSE" layoutX="196.0" layoutY="90.0" lightOn="true" />
+      <Button fx:id="tfUpdate" layoutX="169.0" layoutY="70.0" mnemonicParsing="false" onAction="#ModifierUnLivre" text="update" />
+   </children>
+</AnchorPane>
