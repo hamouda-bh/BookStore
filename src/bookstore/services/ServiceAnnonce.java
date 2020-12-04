@@ -8,6 +8,7 @@ package bookstore.services;
 import bookstore.Testing.DBConnection;
 import bookstore.entities.Annonce;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -70,19 +71,71 @@ public class ServiceAnnonce {
         }
     }
     
-    public void afficherAnnonce(Annonce a) {
+    public List<Integer> afficherIdAnnonce() {
+        List<Integer> id = new ArrayList<>();
         try {
-            String req = "SELECT * FROM annonce WHERE id= ?";
+            String req = "SELECT id_Annonce FROM annonce";
             PreparedStatement ps = cnx.prepareStatement(req,Statement.RETURN_GENERATED_KEYS);
-            ps.setInt(1,a.getId_annonce());
-            ps.executeQuery();
-
+            ResultSet rs =  ps.executeQuery();
+            while(rs.next()) {
+               id.add(new Integer(rs.getInt(1)));
+           }
         }
         catch(SQLException ex) {
             System.out.println(ex.getMessage());
         }
+        return id;
     }    
     
+    public List<Date> afficherDateAnnonce() {
+        List<Date> date = new ArrayList<>();
+        try {
+            String req = "SELECT date_publication FROM annonce";
+            PreparedStatement ps = cnx.prepareStatement(req,Statement.RETURN_GENERATED_KEYS);
+            ResultSet rs =  ps.executeQuery();
+            while(rs.next()) {
+               date.add(new Date(rs.getLong(1)));
+           }
+        }
+        catch(SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return date;
+    } 
+    
+    public List<Float> afficherPrixAnnonce() {
+        List<Float> prix = new ArrayList<>();
+        try {
+            String req = "SELECT prix FROM annonce";
+            PreparedStatement ps = cnx.prepareStatement(req,Statement.RETURN_GENERATED_KEYS);
+            ResultSet rs =  ps.executeQuery();
+            while(rs.next()) {
+               prix.add(new Float(rs.getFloat(1)));
+           }
+        }
+        catch(SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return prix;
+    } 
+        
+    public List<String> afficherEtatAnnonce() {
+        List<String> id = new ArrayList<>();
+        try {
+            String req = "SELECT etat_de_livre FROM annonce";
+            PreparedStatement ps = cnx.prepareStatement(req,Statement.RETURN_GENERATED_KEYS);
+            ResultSet rs =  ps.executeQuery();
+            while(rs.next()) {
+               id.add(new String(rs.getString(1)));
+           }
+        }
+        catch(SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return id;
+    }       
+        
+        
     public List<Annonce> afficherAnnonces() {
         List<Annonce> list = new ArrayList<>();
         try {
