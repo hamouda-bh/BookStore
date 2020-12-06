@@ -5,6 +5,7 @@
         <group>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             <file>file:/D:/Esprit/Alternance/Projet%20Java/BookStore/src/bookstore/viewsControllers/RegisterWindowController.java</file>
             <file>file:/D:/Esprit/Alternance/Projet%20Java/BookStore/src/bookstore/views/ViewFactory.java</file>
             <file>file:/D:/Esprit/Alternance/Projet%20Java/BookStore/src/bookstore/viewsControllers/LivreKidsController.java</file>
@@ -19,6 +20,16 @@
             <file>file:/D:/Esprit/Alternance/Projet%20Java/BookStore/src/bookstore/services/LivreKidsService.java</file>
             <file>file:/D:/Esprit/Alternance/Projet%20Java/BookStore/src/bookstore/Testing/MainProgGUI.java</file>
 >>>>>>> maissaElamri
+=======
+            <file>file:/C:/Users/Mehdi/Desktop/9rayetZay/Book/BookStore/src/bookstore/services/ServiceAnnonce.java</file>
+            <file>file:/C:/Users/Mehdi/Desktop/9rayetZay/Book/BookStore/src/bookstore/viewsControllers/LivreKidsController.java</file>
+            <file>file:/C:/Users/Mehdi/Desktop/9rayetZay/Book/BookStore/src/bookstore/entities/Annonce.java</file>
+            <file>file:/C:/Users/Mehdi/Desktop/9rayetZay/Book/BookStore/src/bookstore/views/AnnoncesView.fxml</file>
+            <file>file:/C:/Users/Mehdi/Desktop/9rayetZay/Book/BookStore/src/bookstore/services/PanierService.java</file>
+            <file>file:/C:/Users/Mehdi/Desktop/9rayetZay/Book/BookStore/src/bookstore/viewsControllers/BaseController.java</file>
+            <file>file:/C:/Users/Mehdi/Desktop/9rayetZay/Book/BookStore/src/bookstore/views/ViewFactory.java</file>
+            <file>file:/C:/Users/Mehdi/Desktop/9rayetZay/Book/BookStore/src/bookstore/viewsControllers/BlogviewController.java</file>
+>>>>>>> 90a12605a4eb0416d38d27e73b469fb81b181a4f
         </group>
     </open-files>
 </project-private>
