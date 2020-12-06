@@ -1,18 +1,39 @@
-
 package bookstore.viewsControllers;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.fxml.Initializable;
+import bookstore.views.ViewFactory;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
 
-public class GererPanierController implements Initializable {
+public class GererPanierController extends BaseController{
 
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+   public GererPanierController(ViewFactory vf, String fxmlName)
+   {
+       super(vf,fxmlName);
+   }
     
+    @FXML
+    private Button passerC_btn_id;
+
+    @FXML
+    private TableColumn<?, ?> nomlivre_id;
+
+    @FXML
+    private TableColumn<?, ?> pic_id;
+
+    @FXML
+    private TableColumn<?, ?> nomlivre_id1;
+
+    @FXML
+    private TableColumn<?, ?> nomlivre_id2;
+
+    @FXML
+    private TableColumn<?, ?> nomlivre_id21;
+
+   @FXML
+    void onCliqPasserCommande() {
+        vf.showCommandeForm();
+    }  
 }
+

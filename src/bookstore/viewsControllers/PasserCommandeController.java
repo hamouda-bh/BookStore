@@ -1,27 +1,30 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package bookstore.viewsControllers;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.fxml.Initializable;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleButton;
 
-/**
- * FXML Controller class
- *
- * @author nour
- */
-public class PasserCommandeController implements Initializable {
+public class PasserCommandeController {
 
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
-    
+    @FXML
+    private TextField inputId;
+
+    @FXML
+    private CheckBox check1_id;
+
+    @FXML
+    private CheckBox check2_id;
+
+    @FXML
+    private Button confirm_btn_id;
+
+    @FXML
+    private Button annuler_btn_id;
+
+    @FXML
+    private ToggleButton btn_code_id;
+
 }
+

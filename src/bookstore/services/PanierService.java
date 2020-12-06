@@ -13,7 +13,8 @@ public class PanierService {
 Connection cnx = DBConnection.getInstance().getCnx();
 
 public void ajouter (Panier_livre p) {
-	 String req ="INSERT INTO panier_livre (id_panier, id_client, id_livre, somme_ajouter,quantite_ajouter) VALUES ('"+p.getId_panier()+"', '"+p.getId_user()+"',  '"+p.getId_comm()+"',  '"+p.getSomme_ajoute()+"',  '"+p.getQuantite_ajouter()+"')"; 
+	 String req ="INSERT INTO panier_livre (id_panier, id_client, id_livre, somme_ajouter,quantite_ajouter) VALUES ('"
+                 +p.getId_panier()+"', '"+p.getId_user()+"',  '"+p.getId_comm()+"',  '"+p.getSomme_ajoute()+"',  '"+p.getQuantite_ajouter()+"')"; 
 try {
 	
 	Statement st = cnx.createStatement();

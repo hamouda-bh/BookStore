@@ -58,12 +58,10 @@ private int quantite_ajouter;
         if (this.id_panier != other.id_panier) {
             return false;
         }
-        if (this.id_user != other.id_user) {
+        if ((this.id_user != other.id_user)&&(this.id_comm != other.id_comm)) {
             return false;
         }
-        if (this.id_comm != other.id_comm) {
-            return false;
-        }
+       
         return true;
     }
 
