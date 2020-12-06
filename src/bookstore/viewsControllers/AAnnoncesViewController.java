@@ -12,33 +12,29 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
-import javafx.scene.control.TextField;
+import javafx.scene.control.TableView;
 
 /**
  * FXML Controller class
  *
  * @author Mehdi
  */
-public class MesAnnoncesViewController implements Initializable {
+public class AAnnoncesViewController implements Initializable {
 
     @FXML
-    private Button modifierUneAnnonce;
+    private Button AjouterUneNouvelleAnnonce;
     @FXML
-    private Button AjouterUneAnnonce;
+    private TableView<?> fxTableAnnonces;
     @FXML
-    private Button SupprimerUneAnnonce;
+    private TableColumn<?, ?> titre;
     @FXML
-    private TextField findannonce;
+    private TableColumn<?, ?> auteur;
     @FXML
-    private Button chercher;
+    private TableColumn<?, ?> genre;
     @FXML
-    private TableColumn<?, ?> cellannonce;
+    private TableColumn<?, ?> etat_de_livre;
     @FXML
-    private TableColumn<?, ?> celldate;
-    @FXML
-    private TableColumn<?, ?> cellprix;
-    @FXML
-    private TableColumn<?, ?> celletat;
+    private TableColumn<?, ?> prix1;
 
     /**
      * Initializes the controller class.
@@ -49,19 +45,7 @@ public class MesAnnoncesViewController implements Initializable {
     }    
 
     @FXML
-    private void modifierAnnonce(ActionEvent event) {
-    }
-
-    @FXML
     private void ajouterAnnonce(ActionEvent event) {
-    }
-
-    @FXML
-    private void supprimerAnnonce(ActionEvent event) {
-    }
-
-    @FXML
-    private void afficherAnnonce(ActionEvent event) {
     }
     
 }

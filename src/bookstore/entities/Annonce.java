@@ -6,6 +6,8 @@
 package bookstore.entities;
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -21,6 +23,8 @@ public class Annonce {
     private float prix;
     private String etat_de_livre;
     private Date date_achat;
+    
+    List<Livre> livre = new ArrayList<>();
     
     public void confirmerAnnonce(){}
     
