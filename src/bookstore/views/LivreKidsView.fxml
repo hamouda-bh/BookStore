@@ -12,10 +12,10 @@
       <ScrollBar layoutX="1087.0" layoutY="1.0" orientation="VERTICAL" prefHeight="715.0" prefWidth="14.0" />
       <Button fx:id="addKidsBook" layoutX="259.0" layoutY="76.0" mnemonicParsing="false" text="Add kids Book" />
       <Button fx:id="editBook" layoutX="388.0" layoutY="76.0" mnemonicParsing="false" text="Edit book" />
-      <JFXTextField fx:id="SeachFieldKidsBooks" layoutX="259.0" layoutY="139.0" prefHeight="26.0" prefWidth="674.0" unFocusColor="#3c9ce9" />
+      <JFXTextField fx:id="SeachFieldKidsBooks" focusColor="#3c9ce9" layoutX="260.0" layoutY="147.0" prefHeight="26.0" prefWidth="674.0" unFocusColor="#3c9ce9" />
       <TableView fx:id="KidsBooksList" layoutX="260.0" layoutY="206.0" prefHeight="429.0" prefWidth="674.0" style="-fx-border-color: #3c9ce9; -fx-border-radius: 10px;">
         <columns>
-          <TableColumn prefWidth="75.0" text="idLivre" />
+          <TableColumn prefWidth="75.0" />
           <TableColumn prefWidth="103.0" text="Title" />
             <TableColumn minWidth="0.0" prefWidth="102.0" text="Categorie" />
             <TableColumn minWidth="0.0" prefWidth="392.0" text="Description" />
