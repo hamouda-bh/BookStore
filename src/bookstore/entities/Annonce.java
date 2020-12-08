@@ -45,8 +45,11 @@ public class Annonce {
     public Annonce() {
     }
 
-    public Annonce(int id_annonce) {
-        this.id_annonce = id_annonce;
+    public Annonce(Date date_publication, float prix, String etat_de_livre, Date date_achat) {
+        this.date_publication = date_publication;
+        this.prix = prix;
+        this.etat_de_livre = etat_de_livre;
+        this.date_achat = date_achat;
     }
 
     

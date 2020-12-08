@@ -27,15 +27,12 @@ public class ServiceAnnonce {
     
     public void ajouterAnnonce(Annonce a) {
         try {
-            String req = "INSERT INTO annonce () values (?,?,?,?,?,?,?)";
+            String req = "INSERT INTO annonce(date_publication,prix,etat_de_livre,date_achat) values (?,?,?,?)";
             PreparedStatement st = cnx.prepareStatement(req,Statement.RETURN_GENERATED_KEYS);
-            st.setInt(1,a.getId_annonce());
-            st.setDate(2,a.getDate_publication());
-            st.setInt(3,a.getId_client());
-            st.setInt(4,a.getId_livre());
-            st.setFloat(5,a.getPrix());
-            st.setString(6,a.getEtat_de_livre());
-            st.setDate(7,a.getDate_achat());
+            st.setDate(1,a.getDate_publication());
+            st.setFloat(2,a.getPrix());
+            st.setString(3,a.getEtat_de_livre());
+            st.setDate(4,a.getDate_achat());
             st.executeUpdate();
             ResultSet rs = st.getGeneratedKeys();
             System.out.println("Annonce ajoutée !");
@@ -70,80 +67,16 @@ public class ServiceAnnonce {
             System.out.println(ex.getMessage());
         }
     }
-    
-    public List<Integer> afficherIdAnnonce() {
-        List<Integer> id = new ArrayList<>();
-        try {
-            String req = "SELECT id_Annonce FROM annonce";
-            PreparedStatement ps = cnx.prepareStatement(req,Statement.RETURN_GENERATED_KEYS);
-            ResultSet rs =  ps.executeQuery();
-            while(rs.next()) {
-               id.add(new Integer(rs.getInt(1)));
-           }
-        }
-        catch(SQLException ex) {
-            System.out.println(ex.getMessage());
-        }
-        return id;
-    }    
-    
-    public List<Date> afficherDateAnnonce() {
-        List<Date> date = new ArrayList<>();
-        try {
-            String req = "SELECT date_publication FROM annonce";
-            PreparedStatement ps = cnx.prepareStatement(req,Statement.RETURN_GENERATED_KEYS);
-            ResultSet rs =  ps.executeQuery();
-            while(rs.next()) {
-               date.add(new Date(rs.getLong(1)));
-           }
-        }
-        catch(SQLException ex) {
-            System.out.println(ex.getMessage());
-        }
-        return date;
-    } 
-    
-    public List<Float> afficherPrixAnnonce() {
-        List<Float> prix = new ArrayList<>();
-        try {
-            String req = "SELECT prix FROM annonce";
-            PreparedStatement ps = cnx.prepareStatement(req,Statement.RETURN_GENERATED_KEYS);
-            ResultSet rs =  ps.executeQuery();
-            while(rs.next()) {
-               prix.add(new Float(rs.getFloat(1)));
-           }
-        }
-        catch(SQLException ex) {
-            System.out.println(ex.getMessage());
-        }
-        return prix;
-    } 
-        
-    public List<String> afficherEtatAnnonce() {
-        List<String> id = new ArrayList<>();
-        try {
-            String req = "SELECT etat_de_livre FROM annonce";
-            PreparedStatement ps = cnx.prepareStatement(req,Statement.RETURN_GENERATED_KEYS);
-            ResultSet rs =  ps.executeQuery();
-            while(rs.next()) {
-               id.add(new String(rs.getString(1)));
-           }
-        }
-        catch(SQLException ex) {
-            System.out.println(ex.getMessage());
-        }
-        return id;
-    }       
-        
-        
+
+       
     public List<Annonce> afficherAnnonces() {
         List<Annonce> list = new ArrayList<>();
         try {
-            String req = "SELECT * FROM annonce";
+            String req = "SELECT date_publication,prix,etat_de_livre,date_achat FROM annonce";
             Statement st = cnx.createStatement();
             ResultSet res = st.executeQuery(req);
             while(res.next()) {
-                list.add(new Annonce(res.getInt(1),res.getDate(2),res.getInt(3),res.getInt(4),res.getFloat(5),res.getString(6),res.getDate(7)));
+                list.add(new Annonce(res.getDate(1),res.getFloat(2),res.getString(3),res.getDate(4)));
             }
             System.out.println("Annonces récupérées !");
         }

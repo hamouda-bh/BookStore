@@ -10,11 +10,10 @@
       <Button fx:id="AjouterUneNouvelleAnnonce" layoutX="138.0" layoutY="461.0" mnemonicParsing="false" onAction="#ajouterAnnonce" prefHeight="36.0" prefWidth="195.0" text="Ajouter une nouvelle annonce" />
       <TableView fx:id="fxTableAnnonces" layoutX="18.0" layoutY="21.0" prefHeight="428.0" prefWidth="459.0">
         <columns>
-          <TableColumn fx:id="titre" prefWidth="100.0" text="Titre" />
-          <TableColumn fx:id="auteur" prefWidth="98.0" text="Auteur" />
-            <TableColumn fx:id="genre" minWidth="0.0" prefWidth="83.0" text="Genre" />
-            <TableColumn fx:id="etat_de_livre" minWidth="0.0" prefWidth="83.0" text="Etat" />
-            <TableColumn fx:id="prix1" minWidth="0.0" prefWidth="94.0" text="Prix" />
+          <TableColumn fx:id="datepublicationcell" prefWidth="143.0" text="Date de publication" />
+            <TableColumn fx:id="prixcell" minWidth="0.0" prefWidth="101.0" text="Prix" />
+            <TableColumn fx:id="etatcell" minWidth="0.0" prefWidth="94.0" text="Etat" />
+          <TableColumn fx:id="dateachatcell" prefWidth="120.0" text="Date d'achat" />
         </columns>
       </TableView>
    </children>
