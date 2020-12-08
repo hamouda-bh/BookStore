@@ -20,6 +20,12 @@ public class Commande {
         this.id_client = id_client;
         this.prixTotale = prixTotale;
     }
+     public Commande( Date date_commande,int prixTotale) {
+        Client c = null;   
+        this.date_commande = date_commande;
+        this.id_client = c.getId_user();
+        this.prixTotale = prixTotale;
+    }
 
     public int getId_commande() {
         return id_commande;
@@ -91,6 +97,9 @@ public class Commande {
     }
     public void confirmerCommande ()
     {
+        Panier_livre p = new Panier_livre();
+        int i= p.getId_comm();
+        Facture f = new Facture(id_commande, id_client,i,date_commande);
     }
     
 }

@@ -1,12 +1,18 @@
 package bookstore.viewsControllers;
 
+import bookstore.views.ViewFactory;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 import javax.swing.Icon;
 
-public class CommandeFaiteController {
+public class CommandeFaiteController extends BaseController {
+    
 
+    public CommandeFaiteController(ViewFactory vf, String fxmlName)
+   {
+       super(vf,fxmlName);
+   }
     @FXML
     private Icon imprimer_icon_id;
 

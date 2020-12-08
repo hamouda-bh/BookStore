@@ -12,7 +12,6 @@ public class GererPanierController extends BaseController{
    {
        super(vf,fxmlName);
    }
-    
     @FXML
     private Button passerC_btn_id;
 
@@ -31,9 +30,9 @@ public class GererPanierController extends BaseController{
     @FXML
     private TableColumn<?, ?> nomlivre_id21;
 
-   @FXML
-    void onCliqPasserCommande() {
+    @FXML
+    void onCliqPasserCommande(ActionEvent event) {
         vf.showCommandeForm();
-    }  
+    }
+    
 }
-

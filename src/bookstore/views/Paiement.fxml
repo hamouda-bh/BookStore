@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.viewsController.PaiementController">
+<AnchorPane id="AnchorPane" prefHeight="494.0" prefWidth="785.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.viewsController.PaiementController">
    <children>
       <Text layoutX="221.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payer en ligne ">
          <font>
@@ -50,14 +50,14 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="nom_id" layoutX="169.0" layoutY="83.0" />
-      <TextField fx:id="tel_id" layoutX="191.0" layoutY="157.0" />
-      <TextField fx:id="prenom_id" layoutX="191.0" layoutY="120.0" />
-      <TextField fx:id="adresse_id" layoutX="191.0" layoutY="194.0" prefHeight="32.0" prefWidth="187.0" />
-      <TextField fx:id="code_id" layoutX="169.0" layoutY="306.0" />
-      <TextField fx:id="num_compte_id" layoutX="263.0" layoutY="268.0" prefHeight="32.0" prefWidth="187.0" />
-      <Button fx:id="payer_btn_id" layoutX="225.0" layoutY="355.0" mnemonicParsing="false" text="payer" />
-      <Button fx:id="annuler_btn_id" layoutX="320.0" layoutY="355.0" mnemonicParsing="false" text="Annuler" />
+      <TextField fx:id="nom_id" layoutX="301.0" layoutY="83.0" />
+      <TextField fx:id="tel_id" layoutX="302.0" layoutY="155.0" />
+      <TextField fx:id="prenom_id" layoutX="301.0" layoutY="119.0" />
+      <TextField fx:id="adresse_id" layoutX="302.0" layoutY="189.0" prefHeight="32.0" prefWidth="187.0" />
+      <TextField fx:id="code_id" layoutX="302.0" layoutY="304.0" />
+      <TextField fx:id="num_compte_id" layoutX="302.0" layoutY="268.0" prefHeight="32.0" prefWidth="187.0" />
+      <Button fx:id="payer_btn_id" layoutX="209.0" layoutY="355.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="73.0" text="payer" />
+      <Button fx:id="annuler_btn_id" layoutX="320.0" layoutY="355.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="85.0" text="Annuler" />
       <CheckBox fx:id="check_bancaire_id" layoutX="251.0" layoutY="239.0" mnemonicParsing="false" text="bancaire" />
       <CheckBox fx:id="check_postale_id" layoutX="356.0" layoutY="239.0" mnemonicParsing="false" text="postale" />
    </children>

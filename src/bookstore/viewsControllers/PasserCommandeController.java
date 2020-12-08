@@ -1,14 +1,22 @@
 package bookstore.viewsControllers;
 
+import bookstore.views.ViewFactory;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 
-public class PasserCommandeController {
+public class PasserCommandeController extends BaseController{
 
-    @FXML
+
+     public PasserCommandeController(ViewFactory vf, String fxmlName)
+   {
+       super(vf,fxmlName);
+   }
+     @FXML
     private TextField inputId;
 
     @FXML
@@ -26,5 +34,27 @@ public class PasserCommandeController {
     @FXML
     private ToggleButton btn_code_id;
 
+    @FXML
+    private TableColumn<?, ?> nomlivre_id;
+
+    @FXML
+    private TableColumn<?, ?> pic_id;
+
+    @FXML
+    private TableColumn<?, ?> nomlivre_id2;
+
+    @FXML
+    private TableColumn<?, ?> nomlivre_id21;
+    
+    @FXML
+    void onCliqAnnuler(ActionEvent event) {
+            vf.showPanier();
+    }
+
+    @FXML
+    void onCliqConfirmer(ActionEvent event) {
+            vf.showCommandeFaite();
+    }
+    
 }
 

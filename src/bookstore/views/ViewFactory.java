@@ -8,7 +8,9 @@ package bookstore.views;
 
 import bookstore.viewsControllers.LivreKidsController;
 import bookstore.viewsControllers.BaseController;
+import bookstore.viewsControllers.CommandeFaiteController;
 import bookstore.viewsControllers.GererPanierController;
+import bookstore.viewsControllers.PasserCommandeController;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -61,8 +63,12 @@ public class ViewFactory {
     }
      public void showPanier(  )
     {
-        BaseController b2= new GererPanierController(this, "GererPanier.fxml");
+        BaseController b2= new PasserCommandeController(this, "GererPanier.fxml");
          initializeStage(b2);
     }
-    
+     public void showCommandeFaite()
+    {
+        BaseController b3= new CommandeFaiteController(this, "commandeFaite.fxml");
+         initializeStage(b3);
+    }
 }

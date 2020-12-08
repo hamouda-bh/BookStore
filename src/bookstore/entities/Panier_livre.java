@@ -1,8 +1,9 @@
 package bookstore.entities;
 
+import bookstore.services.PanierService;
 import java.util.ArrayList;
 
-public class Panier_livre{
+public class Panier_livre extends Panier{
 
 private int id_panier;
 private int id_user;
@@ -32,6 +33,15 @@ private int quantite_ajouter;
         this.id_panier = id_panier;
         this.id_user = id_user;
         this.id_comm = id_comm;
+        this.somme_ajoute = somme_ajouté;
+        this.quantite_ajouter = quantite_ajouter;
+    }
+    
+    public Panier_livre(float somme_ajouté, int quantite_ajouter) {
+        Client c = null;
+        Livre l = null;
+        this.id_comm=l.getId_livre();
+        this.id_user=c.getId_user();
         this.somme_ajoute = somme_ajouté;
         this.quantite_ajouter = quantite_ajouter;
     }
@@ -92,6 +102,21 @@ private int quantite_ajouter;
 
     public void setId_comm(int id_comm) {
         this.id_comm = id_comm;
+    }
+
+    @Override
+    public void retirerLivre(Livre b) {
+         PanierService ps = new PanierService();
+        ps.supprimer(this);
+    }
+
+    @Override
+    public int modifierQuantité(ArrayList<Livre> list) {
+       
+        PanierService ps = new PanierService();
+        ps.modifier(this);
+        return ps.afficherQ();
+    
     }
 
    
