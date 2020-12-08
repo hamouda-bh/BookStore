@@ -8,7 +8,6 @@ package bookstore.services;
 import bookstore.Testing.DBConnection;
 import bookstore.entities.Annonce;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -29,10 +28,10 @@ public class ServiceAnnonce {
         try {
             String req = "INSERT INTO annonce(date_publication,prix,etat_de_livre,date_achat) values (?,?,?,?)";
             PreparedStatement st = cnx.prepareStatement(req,Statement.RETURN_GENERATED_KEYS);
-            st.setDate(1,a.getDate_publication());
+            st.setString(1,a.getDate_publication());
             st.setFloat(2,a.getPrix());
             st.setString(3,a.getEtat_de_livre());
-            st.setDate(4,a.getDate_achat());
+            st.setString(4,a.getDate_achat());
             st.executeUpdate();
             ResultSet rs = st.getGeneratedKeys();
             System.out.println("Annonce ajoutée !");
@@ -76,7 +75,7 @@ public class ServiceAnnonce {
             Statement st = cnx.createStatement();
             ResultSet res = st.executeQuery(req);
             while(res.next()) {
-                list.add(new Annonce(res.getDate(1),res.getFloat(2),res.getString(3),res.getDate(4)));
+                list.add(new Annonce(res.getString(1),res.getFloat(2),res.getString(3),res.getString(4)));
             }
             System.out.println("Annonces récupérées !");
         }

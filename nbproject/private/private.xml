@@ -3,9 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/Mehdi/Desktop/9rayetZay/Book/BookStore/src/bookstore/services/ServiceAnnonce.java</file>
+            <file>file:/C:/Users/Mehdi/Desktop/9rayetZay/Book/BookStore/src/bookstore/views/AnnoncesViewController.java</file>
             <file>file:/C:/Users/Mehdi/Desktop/9rayetZay/Book/BookStore/src/bookstore/Testing/ZayTestGUI.java</file>
-            <file>file:/C:/Users/Mehdi/Desktop/9rayetZay/Book/BookStore/src/bookstore/viewsControllers/AAnnoncesViewController.java</file>
-            <file>file:/C:/Users/Mehdi/Desktop/9rayetZay/Book/BookStore/src/bookstore/Testing/MainProgGUI.java</file>
+            <file>file:/C:/Users/Mehdi/Desktop/9rayetZay/Book/BookStore/src/bookstore/entities/Annonce.java</file>
+            <file>file:/C:/Users/Mehdi/Desktop/9rayetZay/Book/BookStore/src/bookstore/views/AAnnoncesView.fxml</file>
+            <file>file:/C:/Users/Mehdi/Desktop/9rayetZay/Book/BookStore/src/bookstore/views/AAjoutAnnonceViewController.java</file>
         </group>
     </open-files>
 </project-private>

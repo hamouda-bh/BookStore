@@ -5,19 +5,16 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="492.0" prefWidth="414.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1">
+<AnchorPane id="AnchorPane" prefHeight="497.0" prefWidth="466.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.views.AAjoutAnnonceViewController">
    <children>
-      <Button fx:id="btnAjouter" layoutX="146.0" layoutY="379.0" mnemonicParsing="false" onAction="#ajouterUneNouvelleAnnonce" prefHeight="35.0" prefWidth="110.0" text="Ajouter" />
-      <TextField fx:id="titre" layoutX="188.0" layoutY="87.0" onAction="#FxSetTitre" />
-      <TextField fx:id="auteur" layoutX="188.0" layoutY="147.0" onAction="#FxSetAuteur" />
-      <TextField fx:id="genre" layoutX="188.0" layoutY="194.0" onAction="#FxSetGenre" />
-      <TextField fx:id="prix" layoutX="188.0" layoutY="247.0" onAction="#FxSetPrix" />
-      <Label layoutX="79.0" layoutY="91.0" text="Titre :" />
-      <Label layoutX="73.0" layoutY="142.0" text="Auteur :" />
-      <Label layoutX="80.0" layoutY="198.0" text="Genre :" />
-      <Label layoutX="86.0" layoutY="251.0" text="Prix :" />
-      <Label layoutX="86.0" layoutY="307.0" text="Etat :" />
-      <TextField fx:id="etat" layoutX="188.0" layoutY="303.0" onAction="#FxSetEtat" />
+      <Button fx:id="btnAjouter" layoutX="189.0" layoutY="345.0" mnemonicParsing="false" onAction="#ajouterUneNouvelleAnnonce" prefHeight="10.0" prefWidth="88.0" text="Ajouter" />
+      <TextField fx:id="tfdate_publication" layoutX="234.0" layoutY="99.0" />
+      <TextField fx:id="tfprix" layoutX="234.0" layoutY="151.0" />
+      <TextField fx:id="tfetat" layoutX="234.0" layoutY="206.0" />
+      <TextField fx:id="tfdateachat" layoutX="234.0" layoutY="259.0" />
+      <Label layoutX="83.0" layoutY="103.0" prefHeight="17.0" prefWidth="128.0" text="Date de publication : " />
+      <Label layoutX="167.0" layoutY="155.0" text="Prix :" />
+      <Label layoutX="124.0" layoutY="212.0" text="Etat du livre :" />
+      <Label layoutX="117.0" layoutY="263.0" text="Date d'achat :" />
    </children>
 </AnchorPane>

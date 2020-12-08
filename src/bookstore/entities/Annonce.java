@@ -17,12 +17,12 @@ import java.util.Objects;
 public class Annonce {
     
     private int id_annonce;
-    private Date date_publication;
+    private String date_publication;
     private int id_client;
     private int id_livre;
     private float prix;
     private String etat_de_livre;
-    private Date date_achat;
+    private String date_achat;
     
     List<Livre> livre = new ArrayList<>();
     
@@ -32,7 +32,7 @@ public class Annonce {
     
     public void supprimerLivre(){}
 
-    public Annonce(int id_annonce, Date date_publication, int id_client, int id_livre, float prix, String etat_de_livre, Date date_achat) {
+    public Annonce(int id_annonce, String date_publication, int id_client, int id_livre, float prix, String etat_de_livre, String date_achat) {
         this.id_annonce = id_annonce;
         this.date_publication = date_publication;
         this.id_client = id_client;
@@ -45,7 +45,7 @@ public class Annonce {
     public Annonce() {
     }
 
-    public Annonce(Date date_publication, float prix, String etat_de_livre, Date date_achat) {
+    public Annonce(String date_publication, float prix, String etat_de_livre, String date_achat) {
         this.date_publication = date_publication;
         this.prix = prix;
         this.etat_de_livre = etat_de_livre;
@@ -53,7 +53,7 @@ public class Annonce {
     }
 
     
-    public Annonce(Date date_publication, int id_client, int id_livre, float prix, String etat_de_livre, Date date_achat) {
+    public Annonce(String date_publication, int id_client, int id_livre, float prix, String etat_de_livre, String date_achat) {
         this.date_publication = date_publication;
         this.id_client = id_client;
         this.id_livre = id_livre;
@@ -70,11 +70,11 @@ public class Annonce {
         this.id_annonce = id_annonce;
     }
 
-    public Date getDate_publication() {
+    public String getDate_publication() {
         return date_publication;
     }
 
-    public void setDate_publication(Date date_publication) {
+    public void setDate_publication(String date_publication) {
         this.date_publication = date_publication;
     }
 
@@ -110,11 +110,11 @@ public class Annonce {
         this.etat_de_livre = etat_de_livre;
     }
 
-    public Date getDate_achat() {
+    public String getDate_achat() {
         return date_achat;
     }
 
-    public void setDate_achat(Date date_achat) {
+    public void setDate_achat(String date_achat) {
         this.date_achat = date_achat;
     }
 

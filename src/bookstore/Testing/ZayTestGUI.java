@@ -24,7 +24,7 @@ public class ZayTestGUI extends Application {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/AAnnoncesView.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
-        primaryStage.setTitle("Toute les annonces");
+        primaryStage.setTitle("BookStore : Toute les annonces");
         primaryStage.setScene(scene);
         primaryStage.show();
         
