@@ -6,6 +6,7 @@
 
 package bookstore.views;
 
+import bookstore.viewsControllers.CommandeFaiteController;
 import bookstore.viewsControllers.LivreKidsController;
 import bookstore.viewsControllers.BaseController;
 import bookstore.viewsControllers.GererPanierController;
@@ -88,7 +89,7 @@ public class ViewFactory {
 		
 		public void showCommandeForm(  )
 		{
-			BaseController b= new GererPanierController(this, "PasserCommande.fxml");
+			BaseController b= new PasserCommandeController(this, "PasserCommande.fxml");
 			 initializeStage(b);
 		}
 		 public void showPanier(  )
@@ -96,10 +97,15 @@ public class ViewFactory {
 			BaseController b2= new GererPanierController(this, "GererPanier.fxml");
 			 initializeStage(b2);
 		}
-
+                 public void showPaiement(){
+                     BaseController paiement = new PaiementController(this, "Paiement.fxml");
+                     initializeStage(paiement);
+                 } 
+                 /*
                 public void showCommandeFaite(){
                     BaseController b3= new CommandeFaiteController(this, "commandeFaite.fxml");
                     initializeStage(b3);
                 }
+                */
 		
 }

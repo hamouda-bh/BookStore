@@ -1,11 +1,15 @@
 package bookstore.viewsControllers;
 
+import bookstore.views.ViewFactory;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 
-public class PaiementController {
+public class PaiementController extends BaseController {
+    public PaiementController(ViewFactory vf, String fxmlName){
+        super(vf, fxmlName);
+    }
 
     @FXML
     private TextField nom_id;
