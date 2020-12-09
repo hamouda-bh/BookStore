@@ -8,6 +8,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             <file>file:/D:/Esprit/Alternance/Projet%20Java/BookStore/src/bookstore/viewsControllers/RegisterWindowController.java</file>
             <file>file:/D:/Esprit/Alternance/Projet%20Java/BookStore/src/bookstore/views/ViewFactory.java</file>
             <file>file:/D:/Esprit/Alternance/Projet%20Java/BookStore/src/bookstore/viewsControllers/LivreKidsController.java</file>
@@ -38,6 +39,17 @@
             <file>file:/C:/Users/nour/Desktop/giit/BookStore/src/bookstore/viewsControllers/GererPanierController.java</file>
             <file>file:/C:/Users/nour/Desktop/giit/BookStore/src/bookstore/viewsControllers/PasserCommandeController.java</file>
 >>>>>>> nourBhy
+=======
+            <file>file:/C:/Users/user/Desktop/Projet/BookStore/src/bookstore/entities/LivreKids.java</file>
+            <file>file:/C:/Users/user/Desktop/Projet/BookStore/src/bookstore/entities/Livre.java</file>
+            <file>file:/C:/Users/user/Desktop/Projet/BookStore/src/bookstore/entities/Categorie.java</file>
+            <file>file:/C:/Users/user/Desktop/Projet/BookStore/src/bookstore/services/LivreKidsService.java</file>
+            <file>file:/C:/Users/user/Desktop/Projet/BookStore/src/bookstore/services/livreService.java</file>
+            <file>file:/C:/Users/user/Desktop/Projet/BookStore/src/bookstore/views/AjoutLivreController.java</file>
+            <file>file:/C:/Users/user/Desktop/Projet/BookStore/src/bookstore/Testing/DBConnection.java</file>
+            <file>file:/C:/Users/user/Desktop/Projet/BookStore/src/bookstore/Testing/ajoutLivreFXMain.java</file>
+            <file>file:/C:/Users/user/Desktop/Projet/BookStore/src/bookstore/views/Livre.fxml</file>
+>>>>>>> maissaElamri
         </group>
     </open-files>
 </project-private>
