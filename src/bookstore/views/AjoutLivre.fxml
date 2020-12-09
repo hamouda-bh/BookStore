@@ -4,23 +4,32 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.views.AjoutLivreController">
+<AnchorPane id="AnchorPane" prefHeight="291.0" prefWidth="562.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.views.AjoutLivreController">
    <children>
-      <Label layoutX="158.0" layoutY="92.0" prefHeight="17.0" prefWidth="94.0" text="id_livre" />
-      <Label layoutX="152.0" layoutY="127.0" text="id_categorie" />
-      <Label layoutX="163.0" layoutY="166.0" text="titre" />
-      <Label layoutX="163.0" layoutY="201.0" text="auteur" />
-      <Label layoutX="165.0" layoutY="239.0" text="genre" />
-      <Label layoutX="164.0" layoutY="275.0" text="prix" />
-      <Label layoutX="158.0" layoutY="313.0" text="image" />
-      <TextField fx:id="tfId" layoutX="294.0" layoutY="88.0" />
-      <TextField fx:id="tfIdCategorie" layoutX="294.0" layoutY="123.0" />
-      <TextField fx:id="tfTitre" layoutX="294.0" layoutY="162.0" />
-      <TextField fx:id="tfAuteur" layoutX="294.0" layoutY="197.0" />
-      <TextField fx:id="tfGenre" layoutX="294.0" layoutY="235.0" />
-      <TextField fx:id="tfPrix" layoutX="294.0" layoutY="271.0" />
-      <TextField fx:id="tfImage" layoutX="294.0" layoutY="309.0" />
-      <Button fx:id="tfENV" layoutX="268.0" layoutY="353.0" mnemonicParsing="false" onAction="#Ajouterunlivre" text="Envoyer" />
+      <Label layoutX="39.0" layoutY="94.0" text="Catégorie" />
+      <Label layoutX="140.0" layoutY="94.0" text="Titre" />
+      <Label layoutX="224.0" layoutY="94.0" text="Auteur" />
+      <Label layoutX="331.0" layoutY="94.0" text="Genre" />
+      <Label layoutX="424.0" layoutY="94.0" text="Prix" />
+      <Label layoutX="502.0" layoutY="94.0" text="Image" />
+      <TextField fx:id="tfIdCategorie" layoutX="26.0" layoutY="123.0" prefHeight="25.0" prefWidth="71.0" />
+      <TextField fx:id="tfTitre" layoutX="116.0" layoutY="123.0" prefHeight="25.0" prefWidth="71.0" />
+      <TextField fx:id="tfAuteur" layoutX="209.0" layoutY="123.0" prefHeight="25.0" prefWidth="78.0" />
+      <TextField fx:id="tfGenre" layoutX="311.0" layoutY="123.0" prefHeight="25.0" prefWidth="71.0" />
+      <TextField fx:id="tfPrix" layoutX="405.0" layoutY="123.0" prefHeight="25.0" prefWidth="58.0" />
+      <TextField fx:id="tfImage" layoutX="489.0" layoutY="123.0" prefHeight="25.0" prefWidth="58.0" />
+      <Button fx:id="tfENV" layoutX="277.0" layoutY="200.0" mnemonicParsing="false" onAction="#Ajouterunlivre" prefHeight="25.0" prefWidth="78.0" text="Confirmer" />
+      <Label layoutX="65.0" layoutY="27.0">
+         <font>
+            <Font name="Bodoni MT Black Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="11.0" prefHeight="32.0" prefWidth="227.0" text="Ajouter votre  livre ! " textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS" wrapText="true">
+         <font>
+            <Font name="Book Antiqua" size="15.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

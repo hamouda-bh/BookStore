@@ -3,9 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Esprit/Alternance/Projet%20Java/BookStore/src/bookstore/entities/LivreKids.java</file>
-            <file>file:/D:/Esprit/Alternance/Projet%20Java/BookStore/src/bookstore/services/LivreKidsService.java</file>
-            <file>file:/D:/Esprit/Alternance/Projet%20Java/BookStore/src/bookstore/Testing/MainProgGUI.java</file>
+            <file>file:/C:/Users/user/Desktop/Projet/BookStore/src/bookstore/entities/LivreKids.java</file>
+            <file>file:/C:/Users/user/Desktop/Projet/BookStore/src/bookstore/entities/Livre.java</file>
+            <file>file:/C:/Users/user/Desktop/Projet/BookStore/src/bookstore/entities/Categorie.java</file>
+            <file>file:/C:/Users/user/Desktop/Projet/BookStore/src/bookstore/services/LivreKidsService.java</file>
+            <file>file:/C:/Users/user/Desktop/Projet/BookStore/src/bookstore/services/livreService.java</file>
+            <file>file:/C:/Users/user/Desktop/Projet/BookStore/src/bookstore/views/AjoutLivreController.java</file>
+            <file>file:/C:/Users/user/Desktop/Projet/BookStore/src/bookstore/Testing/DBConnection.java</file>
+            <file>file:/C:/Users/user/Desktop/Projet/BookStore/src/bookstore/Testing/ajoutLivreFXMain.java</file>
+            <file>file:/C:/Users/user/Desktop/Projet/BookStore/src/bookstore/views/Livre.fxml</file>
         </group>
     </open-files>
 </project-private>
