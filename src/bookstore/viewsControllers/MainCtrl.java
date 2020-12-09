@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package bookstore.viewControllers;
+package bookstore.viewsControllers;
 
+import bookstore.Testing.Cache;
+import bookstore.views.ViewFactory;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -13,13 +15,17 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
  *
  * @author PC-Hamouda
  */
-public class MainCtrl implements Initializable {
+public class MainCtrl extends BaseController implements Initializable {
+    public MainCtrl(ViewFactory vf, String fxmlName){
+        super(vf, fxmlName);
+    }
 
     @FXML
     private Button btnOverview;
@@ -34,7 +40,7 @@ public class MainCtrl implements Initializable {
     @FXML
     private Button btnSettings;
     @FXML
-    private Button btnSignout;
+    private Button logOut;
     @FXML
     private Pane pnlCustomer;
     @FXML
@@ -57,5 +63,11 @@ public class MainCtrl implements Initializable {
     @FXML
     private void handleClicks(ActionEvent event) {
     }
-    
+    @FXML
+    void logOutAction() {
+    	Cache.client = null ;
+    	Stage stage = (Stage) logOut.getScene().getWindow();
+    	vf.closeStage(stage);
+    	vf.showLoginWindow();
+    }
 }

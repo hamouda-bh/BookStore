@@ -68,7 +68,7 @@ public class ViewFactory {
 	    }
 	    public void showMainWindow() {
 	        System.out.println("show main window called");
-			BaseController mainController = new MainWindowController(this, "MainWindowView.fxml");
+			BaseController mainController = new MainCtrl(this, "main.fxml");
 			initializeStage(mainController);
 	    }
 	    public void closeStage(Stage stageToClose) {

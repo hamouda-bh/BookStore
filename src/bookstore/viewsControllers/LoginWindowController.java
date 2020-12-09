@@ -48,7 +48,7 @@ public class LoginWindowController extends BaseController {
        	validateLogins();
         }else 
        	 System.out.println("error");
-                                     }
+        }
    
    public void validateLogin() {
    	Connection cnx = DBConnection.getInstance().getCnx();
