@@ -18,6 +18,8 @@ import javafx.*;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 public class MainProgGUI extends Application {
+    
+    
 
 	public static void main(String[] args) {
 		launch(args);
@@ -27,8 +29,12 @@ public class MainProgGUI extends Application {
 	public void start(Stage stage)   {
 		try {    
 			ViewFactory vf = new ViewFactory();
+<<<<<<< HEAD
 			vf.showPanier();
             vf.showCommandeForm();
+=======
+			vf.showPanier();	
+>>>>>>> parent of c9d3851... v
 		}catch(Exception e) {			
 			e.printStackTrace();
         }	
