@@ -35,6 +35,7 @@ System.out.println("c supprimée");
 	e.printStackTrace();
 }
 }
+/*
 public void modifier (Commande p) {
 	 String req ="UPDATE commande SET date_commande='"+p.getDate_commande()+"' WHERE id="+p.getId_commande();
 try {
@@ -46,16 +47,16 @@ System.out.println("c modifiée");
 	e.printStackTrace();
 }
 }
-
+*/
 public List<Commande> afficher ( ) {
 	List<Commande> list= new ArrayList<>();
-	 String req = "SELECT * from commande";
+	 String req = "SELECT c.date_commande, c.prix_Totale from commande c join client d on c.id_client=d.id_client";
 try {
 	
 	Statement st = cnx.createStatement();
 ResultSet res =st.executeQuery(req);
 while (res.next()) {
-	list.add(new Commande(res.getInt("id_commande"),res.getDate("date_commande"),res.getInt("id_client"),res.getInt("prixTotale")));
+	list.add(new Commande(res.getDate("date_commande"),res.getInt("prixTotale")));
 }
 System.out.println("c recupere");
 } catch (SQLException e) {

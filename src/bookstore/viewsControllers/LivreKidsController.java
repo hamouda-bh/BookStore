@@ -8,29 +8,36 @@ package bookstore.viewsControllers;
 import bookstore.views.ViewFactory;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.TableView;
+import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
  *
  * @author PC-Hamouda
  */
-
-
-import com.jfoenix.controls.JFXButton;
-import javafx.fxml.FXML;
-
-public class LivreKidsController extends BaseController {
-
-    public LivreKidsController(ViewFactory vf, String fxmlName) {
-        super(vf, fxmlName);
+public class LivreKidsController extends BaseController implements Initializable {
+    public LivreKidsController(ViewFactory vf,String fxmlName){
+        super(vf,fxmlName);
     }
     @FXML
-    private JFXButton vgvg;
-
+    private AnchorPane PageKidsBooks;
     @FXML
-    public void showCategoriesWindowFromLivre() {
-        vf.showCategoriesWindowFromLivre();
-    }
+    private Button addKidsBook;
+    @FXML
+    private Button editBook;
+    @FXML
+    private TableView<?> KidsBooksList;
+
+    /**
+     * Initializes the controller class.
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+    }    
+    
 }
-

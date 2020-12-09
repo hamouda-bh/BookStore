@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="578.0" prefWidth="905.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" >
+   <children>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text layoutX="305.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirmez votre commande ">
+         <font>
+            <Font size="22.0" />
+         </font></Text>
+      <Text layoutX="589.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Code de reduction ?" />
+      <Text layoutX="590.0" layoutY="234.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Paiement :" />
+      <TextField fx:id="inputId" layoutX="621.0" layoutY="127.0" />
+      <CheckBox fx:id="check1_id" layoutX="673.0" layoutY="248.0" mnemonicParsing="false" text="à la livraison" />
+      <CheckBox fx:id="check2_id" layoutX="674.0" layoutY="279.0" mnemonicParsing="false" text="en ligne" />
+      <Text layoutX="590.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total prix :" />
+      <Text layoutX="713.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" text="000,000 dt" />
+      <Button fx:id="confirm_btn_id" layoutX="590.0" layoutY="388.0" mnemonicParsing="false" onAction="#onCliqConfirmer" text="Confirmer" />
+      <Button id="back" fx:id="annuler_btn_id" layoutX="740.0" layoutY="388.0" mnemonicParsing="false" onAction="#onCliqAnnuler" prefHeight="31.0" prefWidth="87.0" text="Annuler" />
+      <ToggleButton fx:id="btn_code_id" layoutX="673.0" layoutY="164.0" mnemonicParsing="false" text="appliquer" />
+      <TableView layoutX="74.0" layoutY="122.0" pickOnBounds="false" prefHeight="423.0" prefWidth="447.0">
+         <columns>
+            <TableColumn fx:id="nomlivre_id" prefWidth="105.0" text="Nom livre" />
+            <TableColumn fx:id="pic_id" prefWidth="158.0" text="photo" />
+            <TableColumn fx:id="nomlivre_id2" prefWidth="91.0" text="Quantité" />
+            <TableColumn fx:id="nomlivre_id21" prefWidth="91.0" text="Prix" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

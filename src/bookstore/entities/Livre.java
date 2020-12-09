@@ -1,11 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package bookstore.entities;
 
 import java.util.Objects;
+import javafx.scene.control.TextField;
 
 /**
  *
@@ -13,33 +9,38 @@ import java.util.Objects;
  */
 public class Livre {
     private int id_livre;
-    private int id_categorie ;
+    private String label_cat ;
     private String titre ;
     private String auteur ;
-    private float prix ;
     private String genre;
+    private float prix ;
     private String image ;
 
     public Livre() {
     }
 
-    public Livre(int id_livre, int id_categorie, String titre, String auteur, float prix, String genre, String image) {
+    public Livre(int id_livre, String label_cat, String titre, String auteur, String genre,float prix,String image) {
         this.id_livre = id_livre;
-        this.id_categorie = id_categorie;
+        this.label_cat = label_cat;
         this.titre = titre;
         this.auteur = auteur;
-        this.prix = prix;
         this.genre=genre;
+        this.prix = prix;
         this.image = image;
     }
-    public Livre(int id_categorie,String titre,String nom_auteur,float prix,String genre,String Image){
-        this.id_categorie = id_categorie;
-        this.titre=titre;
-        this.auteur=nom_auteur;
-        this.prix=prix;
-        this.genre=genre;
-        this.image=image;
+
+    public Livre(String label_cat, String titre, String auteur, String genre, float prix, String image) {
+        this.label_cat = label_cat;
+        this.titre = titre;
+        this.auteur = auteur;
+        this.genre = genre;
+        this.prix = prix;
+        this.image = image;
     }
+
+    
+   
+    
 
     public int getId_livre() {
         return id_livre;
@@ -49,12 +50,12 @@ public class Livre {
         this.id_livre = id_livre;
     }
 
-    public int getId_categorie() {
-        return id_categorie;
+    public String getLabel_cat() {
+        return label_cat;
     }
 
-    public void setId_categorie(int id_categorie) {
-        this.id_categorie = id_categorie;
+    public void setLabel_cat(String label_cat) {
+        this.label_cat = label_cat;
     }
 
     public String getTitre() {
@@ -99,7 +100,7 @@ public class Livre {
 
     @Override
     public String toString() {
-        return "Livre{" + "idLivre=" + id_livre + ", idCategorie=" + id_categorie + ", titre=" + titre + ", nomAuteur=" + auteur + ", prix=" + prix + ", Image=" + image + '}';
+        return "Livre{" + "idLivre=" + id_livre + ", Label=" + label_cat + ", titre=" + titre + ", nomAuteur=" + auteur + ", genre=" + genre + ",  prix=" + prix + ", Image=" + image + '}';
     }
     
 
@@ -107,7 +108,7 @@ public class Livre {
     public int hashCode() {
         int hash = 5;
         hash = 41 * hash + this.id_livre;
-        hash = 41 * hash + Objects.hashCode(this.id_categorie);
+        hash = 41 * hash + Objects.hashCode(this.label_cat);
         hash = 41 * hash + Objects.hashCode(this.titre);
         hash = 41 * hash + Objects.hashCode(this.auteur);
         hash = 41 * hash + Float.floatToIntBits(this.prix);

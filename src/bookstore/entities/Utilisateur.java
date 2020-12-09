@@ -6,7 +6,6 @@
 
 package bookstore.entities;
 
-import org.apache.commons.codec.digest.DigestUtils;
 
 /**
  *
@@ -69,6 +68,15 @@ public class Utilisateur {
 		this.tel = tel;
 		this.adress = adress;
 	}
+	
+	public Utilisateur(String nom, String prenom, String username, String email, String tel,
+			String adress) {
+		
+		this.nom = nom;
+		this.prenom = prenom;
+		this.username = username;
+		this.email = email;
+		this.tel = tel;
 
 
 	public Utilisateur(int id_user, String nom, String prenom, String username, String email, String tel,
@@ -141,6 +149,8 @@ public class Utilisateur {
 		this.password = password;
 	}
 
+	
+	
 
 	public String getAdress() {
 		return adress;

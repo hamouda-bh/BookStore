@@ -24,6 +24,7 @@ System.out.println("F ajoutée");
 	e.printStackTrace();
 }
 }
+/*
 public void supprimer (Facture p) {
 	 String req ="DELETE From facture WHERE id_facture="+p.getIdFacture();
 try {
@@ -46,16 +47,15 @@ System.out.println("F modifiée");
 	e.printStackTrace();
 }
 }
-
+*/
 public List<Facture> afficher ( ) {
 	List<Facture> list= new ArrayList<>();
-	 String req = "SELECT * from facture";
+	 String req = "SELECT date_facturation from facture";
 try {
-	
 	Statement st = cnx.createStatement();
 ResultSet res =st.executeQuery(req);
 while (res.next()) {
-	list.add(new Facture(res.getInt("idFacture"),res.getInt("idCommande"),res.getInt("id_client"),res.getInt("id_livre"),res.getDate("date_fact")));
+	list.add(new Facture(res.getDate("date_fact")));
 }
 System.out.println("f recupere");
 } catch (SQLException e) {

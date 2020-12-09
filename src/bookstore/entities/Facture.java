@@ -18,8 +18,23 @@ private Date date_fact ;
         this.id_livre = id_livre;
         this.date_fact = date_fact;
     }
+  public Facture(int idCommande, int id_client, int id_livre, Date date_fact) {
+       
+        this.idCommande = idCommande;
+        this.id_client = id_client;
+        this.id_livre = id_livre;
+        this.date_fact = date_fact;
+    }
 
-
+    public Facture(Date date_fact) {
+        Client c = null;
+        Livre l = null;
+        Commande cc = null;
+        this.idCommande = cc.getId_commande();
+        this.id_client = c.getId_user();
+        this.id_livre = l.getId_livre();
+        this.date_fact = date_fact;
+    }
     @Override
     public int hashCode() {
         int hash = 3;
@@ -39,13 +54,7 @@ private Date date_fact ;
             return false;
         }
         final Facture other = (Facture) obj;
-        if (this.idFacture != other.idFacture) {
-            return false;
-        }
-        if (this.idCommande != other.idCommande) {
-            return false;
-        }
-        if (this.id_client != other.id_client) {
+        if ((this.idFacture != other.idFacture) && (this.idCommande != other.idCommande) &&(this.id_client != other.id_client)) {
             return false;
         }
         return true;

@@ -45,7 +45,9 @@ public class EditAccountController extends BaseController implements Initializab
 
     @FXML
     private TextField telField;
-  
+
+    
+
     @FXML
     private TextField adressField;
     
@@ -87,7 +89,7 @@ public class EditAccountController extends BaseController implements Initializab
     @FXML
     void cancelButtonAction() {
     	vf.showMainWindow();
-	    Stage stage = (Stage) nameField.getScene().getWindow();
+	    Stage stage = (Stage) emailField.getScene().getWindow();
 	    vf.closeStage(stage);
     }
 
@@ -97,8 +99,9 @@ public class EditAccountController extends BaseController implements Initializab
 		prenomField.setText(Cache.client.getPrenom());
 		userNameField.setText(Cache.client.getUsername());
 		emailField.setText(Cache.client.getEmail());
-		telField.setText(Cache.client.getTel());			
+		telField.setText(Cache.client.getTel());		
 		adressField.setText(Cache.client.getAdress());
-	
+		
+		
 	}
 }
