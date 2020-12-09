@@ -21,7 +21,7 @@ public class DetailsLivreController implements Initializable {
     @FXML
     private Label lbId;
     @FXML
-    private Label lbIdCategorie;
+    private Label lbLabelCat;
     @FXML
     private Label lbTitre;
     @FXML
@@ -45,8 +45,8 @@ public class DetailsLivreController implements Initializable {
         this.lbId.setText(Integer.toString(n)); 
     }
 
-    public void setLbIdCategorie(int i) {
-        this.lbIdCategorie.setText(Integer.toString(i)); 
+    public void setLbLabelCat(String str) {
+        this.lbLabelCat=lbLabelCat; 
     }
 
     public void setLbTitre(String str) {

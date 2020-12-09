@@ -3,22 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/BookStore/src/bookstore/services/ClientService.java</file>
-            <file>file:/C:/BookStore/src/bookstore/views/mainitem.fxml</file>
-            <file>file:/C:/BookStore/src/bookstore/viewsControllers/BlogviewController.java</file>
-            <file>file:/C:/BookStore/src/bookstore/views/main.fxml</file>
-            <file>file:/C:/BookStore/src/bookstore/viewsControllers/MainCtrl.java</file>
-            <file>file:/C:/BookStore/src/bookstore/Testing/MainProg.java</file>
-            <file>file:/C:/BookStore/src/bookstore/views/ModifierLivreController.java</file>
-            <file>file:/C:/BookStore/src/bookstore/viewsControllers/MainWindowController.java</file>
-            <file>file:/C:/BookStore/src/bookstore/viewsControllers/LivreKidsController.java</file>
-            <file>file:/C:/BookStore/src/bookstore/viewsControllers/BaseController.java</file>
-            <file>file:/C:/BookStore/src/bookstore/Testing/DBConnection.java</file>
-            <file>file:/C:/BookStore/src/bookstore/entities/LivreKids.java</file>
-            <file>file:/C:/BookStore/src/bookstore/entities/Utilisateur.java</file>
-            <file>file:/C:/BookStore/src/bookstore/viewsControllers/LoginWindowController.java</file>
             <file>file:/C:/BookStore/src/bookstore/views/ViewFactory.java</file>
-            <file>file:/C:/BookStore/src/bookstore/Testing/MainProgGUI.java</file>
         </group>
     </open-files>
 </project-private>

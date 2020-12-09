@@ -8,10 +8,6 @@ package bookstore.services;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
-
-
-
-
 import bookstore.entities.Categorie;
 import bookstore.Testing.DBConnection;
 
@@ -25,6 +21,26 @@ try {
 	Statement st = cnx.createStatement();
 st.executeUpdate(req);
 System.out.println("Livre ajouté");
+} catch (SQLException e) {
+}
+}
+public void supprimer (Categorie cat) {
+	 String req ="DELETE From Categorie WHERE id="+cat.getIdCategorie();
+try {
+	
+	Statement st = cnx.createStatement();
+st.executeUpdate(req);
+System.out.println("Categorie supprimée");
+} catch (SQLException e) {
+}
+}
+public void modifier (Categorie cat) {
+	 String req ="UPDATE Categorie SET Label='"+cat.getLabel()+"' WHERE id="+cat.getIdCategorie();
+try {
+	
+	Statement st = cnx.createStatement();
+st.executeUpdate(req);
+System.out.println("Categorie modifié");
 } catch (SQLException e) {
 }
 }
