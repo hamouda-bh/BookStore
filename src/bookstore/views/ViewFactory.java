@@ -5,17 +5,12 @@
  */
 
 package bookstore.views;
-<<<<<<< HEAD
-import bookstore.viewsControllers.*;
-import bookstore.views.*;
-=======
 
 import bookstore.viewsControllers.LivreKidsController;
 import bookstore.viewsControllers.BaseController;
 import bookstore.viewsControllers.CommandeFaiteController;
 import bookstore.viewsControllers.GererPanierController;
 import bookstore.viewsControllers.PasserCommandeController;
->>>>>>> nourBhy
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -61,38 +56,6 @@ public class ViewFactory {
         
     }
     
-<<<<<<< HEAD
-    public void showLoginWindow() {
-	        System.out.println("show login window called");
-			BaseController loginController = new LoginWindowController(this, "LoginWindow.fxml");
-			initializeStage(loginController);
-	    }
-	public void showRegisterWindow() {
-	    System.out.println("show register window called");
-		BaseController registerController = new RegisterWindowController(this, "RegisterWindowController.fxml");
-		initializeStage(registerController);
-	}
-	public void showMainWindow() {
-	    System.out.println("show main window called");
-		BaseController mainController = new MainWindowController(this, "MainWindowView.fxml");
-		initializeStage(mainController);
-	}
-	public void closeStage(Stage stageToClose) {
-		stageToClose.close();
-		st.remove(stageToClose);
-	}
-	
-	public void showAccountWindow(){
-		System.out.println("show account window called");
-		BaseController accountController = new AccountWindowController(this, "AccountWindow.fxml");
-		initializeStage(accountController);
-	}
-	public void showAccountEditWindow(){
-		System.out.println("show account edit window called");
-		BaseController editAccountController = new EditAccountController(this, "EditAccountWindow.fxml");
-		initializeStage(editAccountController);
-	}
-=======
     public void showCommandeForm(  )
     {
         BaseController b= new GererPanierController(this, "PasserCommande.fxml");
@@ -108,5 +71,4 @@ public class ViewFactory {
         BaseController b3= new CommandeFaiteController(this, "commandeFaite.fxml");
          initializeStage(b3);
     }
->>>>>>> nourBhy
 }
