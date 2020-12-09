@@ -3,32 +3,29 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.SepiaTone?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.views.PublicationviewController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #a2b8ee;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.views.PublicationviewController">
    <children>
-      <Label layoutX="55.0" layoutY="57.0" text="id_publication" />
-      <Label layoutX="57.0" layoutY="111.0" text="id_blog" />
-      <Label layoutX="55.0" layoutY="165.0" text="id_client" />
-      <Label layoutX="54.0" layoutY="227.0" text="contenue" />
-      <Label layoutX="57.0" layoutY="283.0" text="commentaire" />
+      <Label layoutX="149.0" layoutY="57.0" text="id_publication" />
+      <Label layoutX="147.0" layoutY="111.0" text="id_blog" />
+      <Label layoutX="147.0" layoutY="165.0" text="id_client" />
+      <Label layoutX="149.0" layoutY="227.0" text="contenue" />
+      <Label layoutX="139.0" layoutY="283.0" text="commentaire" />
       <TextField fx:id="tfidp" layoutX="246.0" layoutY="53.0" prefHeight="25.0" prefWidth="239.0" />
       <TextField fx:id="tfidb" layoutX="246.0" layoutY="107.0" prefHeight="25.0" prefWidth="239.0" />
       <TextField fx:id="tfidc" layoutX="246.0" layoutY="161.0" prefHeight="25.0" prefWidth="239.0" />
       <TextField fx:id="tfcontenue" layoutX="246.0" layoutY="223.0" prefHeight="25.0" prefWidth="239.0" />
       <TextField fx:id="tfcommentaire" layoutX="246.0" layoutY="279.0" prefHeight="25.0" prefWidth="239.0" />
-      <Button fx:id="btn" layoutX="68.0" layoutY="348.0" mnemonicParsing="false" onAction="#ajouterPublication" text="ajouter_publication" />
-      <Button fx:id="btnmodifier" layoutX="246.0" layoutY="348.0" mnemonicParsing="false" onAction="#modifierPublication" text="modifier_publication" />
-      <Button fx:id="btnsupprimer" layoutX="427.0" layoutY="348.0" mnemonicParsing="false" onAction="#supprimerPublication" text="supprimer_publication" />
+      <Button fx:id="btn" layoutX="187.0" layoutY="348.0" mnemonicParsing="false" onAction="#ajouterPublication" text="ajouter_publication" />
+      <Button fx:id="btnmodifier" layoutX="318.0" layoutY="348.0" mnemonicParsing="false" onAction="#modifierPublication" text="modifier_publication" />
+      <Button fx:id="btnsupprimer" layoutX="459.0" layoutY="348.0" mnemonicParsing="false" onAction="#supprimerPublication" text="supprimer_publication" />
       <Label layoutX="186.0" layoutY="8.0" text="PUBLICATIONS" textFill="#d0293df2">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
+      <AnchorPane layoutY="-1.0" prefHeight="411.0" prefWidth="134.0" style="-fx-background-color: #433dae;" />
    </children>
-   <effect>
-      <SepiaTone />
-   </effect>
 </AnchorPane>
