@@ -17,6 +17,7 @@ import javafx.scene.control.*;
 import bookstore.Testing.Cache;
 import bookstore.Testing.DBConnection;
 import bookstore.entities.Client;
+import bookstore.services.ClientService;
 import bookstore.views.ViewFactory;
 /**
  *
@@ -44,7 +45,7 @@ public class LoginWindowController extends BaseController {
    @FXML
    void loginButton(ActionEvent evt) {
         if (emailField.getText().isEmpty()==false && passwordField.getText().isEmpty() == false) {
-       	validateLogin();
+       	validateLogins();
         }else 
        	 System.out.println("error");
                                      }
@@ -55,14 +56,16 @@ public class LoginWindowController extends BaseController {
    	
    	
    	try {
-   		Statement st = cnx.createStatement();			  
+   		    Statement st = cnx.createStatement();			  
 			ResultSet res = st.executeQuery(verifyLogin);
+			ClientService cs = new ClientService();
 			if(res.next() ) {
+				
 			
-            
+   		
            	  
                	System.out.println("succes"); 
-               	Cache.client =  new Client(res.getInt("id_client"),res.getString("nom"),res.getString("prenom"),res.getString("email"),res.getString("username"),res.getString("tel"),res.getString("password"),res.getString("photo"),res.getString("adresse"));
+               	Cache.client =  new Client(res.getInt("id_client"),res.getString("nom"),res.getString("prenom"),res.getString("email"),res.getString("username"),res.getString("tel"),res.getString("password"),res.getString("adresse"));
                	vf.showMainWindow();
                	Stage stage = (Stage) emailField.getScene().getWindow();
                	vf.closeStage(stage);
@@ -81,6 +84,41 @@ public class LoginWindowController extends BaseController {
    	vf.showRegisterWindow();
    	Stage stage = (Stage) emailField.getScene().getWindow();
    	vf.closeStage(stage);
+   }
+   public void validateLogins() {
+	   	Connection cnx = DBConnection.getInstance().getCnx();
+	   	ClientService cs = new ClientService();
+	   	
+	  if ( cs.authentification(emailField.getText(), passwordField.getText())  ) {
+	   	
+	   	
+	   	String verifyLogin = "SELECT * FROM client WHERE email = '"+emailField.getText()+"'  "  ;   
+	   	
+	   	
+	   	try {
+	   		    Statement st = cnx.createStatement();			  
+				ResultSet res = st.executeQuery(verifyLogin);
+				
+				if(res.next() ) {
+					
+				
+	   		
+	           	  
+	               	System.out.println("succes"); 
+	               	Cache.client =  new Client(res.getInt("id_client"),res.getString("nom"),res.getString("prenom"),res.getString("email"),res.getString("username"),res.getString("tel"),res.getString("password"),res.getString("adresse"));
+	               	vf.showMainWindow();
+	               	Stage stage = (Stage) emailField.getScene().getWindow();
+	               	vf.closeStage(stage);
+	             
+	             }else {
+	                	System.out.println("error");
+				}
+	   	}catch(Exception e){
+	   		e.printStackTrace();
+	   		e.getCause();
+	   		
+	   	}
+	   }
    }
 
 

@@ -6,6 +6,8 @@
 
 package bookstore.entities;
 
+import org.apache.commons.codec.digest.DigestUtils;
+
 /**
  *
  * @author PC-Hamouda
@@ -19,8 +21,8 @@ public class Utilisateur {
 	  private String email;
 	  private String tel ;
 	  private String password;
-	  private String photo ;
-	  private String adress;// LE chemin des images 
+	
+	  private String adress; 
 	  
 	  
 	  
@@ -32,7 +34,7 @@ public class Utilisateur {
 	}
 	  
 	public Utilisateur(String nom, String prenom, String username, String email, String tel, String password,
-			String photo,String adress) {
+			String adress) {
 		
 		this.nom = nom;
 		this.prenom = prenom;
@@ -40,12 +42,37 @@ public class Utilisateur {
 		this.email = email;
 		this.tel = tel;
 		this.password = password;
-		this.photo = photo;
+	
+		this.adress = adress;
+	}
+	
+	public Utilisateur(String nom, String prenom, String username, String email, String tel,
+			String adress) {
+		
+		this.nom = nom;
+		this.prenom = prenom;
+		this.username = username;
+		this.email = email;
+		this.tel = tel;
+
+	
+		this.adress = adress;
+	}
+	
+	public Utilisateur(int id_user, String nom, String prenom, String username, String email, String tel,
+			String adress) {
+		this.id_user = id_user;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.username = username;
+		this.email = email;
+		this.tel = tel;
 		this.adress = adress;
 	}
 
+
 	public Utilisateur(int id_user, String nom, String prenom, String username, String email, String tel,
-			String password, String photo,String adress) {
+			String password,String adress) {
 	
 		this.id_user = id_user;
 		this.nom = nom;
@@ -54,13 +81,10 @@ public class Utilisateur {
 		this.email = email;
 		this.tel = tel;
 		this.password = password;
-		this.photo = photo;
 		this.adress = adress;
 	}
 	
-	
-	
-	
+
 	public int getId_user() {
 		return id_user;
 	}
@@ -117,14 +141,6 @@ public class Utilisateur {
 		this.password = password;
 	}
 
-	public String getPhoto() {
-		return photo;
-	}
-
-	public void setPhoto(String photo) {
-		this.photo = photo;
-	}
-	
 
 	public String getAdress() {
 		return adress;
@@ -162,7 +178,7 @@ public class Utilisateur {
 	@Override
 	public String toString() {
 		return "Utilisateur [id_user=" + id_user + ", nom=" + nom + ", prenom=" + prenom + ", username=" + username
-				+ ", email=" + email + ", tel=" + tel + ", password=" + password + ", photo=" + photo + ", adress="
+				+ ", email=" + email + ", tel=" + tel + ", password=" + password + ", adress="
 				+ adress + "]";
 	}
 
