@@ -69,16 +69,7 @@ public class Utilisateur {
 		this.adress = adress;
 	}
 	
-	public Utilisateur(String nom, String prenom, String username, String email, String tel,
-			String adress) {
-		
-		this.nom = nom;
-		this.prenom = prenom;
-		this.username = username;
-		this.email = email;
-		this.tel = tel;
-
-
+	
 	public Utilisateur(int id_user, String nom, String prenom, String username, String email, String tel,
 			String password,String adress) {
 	
