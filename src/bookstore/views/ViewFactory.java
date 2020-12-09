@@ -101,5 +101,8 @@ public class ViewFactory {
 	    	System.out.println("show account edit window called");
 			BaseController editAccountController = new EditAccountController(this, "EditAccountWindow.fxml");
 			initializeStage(editAccountController);
-	    }
+		}
+		
+
+		
 }
