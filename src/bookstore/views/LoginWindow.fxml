@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="271.0" prefWidth="460.0" style="-fx-background-color: gris;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane layoutY="-1.0" prefHeight="90.0" prefWidth="500.0" style="-fx-background-color: #CFD8DF;">
+         <children>
+            <Label layoutX="193.0" layoutY="18.0" prefHeight="18.0" prefWidth="149.0" style="-fx-background-color: CFD8DF;" text="LOGIN" textFill="#161616">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <TextField fx:id="emailField" layoutX="154.0" layoutY="127.0" prefHeight="26.0" prefWidth="250.0" style="-fx-background-color: CFD8DF;" />
+      <PasswordField fx:id="passwordField" layoutX="154.0" layoutY="166.0" prefHeight="26.0" prefWidth="250.0" style="-fx-background-color: CFD8DF;" />
+      <Button fx:id="loginField" layoutX="164.0" layoutY="211.0" minHeight="19.0" mnemonicParsing="false" onAction="#loginButton" prefHeight="33.0" prefWidth="103.0" style="-fx-background-color: CFD8DF;" text="Login" textFill="#161616" />
+      <Label layoutX="54.0" layoutY="128.0" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: CFD8DF;" text="   Email" />
+      <Label layoutX="54.0" layoutY="166.0" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: CFD8DF;" text="  Password" />
+      <Button fx:id="registerField" layoutX="288.0" layoutY="211.0" minHeight="19.0" mnemonicParsing="false" onAction="#registerButtonAction" prefHeight="33.0" prefWidth="103.0" style="-fx-background-color: CFD8DF;" text="Register" textFill="#161616" />
+   </children>
+</AnchorPane>

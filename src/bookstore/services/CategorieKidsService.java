@@ -20,6 +20,24 @@ import java.sql.Statement;
  */
 public class CategorieKidsService {
     Connection cnx = DBConnection.getInstance().getCnx();
+    public boolean rechercheTitre(String titre){
+        try {
+            String sql = "SELECT titre from livrekids where UPPER(?)=UPPER(titre)";
+            PreparedStatement st = cnx.prepareStatement(sql);
+            st.setString(1, titre);
+            ResultSet rs = st.executeQuery();
+            while(rs.next()){
+                    if((rs.getString(1)).equals(titre)){
+                    System.out.println("Livre Trouvé");
+                    return true;
+                }
+            }
+            
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return false;
+    }
     public void ajouterCategorieKids(CategorieKids cat) {
         try {
             String sql = "INSERT INTO categoriekids values (?,?) ";

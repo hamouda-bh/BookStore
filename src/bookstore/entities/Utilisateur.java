@@ -1,7 +1,15 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
 package bookstore.entities;
 
-
-
+/**
+ *
+ * @author PC-Hamouda
+ */
 public class Utilisateur {
     
 	  private int  id_user;
@@ -11,7 +19,8 @@ public class Utilisateur {
 	  private String email;
 	  private String tel ;
 	  private String password;
-	  private String photo ; // LE chemin des images 
+	  private String photo ;
+	  private String adress;// LE chemin des images 
 	  
 	  
 	  
@@ -23,7 +32,7 @@ public class Utilisateur {
 	}
 	  
 	public Utilisateur(String nom, String prenom, String username, String email, String tel, String password,
-			String photo) {
+			String photo,String adress) {
 		
 		this.nom = nom;
 		this.prenom = prenom;
@@ -32,10 +41,11 @@ public class Utilisateur {
 		this.tel = tel;
 		this.password = password;
 		this.photo = photo;
+		this.adress = adress;
 	}
 
 	public Utilisateur(int id_user, String nom, String prenom, String username, String email, String tel,
-			String password, String photo) {
+			String password, String photo,String adress) {
 	
 		this.id_user = id_user;
 		this.nom = nom;
@@ -45,6 +55,7 @@ public class Utilisateur {
 		this.tel = tel;
 		this.password = password;
 		this.photo = photo;
+		this.adress = adress;
 	}
 	
 	
@@ -113,6 +124,15 @@ public class Utilisateur {
 	public void setPhoto(String photo) {
 		this.photo = photo;
 	}
+	
+
+	public String getAdress() {
+		return adress;
+	}
+
+	public void setAdress(String adress) {
+		this.adress = adress;
+	}
 
 	public void modifierPrix() {
 		  
@@ -137,10 +157,13 @@ public class Utilisateur {
 		  
 	  }
 
+	
+
 	@Override
 	public String toString() {
 		return "Utilisateur [id_user=" + id_user + ", nom=" + nom + ", prenom=" + prenom + ", username=" + username
-				+ ", email=" + email + ", tel=" + tel + ", password=" + password + ", photo=" + photo + "]";
+				+ ", email=" + email + ", tel=" + tel + ", password=" + password + ", photo=" + photo + ", adress="
+				+ adress + "]";
 	}
 
 	@Override

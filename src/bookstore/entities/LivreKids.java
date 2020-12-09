@@ -14,36 +14,37 @@ import java.util.Objects;
 public class LivreKids {
     private int idLivreKids;
     private int idCategorie;
+    private String titre;
     private String Description;
     private String Image;
     private String Video;
     private String Son;
 
-    public LivreKids(int idLivreKids, int idCategorie, String Description, String Image, String Video, String Son) {
+    public LivreKids(int idLivreKids, int idCategorie, String titre, String Description, String Image, String Video, String Son) {
         this.idLivreKids = idLivreKids;
         this.idCategorie = idCategorie;
-        this.Description = Description;
-        this.Image = Image;
-        this.Video = Video;
-        this.Son = Son;
-    }
-
-    public LivreKids(String Description, String Image, String Video, String Son) {
+        this.titre = titre;
         this.Description = Description;
         this.Image = Image;
         this.Video = Video;
         this.Son = Son;
     }
     
-    public LivreKids(int idLivreKids, String Description, String Image, String Video, String Son) {
-        this.idLivreKids = idLivreKids;
+    public LivreKids(String titre, String Description, String Image, String Video, String Son) {
+        this.titre = titre;
         this.Description = Description;
         this.Image = Image;
         this.Video = Video;
         this.Son = Son;
     }
 
-   
+    public LivreKids(String titre, String Description) {
+        this.titre = titre;
+        this.Description = Description;
+    }
+    
+
+    
 
     public int getIdLivreKids() {
         return idLivreKids;
