@@ -5,6 +5,7 @@
  */
 package bookstore.viewsControllers;
 
+import bookstore.views.ViewFactory;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -18,8 +19,10 @@ import javafx.scene.layout.AnchorPane;
  *
  * @author PC-Hamouda
  */
-public class LivreKidsController implements Initializable {
-
+public class LivreKidsController extends BaseController implements Initializable {
+    public LivreKidsController(ViewFactory vf,String fxmlName){
+        super(vf,fxmlName);
+    }
     @FXML
     private AnchorPane PageKidsBooks;
     @FXML

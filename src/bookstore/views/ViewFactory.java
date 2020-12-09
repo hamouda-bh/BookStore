@@ -9,6 +9,7 @@ package bookstore.views;
 import bookstore.viewsControllers.LivreKidsController;
 import bookstore.viewsControllers.BaseController;
 import bookstore.viewsControllers.GererPanierController;
+import bookstore.viewsControllers.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -47,25 +48,6 @@ public class ViewFactory {
 	        st.add(stage);
 	    }
     
-    
-        public void initializeStage(BaseController baseController) {
-	    	
-	    	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(baseController.getFxmlName()));
-	        fxmlLoader.setController(baseController);
-	        Parent parent;
-	        try {
-	            parent = fxmlLoader.load();
-	        } catch (IOException e) {
-	            e.printStackTrace();
-	            return;
-	        }
-	        Scene scene = new Scene(parent);
-	        Stage stage = new Stage();
-	        
-	        stage.setScene(scene);
-	        stage.show();
-	        st.add(stage);
-	    }
     public void showCategoriesWindowFromLivre(){
         BaseController cat = new LivreKidsController(this, "CategorieKidsView.fxml");
         initializeStage(cat);
@@ -114,5 +96,10 @@ public class ViewFactory {
 			BaseController b2= new GererPanierController(this, "GererPanier.fxml");
 			 initializeStage(b2);
 		}
+
+                public void showCommandeFaite(){
+                    BaseController b3= new CommandeFaiteController(this, "commandeFaite.fxml");
+                    initializeStage(b3);
+                }
 		
 }
