@@ -7,17 +7,11 @@ package bookstore.viewsControllers;
 
 import bookstore.entities.Blog;
 import bookstore.services.serviceBlog;
-import bookstore.views.DetailsBlogController;
+import bookstore.views.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+
 import javax.swing.JOptionPane;
 
 /**
@@ -25,7 +19,7 @@ import javax.swing.JOptionPane;
  *
  * @author aziz
  */
-public class BlogviewController implements Initializable {
+public class BlogviewController extends BaseController implements Initializable {
 
     @FXML
     private TextField tfid;
