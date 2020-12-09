@@ -19,8 +19,10 @@ import bookstore.views.ViewFactory;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 	
 public class RegisterWindowController extends BaseController {
@@ -45,6 +47,8 @@ public class RegisterWindowController extends BaseController {
     @FXML
     private PasswordField passwordField;
     @FXML
+    private Button cancelButton;
+    @FXML
     void registerButtonAction() {
     	Connection cnx = DBConnection.getInstance().getCnx();
     	String req = "INSERT INTO client (nom, prenom, username, email, tel, photo, password, adresse) VALUES ('"+nameField.getText()+"','"+prenomField.getText()+"','"+userNameField.getText()+"','"+emailField.getText()+"','"+telField.getText()+"','"+photoField.getText()+"','"+adressField.getText()+"','"+passwordField.getText()+"')";
@@ -52,10 +56,21 @@ public class RegisterWindowController extends BaseController {
     		Statement st = cnx.createStatement();	  		  
   		    st.executeUpdate(req);
   		    System.out.println("Felicitations votre compte a ete creer!");
+  		    vf.showLoginWindow();
+		    Stage stage = (Stage) photoField.getScene().getWindow();
+    	    vf.closeStage(stage);
 			
     	}catch(Exception e){
     		e.printStackTrace();
     		e.getCause();		
     	}
+    }
+    
+
+    @FXML
+    void cancelButtonAction(ActionEvent event) {
+    	vf.showLoginWindow();
+	    Stage stage = (Stage) photoField.getScene().getWindow();
+	    vf.closeStage(stage);
     }
 }	

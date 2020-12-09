@@ -6,8 +6,11 @@
 
 package bookstore.viewsControllers;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TreeView;
+import javafx.stage.Stage;
+import bookstore.Testing.Cache;
 import bookstore.views.ViewFactory;
 
 /**
@@ -21,7 +24,8 @@ public class MainWindowController extends BaseController {
 		// TODO Auto-generated constructor stub
 	}
 	
-	
+	 @FXML
+	    private Button logOut;
 	@FXML
 	    private TreeView<?> treeView;
 	@FXML
@@ -30,5 +34,17 @@ public class MainWindowController extends BaseController {
 	@FXML
     void myAccountAction() {
         vf.showAccountWindow();
+        Stage stage = (Stage) logOut.getScene().getWindow();
+  	    vf.closeStage(stage);
+    }
+	
+
+    @FXML
+    void logOutAction() {
+    	Cache.client = null ;
+    	Stage stage = (Stage) logOut.getScene().getWindow();
+    	vf.closeStage(stage);
+    	vf.showLoginWindow();
+
     }
 }

@@ -7,7 +7,16 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
+<<<<<<< HEAD
 <AnchorPane id="AnchorPane" fx:id="PageKidsBooks" opacity="0.87" prefHeight="455.0" prefWidth="779.0" style="-fx-background-radius: 10px; -fx-background-color: #a2bef8;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.views.LivreKidsController">
+=======
+<<<<<<< HEAD:src/bookstore/views/LivreKids.fxml
+
+<AnchorPane id="AnchorPane" prefHeight="715.0" prefWidth="1074.0" style="-fx-background-color: #3d4c5e;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="bookstore.views.LivreKidsController">
+=======
+<AnchorPane id="AnchorPane" opacity="0.87" prefHeight="715.0" prefWidth="1074.0" style="-fx-background-color: #3d4c5e;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.views.LivreKidsController">
+>>>>>>> 48db631b0858bd53cb52b96ce760b4671461e5d8:src/bookstore/views/LivreKidsView.fxml
+>>>>>>> malekBourguiba
    <children>
       <ScrollBar layoutX="1087.0" layoutY="1.0" orientation="VERTICAL" prefHeight="715.0" prefWidth="14.0" />
       <Button fx:id="addKidsBook" layoutX="259.0" layoutY="76.0" mnemonicParsing="false" text="Add kids Book" />
