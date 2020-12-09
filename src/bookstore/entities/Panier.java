@@ -5,26 +5,15 @@
  */
 package bookstore.entities;
 
+import bookstore.services.PanierService;
 import java.util.ArrayList;
 
-/**
- *
- * @author nour
- */
-public class Panier {
-    
-    private int id_panier;
-    private int id_client;
-    
-    
-    public void retirerLivre(Livre b)
-    {
-    }
+public abstract class Panier {
+  
+    public abstract void retirerLivre(Livre b);
     
    
-    public int modifierQuantité (ArrayList<Livre> list)
-    {
-        return 0;
-    }
+    public abstract int modifierQuantité (ArrayList<Livre> list);
+    
     
 }

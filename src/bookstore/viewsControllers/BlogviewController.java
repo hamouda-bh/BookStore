@@ -7,17 +7,15 @@ package bookstore.viewsControllers;
 
 import bookstore.entities.Blog;
 import bookstore.services.serviceBlog;
+<<<<<<< HEAD
 import bookstore.views.DetailsBlogController;
+=======
+import bookstore.views.*;
+>>>>>>> master
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+
 import javax.swing.JOptionPane;
 
 /**
@@ -25,7 +23,7 @@ import javax.swing.JOptionPane;
  *
  * @author aziz
  */
-public class BlogviewController implements Initializable {
+public class BlogviewController extends BaseController implements Initializable {
 
     @FXML
     private TextField tfid;
@@ -74,6 +72,7 @@ public class BlogviewController implements Initializable {
         dbc.setLbcategorie(tfcategorie.getText());
         dbc.setLbdescription(tfdescription.getText());
     }
+<<<<<<< HEAD
     private void modifierBlog(ActionEvent event) throws IOException {
         int a = Integer.parseInt(tfid.getText());
                 int b = Integer.parseInt(tfidc.getText());
@@ -88,3 +87,7 @@ public class BlogviewController implements Initializable {
         sb.supprimer(new Blog(a,b,"",""));
     }
 }
+=======
+    
+}
+>>>>>>> master

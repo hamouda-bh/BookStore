@@ -19,8 +19,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import bookstore.views.ViewFactory;
+import bookstore.Testing.Cache;
 import bookstore.Testing.DBConnection;
+import bookstore.entities.Client;
 public class EditAccountController extends BaseController implements Initializable {
 
     public EditAccountController(ViewFactory viewFactory, String fxmlName) {
@@ -53,15 +56,32 @@ public class EditAccountController extends BaseController implements Initializab
     private PasswordField passwordField;
     @FXML
     private Button editButton;
+    @FXML
+    private Button cancelButton;
+
 
     @FXML
     void editButtonAction() {
     	Connection cnx = DBConnection.getInstance().getCnx();
-    	String req = "UPDATE client SET nom='"+nameField.getText()+"',prenom='"+prenomField.getText()+"',username='"+userNameField.getText()+"',email='"+emailField.getText()+"',tel='"+telField.getText()+"',photo='"+photoField.getText()+"',password='"+passwordField.getText()+"',adresse='"+adressField.getText()+"' WHERE id_client=50 ";
+    	String req = "UPDATE client SET nom='"+nameField.getText()+"',prenom='"+prenomField.getText()+"',username='"+userNameField.getText()+"',email='"+emailField.getText()+"',tel='"+telField.getText()+"',photo='"+photoField.getText()+"',password='"+passwordField.getText()+"',adresse='"+adressField.getText()+"' WHERE id_client= "+Cache.client.getId_user();
     	try {
     		Statement st = cnx.createStatement();	  		  
   		    st.executeUpdate(req);
+  		    Cache.client =  new Client(Cache.client.getId_user(),
+  		    	nameField.getText().toString(),
+  		    	prenomField.getText().toString(),
+  		    	userNameField.getText().toString(),
+  		    	emailField.getText().toString(),
+  		    	telField.getText().toString(),
+  		    	photoField.getText().toString(),
+  		    	passwordField.getText().toString(),
+  		    	adressField.getText().toString());
+  		    	
+  		    
   		    vf.showMainWindow();
+  		    Stage stage = (Stage) photoField.getScene().getWindow();
+  	        vf.closeStage(stage);
+  		    
 			
     	}catch(Exception e){
     		e.printStackTrace();
@@ -70,11 +90,24 @@ public class EditAccountController extends BaseController implements Initializab
 
   	  
     }
+    
+    @FXML
+    void cancelButtonAction() {
+    	vf.showMainWindow();
+	    Stage stage = (Stage) photoField.getScene().getWindow();
+	    vf.closeStage(stage);
+    }
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		
+		nameField.setText(Cache.client.getNom());
+		prenomField.setText(Cache.client.getPrenom());
+		userNameField.setText(Cache.client.getUsername());
+		emailField.setText(Cache.client.getEmail());
+		telField.setText(Cache.client.getTel());
+		photoField.setText(Cache.client.getPhoto());
+		adressField.setText(Cache.client.getAdress());
+		passwordField.setText(Cache.client.getPassword());
 		
 	}
-
 }

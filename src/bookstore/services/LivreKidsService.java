@@ -112,6 +112,33 @@ public class LivreKidsService{
         //return list;
         return null;
     }
+    public String afficherLesLivreParCategorie(String Categorie){
+        //List<LivreKids> list = new ArrayList<>();
+        try {
+            if(rechercheTitre(Categorie)){
+                String sql = "SELECT l.titre,c.nom_categorie,l.description,l.image FROM livrekids FROM livrekids l INNER join categoriekids c on l.id_categorie_kids = c.id_categorie_kids GROUP BY c.nom_categorie ";
+                PreparedStatement st = cnx.prepareStatement(sql);
+                ResultSet rs = st.executeQuery();
+                st.setString(1, Categorie);
+
+                while(rs.next()){
+                    String titreLivre = rs.getString(1);
+                    String nom_categorie = rs.getString(2);
+                    String description = rs.getString(3);
+                    String image = rs.getString(4);
+                    System.out.println(titreLivre + " " + nom_categorie + " " + description + " " + image );
+                }
+            }
+            else
+                return "Livre introuvable";
+            
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        //return list;
+        return null;
+    }
+    
     
     //methode permettant de supprimer un livre de BD
     public void SupprimerUnLivreKids(Livre c){

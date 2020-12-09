@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package bookstore.entities;
 
 import java.util.Objects;
@@ -16,30 +11,33 @@ public class Livre {
     private int id_categorie ;
     private String titre ;
     private String auteur ;
-    private float prix ;
     private String genre;
+    private float prix ;
     private String image ;
 
     public Livre() {
     }
 
-    public Livre(int id_livre, int id_categorie, String titre, String auteur, float prix, String genre, String image) {
+    public Livre(int id_livre, int id_categorie, String titre, String auteur, String genre,float prix,String image) {
         this.id_livre = id_livre;
         this.id_categorie = id_categorie;
         this.titre = titre;
         this.auteur = auteur;
-        this.prix = prix;
         this.genre=genre;
+        this.prix = prix;
         this.image = image;
     }
-    public Livre(int id_categorie,String titre,String nom_auteur,float prix,String genre,String Image){
+
+    public Livre(int id_categorie, String titre, String auteur, String genre, float prix, String image) {
         this.id_categorie = id_categorie;
-        this.titre=titre;
-        this.auteur=nom_auteur;
-        this.prix=prix;
-        this.genre=genre;
-        this.image=image;
+        this.titre = titre;
+        this.auteur = auteur;
+        this.genre = genre;
+        this.prix = prix;
+        this.image = image;
     }
+   
+    
 
     public int getId_livre() {
         return id_livre;
@@ -99,7 +97,7 @@ public class Livre {
 
     @Override
     public String toString() {
-        return "Livre{" + "idLivre=" + id_livre + ", idCategorie=" + id_categorie + ", titre=" + titre + ", nomAuteur=" + auteur + ", prix=" + prix + ", Image=" + image + '}';
+        return "Livre{" + "idLivre=" + id_livre + ", idCategorie=" + id_categorie + ", titre=" + titre + ", nomAuteur=" + auteur + ", genre=" + genre + ",  prix=" + prix + ", Image=" + image + '}';
     }
     
 
