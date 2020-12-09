@@ -17,14 +17,7 @@ import javafx.stage.Stage;
 import javafx.*;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-
-/**
- *
- * @author aziz
- */
 public class MainProgGUI extends Application {
-    
-    
 
 	public static void main(String[] args) {
 		launch(args);
@@ -34,8 +27,8 @@ public class MainProgGUI extends Application {
 	public void start(Stage stage)   {
 		try {    
 			ViewFactory vf = new ViewFactory();
-			vf.showLoginWindow();
-                        vf.showCategoriesWindowFromLivre();
+			vf.showPanier();
+            vf.showCommandeForm();
 		}catch(Exception e) {			
 			e.printStackTrace();
         }	

@@ -7,6 +7,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             <file>file:/D:/Esprit/Alternance/Projet%20Java/BookStore/src/bookstore/viewsControllers/RegisterWindowController.java</file>
             <file>file:/D:/Esprit/Alternance/Projet%20Java/BookStore/src/bookstore/views/ViewFactory.java</file>
             <file>file:/D:/Esprit/Alternance/Projet%20Java/BookStore/src/bookstore/viewsControllers/LivreKidsController.java</file>
@@ -30,6 +31,13 @@
             <file>file:/D:/Esprit/Alternance/Projet%20Java/BookStore/src/bookstore/services/LivreKidsService.java</file>
             <file>file:/D:/Esprit/Alternance/Projet%20Java/BookStore/src/bookstore/Testing/MainProgGUI.java</file>
 >>>>>>> maissaElamri
+=======
+            <file>file:/C:/Users/nour/Desktop/giit/BookStore/src/bookstore/views/ViewFactory.java</file>
+            <file>file:/C:/Users/nour/Desktop/giit/BookStore/src/bookstore/views/PasserCommande.fxml</file>
+            <file>file:/C:/Users/nour/Desktop/giit/BookStore/src/bookstore/viewsControllers/CommandeFaiteController.java</file>
+            <file>file:/C:/Users/nour/Desktop/giit/BookStore/src/bookstore/viewsControllers/GererPanierController.java</file>
+            <file>file:/C:/Users/nour/Desktop/giit/BookStore/src/bookstore/viewsControllers/PasserCommandeController.java</file>
+>>>>>>> nourBhy
         </group>
     </open-files>
 </project-private>

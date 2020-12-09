@@ -1,4 +1,3 @@
-
 package bookstore.services;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -14,7 +13,8 @@ public class PanierService {
 Connection cnx = DBConnection.getInstance().getCnx();
 
 public void ajouter (Panier_livre p) {
-	 String req ="INSERT INTO panier_livre (id_panier, id_client, id_livre, somme_ajouter,quantite_ajouter) VALUES ('"+p.getId_panier()+"', '"+p.getId_user()+"',  '"+p.getId_comm()+"',  '"+p.getSomme_ajoute()+"',  '"+p.getQuantite_ajouter()+"')"; 
+	 String req ="INSERT INTO panier_livre (id_panier, id_client, id_livre, somme_ajouter,quantite_ajouter) VALUES ('"
+                 +p.getId_panier()+"', '"+p.getId_user()+"',  '"+p.getId_comm()+"',  '"+p.getSomme_ajoute()+"',  '"+p.getQuantite_ajouter()+"')"; 
 try {
 	
 	Statement st = cnx.createStatement();
@@ -25,7 +25,7 @@ System.out.println("p ajoutée");
 }
 }
 public void supprimer (Panier_livre p) {
-	 String req ="DELETE From panier_livre WHERE id_panier="+p.getId_comm();
+	 String req ="DELETE From panier_livre WHERE id_livre="+p.getId_comm();
 try {
 	
 	Statement st = cnx.createStatement();
@@ -36,7 +36,7 @@ System.out.println("p supprimée");
 }
 }
 public void modifier (Panier_livre p) {
-	 String req ="UPDATE panier_livre SET Quantite_ajouter='"+p.getQuantite_ajouter()+"' WHERE id_panier="+p.getId_comm();
+	 String req ="UPDATE panier_livre SET Quantite_ajouter='"+p.getQuantite_ajouter()+"' WHERE id_livre="+p.getId_comm();
 try {
 	
 	Statement st = cnx.createStatement();
@@ -49,18 +49,35 @@ System.out.println("p modifiée");
 
 public List<Panier_livre> afficher ( ) {
 	List<Panier_livre> list= new ArrayList<>();
-	 String req = "SELECT * from panier_livre";
+	 String req = "SELECT p.somme_ajouter, p.quantite_ajouter from panier_livre p join livre l on p.id_livre=l.id_livre";
 try {
 	
 	Statement st = cnx.createStatement();
 ResultSet res =st.executeQuery(req);
 while (res.next()) {
-	list.add(new Panier_livre(res.getInt("id_panier"),res.getInt("id_user"),res.getInt("id_comm"),res.getInt("somme_ajoute"),res.getInt("quantite_ajouter")));
+	list.add(new Panier_livre(res.getInt("somme_ajoute"),res.getInt("quantite_ajouter")));
 }
 System.out.println("p recupere");
 } catch (SQLException e) {
 	e.printStackTrace();
 }
 return list;
+}
+
+public int afficherQ ( ) {
+	List<Panier_livre> list= new ArrayList<>();
+	 String req = "SELECT p.quantite_ajouter from panier_livre p join livre l on p.id_livre=l.id_livre";
+try {
+	Statement st = cnx.createStatement();
+ResultSet res =st.executeQuery(req);
+while (res.next()) {
+	int i = res.getInt("quantite_ajouter");
+        return i;
+}
+System.out.println("p recupere");
+} catch (SQLException e) {
+	e.printStackTrace();
+}
+return 0;
 }
 }

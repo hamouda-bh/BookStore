@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GererPanierController">
+   <children>
+      <Text layoutX="234.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mon panier ">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Button fx:id="passerC_btn_id" layoutX="442.0" layoutY="14.0" mnemonicParsing="false" onAction="#onCliqPasserCommande" text="passer commande" />
+      <TableView layoutX="18.0" layoutY="76.0" pickOnBounds="false" prefHeight="324.0" prefWidth="564.0">
+        <columns>
+          <TableColumn fx:id="nomlivre_id" prefWidth="105.0" text="Nom livre" />
+          <TableColumn fx:id="pic_id" prefWidth="158.0" text="photo" />
+            <TableColumn fx:id="nomlivre_id1" prefWidth="121.0" text="Voir plus" />
+            <TableColumn fx:id="nomlivre_id2" prefWidth="91.0" text="Quantité" />
+            <TableColumn fx:id="nomlivre_id21" prefWidth="91.0" text="Supprimer" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
