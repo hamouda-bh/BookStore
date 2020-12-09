@@ -46,8 +46,7 @@ public class EditAccountController extends BaseController implements Initializab
     @FXML
     private TextField telField;
 
-    @FXML
-    private TextField photoField;
+    
 
     @FXML
     private TextField adressField;
@@ -63,7 +62,7 @@ public class EditAccountController extends BaseController implements Initializab
     @FXML
     void editButtonAction() {
     	Connection cnx = DBConnection.getInstance().getCnx();
-    	String req = "UPDATE client SET nom='"+nameField.getText()+"',prenom='"+prenomField.getText()+"',username='"+userNameField.getText()+"',email='"+emailField.getText()+"',tel='"+telField.getText()+"',photo='"+photoField.getText()+"',password='"+passwordField.getText()+"',adresse='"+adressField.getText()+"' WHERE id_client= "+Cache.client.getId_user();
+    	String req = "UPDATE client SET nom='"+nameField.getText()+"',prenom='"+prenomField.getText()+"',username='"+userNameField.getText()+"',email='"+emailField.getText()+"',tel='"+telField.getText()+"',adresse='"+adressField.getText()+"' WHERE id_client= "+Cache.client.getId_user();
     	try {
     		Statement st = cnx.createStatement();	  		  
   		    st.executeUpdate(req);
@@ -72,14 +71,12 @@ public class EditAccountController extends BaseController implements Initializab
   		    	prenomField.getText().toString(),
   		    	userNameField.getText().toString(),
   		    	emailField.getText().toString(),
-  		    	telField.getText().toString(),
-  		    	photoField.getText().toString(),
-  		    	passwordField.getText().toString(),
+  		    	telField.getText().toString(), 		    	  		    	
   		    	adressField.getText().toString());
   		    	
   		    
   		    vf.showMainWindow();
-  		    Stage stage = (Stage) photoField.getScene().getWindow();
+  		    Stage stage = (Stage) prenomField.getScene().getWindow();
   	        vf.closeStage(stage);
   		    
 			
@@ -94,7 +91,7 @@ public class EditAccountController extends BaseController implements Initializab
     @FXML
     void cancelButtonAction() {
     	vf.showMainWindow();
-	    Stage stage = (Stage) photoField.getScene().getWindow();
+	    Stage stage = (Stage) emailField.getScene().getWindow();
 	    vf.closeStage(stage);
     }
 
@@ -104,10 +101,9 @@ public class EditAccountController extends BaseController implements Initializab
 		prenomField.setText(Cache.client.getPrenom());
 		userNameField.setText(Cache.client.getUsername());
 		emailField.setText(Cache.client.getEmail());
-		telField.setText(Cache.client.getTel());
-		photoField.setText(Cache.client.getPhoto());
+		telField.setText(Cache.client.getTel());		
 		adressField.setText(Cache.client.getAdress());
-		passwordField.setText(Cache.client.getPassword());
+		
 		
 	}
 }
