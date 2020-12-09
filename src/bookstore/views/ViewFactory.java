@@ -56,7 +56,7 @@ public class ViewFactory {
         
     }
     
-    public void showLoginWindow() {
+            public void showLoginWindow() {
 	        System.out.println("show login window called");
 			BaseController loginController = new LoginWindowController(this, "LoginWindow.fxml");
 			initializeStage(loginController);
