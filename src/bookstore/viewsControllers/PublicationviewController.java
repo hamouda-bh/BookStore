@@ -9,7 +9,6 @@ import bookstore.entities.Blog;
 import bookstore.entities.Publication;
 import bookstore.services.serviceBlog;
 import bookstore.services.servicePublication;
-import bookstore.views.DetailsPublicationController;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;

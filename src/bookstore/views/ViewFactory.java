@@ -48,10 +48,8 @@ public class ViewFactory {
 	        stage.show();
 	        st.add(stage);
 	    }
-    public void showCategoriesWindowFromLivre(){
-        BaseController cat = new LivreKidsController(this,"CategorieKidsView.fxml");
-        initializeStage(cat);
-    }
+    
+    
     public void displayCategories(){
         
     }

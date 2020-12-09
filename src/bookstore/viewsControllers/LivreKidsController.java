@@ -5,12 +5,8 @@
  */
 package bookstore.viewsControllers;
 
-import bookstore.views.ViewFactory;
-import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -22,26 +18,16 @@ import javafx.scene.layout.AnchorPane;
  *
  * @author PC-Hamouda
  */
-public class LivreKidsController extends BaseController implements Initializable {
+public class LivreKidsController implements Initializable {
 
     @FXML
     private AnchorPane PageKidsBooks;
-
     @FXML
     private Button addKidsBook;
-
     @FXML
     private Button editBook;
-
-    @FXML
-    private JFXTextField SeachFieldKidsBooks;
-
     @FXML
     private TableView<?> KidsBooksList;
-
-    public LivreKidsController(ViewFactory vf, String fxmlName) {
-        super(vf,fxmlName);
-    }
 
     /**
      * Initializes the controller class.
@@ -50,7 +36,5 @@ public class LivreKidsController extends BaseController implements Initializable
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-
-    
     
 }

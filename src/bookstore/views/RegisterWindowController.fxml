@@ -14,17 +14,15 @@
       <Label layoutX="66.0" layoutY="185.0" prefHeight="18.0" prefWidth="55.0" text="Username" />
       <Label layoutX="66.0" layoutY="220.0" prefHeight="18.0" prefWidth="55.0" text="Email" />
       <Label layoutX="66.0" layoutY="258.0" prefHeight="18.0" prefWidth="55.0" text="Tel" />
-      <Label layoutX="64.0" layoutY="295.0" prefHeight="18.0" prefWidth="55.0" text="Photo" />
-      <Label layoutX="64.0" layoutY="332.0" prefHeight="18.0" prefWidth="55.0" text="Adress" />
+      <Label layoutX="66.0" layoutY="295.0" prefHeight="18.0" prefWidth="55.0" text="Adress" />
       <TextField fx:id="nameField" layoutX="163.0" layoutY="110.0" prefHeight="26.0" prefWidth="276.0" style="-fx-background-color: CFD8DF;" />
       <TextField fx:id="prenomField" layoutX="163.0" layoutY="146.0" prefHeight="26.0" prefWidth="276.0" style="-fx-background-color: CFD8DF;" />
       <TextField fx:id="userNameField" layoutX="163.0" layoutY="181.0" prefHeight="26.0" prefWidth="276.0" style="-fx-background-color: CFD8DF;" />
       <TextField fx:id="emailField" layoutX="163.0" layoutY="216.0" prefHeight="26.0" prefWidth="276.0" style="-fx-background-color: CFD8DF;" />
       <TextField fx:id="telField" layoutX="163.0" layoutY="254.0" prefHeight="26.0" prefWidth="276.0" style="-fx-background-color: CFD8DF;" />
-      <TextField fx:id="photoField" layoutX="163.0" layoutY="291.0" prefHeight="26.0" prefWidth="276.0" style="-fx-background-color: CFD8DF;" />
-      <TextField fx:id="adressField" layoutX="163.0" layoutY="328.0" prefHeight="26.0" prefWidth="276.0" style="-fx-background-color: CFD8DF;" />
-      <Label layoutX="64.0" layoutY="372.0" prefHeight="18.0" prefWidth="55.0" text="Password" />
-      <PasswordField fx:id="passwordField" layoutX="163.0" layoutY="368.0" prefHeight="26.0" prefWidth="276.0" style="-fx-background-color: CFD8DF;" />
+      <TextField fx:id="adressField" layoutX="163.0" layoutY="291.0" prefHeight="26.0" prefWidth="276.0" style="-fx-background-color: CFD8DF;" />
+      <Label layoutX="64.0" layoutY="340.0" prefHeight="18.0" prefWidth="55.0" text="Password" />
+      <PasswordField fx:id="passwordField" layoutX="163.0" layoutY="336.0" prefHeight="26.0" prefWidth="276.0" style="-fx-background-color: CFD8DF;" />
       <AnchorPane layoutX="-1.0" prefHeight="87.0" prefWidth="500.0" style="-fx-background-color: CFD8DF;">
          <children>
             <Label layoutX="167.0" layoutY="21.0" prefHeight="54.0" prefWidth="189.0" style="-fx-background-color: CFD8DF;" text="REGISTER">
@@ -34,7 +32,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <Button layoutX="372.0" layoutY="421.0" mnemonicParsing="false" onAction="#registerButtonAction" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: CFD8DF;" text="Register" />
-      <Button fx:id="cancelButton" layoutX="301.0" layoutY="421.0" mnemonicParsing="false" onAction="#cancelButtonAction" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: CFD8DF;" text="Cancel" />
+      <Button layoutX="372.0" layoutY="378.0" mnemonicParsing="false" onAction="#registerButtonAction" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: CFD8DF;" text="Register" />
+      <Button fx:id="cancelButton" layoutX="301.0" layoutY="378.0" mnemonicParsing="false" onAction="#cancelButtonAction" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: CFD8DF;" text="Cancel" />
    </children>
 </AnchorPane>
