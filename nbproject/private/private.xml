@@ -3,16 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/D:/Esprit/Alternance/Projet%20Java/BookStore/src/bookstore/viewsControllers/RegisterWindowController.java</file>
-            <file>file:/D:/Esprit/Alternance/Projet%20Java/BookStore/src/bookstore/views/ViewFactory.java</file>
-            <file>file:/D:/Esprit/Alternance/Projet%20Java/BookStore/src/bookstore/viewsControllers/LivreKidsController.java</file>
-=======
-            <file>file:/C:/Users/aziz/Desktop/projetgl/BookStore/src/bookstore/views/BlogviewController.java</file>
-            <file>file:/C:/Users/aziz/Desktop/projetgl/BookStore/src/bookstore/entities/Publication.java</file>
-            <file>file:/C:/Users/aziz/Desktop/projetgl/BookStore/src/bookstore/services/serviceBlog.java</file>
+            <file>file:/C:/Users/aziz/Desktop/projetgl/BookStore/src/bookstore/views/DetailsPublicationController.java</file>
+            <file>file:/C:/Users/aziz/Desktop/projetgl/BookStore/src/bookstore/viewsControllers/BlogviewController.java</file>
+            <file>file:/C:/Users/aziz/Desktop/projetgl/BookStore/src/bookstore/views/PublicationviewController.java</file>
             <file>file:/C:/Users/aziz/Desktop/projetgl/BookStore/src/bookstore/views/DetailsBlogController.java</file>
->>>>>>> 246b6ad46af2e9ce8be923785d0ec336dfc01fe3
         </group>
     </open-files>
 </project-private>

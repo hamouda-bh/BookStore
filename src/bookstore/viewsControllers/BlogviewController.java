@@ -7,6 +7,7 @@ package bookstore.viewsControllers;
 
 import bookstore.entities.Blog;
 import bookstore.services.serviceBlog;
+import bookstore.views.DetailsBlogController;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -57,6 +58,7 @@ public class BlogviewController implements Initializable {
 
         serviceBlog sb = new serviceBlog();
         sb.ajouter(new Blog(a,b,tfcategorie.getText(),tfdescription.getText()));
+        
         JOptionPane.showMessageDialog(null, "blog ajouté");
         
         FXMLLoader loader = new FXMLLoader(getClass().getResource("detailsBlog.fxml"));
@@ -72,5 +74,17 @@ public class BlogviewController implements Initializable {
         dbc.setLbcategorie(tfcategorie.getText());
         dbc.setLbdescription(tfdescription.getText());
     }
-    
+    private void modifierBlog(ActionEvent event) throws IOException {
+        int a = Integer.parseInt(tfid.getText());
+                int b = Integer.parseInt(tfidc.getText());
+            serviceBlog sb = new serviceBlog();
+        sb.modifier(new Blog(a,b,tfcategorie.getText(),tfdescription.getText()));
+
+    }
+     private void suppressionBlog(ActionEvent event) throws IOException {
+        int a = Integer.parseInt(tfid.getText());
+                int b = Integer.parseInt(tfidc.getText());
+            serviceBlog sb = new serviceBlog();
+        sb.supprimer(new Blog(a,b,"",""));
+    }
 }
