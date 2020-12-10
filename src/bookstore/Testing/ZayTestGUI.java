@@ -21,6 +21,8 @@ public class ZayTestGUI extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
 
+        DBConnection.getInstance().getCnx();
+        
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/AAnnoncesView.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);

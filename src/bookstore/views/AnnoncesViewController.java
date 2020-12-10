@@ -16,10 +16,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -33,13 +35,13 @@ public class AnnoncesViewController implements Initializable {
     @FXML
     private TableView<?> fxTableAnnonces;
     @FXML
-    private TableColumn<?, ?> datepublicationcell;
+    private TableColumn<Annonce, String> datepublicationcell;
     @FXML
-    private TableColumn<?, ?> prixcell;
+    private TableColumn<Annonce, Float> prixcell;
     @FXML
-    private TableColumn<?, ?> etatcell;
+    private TableColumn<Annonce, String> etatcell;
     @FXML
-    private TableColumn<?, ?> dateachatcell;
+    private TableColumn<Annonce, String> dateachatcell;
 
     private ObservableList<Annonce> ob;
     /**
@@ -60,11 +62,16 @@ public class AnnoncesViewController implements Initializable {
 
     @FXML
     private void ajouterAnnonce(ActionEvent event) throws IOException {
-        
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("AAjoutAnnonceView.fxml"));
-        Parent root = loader.load();
-        
-        AjouterUneNouvelleAnnonce.getScene().setRoot(root);
+        try {
+        Parent root = FXMLLoader.load(getClass().getResource("AAjoutAnnonceView.fxml"));
+        Stage st = new Stage();
+        st.setTitle("BookStore : Toute les annonces");
+        st.setScene(new Scene(root,450,450));
+        st.show();
+        }
+        catch(IOException ex) {
+            System.out.println(ex.getMessage());
+        }
     }
     
 }

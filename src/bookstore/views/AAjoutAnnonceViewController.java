@@ -7,13 +7,19 @@ package bookstore.views;
 
 import bookstore.entities.Annonce;
 import bookstore.services.ServiceAnnonce;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 
 /**
@@ -26,13 +32,13 @@ public class AAjoutAnnonceViewController implements Initializable {
     @FXML
     private Button btnAjouter;
     @FXML
-    private TextField tfdate_publication;
+    private DatePicker tfdate_publication;
     @FXML
     private TextField tfprix;
     @FXML
     private TextField tfetat;
     @FXML
-    private TextField tfdateachat;
+    private DatePicker tfdateachat;
 
     /**
      * Initializes the controller class.
@@ -45,7 +51,7 @@ public class AAjoutAnnonceViewController implements Initializable {
     @FXML
     private void ajouterUneNouvelleAnnonce(ActionEvent event) {
         ServiceAnnonce sa = new ServiceAnnonce();
-        sa.ajouterAnnonce(new Annonce(tfdate_publication.getText(),tfprix.getLength(),tfetat.getText(),tfdateachat.getText()));
+        sa.ajouterAnnonce(new Annonce(tfdate_publication.getValue().toString(),tfprix.getLength(),tfetat.getText(),tfdateachat.getValue().toString()));
         
         JOptionPane.showMessageDialog(null,"Annonce ajoutée !");
         

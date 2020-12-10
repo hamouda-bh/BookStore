@@ -5,41 +5,49 @@
  */
 package bookstore.Testing;
 
-import java.sql.*;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 /**
  *
- * @author PC-Hamouda
+ * @author bhk
  */
 public class DBConnection {
+
+    private String url = "jdbc:mysql://127.0.0.1:3306/book_store_db";
+    private String login = "root";
+    private String password = "";
+
     private Connection cnx;
-    private static DBConnection Instance; 
-    private final String USERNAME = "root";
-    private final String PASSWORD = "";
-<<<<<<< HEAD
-    private final String URL = "jdbc:mysql://localhost:3306/book_store_db?serverTimezone=UTC";
-=======
-    private  final String URL = "jdbc:mysql://localhost:3306/book_store_db";
->>>>>>> b52909e77e32f78019dadf4b7de204657a9e0b05
-    //?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-    
-    private DBConnection (){
+
+    static DBConnection instance;
+
+    private DBConnection() {
         try {
-        cnx = DriverManager.getConnection(URL, USERNAME,PASSWORD);
-        System.out.println("Connected to Bookstore");
-        }catch(SQLException ex){
-            System.out.println(ex.getMessage());
+            cnx = DriverManager.getConnection(url, login, password);
+            System.out.println("Connexion établie");
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
         }
-    } 
-    
-    public static DBConnection getInstance(){
-        if (Instance == null)
-            Instance = new DBConnection();
-        return Instance;
     }
 
     public Connection getCnx() {
         return cnx;
-    }    
+    }
+
+    public static DBConnection getInstance() {
+        if (instance == null) {
+            instance = new DBConnection();
+        }
+        return instance;
+    }
+
 }
