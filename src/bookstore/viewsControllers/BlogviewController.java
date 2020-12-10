@@ -73,5 +73,17 @@ public class BlogviewController extends BaseController implements Initializable 
         dbc.setLbcategorie(tfcategorie.getText());
         dbc.setLbdescription(tfdescription.getText());
     }
-    
+     private void modifierBlog(ActionEvent event) throws IOException {
+        int a = Integer.parseInt(tfid.getText());
+                int b = Integer.parseInt(tfidc.getText());
+            serviceBlog sb = new serviceBlog();
+        sb.modifier(new Blog(a,b,tfcategorie.getText(),tfdescription.getText()));
+
+    }
+     private void suppressionBlog(ActionEvent event) throws IOException {
+        int a = Integer.parseInt(tfid.getText());
+                int b = Integer.parseInt(tfidc.getText());
+            serviceBlog sb = new serviceBlog();
+        sb.supprimer(new Blog(a,b,"",""));
+    }
 }

@@ -9,6 +9,7 @@ import bookstore.entities.Blog;
 import bookstore.entities.Publication;
 import bookstore.services.serviceBlog;
 import bookstore.services.servicePublication;
+import bookstore.viewsControllers.DetailsPublicationController;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -75,5 +76,23 @@ public class PublicationviewController implements Initializable {
         dpc.setLbcontenue(tfcontenue.getText());
         dpc.setLbcommentaire(tfcommentaire.getText());
     }
-    
+    private void modifierPublication(ActionEvent event) throws IOException {
+       int a = Integer.parseInt(tfidb.getText());
+                  int c = Integer.parseInt(tfidp.getText());
+
+                int b = Integer.parseInt(tfidc.getText());
+            servicePublication sp = new servicePublication();
+        sp.ajouter(new Publication(a,b,c,tfcontenue.getText(),tfcommentaire.getText()));
+        JOptionPane.showMessageDialog(null, "Publication modifiée !");
+
+    }
+     private void supprimerPublication(ActionEvent event) throws IOException {
+       int a = Integer.parseInt(tfidb.getText());
+                  int c = Integer.parseInt(tfidp.getText());
+
+                int b = Integer.parseInt(tfidc.getText());
+            servicePublication sp = new servicePublication();
+        sp.supprimer(new Publication(a,b,c,"",""));
+        JOptionPane.showMessageDialog(null, "Publication supprimée !");
+    }
 }
