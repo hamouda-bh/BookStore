@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="497.0" prefWidth="466.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.views.AAjoutAnnonceViewController">
+   <children>
+      <Button fx:id="btnAjouter" layoutX="189.0" layoutY="345.0" mnemonicParsing="false" onAction="#ajouterUneNouvelleAnnonce" prefHeight="10.0" prefWidth="88.0" text="Ajouter" />
+      <TextField fx:id="tfdate_publication" layoutX="234.0" layoutY="99.0" />
+      <TextField fx:id="tfprix" layoutX="234.0" layoutY="151.0" />
+      <TextField fx:id="tfetat" layoutX="234.0" layoutY="206.0" />
+      <TextField fx:id="tfdateachat" layoutX="234.0" layoutY="259.0" />
+      <Label layoutX="83.0" layoutY="103.0" prefHeight="17.0" prefWidth="128.0" text="Date de publication : " />
+      <Label layoutX="167.0" layoutY="155.0" text="Prix :" />
+      <Label layoutX="124.0" layoutY="212.0" text="Etat du livre :" />
+      <Label layoutX="117.0" layoutY="263.0" text="Date d'achat :" />
+   </children>
+</AnchorPane>

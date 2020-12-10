@@ -17,7 +17,11 @@ public class DBConnection {
     private static DBConnection Instance; 
     private final String USERNAME = "root";
     private final String PASSWORD = "";
+<<<<<<< HEAD
     private final String URL = "jdbc:mysql://localhost:3306/book_store_db?serverTimezone=UTC";
+=======
+    private  final String URL = "jdbc:mysql://localhost:3306/book_store_db";
+>>>>>>> b52909e77e32f78019dadf4b7de204657a9e0b05
     //?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
     
     private DBConnection (){

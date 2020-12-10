@@ -3,10 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/BookStore/src/bookstore/views/publicationview.fxml</file>
             <file>file:/C:/BookStore/src/bookstore/viewsControllers/PublicationviewController.java</file>
             <file>file:/C:/BookStore/src/bookstore/viewsControllers/BlogviewController.java</file>
             <file>file:/C:/BookStore/src/bookstore/views/blogview.fxml</file>
+=======
+            <file>file:/C:/Users/Mehdi/Desktop/9rayetZay/Book/BookStore/src/bookstore/services/ServiceAnnonce.java</file>
+            <file>file:/C:/Users/Mehdi/Desktop/9rayetZay/Book/BookStore/src/bookstore/views/AnnoncesViewController.java</file>
+            <file>file:/C:/Users/Mehdi/Desktop/9rayetZay/Book/BookStore/src/bookstore/Testing/ZayTestGUI.java</file>
+            <file>file:/C:/Users/Mehdi/Desktop/9rayetZay/Book/BookStore/src/bookstore/entities/Annonce.java</file>
+            <file>file:/C:/Users/Mehdi/Desktop/9rayetZay/Book/BookStore/src/bookstore/services/PanierService.java</file>
+            <file>file:/C:/Users/Mehdi/Desktop/9rayetZay/Book/BookStore/src/bookstore/Testing/DBConnection.java</file>
+            <file>file:/C:/Users/Mehdi/Desktop/9rayetZay/Book/BookStore/src/bookstore/views/AAnnoncesView.fxml</file>
+            <file>file:/C:/Users/Mehdi/Desktop/9rayetZay/Book/BookStore/src/bookstore/views/AAjoutAnnonceViewController.java</file>
+>>>>>>> b52909e77e32f78019dadf4b7de204657a9e0b05
         </group>
     </open-files>
 </project-private>
