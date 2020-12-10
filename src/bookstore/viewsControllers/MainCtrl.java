@@ -70,4 +70,8 @@ public class MainCtrl extends BaseController implements Initializable {
     	vf.closeStage(stage);
     	vf.showLoginWindow();
     }
+    @FXML
+    private void goBlog(ActionEvent event) {
+        vf.showBlog();
+    }
 }
