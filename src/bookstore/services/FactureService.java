@@ -7,23 +7,42 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bookstore.Testing.DBConnection;
+import bookstore.entities.Commande;
 import bookstore.entities.Facture;
+import bookstore.utils.PDFutil;
+import bookstore.viewsControllers.CommandeFaiteController;
+import com.lowagie.text.DocumentException;
+import com.lowagie.text.pdf.BidiOrder;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class FactureService {
 Connection cnx = DBConnection.getInstance().getCnx();
 
-public void ajouter (Facture p) {
-	 String req ="INSERT INTO facture (id_facture, id_commande, id_client, id_livre, date_facturaction) "
-                 + "VALUES ('"+p.getIdFacture()+"', '"+p.getIdCommande()+"',  '"+p.getId_client()+"',  '"+p.getId_livre()+"',  '"+p.getDate_fact()+"')"; 
+public void ajouter (Facture p , Commande c) throws IOException {
+	 String req ="INSERT INTO facture (id_facture, id_commande, id_client, date_facturaction, prix_totale) "
+                 + "VALUES ('"+p.getIdFacture()+"', '"+c.getId_commande()+"',  '"+c.getId_client()+"',  '"+c.getDate_commande()+"',  '"+c.getPrixTotale()+"')"; 
 try {
+    
 	
 	Statement st = cnx.createStatement();
 st.executeUpdate(req);
 System.out.println("F ajoutée");
+
+
+
+System.out.println("F ajoutée");
+    
+
+
 } catch (SQLException e) {
 	e.printStackTrace();
+}  
 }
-}
+
+ 
 /*
 public void supprimer (Facture p) {
 	 String req ="DELETE From facture WHERE id_facture="+p.getIdFacture();

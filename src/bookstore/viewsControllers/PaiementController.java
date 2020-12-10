@@ -1,12 +1,17 @@
 package bookstore.viewsControllers;
 
+import bookstore.services.FactureService;
 import bookstore.views.ViewFactory;
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 
-public class PaiementController extends BaseController {
+public class PaiementController extends BaseController implements Initializable{
     public PaiementController(ViewFactory vf, String fxmlName){
         super(vf, fxmlName);
     }
@@ -40,5 +45,15 @@ public class PaiementController extends BaseController {
 
     @FXML
     private CheckBox check_postale_id;
+ @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+    }    
 
+    @FXML
+    void onCliqPayer(ActionEvent event) {
+            vf.showCommandeFaite();
+         //   FactureService f = new FactureService();
+        //    f.ajouter(p, c);
+    }
 }
