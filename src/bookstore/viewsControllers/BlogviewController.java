@@ -15,6 +15,13 @@ import bookstore.views.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 
 import javax.swing.JOptionPane;
 
@@ -44,7 +51,6 @@ public class BlogviewController extends BaseController implements Initializable 
      * @param url
      * @param rb
      */
-    @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
@@ -73,7 +79,11 @@ public class BlogviewController extends BaseController implements Initializable 
         dbc.setLbdescription(tfdescription.getText());
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
     private void modifierBlog(ActionEvent event) throws IOException {
+=======
+     private void modifierBlog(ActionEvent event) throws IOException {
+>>>>>>> master
         int a = Integer.parseInt(tfid.getText());
                 int b = Integer.parseInt(tfidc.getText());
             serviceBlog sb = new serviceBlog();
@@ -86,8 +96,12 @@ public class BlogviewController extends BaseController implements Initializable 
             serviceBlog sb = new serviceBlog();
         sb.supprimer(new Blog(a,b,"",""));
     }
+<<<<<<< HEAD
 }
 =======
     
+}
+>>>>>>> master
+=======
 }
 >>>>>>> master

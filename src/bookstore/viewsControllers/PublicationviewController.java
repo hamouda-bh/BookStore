@@ -9,6 +9,7 @@ import bookstore.entities.Blog;
 import bookstore.entities.Publication;
 import bookstore.services.serviceBlog;
 import bookstore.services.servicePublication;
+import bookstore.viewsControllers.DetailsPublicationController;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -75,7 +76,11 @@ public class PublicationviewController implements Initializable {
         dpc.setLbcontenue(tfcontenue.getText());
         dpc.setLbcommentaire(tfcommentaire.getText());
     }
+<<<<<<< HEAD
      private void modifierPublication(ActionEvent event) throws IOException {
+=======
+    private void modifierPublication(ActionEvent event) throws IOException {
+>>>>>>> master
        int a = Integer.parseInt(tfidb.getText());
                   int c = Integer.parseInt(tfidp.getText());
 

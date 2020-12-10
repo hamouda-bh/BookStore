@@ -14,7 +14,7 @@
       <Label layoutX="331.0" layoutY="94.0" text="Genre" />
       <Label layoutX="424.0" layoutY="94.0" text="Prix" />
       <Label layoutX="502.0" layoutY="94.0" text="Image" />
-      <TextField fx:id="tfIdCategorie" layoutX="26.0" layoutY="123.0" prefHeight="25.0" prefWidth="71.0" />
+      <TextField fx:id="tfLabelCat" layoutX="26.0" layoutY="123.0" prefHeight="25.0" prefWidth="71.0" />
       <TextField fx:id="tfTitre" layoutX="116.0" layoutY="123.0" prefHeight="25.0" prefWidth="71.0" />
       <TextField fx:id="tfAuteur" layoutX="209.0" layoutY="123.0" prefHeight="25.0" prefWidth="78.0" />
       <TextField fx:id="tfGenre" layoutX="311.0" layoutY="123.0" prefHeight="25.0" prefWidth="71.0" />

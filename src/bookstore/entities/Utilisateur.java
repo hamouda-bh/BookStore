@@ -6,7 +6,7 @@
 
 package bookstore.entities;
 
-import org.apache.commons.codec.digest.DigestUtils;
+
 
 /**
  *

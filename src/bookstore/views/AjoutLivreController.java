@@ -19,7 +19,7 @@ public class AjoutLivreController {
     private TextField tfId;
 
     @FXML
-    private TextField tfIdCategorie;
+    private TextField tfLabelCat;
 
     @FXML
     private TextField tfTitre;
@@ -52,10 +52,9 @@ public class AjoutLivreController {
     @FXML
     void Ajouterunlivre(ActionEvent event) throws IOException {
         int a=Integer.parseInt(tfId.getText());
-        int b=Integer.parseInt(tfIdCategorie.getText());
         float f = Float.parseFloat(tfPrix.getText());
      livreService ls = new livreService ();
-     ls.ajouter(new Livre (a,b,tfTitre.getText(),tfAuteur.getText(),tfGenre.getText(),f,tfImage.getText()));
+     ls.ajouter(new Livre (a,tfLabelCat.getText(),tfTitre.getText(),tfAuteur.getText(),tfGenre.getText(),f,tfImage.getText()));
      JOptionPane.showMessageDialog(null,"Livre ajouté!");
     
 FXMLLoader loader = new FXMLLoader (getClass().getResource("DetailsLivre.fxml"));
@@ -65,7 +64,7 @@ tfId.getScene().setRoot(root);
 DetailsLivreController dlc= loader.getController();
     
         dlc.setLbId(a);
-        dlc.setLbIdCategorie(b);
+        dlc.setLbLabelCat(tfLabelCat.getText());
         dlc.setLbTitre(tfTitre.getText());
         dlc.setLbAuteur(tfAuteur.getText());
         dlc.setLbGenre(tfGenre.getText());
@@ -75,18 +74,16 @@ DetailsLivreController dlc= loader.getController();
     }
     private void Modifierunlivre (ActionEvent event) throws IOException {
         int a=Integer.parseInt(tfId.getText());
-        int b=Integer.parseInt(tfIdCategorie.getText());
         float f = Float.parseFloat(tfPrix.getText());
      livreService ls = new livreService ();
-     ls.modifier(new Livre (a,b,tfTitre.getText(),tfAuteur.getText(),tfGenre.getText(),f,tfImage.getText()));
+     ls.modifier(new Livre (a,tfLabelCat.getText(),tfTitre.getText(),tfAuteur.getText(),tfGenre.getText(),f,tfImage.getText()));
      JOptionPane.showMessageDialog(null,"Livre modifié !");
     }
     private void Supprimerunlivre (ActionEvent event) throws IOException {
         int a=Integer.parseInt(tfId.getText());
-        int b=Integer.parseInt(tfIdCategorie.getText());
         float f = Float.parseFloat(tfPrix.getText());
      livreService ls = new livreService ();
-     ls.supprimer(new Livre (a,b,tfTitre.getText(),tfAuteur.getText(),tfGenre.getText(),f,tfImage.getText()));
+     ls.supprimer(new Livre (a,tfLabelCat.getText(),tfTitre.getText(),tfAuteur.getText(),tfGenre.getText(),f,tfImage.getText()));
      JOptionPane.showMessageDialog(null,"Livre supprimé !");
     }
     

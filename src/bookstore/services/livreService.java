@@ -18,7 +18,7 @@ public class  livreService{
 Connection cnx = DBConnection.getInstance().getCnx();
 
 public void ajouter (Livre l) {
-	 String req ="INSERT INTO Livre (id_livre,titre,id_categorie,auteur,genre,prix,image) VALUES ('"+l.getId_livre()+","+l.getId_categorie()+","+l.getTitre()+","+l.getAuteur()+","+l.getGenre()+","+l.getPrix()+","+l.getImage()+")";
+	 String req ="INSERT INTO Livre (id_livre,label_cat ,titre,auteur,genre,prix,image) VALUES ('"+l.getId_livre()+","+l.getLabel_cat()+","+l.getTitre()+","+l.getAuteur()+","+l.getGenre()+","+l.getPrix()+","+l.getImage()+")";
 try {
 	
 	Statement st = cnx.createStatement();
@@ -56,7 +56,7 @@ try {
 	Statement st = cnx.createStatement();
 ResultSet res =st.executeQuery(req);
 while (res.next()) {
-	list.add(new Livre(res.getInt("id_categorie"),res.getString("titre"),res.getString("auteur"),res.getString("genre"),res.getFloat("prix"),res.getString("image")));
+	list.add(new Livre(res.getString("label_cat"),res.getString("titre"),res.getString("auteur"),res.getString("genre"),res.getFloat("prix"),res.getString("image")));
 }
 System.out.println("Livre recupere");
 } catch (SQLException e) {
