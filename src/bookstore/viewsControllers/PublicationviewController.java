@@ -76,11 +76,9 @@ public class PublicationviewController implements Initializable {
         dpc.setLbcontenue(tfcontenue.getText());
         dpc.setLbcommentaire(tfcommentaire.getText());
     }
-<<<<<<< HEAD
-     private void modifierPublication(ActionEvent event) throws IOException {
-=======
+
     private void modifierPublication(ActionEvent event) throws IOException {
->>>>>>> master
+
        int a = Integer.parseInt(tfidb.getText());
                   int c = Integer.parseInt(tfidp.getText());
 

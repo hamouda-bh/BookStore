@@ -7,11 +7,8 @@ package bookstore.viewsControllers;
 
 import bookstore.entities.Blog;
 import bookstore.services.serviceBlog;
-<<<<<<< HEAD
-import bookstore.views.DetailsBlogController;
-=======
 import bookstore.views.*;
->>>>>>> master
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -78,12 +75,9 @@ public class BlogviewController extends BaseController implements Initializable 
         dbc.setLbcategorie(tfcategorie.getText());
         dbc.setLbdescription(tfdescription.getText());
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-    private void modifierBlog(ActionEvent event) throws IOException {
-=======
+
      private void modifierBlog(ActionEvent event) throws IOException {
->>>>>>> master
+
         int a = Integer.parseInt(tfid.getText());
                 int b = Integer.parseInt(tfidc.getText());
             serviceBlog sb = new serviceBlog();
@@ -96,12 +90,6 @@ public class BlogviewController extends BaseController implements Initializable 
             serviceBlog sb = new serviceBlog();
         sb.supprimer(new Blog(a,b,"",""));
     }
-<<<<<<< HEAD
+
 }
-=======
-    
-}
->>>>>>> master
-=======
-}
->>>>>>> master
+
