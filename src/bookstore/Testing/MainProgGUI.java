@@ -29,7 +29,7 @@ public class MainProgGUI extends Application {
 	public void start(Stage stage)   {
 		try {    
 			ViewFactory vf = new ViewFactory();
-			vf.showPanier();
+			vf.showLoginWindow();
 		}catch(Exception e) {			
 			e.printStackTrace();
         }	
