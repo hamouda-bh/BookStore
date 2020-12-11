@@ -26,6 +26,19 @@
             <file>file:/C:/BookStore/src/bookstore/views/AAnnoncesView.fxml</file>
             <file>file:/C:/BookStore/src/bookstore/views/AAjoutAnnonceViewController.java</file>
 
+            <file>file:/C:/BookStore/src/bookstore/viewsControllers/PasserCommandeController.java</file>
+            <file>file:/C:/BookStore/src/bookstore/views/AjoutCategorieController.java</file>
+            <file>file:/C:/BookStore/src/bookstore/views/Livre.fxml</file>
+            <file>file:/C:/BookStore/src/bookstore/views/LivreController.java</file>
+            <file>file:/C:/BookStore/src/bookstore/viewsControllers/MainCtrl.java</file>
+            <file>file:/C:/BookStore/src/bookstore/Testing/MainProg.java</file>
+            <file>file:/C:/BookStore/src/bookstore/views/AjoutLivreController.java</file>
+            <file>file:/C:/BookStore/src/bookstore/viewsControllers/BaseController.java</file>
+            <file>file:/C:/BookStore/src/bookstore/views/AjoutLivre.fxml</file>
+            <file>file:/C:/BookStore/src/bookstore/views/DetailsLivreController.java</file>
+            <file>file:/C:/BookStore/src/bookstore/views/ViewFactory.java</file>
+            <file>file:/C:/BookStore/src/bookstore/Testing/LivreFXMain.java</file>
+            <file>file:/C:/BookStore/src/bookstore/Testing/MainProgGUI.java</file>
         </group>
     </open-files>
 </project-private>

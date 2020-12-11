@@ -128,5 +128,14 @@ public class ViewFactory {
                     BaseController ajouterLivre = new AjouterLivreKidsController(this, "AjouterLivreKids.fxml");
                     initializeStage(ajouterLivre);
                 }
+                  public void showAjoutLivre(){
+                     BaseController ajoutlivre = new AjoutLivreController(this, "AjoutLivre.fxml");
+                     initializeStage(ajoutlivre);
+                 
 		
+                  }
+                  public void showLivre(){
+                     BaseController livre = new LivreController(this, "Livre.fxml");
+                     initializeStage(livre);
+					}
 }

@@ -50,7 +50,8 @@ System.out.println("Livre modifié");
 
 public List<Livre> afficher ( ) {
 	List<Livre> list= new ArrayList<>();
-	 String req = "SELECT * from Livre";
+	 String req = "SELECT c.Label,l.titre,l.auteur,l.genre,l.prix,l.image FROM livre l INNER join categorie c on l.idCategorie = c.idCategorie";
+                 //"SELECT * from Livre";
 try {
 	
 	Statement st = cnx.createStatement();

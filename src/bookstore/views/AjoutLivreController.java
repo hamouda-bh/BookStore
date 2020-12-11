@@ -1,7 +1,7 @@
   package bookstore.views;
-
 import bookstore.entities.Livre;
 import bookstore.services.livreService;
+import bookstore.viewsControllers.BaseController;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -13,9 +13,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javax.swing.JOptionPane;
 
-public class AjoutLivreController {
+public class AjoutLivreController extends BaseController{
+    public AjoutLivreController(ViewFactory vf, String fxmlName){
+        super(vf, fxmlName);
+    }
 
-    @FXML
     private TextField tfId;
 
     @FXML
