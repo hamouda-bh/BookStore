@@ -29,7 +29,7 @@ public class MainWindowController extends BaseController {
 	@FXML
 	    private TreeView<?> treeView;
 	@FXML
-    private MenuItem myAccountButton;
+        private MenuItem myAccountButton;
     
 	@FXML
     void myAccountAction() {

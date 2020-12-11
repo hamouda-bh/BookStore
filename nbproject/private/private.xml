@@ -7,6 +7,15 @@
             <file>file:/C:/BookStore/src/bookstore/viewsControllers/PublicationviewController.java</file>
             <file>file:/C:/BookStore/src/bookstore/viewsControllers/BlogviewController.java</file>
             <file>file:/C:/BookStore/src/bookstore/views/blogview.fxml</file>
+            <file>file:/C:/BookStore/src/bookstore/viewsControllers/KidsSpaceController.java</file>
+            <file>file:/C:/BookStore/src/bookstore/viewsControllers/LivreKidsViewController.java</file>
+            <file>file:/C:/BookStore/src/bookstore/viewsControllers/AjouterLivreKidsController.java</file>
+            <file>file:/C:/BookStore/src/bookstore/views/LivreKidsView.fxml</file>
+            <file>file:/C:/BookStore/src/bookstore/views/AjouterLivreKids.fxml</file>
+            <file>file:/C:/BookStore/src/bookstore/viewsControllers/LoginWindowController.java</file>
+            <file>file:/C:/BookStore/src/bookstore/viewsControllers/MainCtrl.java</file>
+            <file>file:/C:/BookStore/src/bookstore/Testing/MainProgGUI.java</file>
+            <file>file:/C:/BookStore/src/bookstore/views/ViewFactory.java</file>
         </group>
     </open-files>
 </project-private>
