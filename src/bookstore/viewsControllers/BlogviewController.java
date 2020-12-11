@@ -18,6 +18,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
@@ -161,6 +162,14 @@ public class BlogviewController extends BaseController implements Initializable 
             serviceBlog sb = new serviceBlog();
         sb.supprimer(new Blog(a,b,"",""));
     }
-
+     
+     @FXML
+     private void anonce(ActionEvent event) throws IOException {
+         Parent root = FXMLLoader.load(getClass().getResource("../views/AAnnonceView.fxml"));
+         Stage st = new Stage();
+         Scene sc = new Scene(root);
+         st.setTitle("BookStore : Toute les annonces");
+         st.setScene(sc);
+         st.show();
+     }
 }
-

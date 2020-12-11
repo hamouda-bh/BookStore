@@ -11,6 +11,12 @@
             <file>file:/C:/BookStore/src/bookstore/viewsControllers/MainWindowController.java</file>
             <file>file:/C:/BookStore/src/bookstore/viewsControllers/PaiementController.java</file>
             <file>file:/C:/BookStore/src/bookstore/views/blogview.fxml</file>
+            <file>file:/C:/BookStore/src/bookstore/views/AAjoutAnnonceViewController.java</file>
+            <file>file:/C:/BookStore/src/bookstore/entities/Annonce.java</file>
+            <file>file:/C:/BookStore/src/bookstore/views/AnnoncesViewController.java</file>
+            <file>file:/C:/BookStore/src/bookstore/views/MesAnnoncesViewController.java</file>
+            <file>file:/C:/BookStore/src/bookstore/Testing/ZayTestGUI.java</file>
+            <file>file:/C:/BookStore/src/bookstore/services/ServiceAnnonce.java</file>
         </group>
     </open-files>
 </project-private>
