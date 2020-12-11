@@ -5,6 +5,8 @@
  */
 package bookstore.Testing;
 
+import bookstore.entities.Panier_livre;
+import bookstore.services.PanierService;
 import bookstore.views.ViewFactory;
 import java.io.IOException;
 import javafx.application.Application;
@@ -23,13 +25,20 @@ public class MainProgGUI extends Application {
 
 	public static void main(String[] args) {
 		launch(args);
+                
 	}
 
 	@Override
 	public void start(Stage stage)   {
 		try {    
 			ViewFactory vf = new ViewFactory();
+<<<<<<< HEAD
 			vf.ShowKidsSpace();
+=======
+			vf.showPanier();
+                        
+                        
+>>>>>>> nourBhy
 		}catch(Exception e) {			
 			e.printStackTrace();
         }	

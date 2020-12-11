@@ -1,12 +1,17 @@
 package bookstore.viewsControllers;
 
+import bookstore.services.FactureService;
 import bookstore.views.ViewFactory;
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 
-public class PaiementController extends BaseController {
+public class PaiementController extends BaseController implements Initializable{
     public PaiementController(ViewFactory vf, String fxmlName){
         super(vf, fxmlName);
     }
@@ -41,4 +46,49 @@ public class PaiementController extends BaseController {
     @FXML
     private CheckBox check_postale_id;
 
+    @FXML
+    private Button btnOverview;
+
+    @FXML
+    private Button btnOrders;
+
+    @FXML
+    private Button btnCustomers;
+
+    @FXML
+    private Button btnMenus;
+
+    @FXML
+    private Button btnPackages;
+
+    @FXML
+    private Button btnSettings;
+
+    @FXML
+    private Button logOut;
+
+    @FXML
+    void handleClicks(ActionEvent event) {
+
+    }
+
+    @FXML
+    void logOutAction(ActionEvent event) {
+
+    }
+ @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+    }    
+  @FXML
+    void onCliqAnnuler(ActionEvent event) {
+            vf.showPanier();
+    }
+
+    @FXML
+    void onCliqPayer(ActionEvent event) {
+            vf.showCommandeFaite();
+         //   FactureService f = new FactureService();
+        //    f.ajouter(p, c);
+    }
 }

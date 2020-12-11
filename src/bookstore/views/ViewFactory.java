@@ -76,6 +76,10 @@ public class ViewFactory {
 	    	stageToClose.close();
 	    	st.remove(stageToClose);
 	    }
+             public void showCommandeFaite(){
+			BaseController cmdfaite = new CommandeFaiteController(this, "commandeFaite.fxml");
+			initializeStage(cmdfaite);
+	    }
 	    public void showAccountWindow(){
 	    	System.out.println("show account window called");
 			BaseController accountController = new AccountWindowController(this, "AccountWindow.fxml");

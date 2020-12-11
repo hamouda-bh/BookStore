@@ -1,7 +1,11 @@
 package bookstore.entities;
 
 import bookstore.services.PanierService;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.scene.control.Button;
 
 public class Panier_livre extends Panier{
 
@@ -10,14 +14,23 @@ private int id_user;
 private int id_comm;
 private float somme_ajoute ;
 private int quantite_ajouter;
+private Button supprimer;
   public Panier_livre() {
+    }
+
+    public Button getSupprimer() {
+        return supprimer;
+    }
+
+    public void setSupprimer(Button supprimer) {
+        this.supprimer = supprimer;
     }
 
     public float getSomme_ajoute() {
         return somme_ajoute;
     }
 
-    public void setSomme_ajouté(float somme_ajouté) {
+    public void setSomme_ajoute(float somme_ajouté) {
         this.somme_ajoute = somme_ajouté;
     }
 
@@ -29,21 +42,33 @@ private int quantite_ajouter;
         this.quantite_ajouter = quantite_ajouter;
     }
 
-    public Panier_livre(int id_panier, int id_user, int id_comm, float somme_ajouté, int quantite_ajouter) {
+    public Panier_livre( int id_user, int id_comm, float somme_ajoute, int quantite_ajouter, Button supprimer) {
+        this.id_user = id_user;
+        this.id_comm = id_comm;
+        this.somme_ajoute = somme_ajoute;
+        this.quantite_ajouter = quantite_ajouter;
+        this.supprimer = supprimer;
+    }
+
+    public Panier_livre(int id_panier, int id_user, int id_comm, float somme_ajoute, int quantite_ajouter) {
         this.id_panier = id_panier;
         this.id_user = id_user;
         this.id_comm = id_comm;
-        this.somme_ajoute = somme_ajouté;
+        this.somme_ajoute = somme_ajoute;
+        this.quantite_ajouter = quantite_ajouter;
+    }
+    public Panier_livre(int id_user, int id_comm, float somme_ajoute, int quantite_ajouter) {
+        this.id_user = id_user;
+        this.id_comm = id_comm;
+        this.somme_ajoute = somme_ajoute;
         this.quantite_ajouter = quantite_ajouter;
     }
     
-    public Panier_livre(float somme_ajouté, int quantite_ajouter) {
-        Client c = null;
-        Livre l = null;
-        this.id_comm=l.getId_livre();
-        this.id_user=c.getId_user();
-        this.somme_ajoute = somme_ajouté;
+    public Panier_livre(float somme_ajoute, int quantite_ajouter, Button  supprimer) {
+       
+        this.somme_ajoute = somme_ajoute;
         this.quantite_ajouter = quantite_ajouter;
+        this.supprimer = supprimer;
     }
 
     @Override
@@ -107,14 +132,18 @@ private int quantite_ajouter;
     @Override
     public void retirerLivre(Livre b) {
          PanierService ps = new PanierService();
-        ps.supprimer(this);
+        ps.supprimer(this.id_comm);
     }
 
     @Override
     public int modifierQuantité(ArrayList<Livre> list) {
        
         PanierService ps = new PanierService();
-        ps.modifier(this);
+    try {
+        ps.modifier(this.quantite_ajouter,this.id_comm);
+    } catch (SQLException ex) {
+        Logger.getLogger(Panier_livre.class.getName()).log(Level.SEVERE, null, ex);
+    }
         return ps.afficherQ();
     
     }

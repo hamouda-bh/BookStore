@@ -8,29 +8,38 @@ import java.util.List;
 
 import bookstore.Testing.DBConnection;
 import bookstore.entities.Commande;
+import java.sql.PreparedStatement;
+import java.util.logging.Logger;
 
 public class CommandeService {
 Connection cnx = DBConnection.getInstance().getCnx();
 
-public void ajouter (Commande p) {
-	 String req ="INSERT INTO commande (id_commande, date_commande, id_client, prix_Totale) VALUES ('"
-                 +p.getId_commande()+"', '"+p.getDate_commande()+"',  '"+p.getId_client()+"',  '"+p.getPrixTotale()+"')"; 
-try {
-	
-	Statement st = cnx.createStatement();
-st.executeUpdate(req);
-System.out.println("c ajoutée");
-} catch (SQLException e) {
-	e.printStackTrace();
+public void ajouter (Commande p) throws SQLException {
+         String requete1 = "INSERT INTO commande (id_commande,  date_commande, id_client, prix_Totale) VALUES (?,?,?,?)";
+        PreparedStatement pst = cnx.prepareStatement(requete1);
+
+        pst.setInt(1, p.getId_commande());
+        pst.setString(2,p.getDate_commande());
+        pst.setInt(3, p.getId_client());
+        pst.setFloat(4, p.getPrixTotale());
+        pst.executeUpdate();
+        System.out.println("p ajoutée");
+        try {
+            pst = cnx.prepareStatement(requete1);
+        } catch (SQLException e) {
+        e.printStackTrace();        }
+          
 }
-}
-public void supprimer (Commande p) {
-	 String req ="DELETE From commande WHERE id_commande="+p.getId_commande();
-try {
-	
-	Statement st = cnx.createStatement();
-st.executeUpdate(req);
-System.out.println("c supprimée");
+
+
+public void supprimer (int i) {
+	 String req = "DELETE From commande WHERE commande.id_commande=?";
+        try {
+ PreparedStatement pst2 = cnx.prepareStatement(req);
+            pst2.setInt(1, i);
+            pst2.executeUpdate();
+          
+            System.out.println("cmd supprimée");
 } catch (SQLException e) {
 	e.printStackTrace();
 }
@@ -48,20 +57,41 @@ System.out.println("c modifiée");
 }
 }
 */
+
+
+
+
+
+
+
+
+
+
 public List<Commande> afficher ( ) {
-	List<Commande> list= new ArrayList<>();
-	 String req = "SELECT c.date_commande, c.prix_Totale from commande c join client d on c.id_client=d.id_client";
-try {
-	
-	Statement st = cnx.createStatement();
-ResultSet res =st.executeQuery(req);
-while (res.next()) {
-	list.add(new Commande(res.getDate("date_commande"),res.getInt("prixTotale")));
-}
-System.out.println("c recupere");
-} catch (SQLException e) {
-	e.printStackTrace();
-}
-return list;
-}
+	 List<Commande> list = new ArrayList<>();
+        String req = "SELECT * from commande ";
+        try {
+
+            Statement st = cnx.createStatement();
+            ResultSet res = st.executeQuery(req);
+            while (res.next()) {
+                list.add(new Commande(res.getInt("id_commande"), res.getString("date_commande"),res.getInt("id_client"), res.getFloat("prix_Totale")));
+            }
+            System.out.println("p recupere");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+    
+    
+    public void affichage() {
+
+            List<Commande> cmd = this.afficher();
+            for (Commande a : cmd) {
+                
+                System.out.println(a.toString());
+                
+            }}
 }
