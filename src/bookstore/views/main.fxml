@@ -18,7 +18,39 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="1050.0" style="-fx-background-color: #02030A;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <VBox alignment="TOP_CENTER" prefHeight="576.0" prefWidth="256.0" style="-fx-background-color: #557de1;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <StackPane layoutX="258.0" prefHeight="576.0" prefWidth="793.0" style="-fx-background-color: #02030A;">
+         <children>
+            <Pane fx:id="pnlCustomer" prefHeight="200.0" prefWidth="200.0" />
+            <Pane fx:id="pnlOrders" prefHeight="200.0" prefWidth="200.0" />
+            <Pane fx:id="pnlMenus" prefHeight="200.0" prefWidth="200.0" />
+            <Pane fx:id="pnlOverview" prefHeight="576.0" prefWidth="802.0" style="-fx-background-color: #152f72;">
+               <children>
+                  <TextField layoutX="590.0" layoutY="47.0" prefHeight="27.0" prefWidth="183.0" promptText="search" style="-fx-background-color: #557de1; -fx-border-color: #a2b8ee; -fx-border-radius: 5px;" />
+                  <HBox alignment="CENTER_LEFT" layoutX="31.0" layoutY="178.0" prefHeight="42.0" prefWidth="712.0" spacing="80.0" style="-fx-background-color: #557de1;" />
+                  <ScrollPane layoutX="14.0" layoutY="232.0" prefHeight="320.0" prefWidth="746.0" stylesheets="@style.css">
+                     <content>
+                        <VBox fx:id="pnItems" prefHeight="318.0" prefWidth="744.0" spacing="5.0" style="-fx-background-color: #a2b8ee;">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+                  <ImageView fitHeight="17.0" fitWidth="16.0" layoutX="749.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_Search_52px.png" />
+                     </image>
+                  </ImageView>
+                  <Text fill="WHITE" layoutX="87.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: roboto;" text="Bienvenue dans l'art de Lire">
+                     <font>
+                        <Font name="Rage Italic" size="34.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+         </children>
+      </StackPane>
+      <VBox alignment="TOP_CENTER" layoutX="1.0" layoutY="-7.0" prefHeight="585.0" prefWidth="256.0" style="-fx-background-color: #557de1;">
          <children>
             <ImageView fitHeight="73.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -66,7 +98,7 @@
                   <Insets left="50.0" />
                </padding>
             </Button>
-            <Button fx:id="myAccountButton" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#myAccountAction" prefHeight="42.0" prefWidth="259.0" style="-fx-background-color: #a2b8ee;" stylesheets="@style.css" text="Account" textFill="WHITE">
+            <Button fx:id="myAccountButton" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="259.0" style="-fx-background-color: #a2b8ee;" stylesheets="@style.css" text="Account" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -102,11 +134,11 @@
                   <Insets left="50.0" />
                </padding>
             </Button>
-            <Button fx:id="btnSettings" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="259.0" style="-fx-background-color: #a2b8ee;" stylesheets="@style.css" text="Settings" textFill="WHITE">
+            <Button fx:id="btn_panier" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#panier" prefHeight="42.0" prefWidth="259.0" style="-fx-background-color: #a2b8ee;" stylesheets="@style.css" text="Panier" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/icons8_Slider__32px.png" />
+                        <Image url="@../images/cart-plus-solid.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -140,38 +172,6 @@
             </Button>
          </children>
       </VBox>
-      <StackPane layoutX="258.0" prefHeight="576.0" prefWidth="793.0" style="-fx-background-color: #02030A;">
-         <children>
-            <Pane fx:id="pnlCustomer" prefHeight="200.0" prefWidth="200.0" />
-            <Pane fx:id="pnlOrders" prefHeight="200.0" prefWidth="200.0" />
-            <Pane fx:id="pnlMenus" prefHeight="200.0" prefWidth="200.0" />
-            <Pane fx:id="pnlOverview" prefHeight="576.0" prefWidth="802.0" style="-fx-background-color: #152f72;">
-               <children>
-                  <TextField layoutX="590.0" layoutY="47.0" prefHeight="27.0" prefWidth="183.0" promptText="search" style="-fx-background-color: #557de1; -fx-border-color: #a2b8ee; -fx-border-radius: 5px;" />
-                  <HBox alignment="CENTER_LEFT" layoutX="31.0" layoutY="178.0" prefHeight="42.0" prefWidth="712.0" spacing="80.0" style="-fx-background-color: #557de1;" />
-                  <ScrollPane layoutX="14.0" layoutY="232.0" prefHeight="320.0" prefWidth="746.0" stylesheets="@style.css">
-                     <content>
-                        <VBox fx:id="pnItems" prefHeight="318.0" prefWidth="744.0" spacing="5.0" style="-fx-background-color: #a2b8ee;">
-                           <padding>
-                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                           </padding>
-                        </VBox>
-                     </content>
-                  </ScrollPane>
-                  <ImageView fitHeight="17.0" fitWidth="16.0" layoutX="749.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/icons8_Search_52px.png" />
-                     </image>
-                  </ImageView>
-                  <Text fill="WHITE" layoutX="87.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: roboto;" text="Bienvenue dans l'art de Lire">
-                     <font>
-                        <Font name="Rage Italic" size="34.0" />
-                     </font>
-                  </Text>
-               </children>
-            </Pane>
-         </children>
-      </StackPane>
    </children>
    <effect>
       <DropShadow color="#1b1eeb" />

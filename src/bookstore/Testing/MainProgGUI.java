@@ -32,9 +32,9 @@ public class MainProgGUI extends Application {
 	public void start(Stage stage)   {
 		try {    
 			ViewFactory vf = new ViewFactory();
-			vf.ShowKidsSpace();
-			vf.showPanier();
-			vf.showUI();
+			//vf.showUI();
+                        //vf.showMainWindow();
+                        vf.showPanier();
                         
                         
 		}catch(Exception e) {			

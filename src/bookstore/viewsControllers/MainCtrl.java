@@ -37,8 +37,9 @@ public class MainCtrl extends BaseController implements Initializable {
     private Button btnMenus;
     @FXML
     private Button btnPackages;
-    @FXML
-    private Button btnSettings;
+  
+      @FXML
+    private Button btn_panier;
     @FXML
     private Button logOut;
     @FXML
@@ -53,32 +54,20 @@ public class MainCtrl extends BaseController implements Initializable {
     private VBox pnItems;
     @FXML
     private Button myAccountButton;
-
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
-
-    @FXML
-    private void handleClicks() {
-    }
-    
-    
-    @FXML
+@FXML
     void logOutAction() {
     	Cache.client = null ;
     	Stage stage = (Stage) logOut.getScene().getWindow();
     	vf.closeStage(stage);
     	vf.showLoginWindow();
     }
+    /*
     void myAccountAction() {
-        vf.showAccountWindow();
+        vf.showAccountEditWindow();
         Stage stage = (Stage) logOut.getScene().getWindow();
   	    vf.closeStage(stage);
     }
+    */
     @FXML
     void ShowKidsSpace() {
         vf.ShowKidsSpace();
@@ -93,12 +82,30 @@ public class MainCtrl extends BaseController implements Initializable {
     private void goBlog(ActionEvent event) {
         vf.showBlog();
     }
-   // @FXML
-    /*void myAccountAction() {
-        vf.showAccountWindow();
+    /*
+    @FXML
+    void myAccountAction() {
+        vf.showAccountEditWindow();
         Stage stage = (Stage) logOut.getScene().getWindow();
   	    vf.closeStage(stage);
     }*/
+     @FXML
+    void panier(ActionEvent event) {
+        vf.showPanier();
+    }
+    /**
+     * Initializes the controller class.
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+    }    
+
+    @FXML
+    private void handleClicks() {
+    }
+    
+    
     
     
 }

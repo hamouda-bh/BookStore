@@ -5,6 +5,7 @@
  */
 package bookstore.viewsControllers;
 
+import bookstore.Testing.Cache;
 import bookstore.views.ViewFactory;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,6 +17,9 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -70,9 +74,63 @@ public class PasserCommandeController extends BaseController implements Initiali
     @FXML
     private TableColumn<?, ?> nomlivre_id21;
 
-    /**
-     * Initializes the controller class.
-     */
+  
+      @FXML
+    private Button btn_panier;
+   
+    @FXML
+    private Pane pnlCustomer;
+    @FXML
+    private Pane pnlOrders;
+    @FXML
+    private Pane pnlMenus;
+    @FXML
+    private Pane pnlOverview;
+    @FXML
+    private VBox pnItems;
+    @FXML
+    private Button myAccountButton;
+@FXML
+    void logOutAction() {
+    	Cache.client = null ;
+    	Stage stage = (Stage) logOut.getScene().getWindow();
+    	vf.closeStage(stage);
+    	vf.showLoginWindow();
+    }
+    /*
+    void myAccountAction() {
+        vf.showAccountEditWindow();
+        Stage stage = (Stage) logOut.getScene().getWindow();
+  	    vf.closeStage(stage);
+    }
+    */
+    @FXML
+    void ShowKidsSpace() {
+        vf.ShowKidsSpace();
+    }
+     @FXML
+    private void goLivre() {
+    
+     vf.showLivre() ;
+    
+           }
+    @FXML
+    private void goBlog(ActionEvent event) {
+        vf.showBlog();
+    }
+    /*
+    @FXML
+    void myAccountAction() {
+        vf.showAccountEditWindow();
+        Stage stage = (Stage) logOut.getScene().getWindow();
+  	    vf.closeStage(stage);
+    }*/
+     @FXML
+    void panier(ActionEvent event) {
+        vf.showPanier();
+    }
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

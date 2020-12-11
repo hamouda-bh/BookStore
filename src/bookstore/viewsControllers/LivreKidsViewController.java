@@ -9,9 +9,12 @@ import bookstore.Testing.Cache;
 import bookstore.views.ViewFactory;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /**
@@ -49,16 +52,67 @@ public class LivreKidsViewController extends BaseController implements Initializ
 
     @FXML
     private Button ShowLivreKids1;
+  
+      @FXML
+    private Button btn_panier;
+    @FXML
+    private Pane pnlCustomer;
+    @FXML
+    private Pane pnlOrders;
+    @FXML
+    private Pane pnlMenus;
+    @FXML
+    private Pane pnlOverview;
+    @FXML
+    private VBox pnItems;
+    @FXML
+    private Button myAccountButton;
+@FXML
+    void logOutAction() {
+    	Cache.client = null ;
+    	Stage stage = (Stage) logOut.getScene().getWindow();
+    	vf.closeStage(stage);
+    	vf.showLoginWindow();
+    }
+    /*
+    void myAccountAction() {
+        vf.showAccountEditWindow();
+        Stage stage = (Stage) logOut.getScene().getWindow();
+  	    vf.closeStage(stage);
+    }
+    */
+    @FXML
+    void ShowKidsSpace() {
+        vf.ShowKidsSpace();
+    }
+     @FXML
+    private void goLivre() {
+    
+     vf.showLivre() ;
+    
+           }
+    @FXML
+    private void goBlog(ActionEvent event) {
+        vf.showBlog();
+    }
+    /*
+    @FXML
+    void myAccountAction() {
+        vf.showAccountEditWindow();
+        Stage stage = (Stage) logOut.getScene().getWindow();
+  	    vf.closeStage(stage);
+    }*/
+     @FXML
+    void panier(ActionEvent event) {
+        vf.showPanier();
+    }
+    
 
     @FXML
     void AjouterNouveauLivreKids( ) {
         vf.ShowAjouterLivreKids();
     }
 
-    @FXML
-    void ShowKidsSpace( ) {
-        vf.ShowKidsSpace();
-    }
 
     @FXML
     void handleClicks( ) {
@@ -66,20 +120,12 @@ public class LivreKidsViewController extends BaseController implements Initializ
     }
     @FXML
     void myAccountAction() {
-        vf.showAccountWindow();
+        vf.showAccountEditWindow();
         Stage stage = (Stage) logOut.getScene().getWindow();
   	vf.closeStage(stage);
     }
 	
     
-    @FXML
-    void logOutAction() {
-    	Cache.client = null ;
-    	Stage stage = (Stage) logOut.getScene().getWindow();
-    	vf.closeStage(stage);
-    	vf.showLoginWindow();
-
-    }
     @FXML
     void ConsulterLesLivres( ) {
         

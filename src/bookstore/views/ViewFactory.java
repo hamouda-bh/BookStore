@@ -80,7 +80,7 @@ public class ViewFactory {
 			BaseController cmdfaite = new CommandeFaiteController(this, "commandeFaite.fxml");
 			initializeStage(cmdfaite);
 	    }
-	    public void showAccountWindow(){
+	    
 	    /*public void showAccountWindow(){
 	    	System.out.println("show account window called");
 			BaseController accountController = new AccountWindowController(this, "AccountWindow.fxml");
@@ -130,7 +130,7 @@ public class ViewFactory {
                 }
 
                 public void ShowLivreKids() {
-                    BaseController enterLivreKids = new LivreKidsViewController(this, "LivreKidsViewController.fxml");
+                    BaseController enterLivreKids = new LivreKidsViewController(this, "LivreKidsView.fxml");
                     initializeStage(enterLivreKids);
                 }
                 public void ShowAjouterLivreKids(){
@@ -140,6 +140,7 @@ public class ViewFactory {
                   public void showAjoutLivre(){
                      BaseController ajoutlivre = new AjoutLivreController(this, "AjoutLivre.fxml");
                      initializeStage(ajoutlivre);
+                  }
                  public void showPasswordWindow(){
                      BaseController psw = new PasswordController(this, "Password.fxml");
                      initializeStage(psw);
@@ -159,13 +160,10 @@ public class ViewFactory {
                     BaseController home = new HomeController(this, "Home.fxml");
                      initializeStage(home);
                  }
-                 
-                 
-                 
-		
-                  }
-                  public void showLivre(){
+                 public void showLivre(){
                      BaseController livre = new LivreController(this, "Livre.fxml");
                      initializeStage(livre);
 					}
+                  
+                  
 }

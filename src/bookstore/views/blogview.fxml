@@ -10,13 +10,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #152f72;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.views.BlogviewController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #152f72;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <TextField fx:id="tfid" layoutX="280.0" layoutY="89.0" prefHeight="25.0" prefWidth="219.0" />
       <Button fx:id="btn" layoutX="269.0" layoutY="310.0" mnemonicParsing="false" onAction="#ajouterBlog" text="ajouter_blog" />
       <TextField fx:id="tfidc" layoutX="280.0" layoutY="134.0" prefHeight="25.0" prefWidth="219.0" />
-      <TextField fx:id="tfcategorie" layoutX="280.0" layoutY="181.0" prefHeight="25.0" prefWidth="219.0" />
-      <TextField fx:id="tfdescription" layoutX="280.0" layoutY="229.0" prefHeight="25.0" prefWidth="219.0" />
+      <TextField fx:id="tfcategorie" layoutX="292.0" layoutY="181.0" prefHeight="25.0" prefWidth="219.0" />
+      <TextField fx:id="tfdescription" layoutX="302.0" layoutY="229.0" prefHeight="25.0" prefWidth="219.0" />
       <Button fx:id="btnmodifier" layoutX="375.0" layoutY="310.0" mnemonicParsing="false" onAction="#modifierBlog" text="modifier_blog" />
       <Button fx:id="btnsupprimer" layoutX="481.0" layoutY="310.0" mnemonicParsing="false" onAction="#suppressionBlog" text="supprimer_blog" />
       <Label layoutX="296.0" layoutY="23.0" text="BLOGS" textFill="#099a26">
@@ -30,120 +30,133 @@
       <Label layoutX="222.0" layoutY="186.0" text="catégorie" />
       <Label layoutX="218.0" layoutY="233.0" text="description" />
 
-      <AnchorPane prefHeight="409.0" prefWidth="179.0" style="-fx-background-color: #433dae;">
-         <children>
-            <VBox alignment="TOP_CENTER" layoutX="-11.0" layoutY="-3.0" prefHeight="596.0" prefWidth="190.0" style="-fx-background-color: #557de1;">
-               <children>
-                  <ImageView fitHeight="73.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/jimmy-fallon.png" />
-                     </image>
-                     <VBox.margin>
-                        <Insets bottom="10.0" top="50.0" />
-                     </VBox.margin>
-                  </ImageView>
-                  <Label text="Jimmy Fallon">
-                     <VBox.margin>
-                        <Insets bottom="20.0" />
-                     </VBox.margin>
-                  </Label>
-                  <Button fx:id="btnOverview" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="259.0" style="-fx-background-color: #a2b8ee;" stylesheets="@style.css" text="Home" textFill="WHITE">
-                     <graphic>
-                        <ImageView fitHeight="23.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/icons8_Home_32px.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                     <padding>
-                        <Insets left="50.0" />
-                     </padding>
-                  </Button>
-                  <Button fx:id="btnOrders" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="259.0" style="-fx-background-color: #a2b8ee;" stylesheets="@style.css" text="Blog" textFill="WHITE">
-                     <graphic>
-                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/icons8_Open_Envelope_32px.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <padding>
-                        <Insets left="50.0" />
-                     </padding>
-                  </Button>
-                  <Button fx:id="btnCustomers" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="259.0" style="-fx-background-color: #a2b8ee;" stylesheets="@style.css" text="Account" textFill="WHITE">
-                     <graphic>
-                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/icons8_Person_32px.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <padding>
-                        <Insets left="50.0" />
-                     </padding>
-                  </Button>
-                  <Button fx:id="btnMenus" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="259.0" style="-fx-background-color: #a2b8ee;" stylesheets="@style.css" text="Livres" textFill="WHITE">
-                     <graphic>
-                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/icons8_Xbox_Menu_32px.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <padding>
-                        <Insets left="50.0" />
-                     </padding>
-                  </Button>
-                  <Button fx:id="btnPackages" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#anonce" prefHeight="42.0" prefWidth="259.0" style="-fx-background-color: #a2b8ee;" stylesheets="@style.css" text="Annonce" textFill="WHITE">
-                     <graphic>
-                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/icons8_Box_32px.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <padding>
-                        <Insets left="50.0" />
-                     </padding>
-                  </Button>
-                  <Button fx:id="btnSettings" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="259.0" style="-fx-background-color: #a2b8ee;" stylesheets="@style.css" text="Settings" textFill="WHITE">
-                     <graphic>
-                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/icons8_Slider__32px.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <padding>
-                        <Insets left="50.0" />
-                     </padding>
-                  </Button>
-                  <Button fx:id="logOut" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#logOutAction" prefHeight="42.0" prefWidth="259.0" style="-fx-background-color: #a2b8ee;" stylesheets="@style.css" text="Sign Out" textFill="WHITE">
-                     <graphic>
-                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/icons8_Sign_Out_32px.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <padding>
-                        <Insets left="50.0" />
-                     </padding>
-                  </Button>
-               </children>
-            </VBox>
-         </children></AnchorPane>
-      <Label layoutX="225.0" layoutY="95.0" text="id_blog" textFill="#f6f6f8" />
-      <Label layoutX="221.0" layoutY="138.0" text="id_client" textFill="#fcf7f7" />
-      <Label layoutX="222.0" layoutY="186.0" text="catégorie" textFill="#fffdfd" />
-      <Label layoutX="218.0" layoutY="233.0" text="description" textFill="#f8f5f5" />
+      <AnchorPane prefHeight="409.0" prefWidth="179.0" style="-fx-background-color: #433dae;" />
+      <Label layoutX="235.0" layoutY="95.0" text="id_blog" textFill="#f6f6f8" />
+      <Label layoutX="231.0" layoutY="138.0" text="id_client" textFill="#fcf7f7" />
+      <Label layoutX="237.0" layoutY="186.0" text="catégorie" textFill="#fffdfd" />
+      <Label layoutX="240.0" layoutY="233.0" text="description" textFill="#f8f5f5" />
       <Button fx:id="btn" layoutX="469.0" layoutY="397.0" mnemonicParsing="false" onAction="#newPub" text="nouvelle publication" />
+      <VBox alignment="TOP_CENTER" layoutX="-28.0" layoutY="-2.0" prefHeight="601.0" prefWidth="256.0" style="-fx-background-color: #557de1;">
+         <children>
+            <ImageView fitHeight="73.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/jimmy-fallon.png" />
+               </image>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="50.0" />
+               </VBox.margin>
+            </ImageView>
+            <Label text="Jimmy Fallon" textFill="WHITE">
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnOverview" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="259.0" style="-fx-background-color: #a2b8ee;" stylesheets="@style.css" text="Home" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_Home_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+            <Button fx:id="btnOrders" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#goBlog" prefHeight="42.0" prefWidth="259.0" style="-fx-background-color: #a2b8ee;" stylesheets="@style.css" text="Blog" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_Open_Envelope_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+            <Button fx:id="myAccountButton" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="259.0" style="-fx-background-color: #a2b8ee;" stylesheets="@style.css" text="Account" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_Person_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+            <Button fx:id="tflivre" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#goLivre" prefHeight="42.0" prefWidth="259.0" style="-fx-background-color: #a2b8ee;" stylesheets="@style.css" text="Livres" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_Xbox_Menu_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+            <Button fx:id="btnPackages" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="259.0" style="-fx-background-color: #a2b8ee;" stylesheets="@style.css" text="Annonce" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_Box_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+            <Button fx:id="btn_panier" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#panier" prefHeight="42.0" prefWidth="259.0" style="-fx-background-color: #a2b8ee;" stylesheets="@style.css" text="Panier" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/cart-plus-solid.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+            <Button fx:id="goToEspaceKids" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#ShowKidsSpace" prefHeight="42.0" prefWidth="259.0" style="-fx-background-color: #4CCC6A;" stylesheets="@style.css" text="Espace Kids" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/child-solid.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+            <Button fx:id="logOut" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#logOutAction" prefHeight="42.0" prefWidth="259.0" style="-fx-background-color: #EA5353;" stylesheets="@style.css" text="Sign Out" textFill="WHITE">
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <graphic>
+                  <ImageView fitHeight="18.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/sign-out-alt-solid.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

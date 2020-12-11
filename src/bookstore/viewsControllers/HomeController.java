@@ -62,6 +62,52 @@ public class HomeController extends BaseController {
     @FXML
     private VBox pnItems;
 
+  
+      @FXML
+    private Button btn_panier;
+    @FXML
+    private Button logOut;
+    private Button myAccountButton;
+@FXML
+    void logOutAction() {
+    	Cache.client = null ;
+    	Stage stage = (Stage) logOut.getScene().getWindow();
+    	vf.closeStage(stage);
+    	vf.showLoginWindow();
+    }
+    /*
+    void myAccountAction() {
+        vf.showAccountEditWindow();
+        Stage stage = (Stage) logOut.getScene().getWindow();
+  	    vf.closeStage(stage);
+    }
+    */
+    @FXML
+    void ShowKidsSpace() {
+        vf.ShowKidsSpace();
+    }
+     @FXML
+    private void goLivre() {
+    
+     vf.showLivre() ;
+    
+           }
+    @FXML
+    private void goBlog(ActionEvent event) {
+        vf.showBlog();
+    }
+    /*
+    @FXML
+    void myAccountAction() {
+        vf.showAccountEditWindow();
+        Stage stage = (Stage) logOut.getScene().getWindow();
+  	    vf.closeStage(stage);
+    }*/
+     @FXML
+    void panier(ActionEvent event) {
+        vf.showPanier();
+    }
+    
     @FXML
     void logOutAction(ActionEvent event) {
        Cache.client = null ;

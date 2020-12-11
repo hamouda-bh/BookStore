@@ -57,6 +57,7 @@ public class LoginController extends BaseController{
 	{
             if (userTextF.getText().isEmpty()==false && passTextF.getText().isEmpty() == false) {
        	    validateLogins();
+            vf.showMainWindow();
         }else 
        	    System.out.println("error");
         }
@@ -102,7 +103,7 @@ public class LoginController extends BaseController{
 	           	  
 	               	System.out.println("succes"); 
 	               	Cache.client =  new Client(res.getInt("id_client"),res.getString("nom"),res.getString("prenom"),res.getString("username"),res.getString("email"),res.getString("tel"),res.getString("password"),res.getString("adresse"));
-	               	vf.showMainUI();
+	               	vf.showMainWindow();
 	               	Stage stage = (Stage) userTextF.getScene().getWindow();
 	               	vf.closeStage(stage);
 	             

@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package bookstore.views;
+import bookstore.Testing.Cache;
 import bookstore.views.ViewFactory;
 import bookstore.viewsControllers.BaseController;
 import java.net.URL;
@@ -14,6 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -57,6 +59,50 @@ public class LivreController extends BaseController implements Initializable {
     private Button tfSupp;
     @FXML
     private Pane pnlCustomer;
+  
+      @FXML
+    private Button btn_panier;
+    @FXML
+    private Button myAccountButton;
+@FXML
+    void logOutAction() {
+    	Cache.client = null ;
+    	Stage stage = (Stage) logOut.getScene().getWindow();
+    	vf.closeStage(stage);
+    	vf.showLoginWindow();
+    }
+    /*
+    void myAccountAction() {
+        vf.showAccountEditWindow();
+        Stage stage = (Stage) logOut.getScene().getWindow();
+  	    vf.closeStage(stage);
+    }
+    */
+    @FXML
+    void ShowKidsSpace() {
+        vf.ShowKidsSpace();
+    }
+     @FXML
+    private void goLivre() {
+    
+     vf.showLivre() ;
+    
+           }
+    @FXML
+    private void goBlog(ActionEvent event) {
+        vf.showBlog();
+    }
+    /*
+    @FXML
+    void myAccountAction() {
+        vf.showAccountEditWindow();
+        Stage stage = (Stage) logOut.getScene().getWindow();
+  	    vf.closeStage(stage);
+    }*/
+     @FXML
+    void panier(ActionEvent event) {
+        vf.showPanier();
+    }
 
     /**
      * Initializes the controller class.
@@ -70,9 +116,6 @@ public class LivreController extends BaseController implements Initializable {
     private void handleClicks() {
     }
 
-    @FXML
-    private void logOutAction() {
-    }
 
     @FXML
     private void ajoute() {

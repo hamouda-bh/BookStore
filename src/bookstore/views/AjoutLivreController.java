@@ -1,4 +1,5 @@
   package bookstore.views;
+import bookstore.Testing.Cache;
 import bookstore.entities.Livre;
 import bookstore.services.livreService;
 import bookstore.viewsControllers.BaseController;
@@ -11,6 +12,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 
 public class AjoutLivreController extends BaseController{
@@ -41,6 +45,75 @@ public class AjoutLivreController extends BaseController{
     @FXML
     private Button tfENV;
 
+    
+      @FXML
+    private Button btnOverview;
+    @FXML
+    private Button btnOrders;
+    @FXML
+    private Button btnCustomers;
+    @FXML
+    private Button btnMenus;
+    @FXML
+    private Button btnPackages;
+  
+      @FXML
+    private Button btn_panier;
+    @FXML
+    private Button logOut;
+    @FXML
+    private Pane pnlCustomer;
+    @FXML
+    private Pane pnlOrders;
+    @FXML
+    private Pane pnlMenus;
+    @FXML
+    private Pane pnlOverview;
+    @FXML
+    private VBox pnItems;
+    @FXML
+    private Button myAccountButton;
+@FXML
+    void logOutAction() {
+    	Cache.client = null ;
+    	Stage stage = (Stage) logOut.getScene().getWindow();
+    	vf.closeStage(stage);
+    	vf.showLoginWindow();
+    }
+    /*
+    void myAccountAction() {
+        vf.showAccountEditWindow();
+        Stage stage = (Stage) logOut.getScene().getWindow();
+  	    vf.closeStage(stage);
+    }
+    */
+    @FXML
+    void ShowKidsSpace() {
+        vf.ShowKidsSpace();
+    }
+     @FXML
+    private void goLivre() {
+    
+     vf.showLivre() ;
+    
+           }
+    @FXML
+    private void goBlog(ActionEvent event) {
+        vf.showBlog();
+    }
+    /*
+    @FXML
+    void myAccountAction() {
+        vf.showAccountEditWindow();
+        Stage stage = (Stage) logOut.getScene().getWindow();
+  	    vf.closeStage(stage);
+    }*/
+     @FXML
+    void panier(ActionEvent event) {
+        vf.showPanier();
+    }
+    
+    
     public AjoutLivreController()   {
         
     }

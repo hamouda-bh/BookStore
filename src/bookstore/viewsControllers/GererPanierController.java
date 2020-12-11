@@ -1,5 +1,6 @@
 package bookstore.viewsControllers;
 
+import bookstore.Testing.Cache;
 import bookstore.entities.Facture;
 import bookstore.entities.Panier_livre;
 import bookstore.services.PanierService;
@@ -17,6 +18,9 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 public class GererPanierController extends BaseController {
 
@@ -27,23 +31,26 @@ public class GererPanierController extends BaseController {
     @FXML
     private TableView<Panier_livre> table_panier;
     
-     @FXML
+         @FXML
     private Button btnOverview;
 
     @FXML
     private Button btnOrders;
 
     @FXML
-    private Button btnCustomers;
+    private Button myAccountButton;
 
     @FXML
-    private Button btnMenus;
+    private Button tflivre;
 
     @FXML
     private Button btnPackages;
 
     @FXML
-    private Button btnSettings;
+    private Button btn_panier;
+
+    @FXML
+    private Button goToEspaceKids;
 
     @FXML
     private Button logOut;
@@ -51,6 +58,60 @@ public class GererPanierController extends BaseController {
     
     @FXML
     private Button passerC_btn_id;
+    
+    @FXML
+    private Button btnCustomers;
+    @FXML
+    private Button btnMenus;
+    @FXML
+    private Pane pnlCustomer;
+    @FXML
+    private Pane pnlOrders;
+    @FXML
+    private Pane pnlMenus;
+    @FXML
+    private Pane pnlOverview;
+    @FXML
+    private VBox pnItems;
+@FXML
+    void logOutAction() {
+    	Cache.client = null ;
+    	Stage stage = (Stage) logOut.getScene().getWindow();
+    	vf.closeStage(stage);
+    	vf.showLoginWindow();
+    }
+    /*
+    void myAccountAction() {
+        vf.showAccountEditWindow();
+        Stage stage = (Stage) logOut.getScene().getWindow();
+  	    vf.closeStage(stage);
+    }
+    */
+    @FXML
+    void ShowKidsSpace() {
+        vf.ShowKidsSpace();
+    }
+     @FXML
+    private void goLivre() {
+    
+     vf.showLivre() ;
+    
+           }
+    @FXML
+    private void goBlog(ActionEvent event) {
+        vf.showBlog();
+    }
+    /*
+    @FXML
+    void myAccountAction() {
+        vf.showAccountEditWindow();
+        Stage stage = (Stage) logOut.getScene().getWindow();
+  	    vf.closeStage(stage);
+    }*/
+     @FXML
+    void panier(ActionEvent event) {
+        vf.showPanier();
+    }
 
     @FXML
     private TableColumn<Panier_livre, String> nomlivre_id;
@@ -154,7 +215,7 @@ private void loadData()
         table_panier.setItems(data);
 
     }
-    
+   
 
 }
 

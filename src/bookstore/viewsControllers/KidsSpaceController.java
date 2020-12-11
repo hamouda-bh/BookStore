@@ -58,10 +58,62 @@ public class KidsSpaceController extends BaseController implements Initializable
     @FXML
     private Button showKidsColoration;
 
+  
+      @FXML
+    private Button btn_panier;
+    @FXML
+    private Pane pnlCustomer;
+    @FXML
+    private Pane pnlOrders;
+    @FXML
+    private Pane pnlMenus;
+    @FXML
+    private Pane pnlOverview;
+    @FXML
+    private VBox pnItems;
+    @FXML
+    private Button myAccountButton;
+@FXML
+    void logOutAction() {
+    	Cache.client = null ;
+    	Stage stage = (Stage) logOut.getScene().getWindow();
+    	vf.closeStage(stage);
+    	vf.showLoginWindow();
+    }
+    /*
+    void myAccountAction() {
+        vf.showAccountEditWindow();
+        Stage stage = (Stage) logOut.getScene().getWindow();
+  	    vf.closeStage(stage);
+    }
+    */
     @FXML
     void ShowKidsSpace() {
         vf.ShowKidsSpace();
     }
+     @FXML
+    private void goLivre() {
+    
+     vf.showLivre() ;
+    
+           }
+    @FXML
+    private void goBlog(ActionEvent event) {
+        vf.showBlog();
+    }
+    /*
+    @FXML
+    void myAccountAction() {
+        vf.showAccountEditWindow();
+        Stage stage = (Stage) logOut.getScene().getWindow();
+  	    vf.closeStage(stage);
+    }*/
+     @FXML
+    void panier(ActionEvent event) {
+        vf.showPanier();
+    }
+    
+   
 
     @FXML
     void handleClicks() {
@@ -85,23 +137,11 @@ public class KidsSpaceController extends BaseController implements Initializable
 
     @FXML
     void myAccountAction() {
-        vf.showAccountWindow();
+        vf.showAccountEditWindow();
         Stage stage = (Stage) logOut.getScene().getWindow();
   	    vf.closeStage(stage);
     }
 	
-
-    @FXML
-    void logOutAction() {
-    	Cache.client = null ;
-    	Stage stage = (Stage) logOut.getScene().getWindow();
-    	vf.closeStage(stage);
-    	vf.showLoginWindow();
-
-    }
-    /**
-     * Initializes the controller class.
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
