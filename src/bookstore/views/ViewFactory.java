@@ -7,7 +7,7 @@
 package bookstore.views;
 
 import bookstore.viewsControllers.CommandeFaiteController;
-import bookstore.viewsControllers.LivreKidsController;
+import bookstore.viewsControllers.KidsSpaceController;
 import bookstore.viewsControllers.BaseController;
 import bookstore.viewsControllers.GererPanierController;
 import bookstore.viewsControllers.*;
@@ -50,7 +50,7 @@ public class ViewFactory {
 	    }
     
     public void showCategoriesWindowFromLivre(){
-        BaseController cat = new LivreKidsController(this, "CategorieKidsView.fxml");
+        BaseController cat = new KidsSpaceController(this, "CategorieKidsView.fxml");
         initializeStage(cat);
     }
     public void displayCategories(){
@@ -89,15 +89,18 @@ public class ViewFactory {
 		
 		public void showCommandeForm(  )
 		{
+                        System.out.println("Formulaire commande appelé");
 			BaseController b= new PasserCommandeController(this, "PasserCommande.fxml");
 			 initializeStage(b);
 		}
 		 public void showPanier(  )
 		{
+                        System.out.println("Panier appelé");
 			BaseController b2= new GererPanierController(this, "GererPanier.fxml");
 			 initializeStage(b2);
 		}
                  public void showPaiement(){
+                     System.out.println("Paiment appelé");
                      BaseController paiement = new PaiementController(this, "Paiement.fxml");
                      initializeStage(paiement);
                  } 
@@ -107,5 +110,19 @@ public class ViewFactory {
                     initializeStage(b3);
                 }
                 */
+
+                public void ShowKidsSpace() {
+                    BaseController enterKidsSpace = new KidsSpaceController(this, "KidsSpaceView.fxml");
+                    initializeStage(enterKidsSpace);
+                }
+
+                public void ShowLivreKids() {
+                    BaseController enterLivreKids = new LivreKidsViewController(this, "LivreKidsViewController.fxml");
+                    initializeStage(enterLivreKids);
+                }
+                public void ShowAjouterLivreKids(){
+                    BaseController ajouterLivre = new AjouterLivreKidsController(this, "AjouterLivreKids.fxml");
+                    initializeStage(ajouterLivre);
+                }
 		
 }

@@ -9,12 +9,9 @@ import bookstore.Testing.Cache;
 import bookstore.views.ViewFactory;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /**
@@ -22,48 +19,58 @@ import javafx.stage.Stage;
  *
  * @author PC-Hamouda
  */
-public class MainCtrl extends BaseController implements Initializable {
-    public MainCtrl(ViewFactory vf, String fxmlName){
+public class LivreKidsViewController extends BaseController implements Initializable {
+    public LivreKidsViewController(ViewFactory vf, String fxmlName){
         super(vf, fxmlName);
     }
-
     @FXML
     private Button btnOverview;
+
     @FXML
     private Button btnOrders;
+
     @FXML
     private Button btnCustomers;
+
     @FXML
     private Button btnMenus;
+
     @FXML
     private Button btnPackages;
+
     @FXML
-    private Button btnSettings;
+    private Button goToEspaceKids;
+
     @FXML
     private Button logOut;
-    @FXML
-    private Pane pnlCustomer;
-    @FXML
-    private Pane pnlOrders;
-    @FXML
-    private Pane pnlMenus;
-    @FXML
-    private Pane pnlOverview;
-    @FXML
-    private VBox pnItems;
-
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
 
     @FXML
-    private void handleClicks() {
+    private Button AjouterNouveauLivreKids;
+
+    @FXML
+    private Button ShowLivreKids1;
+
+    @FXML
+    void AjouterNouveauLivreKids( ) {
+        vf.ShowAjouterLivreKids();
     }
-    
+
+    @FXML
+    void ShowKidsSpace( ) {
+        vf.ShowKidsSpace();
+    }
+
+    @FXML
+    void handleClicks( ) {
+
+    }
+    @FXML
+    void myAccountAction() {
+        vf.showAccountWindow();
+        Stage stage = (Stage) logOut.getScene().getWindow();
+  	vf.closeStage(stage);
+    }
+	
     
     @FXML
     void logOutAction() {
@@ -71,14 +78,15 @@ public class MainCtrl extends BaseController implements Initializable {
     	Stage stage = (Stage) logOut.getScene().getWindow();
     	vf.closeStage(stage);
     	vf.showLoginWindow();
-    }
-    void myAccountAction() {
-        vf.showAccountWindow();
-        Stage stage = (Stage) logOut.getScene().getWindow();
-  	    vf.closeStage(stage);
+
     }
     @FXML
-    void ShowKidsSpace() {
-        vf.ShowKidsSpace();
+    void ConsulterLesLivres( ) {
+        
     }
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+    }    
+    
 }

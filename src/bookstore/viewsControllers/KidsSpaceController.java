@@ -13,6 +13,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -22,63 +24,86 @@ import javafx.stage.Stage;
  *
  * @author PC-Hamouda
  */
-public class MainCtrl extends BaseController implements Initializable {
-    public MainCtrl(ViewFactory vf, String fxmlName){
-        super(vf, fxmlName);
+public class KidsSpaceController extends BaseController implements Initializable {
+    public KidsSpaceController(ViewFactory vf,String fxmlName){
+        super(vf,fxmlName);
     }
-
     @FXML
     private Button btnOverview;
+
     @FXML
     private Button btnOrders;
+
     @FXML
     private Button btnCustomers;
+
     @FXML
     private Button btnMenus;
+
     @FXML
     private Button btnPackages;
+
     @FXML
-    private Button btnSettings;
+    private Button goToEspaceKids;
+
     @FXML
     private Button logOut;
-    @FXML
-    private Pane pnlCustomer;
-    @FXML
-    private Pane pnlOrders;
-    @FXML
-    private Pane pnlMenus;
-    @FXML
-    private Pane pnlOverview;
-    @FXML
-    private VBox pnItems;
-
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
 
     @FXML
-    private void handleClicks() {
+    private Button ShowLivreKids;
+
+    @FXML
+    private Button showCategoriesKids;
+
+    @FXML
+    private Button showKidsColoration;
+
+    @FXML
+    void ShowKidsSpace() {
+        vf.ShowKidsSpace();
     }
-    
-    
+
+    @FXML
+    void handleClicks() {
+
+    }
+
+    @FXML
+    void showCategoriesKids() {
+        
+    }
+
+    @FXML
+    void showKidsColoration() {
+
+    }
+
+    @FXML
+    void showLivreKids() {
+        vf.ShowLivreKids();
+    }
+
+    @FXML
+    void myAccountAction() {
+        vf.showAccountWindow();
+        Stage stage = (Stage) logOut.getScene().getWindow();
+  	    vf.closeStage(stage);
+    }
+	
+
     @FXML
     void logOutAction() {
     	Cache.client = null ;
     	Stage stage = (Stage) logOut.getScene().getWindow();
     	vf.closeStage(stage);
     	vf.showLoginWindow();
+
     }
-    void myAccountAction() {
-        vf.showAccountWindow();
-        Stage stage = (Stage) logOut.getScene().getWindow();
-  	    vf.closeStage(stage);
-    }
-    @FXML
-    void ShowKidsSpace() {
-        vf.ShowKidsSpace();
-    }
+    /**
+     * Initializes the controller class.
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        
+    }    
 }
