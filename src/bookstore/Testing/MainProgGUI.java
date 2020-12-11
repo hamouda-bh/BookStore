@@ -32,13 +32,11 @@ public class MainProgGUI extends Application {
 	public void start(Stage stage)   {
 		try {    
 			ViewFactory vf = new ViewFactory();
-<<<<<<< HEAD
 			vf.ShowKidsSpace();
-=======
 			vf.showPanier();
+			vf.showUI();
                         
                         
->>>>>>> nourBhy
 		}catch(Exception e) {			
 			e.printStackTrace();
         }	

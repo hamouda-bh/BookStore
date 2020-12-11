@@ -1,0 +1,118 @@
+#editAnchorPane{
+	-fx-background-color: linear-gradient(to top right, #172235, #838FA3);
+}
+#verifAnchorPaness{
+	-fx-background-color: linear-gradient(to top right, #172235, #838FA3);
+}
+
+.separator .line {
+    -fx-border-width: 0.1;    
+}
+#nameField{
+	-fx-background-color: transparent ;
+	-fx-text-fill: white;
+}
+#prenomField{
+	-fx-background-color: transparent ;
+	-fx-text-fill: white;
+}
+#userNameField{
+	-fx-background-color: transparent ;
+	-fx-text-fill: white;
+}
+#emailField{
+	-fx-background-color: transparent ;
+	-fx-text-fill: white;
+}
+#telField{
+	-fx-background-color: transparent ;
+	-fx-text-fill: white;
+}
+#adressField{
+	-fx-background-color: transparent ;
+	-fx-text-fill: white;
+}
+#passwordField{
+	-fx-background-color: transparent ;
+	-fx-text-fill: white;
+}
+#mailField{
+	-fx-background-color: transparent ;
+	-fx-text-fill: white;
+}
+#editButton{
+	-fx-background-color: transparent ;
+	-fx-border-style : solid;
+	-fx-border-width: 2;
+	-fx-text-fill: white;
+	-fx-border-radius: 1.5em; 
+	-fx-border-color: #838FA3;
+	-fx-cursor: HAND;	
+}
+#editButton:hover{
+	-fx-background-color: transparent ;
+	-fx-border-style : solid;
+	-fx-border-width: 2;
+	-fx-text-fill: white;
+	-fx-border-radius: 1.5em; 
+	-fx-border-color: #EEF0F2;
+	-fx-cursor: HAND;	
+}
+#sendButton{
+	-fx-background-color: transparent ;
+	-fx-border-style : solid;
+	-fx-border-width: 2;
+	-fx-text-fill: white;
+	-fx-border-radius: 1.5em; 
+	-fx-border-color: #838FA3;
+	-fx-cursor: HAND;	
+}
+#sendButton:hover{
+	-fx-background-color: transparent ;
+	-fx-border-style : solid;
+	-fx-border-width: 2;
+	-fx-text-fill: white;
+	-fx-border-radius: 1.5em; 
+	-fx-border-color: #EEF0F2;
+	-fx-cursor: HAND;	
+}
+#cancelButton{
+	-fx-background-color: transparent ;
+	-fx-border-style : solid;
+	-fx-border-width: 2;
+	-fx-text-fill: white;
+	-fx-border-radius: 1.5em; 
+	-fx-border-color: #838FA3;
+	-fx-cursor: HAND;	
+}
+#cancelButton:hover{
+	-fx-background-color: transparent ;
+	-fx-border-style : solid;
+	-fx-border-width: 2;
+	-fx-text-fill: white;
+	-fx-border-radius: 1.5em; 
+	-fx-border-color: #EEF0F2;
+	-fx-cursor: HAND;	
+}
+#textArea{
+	-fx-background-color: transparent ;
+	-fx-text-fill: white;
+}
+#deleteButton{
+	-fx-background-color: transparent ;
+	-fx-border-style : solid;
+	-fx-border-width: 2;
+	-fx-text-fill: white;
+	-fx-border-radius: 1.5em; 
+	-fx-border-color: #838FA3;
+	-fx-cursor: HAND;	
+}
+#deleteButton:hover{
+	-fx-background-color: transparent ;
+	-fx-border-style : solid;
+	-fx-border-width: 2;
+	-fx-text-fill: white;
+	-fx-border-radius: 1.5em; 
+	-fx-border-color: #EEF0F2;
+	-fx-cursor: HAND;	
+}

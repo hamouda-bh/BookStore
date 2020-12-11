@@ -51,6 +51,8 @@ public class MainCtrl extends BaseController implements Initializable {
     private Pane pnlOverview;
     @FXML
     private VBox pnItems;
+    @FXML
+    private Button myAccountButton;
 
     /**
      * Initializes the controller class.
@@ -91,4 +93,12 @@ public class MainCtrl extends BaseController implements Initializable {
     private void goBlog(ActionEvent event) {
         vf.showBlog();
     }
+   // @FXML
+    /*void myAccountAction() {
+        vf.showAccountWindow();
+        Stage stage = (Stage) logOut.getScene().getWindow();
+  	    vf.closeStage(stage);
+    }*/
+    
+    
 }

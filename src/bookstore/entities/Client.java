@@ -16,6 +16,9 @@ public class Client extends Utilisateur {
 	public Client() {
 		super();
 	}
+	public Client(String nom ,String prenom ,String username,String email,String tel,String adress ) {
+		super(nom,prenom,username,email,tel,adress);
+	}
 	
 	public Client(int id_user, String nom ,String prenom ,String username,String email,String tel,String adress ) {
 		super(id_user,nom,prenom,username,email,tel,adress);
@@ -24,6 +27,11 @@ public class Client extends Utilisateur {
 	public Client(int id_user, String nom ,String prenom ,String username,String email,String tel, 	String password,String adress ) {
 		super(id_user,nom,prenom,username,email,tel,password,adress);
 	}
+
+        public Client (String password){
+                super(password);
+        }
+    
 	
 	public void rechercheLivre( ) {
 		
