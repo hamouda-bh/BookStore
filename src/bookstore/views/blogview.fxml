@@ -10,8 +10,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #152f72;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.views.BlogviewController">
-   <children>
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #152f72;" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   
+    <children>
       <TextField fx:id="tfid" layoutX="280.0" layoutY="89.0" prefHeight="25.0" prefWidth="219.0" />
       <Button fx:id="btn" layoutX="269.0" layoutY="310.0" mnemonicParsing="false" onAction="#ajouterBlog" text="ajouter_blog" />
       <TextField fx:id="tfidc" layoutX="280.0" layoutY="134.0" prefHeight="25.0" prefWidth="219.0" />

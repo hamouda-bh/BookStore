@@ -5,6 +5,7 @@
  */
 package bookstore.viewsControllers;
 
+import bookstore.views.ViewFactory;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -16,7 +17,10 @@ import javafx.scene.control.Label;
  *
  * @author aziz
  */
-public class DetailsBlogController implements Initializable {
+public class DetailsBlogController extends BaseController implements Initializable {
+    public DetailsBlogController(ViewFactory vf, String fxmlName){
+        super(vf, fxmlName);
+    }
 
     @FXML
     private Label lbid;
