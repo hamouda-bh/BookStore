@@ -126,6 +126,12 @@ public class ViewFactory {
                     BaseController home = new HomeController(this, "Home.fxml");
                      initializeStage(home);
                  }
+                 public void showUserDetails(){
+                  
+                    BaseController user = new DetailsController(this, "UserDetails.fxml");
+                     initializeStage(user);
+                 }
+                 
                  
                  
                  
