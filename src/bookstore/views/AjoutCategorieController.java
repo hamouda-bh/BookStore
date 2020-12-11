@@ -33,6 +33,24 @@ public class AjoutCategorieController implements Initializable {
     private Label tfLabel;
     @FXML
     private Button tfAjout;
+    @FXML
+    private Button tfmodcat;
+    @FXML
+    private Button tfSuppCat;
+    @FXML
+    private Button btnOverview;
+    @FXML
+    private Button btnOrders;
+    @FXML
+    private Button btnCustomers;
+    @FXML
+    private Button btnMenus;
+    @FXML
+    private Button btnPackages;
+    @FXML
+    private Button btnSettings;
+    @FXML
+    private Button logOut;
 
     /**
      * Initializes the controller class.
@@ -49,6 +67,26 @@ public class AjoutCategorieController implements Initializable {
      Cs.ajouter(new Categorie (a,tfLabel.getText()));
      JOptionPane.showMessageDialog(null,"Categorie ajouté!");
      
+    }
+
+    @FXML
+    private void ModifierCategorie(ActionEvent event) {
+    }
+
+    @FXML
+    private void SupprimerCategorie(ActionEvent event) {
+    }
+
+    @FXML
+    private void handleClicks(ActionEvent event) {
+    }
+
+    @FXML
+    private void logOutAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void AjouterUneCategorie(MouseEvent event) {
     }
     
 }

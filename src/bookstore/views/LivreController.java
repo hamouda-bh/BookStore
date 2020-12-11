@@ -3,10 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package bookstore.viewsControllers;
-
-import bookstore.Testing.Cache;
+package bookstore.views;
 import bookstore.views.ViewFactory;
+import bookstore.viewsControllers.BaseController;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -15,15 +14,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 
 /**
  * FXML Controller class
  *
- * @author PC-Hamouda
+ * @author user
  */
-public class MainCtrl extends BaseController implements Initializable {
-    public MainCtrl(ViewFactory vf, String fxmlName){
+public class LivreController extends BaseController implements Initializable {
+    public LivreController(ViewFactory vf, String fxmlName){
         super(vf, fxmlName);
     }
 
@@ -42,7 +40,7 @@ public class MainCtrl extends BaseController implements Initializable {
     @FXML
     private Button logOut;
     @FXML
-    private Pane pnlCustomer;
+    private Pane pnlCustomer1;
     @FXML
     private Pane pnlOrders;
     @FXML
@@ -51,6 +49,14 @@ public class MainCtrl extends BaseController implements Initializable {
     private Pane pnlOverview;
     @FXML
     private VBox pnItems;
+    @FXML
+    private Button tfAjouut;
+    @FXML
+    private Button tfModif;
+    @FXML
+    private Button tfSupp;
+    @FXML
+    private Pane pnlCustomer;
 
     /**
      * Initializes the controller class.
@@ -61,19 +67,25 @@ public class MainCtrl extends BaseController implements Initializable {
     }    
 
     @FXML
-    private void handleClicks(ActionEvent event) {
+    private void handleClicks() {
     }
+
     @FXML
-    void logOutAction() {
-    	Cache.client = null ;
-    	Stage stage = (Stage) logOut.getScene().getWindow();
-    	vf.closeStage(stage);
-    	vf.showLoginWindow();
+    private void logOutAction() {
     }
-     @FXML
-    private void goLivre(ActionEvent event) {
+
+    @FXML
+    private void ajoute() {
+        vf.showAjoutLivre();
+    }
+
+    @FXML
+    private void Modifierunlivre() {
+        
+    }
+
+    @FXML
+    private void Supprimerunlivre() {
+    }
     
-     vf.showLivre() ;
-    
-           }
 }

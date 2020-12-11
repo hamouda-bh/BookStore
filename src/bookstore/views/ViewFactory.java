@@ -107,5 +107,15 @@ public class ViewFactory {
                     initializeStage(b3);
                 }
                 */
+                  public void showAjoutLivre(){
+                     BaseController ajoutlivre = new AjoutLivreController(this, "AjoutLivre.fxml");
+                     initializeStage(ajoutlivre);
+                 
 		
-}
+                  }
+                  public void showLivre(){
+                     BaseController livre = new LivreController(this, "Livre.fxml");
+                     initializeStage(livre);
+
+    
+}}
