@@ -31,9 +31,11 @@ import javafx.stage.Stage;
 public class AnnoncesViewController implements Initializable {
 
     @FXML
+    private Button fxmesannonces;
+    @FXML
     private Button AjouterUneNouvelleAnnonce;
     @FXML
-    private TableView<?> fxTableAnnonces;
+    private TableView<Annonce> fxTableAnnonces;
     @FXML
     private TableColumn<Annonce, String> datepublicationcell;
     @FXML
@@ -57,7 +59,7 @@ public class AnnoncesViewController implements Initializable {
         etatcell.setCellValueFactory(new PropertyValueFactory<>("etat_de_livre"));
         dateachatcell.setCellValueFactory(new PropertyValueFactory<>("date_achat"));
         
-        fxTableAnnonces.setItems(null);
+        fxTableAnnonces.setItems(ob);
     }    
 
     @FXML
@@ -74,4 +76,9 @@ public class AnnoncesViewController implements Initializable {
         }
     }
     
+    @FXML
+    private void mesAnnonces(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("AMesAnnonces.fxml"));
+        fxmesannonces.getScene().setRoot(root);
+    }
 }
