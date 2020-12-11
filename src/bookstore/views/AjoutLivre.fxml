@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" blendMode="MULTIPLY" depthTest="DISABLE" prefHeight="291.0" prefWidth="562.0" style="-fx-background-color: #152f72;" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.views.AjoutLivreController">
+<AnchorPane id="AnchorPane" blendMode="MULTIPLY" depthTest="DISABLE" prefHeight="291.0" prefWidth="562.0" style="-fx-background-color: #152f72;" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" >
    <children>
       <Label layoutX="35.0" layoutY="102.0" text="Catégorie" textFill="#c6c4b4">
          <font>

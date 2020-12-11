@@ -26,6 +26,7 @@ public class LivreFXMain extends Application {
     @Override
     
 	public void start(Stage stage)   {
+            DBConnection.getInstance().getCnx();
 		try {    
 			ViewFactory vf = new ViewFactory();
 			vf.showLivre();
