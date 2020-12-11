@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package bookstore.viewsControllers;
+package bookstore.views;
 
 import bookstore.entities.Blog;
 import bookstore.services.serviceBlog;
-import bookstore.views.*;
-
+import bookstore.viewsControllers.BaseController;
+import bookstore.viewsControllers.DetailsBlogController;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -19,7 +19,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-
 import javax.swing.JOptionPane;
 
 /**
@@ -28,26 +27,43 @@ import javax.swing.JOptionPane;
  * @author aziz
  */
 public class BlogviewController extends BaseController implements Initializable {
+    public BlogviewController(ViewFactory vf, String fxmlName){
+        super(vf, fxmlName);
+    }
 
     @FXML
     private TextField tfid;
-    
+    @FXML
+    private Button btn;
     @FXML
     private TextField tfidc;
-    
     @FXML
     private TextField tfcategorie;
-    
     @FXML
     private TextField tfdescription;
     @FXML
-    private Button btn;
+    private Button btnmodifier;
+    @FXML
+    private Button btnsupprimer;
+    @FXML
+    private Button btnOverview;
+    @FXML
+    private Button btnOrders;
+    @FXML
+    private Button btnCustomers;
+    @FXML
+    private Button btnMenus;
+    @FXML
+    private Button btnPackages;
+    @FXML
+    private Button btnSettings;
+    @FXML
+    private Button logOut;
 
     /**
      * Initializes the controller class.
-     * @param url
-     * @param rb
      */
+    @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
@@ -76,20 +92,31 @@ public class BlogviewController extends BaseController implements Initializable 
         dbc.setLbdescription(tfdescription.getText());
     }
 
-     private void modifierBlog(ActionEvent event) throws IOException {
-
+    @FXML
+    private void modifierBlog(ActionEvent event) {
         int a = Integer.parseInt(tfid.getText());
                 int b = Integer.parseInt(tfidc.getText());
             serviceBlog sb = new serviceBlog();
         sb.modifier(new Blog(a,b,tfcategorie.getText(),tfdescription.getText()));
-
     }
-     private void suppressionBlog(ActionEvent event) throws IOException {
-        int a = Integer.parseInt(tfid.getText());
+
+    @FXML
+    private void suppressionBlog(ActionEvent event) {
+         int a = Integer.parseInt(tfid.getText());
                 int b = Integer.parseInt(tfidc.getText());
             serviceBlog sb = new serviceBlog();
         sb.supprimer(new Blog(a,b,"",""));
     }
+@FXML
+    private void newPub(ActionEvent event) {
+        vf.showPublication();
+    }
+    @FXML
+    private void handleClicks(ActionEvent event) {
+    }
 
+    @FXML
+    private void logOutAction(ActionEvent event) {
+    }
+    
 }
-

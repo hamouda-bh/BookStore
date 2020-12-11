@@ -87,4 +87,8 @@ public class MainCtrl extends BaseController implements Initializable {
      vf.showLivre() ;
     
            }
+    @FXML
+    private void goBlog(ActionEvent event) {
+        vf.showBlog();
+    }
 }

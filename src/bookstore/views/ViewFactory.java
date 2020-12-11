@@ -108,6 +108,14 @@ public class ViewFactory {
                      BaseController paiement = new PaiementController(this, "Paiement.fxml");
                      initializeStage(paiement);
                  } 
+                 public void showPublication(){
+                     BaseController publication = new PublicationviewController(this, "publicationview.fxml");
+                     initializeStage(publication);
+                 } 
+                 public void showBlog(){
+                     BaseController blog = new BlogviewController(this, "blogview.fxml");
+                     initializeStage(blog);
+                 } 
                  /*
                 public void showCommandeFaite(){
                     BaseController b3= new CommandeFaiteController(this, "commandeFaite.fxml");

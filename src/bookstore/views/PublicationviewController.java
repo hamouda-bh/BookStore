@@ -3,12 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package bookstore.viewsControllers;
+package bookstore.views;
 
-import bookstore.entities.Blog;
 import bookstore.entities.Publication;
-import bookstore.services.serviceBlog;
 import bookstore.services.servicePublication;
+import bookstore.viewsControllers.BaseController;
 import bookstore.viewsControllers.DetailsPublicationController;
 import java.io.IOException;
 import java.net.URL;
@@ -27,7 +26,10 @@ import javax.swing.JOptionPane;
  *
  * @author aziz
  */
-public class PublicationviewController implements Initializable {
+public class PublicationviewController extends BaseController implements Initializable {
+    public PublicationviewController(ViewFactory vf, String fxmlName){
+        super(vf, fxmlName);
+    }
 
     @FXML
     private TextField tfidp;
@@ -41,6 +43,28 @@ public class PublicationviewController implements Initializable {
     private TextField tfcommentaire;
     @FXML
     private Button btn;
+    @FXML
+    private Button btnmodifier;
+    @FXML
+    private Button btnsupprimer;
+    @FXML
+    private Button btnOverview;
+    @FXML
+    private Button btnOrders;
+    @FXML
+    private Button btnCustomers;
+    @FXML
+    private Button btnMenus;
+    @FXML
+    private Button btnPackages;
+    @FXML
+    private Button btnSettings;
+    @FXML
+    private Button logOut;
+
+   /* PublicationviewController(ViewFactory aThis, String publicationviewControllerfxml) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }*/
 
     /**
      * Initializes the controller class.
@@ -52,7 +76,7 @@ public class PublicationviewController implements Initializable {
 
     @FXML
     private void ajouterPublication(ActionEvent event) throws IOException {
-         int a = Integer.parseInt(tfidb.getText());
+          int a = Integer.parseInt(tfidb.getText());
                   int c = Integer.parseInt(tfidp.getText());
 
                 int b = Integer.parseInt(tfidc.getText());
@@ -77,6 +101,7 @@ public class PublicationviewController implements Initializable {
         dpc.setLbcommentaire(tfcommentaire.getText());
     }
 
+    @FXML
     private void modifierPublication(ActionEvent event) throws IOException {
 
        int a = Integer.parseInt(tfidb.getText());
@@ -88,6 +113,7 @@ public class PublicationviewController implements Initializable {
         JOptionPane.showMessageDialog(null, "Publication modifiée !");
 
     }
+    @FXML
      private void supprimerPublication(ActionEvent event) throws IOException {
        int a = Integer.parseInt(tfidb.getText());
                   int c = Integer.parseInt(tfidp.getText());
@@ -97,4 +123,13 @@ public class PublicationviewController implements Initializable {
         sp.supprimer(new Publication(a,b,c,"",""));
         JOptionPane.showMessageDialog(null, "Publication supprimée !");
     }
+
+    @FXML
+    private void handleClicks(ActionEvent event) {
+    }
+
+    @FXML
+    private void logOutAction(ActionEvent event) {
+    }
+    
 }

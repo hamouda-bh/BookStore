@@ -39,6 +39,13 @@
             <file>file:/C:/BookStore/src/bookstore/views/ViewFactory.java</file>
             <file>file:/C:/BookStore/src/bookstore/Testing/LivreFXMain.java</file>
             <file>file:/C:/BookStore/src/bookstore/Testing/MainProgGUI.java</file>
+            <file>file:/C:/BookStore/src/bookstore/viewsControllers/PasserCommandeController.java</file>
+            <file>file:/C:/BookStore/src/bookstore/views/BlogviewController.java</file>
+            <file>file:/C:/BookStore/src/bookstore/viewsControllers/BaseController.java</file>
+            <file>file:/C:/BookStore/src/bookstore/views/PublicationviewController.java</file>
+            <file>file:/C:/BookStore/src/bookstore/viewsControllers/MainCtrl.java</file>
+            <file>file:/C:/BookStore/src/bookstore/services/serviceBlog.java</file>
+            <file>file:/C:/BookStore/src/bookstore/views/ViewFactory.java</file>
         </group>
     </open-files>
 </project-private>
