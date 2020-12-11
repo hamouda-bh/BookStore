@@ -170,4 +170,14 @@ public class ViewFactory {
 					}
                   
                   
+                 public void showUserDetails(){
+                  
+                    BaseController user = new DetailsController(this, "UserDetails.fxml");
+                     initializeStage(user);
+                 }
+                 
+                 
+                 
+                 
+		
 }

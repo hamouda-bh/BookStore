@@ -122,6 +122,10 @@ public class HomeController extends BaseController {
         Stage stage = (Stage) btnMenus.getScene().getWindow();
   	vf.closeStage(stage);
     }
+     @FXML
+    void userButtonAction(ActionEvent event) {
+        vf.showUserDetails();
+    }
 
 }
 

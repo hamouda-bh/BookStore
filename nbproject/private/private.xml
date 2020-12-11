@@ -9,6 +9,14 @@
             <file>file:/C:/BookStore/src/bookstore/viewsControllers/PublicationviewController.java</file>
             <file>file:/C:/BookStore/src/bookstore/viewsControllers/BlogviewController.java</file>
             <file>file:/C:/BookStore/src/bookstore/views/blogview.fxml</file>
+            <file>file:/C:/BookStore/src/bookstore/services/ClientService.java</file>
+            <file>file:/C:/BookStore/src/bookstore/viewsControllers/HomeController.java</file>
+            <file>file:/C:/BookStore/src/bookstore/viewsControllers/DetailsController.java</file>
+            <file>file:/C:/BookStore/src/bookstore/views/Home.fxml</file>
+            <file>file:/C:/BookStore/src/bookstore/views/UserDetails.fxml</file>
+            <file>file:/C:/BookStore/src/bookstore/Testing/MainProgGUI.java</file>
+            <file>file:/C:/BookStore/src/bookstore/css/users.css</file>
+            <file>file:/C:/BookStore/src/bookstore/views/ViewFactory.java</file>
         </group>
     </open-files>
 </project-private>
