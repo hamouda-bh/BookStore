@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="tfAjouCat" onDragDetected="#AjouterUneCategorie" prefHeight="431.0" prefWidth="647.0" style="-fx-background-color: #a2b8ee;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.views.AjoutCategorieController">
+<AnchorPane id="AnchorPane" fx:id="tfAjouCat" onDragDetected="#AjouterUneCategorie" prefHeight="431.0" prefWidth="647.0" style="-fx-background-color: linear-gradient(to top right,  #152f72, #89a4d0);" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.views.AjoutCategorieController">
    <children>
       <Label fx:id="tfIdCategorie" layoutX="288.0" layoutY="192.0" text="IdCategorie" textFill="#2073ab">
          <font>

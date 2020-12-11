@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="567.0" prefWidth="849.0" style="-fx-background-color: #152f72;" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="567.0" prefWidth="849.0" style="-fx-background-color: linear-gradient(to top right,  #152f72, #89a4d0);" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Button fx:id="AjouterNouveauLivreKids" alignment="BASELINE_LEFT" contentDisplay="CENTER" graphicTextGap="22.0" layoutX="409.0" layoutY="174.0" mnemonicParsing="false" onAction="#AjouterNouveauLivreKids" prefHeight="67.0" prefWidth="284.0" style="-fx-background-color: #a2b8ee;" stylesheets="@style.css" text=" Ajouter Livre" textAlignment="CENTER" textFill="WHITE">
          <padding>

@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="597.0" prefWidth="891.0" style="-fx-background-color: #152f72;" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="597.0" prefWidth="891.0" style="-fx-background-color: linear-gradient(to top right,  #152f72, #89a4d0);" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <TextField layoutX="474.0" layoutY="159.0" prefHeight="48.0" prefWidth="362.0" promptText="Titre" style="-fx-background-color: #557de1; -fx-border-color: #a2b8ee; -fx-border-radius: 5px;" />
       <Button fx:id="AnnulerAjouterLivreKids" graphicTextGap="22.0" layoutX="474.0" layoutY="435.0" mnemonicParsing="false" onAction="#AfficherPageLivreKids" prefHeight="42.0" prefWidth="174.0" style="-fx-background-color: #EA5353; -fx-alignment: left;" stylesheets="@style.css" text="Annuler" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">

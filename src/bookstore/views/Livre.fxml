@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="450.0" prefWidth="703.0" style="-fx-background-color: #a2b8ee;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="450.0" prefWidth="703.0" style="-fx-background-color: linear-gradient(to top right,  #152f72, #89a4d0);" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Pane fx:id="pnlCustomer" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" />
       <Label layoutX="352.0" layoutY="25.0" text="Mes Livres" textFill="#080946">

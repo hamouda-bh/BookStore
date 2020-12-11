@@ -23,7 +23,7 @@
             <Pane fx:id="pnlCustomer" prefHeight="200.0" prefWidth="200.0" />
             <Pane fx:id="pnlOrders" prefHeight="200.0" prefWidth="200.0" />
             <Pane fx:id="pnlMenus" prefHeight="200.0" prefWidth="200.0" />
-            <Pane fx:id="pnlOverview" prefHeight="576.0" prefWidth="802.0" style="-fx-background-color: #152f72;">
+            <Pane fx:id="pnlOverview" prefHeight="576.0" prefWidth="802.0" style="-fx-background-color: linear-gradient(to top right,  #152f72, #89a4d0);">
                <children>
                   <TextField layoutX="590.0" layoutY="47.0" prefHeight="27.0" prefWidth="183.0" promptText="search" style="-fx-background-color: #557de1; -fx-border-color: #a2b8ee; -fx-border-radius: 5px;" />
                   <HBox alignment="CENTER_LEFT" layoutX="31.0" layoutY="178.0" prefHeight="42.0" prefWidth="712.0" spacing="80.0" style="-fx-background-color: #557de1;" />

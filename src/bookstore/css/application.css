@@ -1,6 +1,6 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
 #loginAnchorPane{
-	-fx-background-color: linear-gradient(to top right, #172235, #838FA3);
+	-fx-background-color: linear-gradient(to top right,  #152f72, #89a4d0);
 }
 
 .separator .line {
