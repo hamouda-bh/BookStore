@@ -14,6 +14,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import javafx.collections.ObservableList;
 
 
 /**
@@ -68,7 +69,8 @@ public class ServiceAnnonce {
     }
 
        
-    public List<Annonce> afficherAnnonces() {
+    public List<Annonce> afficherAnnonces(ObservableList<Annonce> ob) {
+        
         List<Annonce> list = new ArrayList<>();
         try {
             String req = "SELECT date_publication,prix,etat_de_livre,date_achat FROM annonce";

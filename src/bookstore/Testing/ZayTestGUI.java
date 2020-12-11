@@ -23,7 +23,7 @@ public class ZayTestGUI extends Application {
 
         DBConnection.getInstance().getCnx();
         
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/Livre.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/AAnnoncesView.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
         primaryStage.setTitle("BookStore : Toute les annonces");

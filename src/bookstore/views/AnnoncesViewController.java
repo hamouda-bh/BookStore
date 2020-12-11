@@ -6,6 +6,7 @@
 package bookstore.views;
 
 import bookstore.entities.Annonce;
+import bookstore.services.ServiceAnnonce;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -21,6 +22,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
@@ -45,40 +47,45 @@ public class AnnoncesViewController implements Initializable {
     @FXML
     private TableColumn<Annonce, String> dateachatcell;
 
-    private ObservableList<Annonce> ob;
+    private ObservableList<Annonce> ob = FXCollections.observableArrayList();
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
-        ob = FXCollections.observableArrayList();
-        
-        datepublicationcell.setCellValueFactory(new PropertyValueFactory<>("date_publication"));
-        prixcell.setCellValueFactory(new PropertyValueFactory<>("prix"));
-        etatcell.setCellValueFactory(new PropertyValueFactory<>("etat_de_livre"));
-        dateachatcell.setCellValueFactory(new PropertyValueFactory<>("date_achat"));
-        
+        ServiceAnnonce sa = new ServiceAnnonce();
+
+        datepublicationcell.setCellValueFactory(new PropertyValueFactory<Annonce, String>("Date_publication"));
+        prixcell.setCellValueFactory(new PropertyValueFactory<Annonce, Float>("Prix"));
+        etatcell.setCellValueFactory(new PropertyValueFactory<Annonce, String>("Etat_de_livre"));
+        dateachatcell.setCellValueFactory(new PropertyValueFactory<Annonce, String>("Date_achat"));
         fxTableAnnonces.setItems(ob);
-    }    
+        sa.afficherAnnonces(ob);
+        //for(int i=0; i<ob.size();i++){
+        //    System.out.println(ob.get(i));
+        //}
+
+    }
 
     @FXML
     private void ajouterAnnonce(ActionEvent event) throws IOException {
         try {
-        Parent root = FXMLLoader.load(getClass().getResource("AAjoutAnnonceView.fxml"));
-        Stage st = new Stage();
-        st.setTitle("BookStore : Toute les annonces");
-        st.setScene(new Scene(root,450,450));
-        st.show();
-        }
-        catch(IOException ex) {
+            Parent root = FXMLLoader.load(getClass().getResource("AAjoutAnnonceView.fxml"));
+            Stage st = new Stage();
+            st.setTitle("BookStore : Toute les annonces");
+            st.setScene(new Scene(root, 450, 450));
+            st.show();
+        } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
     }
-    
+
     @FXML
     private void mesAnnonces(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("AMesAnnonces.fxml"));
-        fxmesannonces.getScene().setRoot(root);
+         FXMLLoader fx = new FXMLLoader(getClass().getResource("AMesAnnoncesView.fxml"));
+         Parent root1 = fx.load();
+        fxmesannonces.getScene().setRoot(root1);
     }
 }
