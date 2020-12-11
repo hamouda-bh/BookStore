@@ -3,37 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/BookStore/src/bookstore/viewsControllers/KidsSpaceController.java</file>
-            <file>file:/C:/BookStore/src/bookstore/viewsControllers/LivreKidsViewController.java</file>
-            <file>file:/C:/BookStore/src/bookstore/viewsControllers/AjouterLivreKidsController.java</file>
-            <file>file:/C:/BookStore/src/bookstore/services/LivreKidsService.java</file>
-            <file>file:/C:/BookStore/src/bookstore/services/FactureService.java</file>
-            <file>file:/C:/BookStore/src/bookstore/viewsControllers/LoginWindowController.java</file>
-            <file>file:/C:/BookStore/src/bookstore/viewsControllers/MainCtrl.java</file>
-            <file>file:/C:/BookStore/src/bookstore/Testing/MainProgGUI.java</file>
-            <file>file:/C:/BookStore/src/bookstore/views/ViewFactory.java</file>
-            <file>file:/C:/BookStore/src/bookstore/Testing/LivreFXMain.java</file>
             <file>file:/C:/BookStore/src/bookstore/viewsControllers/PasserCommandeController.java</file>
-            <file>file:/C:/BookStore/src/bookstore/views/AjoutLivreController.java</file>
-            <file>file:/C:/BookStore/src/bookstore/viewsControllers/BaseController.java</file>
-            <file>file:/C:/BookStore/src/bookstore/views/Livre.fxml</file>
-            <file>file:/C:/BookStore/src/bookstore/views/LivreController.java</file>
-            <file>file:/C:/BookStore/src/bookstore/services/livreService.java</file>
-            <file>file:/C:/BookStore/src/bookstore/views/DetailsLivreController.java</file>
-            <file>file:/C:/BookStore/src/bookstore/views/ViewFactory.java</file>
-            <file>file:/C:/BookStore/src/bookstore/Testing/LivreFXMain.java</file>
-            <file>file:/C:/BookStore/src/bookstore/Testing/MainProgGUI.java</file>
-            <file>file:/C:/BookStore/src/bookstore/Testing/MainProg.java</file>
-            <file>file:/C:/BookStore/src/bookstore/Testing/mainBLOG.java</file>
-            <file>file:/C:/BookStore/src/bookstore/views/BlogviewController.java</file>
-            <file>file:/C:/BookStore/src/bookstore/views/PublicationviewController.java</file>
-            <file>file:/C:/BookStore/src/bookstore/viewsControllers/DetailsBlogController.java</file>
-            <file>file:/C:/BookStore/src/bookstore/viewsControllers/MainCtrl.java</file>
-            <file>file:/C:/BookStore/src/bookstore/Testing/MainProg.java</file>
-            <file>file:/C:/BookStore/src/bookstore/Testing/MainProgGUI.java</file>
-            <file>file:/C:/BookStore/src/bookstore/Testing/ajoutLivreFXMain.java</file>
-            <file>file:/C:/BookStore/src/bookstore/views/ViewFactory.java</file>
-            <file>file:/C:/BookStore/src/bookstore/views/detailsBlog.fxml</file>
+            <file>file:/C:/BookStore/src/bookstore/viewsControllers/MainWindowController.java</file>
+            <file>file:/C:/BookStore/src/bookstore/viewsControllers/PaiementController.java</file>
+            <file>file:/C:/BookStore/src/bookstore/viewsControllers/PublicationviewController.java</file>
+            <file>file:/C:/BookStore/src/bookstore/viewsControllers/BlogviewController.java</file>
+            <file>file:/C:/BookStore/src/bookstore/views/blogview.fxml</file>
         </group>
     </open-files>
 </project-private>

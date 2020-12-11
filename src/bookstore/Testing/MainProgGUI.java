@@ -32,10 +32,14 @@ public class MainProgGUI extends Application {
 	public void start(Stage stage)   {
 		try {    
 			ViewFactory vf = new ViewFactory();
-			//vf.showUI();
+			vf.showUI();
                         //vf.showMainWindow();
-                        vf.showPanier();
+                        //vf.showPanier();
                         
+                        /* 
+                            nour.benhadjyahia@esprit.tn
+                            Nour123nour@
+                        */
                         
 		}catch(Exception e) {			
 			e.printStackTrace();
