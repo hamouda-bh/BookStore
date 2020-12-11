@@ -82,6 +82,9 @@ public class Utilisateur {
 		this.password = password;
 		this.adress = adress;
 	}
+        public Utilisateur(String passsword){
+         this.password = passsword;
+        }
 	
 
 	public int getId_user() {

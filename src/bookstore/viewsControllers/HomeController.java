@@ -5,79 +5,78 @@
  */
 package bookstore.viewsControllers;
 
+/**
+ *
+ * @author Malek
+ */
+
 import bookstore.Testing.Cache;
 import bookstore.views.ViewFactory;
-import java.net.URL;
-import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author PC-Hamouda
- */
-public class MainCtrl extends BaseController implements Initializable {
-    public MainCtrl(ViewFactory vf, String fxmlName){
-        super(vf, fxmlName);
-    }
+public class HomeController extends BaseController {
+    
+    public HomeController(ViewFactory vf, String fxmlName) {
+		super(vf, fxmlName);
+		
+	}
 
     @FXML
     private Button btnOverview;
+
     @FXML
     private Button btnOrders;
+
     @FXML
     private Button btnCustomers;
+
     @FXML
     private Button btnMenus;
+
     @FXML
     private Button btnPackages;
+
     @FXML
     private Button btnSettings;
+
     @FXML
-    private Button logOut;
+    private Button btnSignout;
+
     @FXML
     private Pane pnlCustomer;
+
     @FXML
     private Pane pnlOrders;
+
     @FXML
     private Pane pnlMenus;
+
     @FXML
     private Pane pnlOverview;
+
     @FXML
     private VBox pnItems;
-    @FXML
-    private Button myAccountButton;
-
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
 
     @FXML
-    private void handleClicks(ActionEvent event) {
-    }
-    @FXML
-    void logOutAction() {
-    	Cache.client = null ;
-    	Stage stage = (Stage) logOut.getScene().getWindow();
+    void logOutAction(ActionEvent event) {
+       Cache.client = null ;
+    	Stage stage = (Stage) btnMenus.getScene().getWindow();
     	vf.closeStage(stage);
-    	vf.showLoginWindow();
+    	vf.showUI();
     }
-   // @FXML
-    /*void myAccountAction() {
-        vf.showAccountWindow();
-        Stage stage = (Stage) logOut.getScene().getWindow();
-  	    vf.closeStage(stage);
-    }*/
-    
-    
+
+    @FXML
+    void myAccountAction(ActionEvent event) {
+       vf.showAccountEditWindow();
+        Stage stage = (Stage) btnMenus.getScene().getWindow();
+  	vf.closeStage(stage);
+    }
+
 }
+
+

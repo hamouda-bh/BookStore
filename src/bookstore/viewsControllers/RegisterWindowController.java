@@ -71,12 +71,12 @@ public class RegisterWindowController extends BaseController {
     		Statement st = cnx.createStatement();	  		  
   		    st.executeUpdate(req);
   		    System.out.println("Felicitations votre compte a ete creer!");
-  		    vf.showLoginWindow();
+  		    vf.showUI();
 		    Stage stage = (Stage) emailField.getScene().getWindow();
     	    vf.closeStage(stage);
 			
     	}catch(SQLException ex){
-    		System.out.println("Mail dupliqué");		
+    		System.out.println("Mail duplique");		
     	}catch(Exception e) {
     		e.printStackTrace();
     		e.getCause();
@@ -86,7 +86,7 @@ public class RegisterWindowController extends BaseController {
 
     @FXML
     void cancelButtonAction(ActionEvent event) {
-    	vf.showLoginWindow();
+    	vf.showUI();
 	    Stage stage = (Stage) emailField.getScene().getWindow();
 	    vf.closeStage(stage);
     }
@@ -105,7 +105,7 @@ public class RegisterWindowController extends BaseController {
     	}
     }
     private boolean validateTel() {
-    	Pattern p = Pattern.compile("[2-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]+");
+    	Pattern p = Pattern.compile("[2-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]");
     	Matcher m = p.matcher(telField.getText());
     	if (m.find() && m.group().equals(telField.getText())){
     		return true;

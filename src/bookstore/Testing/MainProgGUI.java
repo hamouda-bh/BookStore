@@ -29,7 +29,8 @@ public class MainProgGUI extends Application {
 	public void start(Stage stage)   {
 		try {    
 			ViewFactory vf = new ViewFactory();
-			vf.showLoginWindow();
+			vf.showUI();
+                        
 		}catch(Exception e) {			
 			e.printStackTrace();
         }	

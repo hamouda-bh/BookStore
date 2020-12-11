@@ -71,5 +71,70 @@ public class ClientService {
 	       }
 	       return false;
 	}
+        public int validateEmail(String email) {
+        int count = 0;
+        try{
+            String req = "select count(1) from client where email=?";
+            PreparedStatement st = cnx.prepareStatement(req);
+            st.setString(1, email);
+            ResultSet res = st.executeQuery();
+            while(res.next()){
+                if(res.getInt(1) == 1)
+                    count+=1;
+            }
+        }catch(SQLException e){
+            System.out.println(e.getMessage());
+        }
+        return count;
+    }
+        
+       /* public void updatePassword(Client c, int id) {
+        try {
+            String req = "update client set  password=? where id=" + id;
+            PreparedStatement st = cnx.prepareStatement(req);
+            st.setString(1, c.getPassword());
+            st.executeUpdate();
+            System.out.println("+ PASSWORD UPDATED IN DATABASE");
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }*/
+        
+       /*public void updatePassword(Client c, int id) {
+        try {
+            String req = "update client set nom=?, prenom=?, username=?, email=?, tel=?, adresse=? where id=" + id;
+            PreparedStatement st = cnx.prepareStatement(req);
+            st.setString(1, c.getNom());
+            st.setString(2, c.getPrenom());
+            st.setString(3, c.getUsername());
+            st.setString(4, c.getEmail());
+            st.setString(5, c.getTel());
+            st.setString(6, c.getAdress());
+            
+            System.out.println(c);
+            System.out.println(req);
+            st.executeUpdate();
+            System.out.println("+ PASSWORD UPDATED IN DATABASE");
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+}*/
+        public void updatePassword(Client c, String email) {
+        try {
+            String req = "update client set password=? where email=" + email;
+            PreparedStatement st = cnx.prepareStatement(req);
+            st.setString(1, c.getPassword());
+                      
+            System.out.println(c);
+            System.out.println(req);
+            st.executeUpdate();
+            System.out.println("+ PASSWORD UPDATED IN DATABASE");
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        }
+        
+        
+        
 
 }

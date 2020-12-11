@@ -76,11 +76,11 @@ public class ViewFactory {
 	    	stageToClose.close();
 	    	st.remove(stageToClose);
 	    }
-	    public void showAccountWindow(){
+	    /*public void showAccountWindow(){
 	    	System.out.println("show account window called");
 			BaseController accountController = new AccountWindowController(this, "AccountWindow.fxml");
 			initializeStage(accountController);
-	    }
+	    }*/
 	    public void showAccountEditWindow(){
 	    	System.out.println("show account edit window called");
 			BaseController editAccountController = new EditAccountController(this, "EditAccountWindow.fxml");
@@ -107,5 +107,27 @@ public class ViewFactory {
                     initializeStage(b3);
                 }
                 */
+                 public void showPasswordWindow(){
+                     BaseController psw = new PasswordController(this, "Password.fxml");
+                     initializeStage(psw);
+                 } 
+                 public void showMailWindow(){
+                     BaseController mail = new MailWindowController(this, "MailWindow.fxml");
+                     initializeStage(mail);
+                 } 
+                 
+                 public void showUI(){
+                    BaseController mail = new LoginController(this, "loginUi.fxml");
+                     initializeStage(mail);
+                 }
+                 
+                 public void showMainUI(){
+                  
+                    BaseController home = new HomeController(this, "Home.fxml");
+                     initializeStage(home);
+                 }
+                 
+                 
+                 
 		
 }

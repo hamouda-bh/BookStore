@@ -24,6 +24,7 @@ import bookstore.views.ViewFactory;
 import bookstore.Testing.Cache;
 import bookstore.Testing.DBConnection;
 import bookstore.entities.Client;
+import javafx.event.ActionEvent;
 public class EditAccountController extends BaseController implements Initializable {
 
     public EditAccountController(ViewFactory viewFactory, String fxmlName) {
@@ -73,7 +74,7 @@ public class EditAccountController extends BaseController implements Initializab
   		    	adressField.getText().toString());
   		    	
   		    
-  		    vf.showMainWindow();
+  		    vf.showMainUI();
   		    Stage stage = (Stage) prenomField.getScene().getWindow();
   	        vf.closeStage(stage);
   		    
@@ -88,7 +89,7 @@ public class EditAccountController extends BaseController implements Initializab
     
     @FXML
     void cancelButtonAction() {
-    	vf.showMainWindow();
+    	vf.showMainUI();
 	    Stage stage = (Stage) emailField.getScene().getWindow();
 	    vf.closeStage(stage);
     }
@@ -104,4 +105,26 @@ public class EditAccountController extends BaseController implements Initializab
 		
 		
 	}
+        
+         @FXML
+    private Button deleteButton;
+
+    
+
+    @FXML
+    void deleteButtonAction(ActionEvent event) {
+      Connection cnx = DBConnection.getInstance().getCnx();
+	    	String req = "DELETE from client WHERE id_client="+Cache.client.getId_user() ;
+	    	try {
+	    		Statement st = cnx.createStatement();	  		  
+	  		    st.executeUpdate(req);
+	  		    vf.showUI();
+	  		    Stage stage = (Stage) editButton.getScene().getWindow();
+          	    vf.closeStage(stage);
+				
+	    	}catch(Exception e){
+	    		e.printStackTrace();
+	    		e.getCause();		
+	    	}
+    }
 }
