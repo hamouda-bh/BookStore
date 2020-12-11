@@ -31,6 +31,9 @@ import javax.swing.JOptionPane;
  * @author aziz
  */
 public class PublicationviewController extends BaseController implements Initializable {
+
+    @FXML
+    private Button btn_ajout;
     public PublicationviewController(ViewFactory vf, String fxmlName){
         super(vf, fxmlName);
     }
@@ -45,8 +48,6 @@ public class PublicationviewController extends BaseController implements Initial
     private TextField tfcontenue;
     @FXML
     private TextField tfcommentaire;
-    @FXML
-    private Button btn;
     @FXML
     private Button btnmodifier;
     @FXML

@@ -24,8 +24,7 @@ import javafx.stage.Stage;
  * @author aziz
  */
 public class DetailsBlogController extends BaseController implements Initializable {
-
-    public DetailsBlogController(ViewFactory vf, String fxmlName) {
+    public DetailsBlogController(ViewFactory vf, String fxmlName){
         super(vf, fxmlName);
     }
 
