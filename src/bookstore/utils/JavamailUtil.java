@@ -34,7 +34,7 @@ public class JavamailUtil {
         
         
         String myAccountEmail ="amin.benmoussa@esprit.tn";
-        String password ="Amin25001";
+        String password ="araestemdacord";
         
         properties.put("com.hof.email.starttime","20170519094544");
         properties.put("mail.smtp.auth","true");
@@ -92,8 +92,8 @@ public class JavamailUtil {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(myAccountEmail));
             message.setRecipient(Message.RecipientType.TO, new InternetAddress(recepient));
-            message.setSubject("La listes des activités");
-            message.setText("aaaaaaaaaa");
+            message.setSubject("Ma facture");
+            message.setText("Cher client, vous trouverez ci joint votre facture,");
              FileDataSource fichier_joint = new FileDataSource("c:/BookStore/facture.pdf");
              message.setDataHandler(new DataHandler(fichier_joint));
              message.setFileName(fichier_joint.getName());

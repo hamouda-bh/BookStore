@@ -45,10 +45,45 @@ public class PaiementController extends BaseController implements Initializable{
 
     @FXML
     private CheckBox check_postale_id;
+
+    @FXML
+    private Button btnOverview;
+
+    @FXML
+    private Button btnOrders;
+
+    @FXML
+    private Button btnCustomers;
+
+    @FXML
+    private Button btnMenus;
+
+    @FXML
+    private Button btnPackages;
+
+    @FXML
+    private Button btnSettings;
+
+    @FXML
+    private Button logOut;
+
+    @FXML
+    void handleClicks(ActionEvent event) {
+
+    }
+
+    @FXML
+    void logOutAction(ActionEvent event) {
+
+    }
  @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+  @FXML
+    void onCliqAnnuler(ActionEvent event) {
+            vf.showPanier();
+    }
 
     @FXML
     void onCliqPayer(ActionEvent event) {

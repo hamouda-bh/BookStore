@@ -8,26 +8,36 @@ public class Facture {
 private int idFacture ;
 private int idCommande ;
 private int id_client ;
-private Date date_fact ;
+private String date_fact ;
+private float prix_totale; 
 
 
 public Facture() {
      
     }
-    public Facture(int idFacture, int idCommande, int id_client,Date date_fact) {
+    public Facture(int idFacture, int idCommande, int id_client,String date_fact, float prix_totale) {
         this.idFacture = idFacture;
         this.idCommande = idCommande;
         this.id_client = id_client;
         this.date_fact = date_fact;
+        this.prix_totale = prix_totale;
     }
-  public Facture(int idCommande, int id_client,  Date date_fact) {
-       
+
+    public float getPrix_totale() {
+        return prix_totale;
+    }
+
+    public void setPrix_totale(float prix_totale) {
+        this.prix_totale = prix_totale;
+    }
+  public Facture(int idCommande, int id_client,  String date_fact, float prix_totale) {
+       this.prix_totale= prix_totale;
         this.idCommande = idCommande;
         this.id_client = id_client;
         this.date_fact = date_fact;
     }
 
-    public Facture(Date date_fact) {
+    public Facture(String date_fact) {
         Client c = null;
         Livre l = null;
         Commande cc = null;
@@ -62,7 +72,7 @@ public Facture() {
 
     @Override
     public String toString() {
-        return "Facture{" + "idFacture=" + idFacture + ", idCommande=" + idCommande + ", id_client=" + id_client + ", date fact=" + date_fact + '}';
+        return "Facture{" + "idFacture=" + idFacture + ", idCommande=" + idCommande + ", id_client=" + id_client + ", date_fact=" + date_fact + ", prix_totale=" + prix_totale + '}';
     }
 
     public int getIdFacture() {
@@ -90,11 +100,11 @@ public Facture() {
     }
 
    
-    public Date getDate_fact() {
+    public String getDate_fact() {
         return date_fact;
     }
 
-    public void setDate_fact(Date date_fact) {
+    public void setDate_fact(String date_fact) {
         this.date_fact = date_fact;
     }
 

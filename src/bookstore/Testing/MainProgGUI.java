@@ -5,6 +5,8 @@
  */
 package bookstore.Testing;
 
+import bookstore.entities.Panier_livre;
+import bookstore.services.PanierService;
 import bookstore.views.ViewFactory;
 import java.io.IOException;
 import javafx.application.Application;
@@ -23,6 +25,7 @@ public class MainProgGUI extends Application {
 
 	public static void main(String[] args) {
 		launch(args);
+                
 	}
 
 	@Override
@@ -30,6 +33,8 @@ public class MainProgGUI extends Application {
 		try {    
 			ViewFactory vf = new ViewFactory();
 			vf.showPanier();
+                        
+                        
 		}catch(Exception e) {			
 			e.printStackTrace();
         }	

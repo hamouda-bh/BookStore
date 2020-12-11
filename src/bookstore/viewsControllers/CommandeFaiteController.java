@@ -67,7 +67,6 @@ public class CommandeFaiteController extends BaseController implements Initializ
 
         try {
             pdf.factPDF();
-
         } catch (DocumentException ex) {
             Logger.getLogger(CommandeFaiteController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -157,6 +156,10 @@ public class CommandeFaiteController extends BaseController implements Initializ
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+    }
+@FXML
+    void onCliqRetour(ActionEvent event) {
+            vf.showPanier();
     }
 
 }

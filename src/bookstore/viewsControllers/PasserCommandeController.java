@@ -31,6 +31,28 @@ public class PasserCommandeController extends BaseController implements Initiali
     private TextField inputId;
     @FXML
     private CheckBox check1_id;
+      @FXML
+    private Button btnOverview;
+
+    @FXML
+    private Button btnOrders;
+
+    @FXML
+    private Button btnCustomers;
+
+    @FXML
+    private Button btnMenus;
+
+    @FXML
+    private Button btnPackages;
+
+    @FXML
+    private Button btnSettings;
+
+    @FXML
+    private Button logOut;
+
+    
     @FXML
     private CheckBox check2_id;
     @FXML
