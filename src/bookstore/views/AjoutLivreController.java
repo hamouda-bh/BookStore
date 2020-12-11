@@ -126,25 +126,25 @@ public class AjoutLivreController extends BaseController{
 
     @FXML
     void Ajouterunlivre(ActionEvent event) throws IOException {
-        int a=Integer.parseInt(tfId.getText());
-        float f = Float.parseFloat(tfPrix.getText());
+       // int a=Integer.parseInt(tfId.getText());
+        //float f = Float.parseFloat(tfPrix.getText());
      livreService ls = new livreService ();
-     ls.ajouter(new Livre (a,tfLabelCat.getText(),tfTitre.getText(),tfAuteur.getText(),tfGenre.getText(),f,tfImage.getText()));
+     ls.ajouter(new Livre (tfLabelCat.getText(),tfTitre.getText(),tfAuteur.getText(),tfGenre.getText(),tfPrix.getLength(),tfImage.getText()));
      JOptionPane.showMessageDialog(null,"Livre ajouté!");
     
-FXMLLoader loader = new FXMLLoader (getClass().getResource("DetailsLivre.fxml"));
-Parent root = loader.load();
-tfId.getScene().setRoot(root);
+//FXMLLoader loader = new FXMLLoader (getClass().getResource("DetailsLivre.fxml"));
+//Parent root = loader.load();
+//tfId.getScene().setRoot(root);
 
-DetailsLivreController dlc= loader.getController();
+//DetailsLivreController dlc= loader.getController();
     
-        dlc.setLbId(a);
-        dlc.setLbLabelCat(tfLabelCat.getText());
-        dlc.setLbTitre(tfTitre.getText());
-        dlc.setLbAuteur(tfAuteur.getText());
-        dlc.setLbGenre(tfGenre.getText());
-        dlc.setLbPrix(f);
-        dlc.setLbImage(tfImage.getText());
+        
+      //  dlc.setLbLabelCat(tfLabelCat.getText());
+       // dlc.setLbTitre(tfTitre.getText());
+        //dlc.setLbAuteur(tfAuteur.getText());
+        //dlc.setLbGenre(tfGenre.getText());
+        //dlc.setLbPrix(tfPrix.getLength());
+        //dlc.setLbImage(tfImage.getText());
         
     }
     private void Modifierunlivre (ActionEvent event) throws IOException {

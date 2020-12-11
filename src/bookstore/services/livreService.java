@@ -18,7 +18,7 @@ public class  livreService{
 Connection cnx = DBConnection.getInstance().getCnx();
 
 public void ajouter (Livre l) {
-	 String req ="INSERT INTO Livre (id_livre,label_cat ,titre,auteur,genre,prix,image) VALUES ('"+l.getId_livre()+","+l.getLabel_cat()+","+l.getTitre()+","+l.getAuteur()+","+l.getGenre()+","+l.getPrix()+","+l.getImage()+")";
+	 String req ="INSERT INTO Livre (label_cat ,titre,auteur,genre,prix,image) VALUES ('"+l.getLabel_cat()+","+l.getTitre()+","+l.getAuteur()+","+l.getGenre()+","+l.getPrix()+","+l.getImage()+")";
 try {
 	
 	Statement st = cnx.createStatement();
