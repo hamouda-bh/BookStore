@@ -24,7 +24,7 @@ public class ajoutCategorie extends Application {
     
     @Override
     public void start(Stage primaryStage) throws IOException {
-          FXMLLoader loader = new FXMLLoader (getClass().getResource("../views/AjoutCategorie.fxml"));
+      FXMLLoader loader = new FXMLLoader (getClass().getResource("../views/AjoutCategorie.fxml"));
       Parent root = loader.load() ;
       Scene scene =new Scene (root) ;
       primaryStage.setTitle("projet BookStore");
