@@ -135,7 +135,7 @@ public class CommandeFaiteController extends BaseController implements Initializ
             
             
             
-            mail.sendMail("amin.benmoussa@esprit.tn");
+            mail.sendMail("nour.benhadjyahia@esprit.tn");
             System.out.println("email envoyé");
              if (SystemTray.isSupported()) {
             TrayIconDemo td = new TrayIconDemo();
