@@ -6,15 +6,15 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="497.0" prefWidth="466.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.views.AAjoutAnnonceViewController">
+<AnchorPane id="AnchorPane" prefHeight="497.0" prefWidth="466.0" style="-fx-background-color: #152f72;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.views.AAjoutAnnonceViewController">
    <children>
-      <Button fx:id="btnAjouter" layoutX="189.0" layoutY="345.0" mnemonicParsing="false" onAction="#ajouterUneNouvelleAnnonce" prefHeight="10.0" prefWidth="88.0" text="Ajouter" />
-      <TextField fx:id="tfprix" layoutX="234.0" layoutY="151.0" />
-      <TextField fx:id="tfetat" layoutX="234.0" layoutY="206.0" />
-      <Label layoutX="83.0" layoutY="103.0" prefHeight="17.0" prefWidth="128.0" text="Date de publication : " />
-      <Label layoutX="167.0" layoutY="155.0" text="Prix :" />
-      <Label layoutX="124.0" layoutY="212.0" text="Etat du livre :" />
-      <Label layoutX="117.0" layoutY="263.0" text="Date d'achat :" />
+      <Button fx:id="btnAjouter" layoutX="189.0" layoutY="345.0" mnemonicParsing="false" onAction="#ajouterUneNouvelleAnnonce" prefHeight="10.0" prefWidth="88.0" style="-fx-background-radius: 30;" text="Ajouter" />
+      <TextField fx:id="tfprix" layoutX="234.0" layoutY="151.0" style="-fx-background-radius: 30;" />
+      <TextField fx:id="tfetat" layoutX="234.0" layoutY="206.0" style="-fx-background-radius: 30;" />
+      <Label layoutX="83.0" layoutY="103.0" prefHeight="17.0" prefWidth="128.0" text="Date de publication : " textFill="#f2f2f2" />
+      <Label layoutX="167.0" layoutY="155.0" text="Prix :" textFill="#f2f2f2" />
+      <Label layoutX="124.0" layoutY="212.0" text="Etat du livre :" textFill="#f2f2f2" />
+      <Label layoutX="117.0" layoutY="263.0" text="Date d'achat :" textFill="#f2f2f2" />
       <DatePicker fx:id="tfdate_publication" layoutX="222.0" layoutY="99.0" prefHeight="25.0" prefWidth="174.0" />
       <DatePicker fx:id="tfdateachat" layoutX="222.0" layoutY="259.0" />
    </children>

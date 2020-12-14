@@ -50,6 +50,7 @@ public class AAjoutAnnonceViewController implements Initializable {
 
     @FXML
     private void ajouterUneNouvelleAnnonce(ActionEvent event) {
+        
         ServiceAnnonce sa = new ServiceAnnonce();
         sa.ajouterAnnonce(new Annonce(tfdate_publication.getValue().toString(),tfprix.getLength(),tfetat.getText(),tfdateachat.getValue().toString()));
         

@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/BookStore/src/bookstore/viewsControllers/BlogviewController.java</file>
             <file>file:/C:/BookStore/src/bookstore/viewsControllers/PublicationviewController.java</file>
             <file>file:/C:/BookStore/src/bookstore/Testing/DBConnection.java</file>
@@ -11,6 +12,14 @@
             <file>file:/C:/BookStore/src/bookstore/viewsControllers/MainWindowController.java</file>
             <file>file:/C:/BookStore/src/bookstore/viewsControllers/PaiementController.java</file>
             <file>file:/C:/BookStore/src/bookstore/views/blogview.fxml</file>
+=======
+            <file>file:/C:/BookStore/src/bookstore/views/AAjoutAnnonceViewController.java</file>
+            <file>file:/C:/BookStore/src/bookstore/entities/Annonce.java</file>
+            <file>file:/C:/BookStore/src/bookstore/views/AnnoncesViewController.java</file>
+            <file>file:/C:/BookStore/src/bookstore/views/MesAnnoncesViewController.java</file>
+            <file>file:/C:/BookStore/src/bookstore/Testing/ZayTestGUI.java</file>
+            <file>file:/C:/BookStore/src/bookstore/services/ServiceAnnonce.java</file>
+>>>>>>> 2467b80cf4eba2fff1464c8b1baab1437da025e8
         </group>
     </open-files>
 </project-private>
