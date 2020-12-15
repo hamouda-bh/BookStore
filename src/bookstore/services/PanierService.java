@@ -135,6 +135,28 @@ public class PanierService {
     }
     
     
+    public float afficherp() {
+        List<Panier_livre> list = new ArrayList<>();
+        String req = "SELECT p.prix from panier_livre p ";
+        try {
+            Statement st = cnx.createStatement();
+            ResultSet res = st.executeQuery(req);
+            float x,i=0;
+            while (res.next()) {
+                
+                x= res.getFloat("prix");
+               i=i+x;
+            }
+            System.out.println("prix recuperé");
+            return i;
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+    
+    
     public List<Panier_livre> afficherL() {
         List<Panier_livre> list = new ArrayList<>();
         String req = "SELECT p.* from panier_livre p ";

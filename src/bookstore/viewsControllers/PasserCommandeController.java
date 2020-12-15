@@ -1,6 +1,7 @@
 package bookstore.viewsControllers;
 
 import bookstore.Testing.Cache;
+import bookstore.entities.Commande;
 import bookstore.entities.Panier_livre;
 import bookstore.services.PanierService;
 import bookstore.views.ViewFactory;
@@ -25,10 +26,10 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
-import bookstore.entities.Coupon;
-import com.booklab.models.ShoppingCart;
-import bookstore.services.ServicesShoppingCart;
+import bookstore.services.CommandeService;
 import java.net.URL;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -36,6 +37,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javax.swing.JOptionPane;
 
 
@@ -81,6 +83,8 @@ public class PasserCommandeController extends BaseController implements Initiali
     private Button annuler_btn_id;
     @FXML
     private ToggleButton btn_code_id;
+    @FXML
+    private Text affSumid;
   
     @FXML
     private Button btn_panier;
@@ -89,6 +93,7 @@ public class PasserCommandeController extends BaseController implements Initiali
     private Pane pnlCustomer;
     @FXML
     private Pane pnlOrders;
+    public String prixF;
     @FXML
     private Pane pnlMenus;
     @FXML
@@ -157,14 +162,31 @@ public class PasserCommandeController extends BaseController implements Initiali
 
     @FXML
     void onCliqConfirmer(ActionEvent event) {
+        
+        
+        if (check2_id.isSelected())
+        {
             vf.showPaiement();
+        }
+        else if (check1_id.isSelected())
+        {
+            vf.showCommandeFaite();
+        }else if ((!check1_id.isSelected())&&(!check1_id.isSelected()))
+        {
+         JOptionPane.showMessageDialog(null, "check mode de paiement ");
+         vf.showCommandeForm();
+        }
     }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        PanierService a = new PanierService();
+        prixF =String.valueOf(a.afficherp());
+        affSumid.setText(prixF);
         initTable();
         loadData();
+        
+        
     }
 
     private void initTable() {
@@ -192,7 +214,7 @@ public class PasserCommandeController extends BaseController implements Initiali
          for (Panier_livre p : panier) {
              p.toString();
             System.out.println("tttttt");
-                
+             
                data.add(p);
             }
 
@@ -200,12 +222,13 @@ public class PasserCommandeController extends BaseController implements Initiali
       
 }
     
- private void affichage() {
+    private void affichage() {
 
         data = FXCollections.observableArrayList();
         PanierService Ac = new PanierService();
         Ac.afficherL().forEach((a) -> {
               data.add(a);
+             
         });
     nomlivre_id.setCellValueFactory(new PropertyValueFactory<>("titre"));   
     prix.setCellValueFactory(new PropertyValueFactory<>("prix"));  
@@ -217,17 +240,26 @@ public class PasserCommandeController extends BaseController implements Initiali
     public void useCoupon(ActionEvent event) {
         int code = Integer.parseInt(inputId.getText());
         if (code == 10) {
-            ServicesShoppingCart sc=new ServicesShoppingCart();
+           /* ServicesShoppingCart sc=new ServicesShoppingCart();
             ShoppingCart a=new ShoppingCart();
             a=sc.setActiveCart(a);
             sc.setDiscount(a,code);
-            JOptionPane.showMessageDialog(null, "Coupon Used");
+            JOptionPane.showMessageDialog(null, "Coupon Used");*/
+            
+            prixF=String.valueOf(  Float.parseFloat(affSumid.getText())-((Float.parseFloat(affSumid.getText())*10)/100));
+            affSumid.setText(prixF); 
+            affSumid.isDisable();
+           btn_code_id.isDisable();
         } else if (code == 20) {
-            ServicesShoppingCart sc=new ServicesShoppingCart();
+           /* ServicesShoppingCart sc=new ServicesShoppingCart();
             ShoppingCart a=new ShoppingCart();
             a=sc.setActiveCart(a);
             sc.setDiscount(a,code);
-            JOptionPane.showMessageDialog(null, "Coupon Used");
+            JOptionPane.showMessageDialog(null, "Coupon Used");*/
+            prixF=String.valueOf(  Float.parseFloat(affSumid.getText())-((Float.parseFloat(affSumid.getText())*20)/100));
+            affSumid.setText(prixF);       
+            affSumid.isDisable();
+            btn_code_id.isDisable();
         }else{
             JOptionPane.showMessageDialog(null, "Please add a valid coupon ");
         }

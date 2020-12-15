@@ -8,6 +8,7 @@ import java.util.List;
 
 import bookstore.Testing.DBConnection;
 import bookstore.entities.Commande;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.util.logging.Logger;
 
@@ -19,7 +20,7 @@ public void ajouter (Commande p) throws SQLException {
         PreparedStatement pst = cnx.prepareStatement(requete1);
 
         pst.setInt(1, p.getId_commande());
-        pst.setString(2,p.getDate_commande());
+        pst.setDate(2, (Date) p.getDate_commande());
         pst.setInt(3, p.getId_client());
         pst.setFloat(4, p.getPrixTotale());
         pst.executeUpdate();
@@ -75,7 +76,7 @@ public List<Commande> afficher ( ) {
             Statement st = cnx.createStatement();
             ResultSet res = st.executeQuery(req);
             while (res.next()) {
-                list.add(new Commande(res.getInt("id_commande"), res.getString("date_commande"),res.getInt("id_client"), res.getFloat("prix_Totale")));
+                list.add(new Commande(res.getInt("id_commande"), res.getDate("date_commande"),res.getInt("id_client"), res.getFloat("prix_Totale")));
             }
             System.out.println("p recupere");
 

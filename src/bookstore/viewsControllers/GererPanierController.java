@@ -49,6 +49,8 @@ public class GererPanierController extends BaseController implements Initializab
 
     @FXML
     private Button btnPackages;
+    
+
 
     @FXML
     private Button btn_panier;
@@ -64,6 +66,7 @@ public class GererPanierController extends BaseController implements Initializab
     
     @FXML
     private Button btnCustomers;
+    private float summ;
     @FXML
     private Button btnMenus;
     @FXML
@@ -77,6 +80,7 @@ public class GererPanierController extends BaseController implements Initializab
     @FXML
     private VBox pnItems;
 
+ 
     @FXML
     void logOutAction() {
     	Cache.client = null ;
@@ -126,8 +130,10 @@ public class GererPanierController extends BaseController implements Initializab
         private ObservableList<Panier_livre> data;
 
 
+        
     @FXML
     void onCliqPasserCommande(ActionEvent event) {
+      
         vf.showCommandeForm();
     }
 @Override
@@ -179,28 +185,25 @@ private void loadData()
 {
     ObservableList<Panier_livre> data= FXCollections.observableArrayList();
    PanierService a = new PanierService();
-    
+  
             List<Panier_livre> panier = new ArrayList<>();
             panier = a.afficherL();
-
-         for (Panier_livre p : panier) {
+            for (Panier_livre p : panier) {
              p.toString();
-            System.out.println("tttttt");
-                
+           
+            System.out.println("tttttt");               
                data.add(p);
             }
-
     table_panier.setItems(data); 
       
 }
 
  private void affichage() {
-
         data = FXCollections.observableArrayList();
         PanierService Ac = new PanierService();
         Ac.afficherL().forEach((a) -> {
-
             data.add(a);
+             
         });
     nomlivre_id.setCellValueFactory(new PropertyValueFactory<>("titre"));   
     prix.setCellValueFactory(new PropertyValueFactory<>("prix"));  

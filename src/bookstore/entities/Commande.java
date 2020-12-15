@@ -1,32 +1,33 @@
 
 package bookstore.entities;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.logging.Logger;
 
 public class Commande {
     private int id_commande; 
-    private String date_commande;
+    private Date date_commande;
     private int id_client;
     private float prixTotale ;
 
     public Commande() {
     }
 
-    public Commande(int id_commande, String date_commande, int id_client, float prixTotale) {
+    public Commande(int id_commande, Date date_commande, int id_client, float prixTotale) {
         this.id_commande = id_commande;
         this.date_commande = date_commande;
         this.id_client = id_client;
         this.prixTotale = prixTotale;
     }
     
-    public Commande(String date_commande, int id_client, float prixTotale) {
+    public Commande(Date date_commande, int id_client, float prixTotale) {
         this.date_commande = date_commande;
         this.id_client = id_client;
         this.prixTotale = prixTotale;
     }
-     public Commande( String date_commande,float prixTotale) {
+     public Commande( Date date_commande,float prixTotale) {
         Client c = null;   
         this.date_commande = date_commande;
         this.id_client = c.getId_user();
@@ -41,11 +42,11 @@ public class Commande {
         this.id_commande = id_commande;
     }
 
-    public String getDate_commande() {
+    public Date getDate_commande() {
         return date_commande;
     }
 
-    public void setDate_commande(String date_commande) {
+    public void setDate_commande(Date date_commande) {
         this.date_commande = date_commande;
     }
 
