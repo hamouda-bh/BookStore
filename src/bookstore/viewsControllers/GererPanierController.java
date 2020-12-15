@@ -2,8 +2,10 @@ package bookstore.viewsControllers;
 
 import bookstore.Testing.Cache;
 import bookstore.entities.Facture;
+import bookstore.entities.Livre;
 import bookstore.entities.Panier_livre;
 import bookstore.services.PanierService;
+import bookstore.services.livreService;
 import bookstore.views.ViewFactory;
 import java.net.URL;
 import java.util.ArrayList;
@@ -13,7 +15,9 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Spinner;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -22,7 +26,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class GererPanierController extends BaseController {
+public class GererPanierController extends BaseController implements Initializable{
 
     public GererPanierController(ViewFactory vf, String fxmlName) {
         super(vf, fxmlName);
@@ -53,8 +57,7 @@ public class GererPanierController extends BaseController {
     private Button goToEspaceKids;
 
     @FXML
-    private Button logOut;
-    
+    private Button logOut;    
     
     @FXML
     private Button passerC_btn_id;
@@ -73,20 +76,15 @@ public class GererPanierController extends BaseController {
     private Pane pnlOverview;
     @FXML
     private VBox pnItems;
-@FXML
+
+    @FXML
     void logOutAction() {
     	Cache.client = null ;
     	Stage stage = (Stage) logOut.getScene().getWindow();
     	vf.closeStage(stage);
     	vf.showLoginWindow();
     }
-    /*
-    void myAccountAction() {
-        vf.showAccountEditWindow();
-        Stage stage = (Stage) logOut.getScene().getWindow();
-  	    vf.closeStage(stage);
-    }
-    */
+  
     @FXML
     void ShowKidsSpace() {
         vf.ShowKidsSpace();
@@ -120,7 +118,7 @@ public class GererPanierController extends BaseController {
     private TableColumn<Panier_livre, String> prix;
 
     @FXML
-    private TableColumn<Panier_livre, String> Quantite;
+    private TableColumn<Panier_livre, Spinner> Quantite;
 
     @FXML
     private TableColumn<Panier_livre, Button> supprimer;
@@ -132,8 +130,9 @@ public class GererPanierController extends BaseController {
     void onCliqPasserCommande(ActionEvent event) {
         vf.showCommandeForm();
     }
-
+@Override
     public void initialize(URL url, ResourceBundle rb) {
+
         initTable();
         loadData();
     }
@@ -145,24 +144,24 @@ public class GererPanierController extends BaseController {
 
 
 private void intiCols()
-{
-    
-
-    nomlivre_id.setCellValueFactory(new PropertyValueFactory<>("id_comm"));   
-    prix.setCellValueFactory(new PropertyValueFactory<>("somme_ajoute"));  
-    Quantite.setCellValueFactory(new PropertyValueFactory<>("quantite_ajouter"));  
+{   
+    nomlivre_id.setCellValueFactory(new PropertyValueFactory<>("titre"));   
+    prix.setCellValueFactory(new PropertyValueFactory<>("prix"));  
+    Quantite.setCellValueFactory(new PropertyValueFactory<>("quantite"));  
     supprimer.setCellValueFactory(new PropertyValueFactory<>("supprimer"));  
-  
-    editableCols();
+    
+  affichage();
+  //  editableCols();
 
 }
 
+/*
 public void editableCols()
 {
     
     nomlivre_id.setCellFactory(TextFieldTableCell.forTableColumn());
     nomlivre_id.setOnEditCommit(e ->{ 
-        e.getTableView().getItems().get(e.getTablePosition().getRow()).setId_comm(Integer.parseInt(e.getNewValue()));
+        e.getTableView().getItems().get(e.getTablePosition().getRow()).setTitre(String.valueOf(e.getNewValue()));
     });
     
     prix.setCellFactory(TextFieldTableCell.forTableColumn());
@@ -175,14 +174,14 @@ public void editableCols()
         e.getTableView().getItems().get(e.getTablePosition().getRow()).setId_comm(Integer.parseInt(e.getNewValue()));
     });
    table_panier.setEditable(true);
-}
+}*/
 private void loadData()
 {
     ObservableList<Panier_livre> data= FXCollections.observableArrayList();
-    PanierService a = new PanierService();
+   PanierService a = new PanierService();
     
             List<Panier_livre> panier = new ArrayList<>();
-            panier = a.afficher();
+            panier = a.afficherL();
 
          for (Panier_livre p : panier) {
              p.toString();
@@ -192,22 +191,19 @@ private void loadData()
             }
 
     table_panier.setItems(data); 
-        
-       
-    
+      
 }
- private void affichage(ActionEvent event) {
+
+ private void affichage() {
 
         data = FXCollections.observableArrayList();
-
         PanierService Ac = new PanierService();
-
-        Ac.afficherActivite1().forEach((a) -> {
+        Ac.afficherL().forEach((a) -> {
 
             data.add(a);
         });
-          nomlivre_id.setCellValueFactory(new PropertyValueFactory<>("id_comm"));   
-    prix.setCellValueFactory(new PropertyValueFactory<>("somme_ajoute"));  
+    nomlivre_id.setCellValueFactory(new PropertyValueFactory<>("titre"));   
+    prix.setCellValueFactory(new PropertyValueFactory<>("prix"));  
     Quantite.setCellValueFactory(new PropertyValueFactory<>("quantite_ajouter"));  
     supprimer.setCellValueFactory(new PropertyValueFactory<>("supprimer"));  
 
@@ -215,8 +211,6 @@ private void loadData()
         table_panier.setItems(data);
 
     }
-   
-
 }
 
 

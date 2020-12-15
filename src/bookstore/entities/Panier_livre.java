@@ -5,6 +5,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 
 public class Panier_livre extends Panier{
@@ -12,9 +14,15 @@ public class Panier_livre extends Panier{
 private int id_panier;
 private int id_user;
 private int id_comm;
+private float prix;
+private String titre;
 private float somme_ajoute ;
 private int quantite_ajouter;
 private Button supprimer;
+
+    
+
+
   public Panier_livre() {
     }
 
@@ -42,34 +50,88 @@ private Button supprimer;
         this.quantite_ajouter = quantite_ajouter;
     }
 
-    public Panier_livre( int id_user, int id_comm, float somme_ajoute, int quantite_ajouter, Button supprimer) {
+    public Panier_livre( int id_user, int id_comm, float somme_ajoute, int quantite_ajouter) {
         this.id_user = id_user;
         this.id_comm = id_comm;
         this.somme_ajoute = somme_ajoute;
         this.quantite_ajouter = quantite_ajouter;
-        this.supprimer = supprimer;
+        this.supprimer = new Button ("supprimer");
+         supprimer.setOnAction(new EventHandler<ActionEvent>(){
+
+                @Override
+                public void handle(ActionEvent t) {
+
+                        PanierService p = new PanierService();
+                        p.supprimer(id_comm);
+                        
+                        
+                }
+            });
     }
 
-    public Panier_livre(int id_panier, int id_user, int id_comm, float somme_ajoute, int quantite_ajouter) {
+    public Panier_livre(int id_panier, int id_user, int id_comm, float somme_ajoute, int quantite_ajouter, String titre, float prix) {
         this.id_panier = id_panier;
         this.id_user = id_user;
         this.id_comm = id_comm;
+        this.prix= prix;
+        this.titre=titre;
         this.somme_ajoute = somme_ajoute;
         this.quantite_ajouter = quantite_ajouter;
-    }
-    public Panier_livre(int id_user, int id_comm, float somme_ajoute, int quantite_ajouter) {
-        this.id_user = id_user;
-        this.id_comm = id_comm;
-        this.somme_ajoute = somme_ajoute;
-        this.quantite_ajouter = quantite_ajouter;
+         this.supprimer = new Button ("supprimer");
+          supprimer.setOnAction(new EventHandler<ActionEvent>(){
+
+                @Override
+                public void handle(ActionEvent t) {
+                  
+                	/*Panier_livre currentPerson = (Panier_livre) ButtonCell.this.getTableView().getItems().get(ButtonCell.this.getIndex());
+                	data.remove(currentPerson);*/
+                        PanierService p = new PanierService();
+                        p.supprimer(id_comm);
+                        
+                        
+                }
+            });
     }
     
-    public Panier_livre(float somme_ajoute, int quantite_ajouter, Button  supprimer) {
+    
+    public Panier_livre(float prix, String titre) {
        
-        this.somme_ajoute = somme_ajoute;
-        this.quantite_ajouter = quantite_ajouter;
+        this.prix = prix;
+        this.titre = titre;
         this.supprimer = supprimer;
+         this.supprimer = new Button ("supprimer");
+          supprimer.setOnAction(new EventHandler<ActionEvent>(){
+
+                @Override
+                public void handle(ActionEvent t) {
+                  
+                	/*Panier_livre currentPerson = (Panier_livre) ButtonCell.this.getTableView().getItems().get(ButtonCell.this.getIndex());
+                	data.remove(currentPerson);*/
+                        PanierService p = new PanierService();
+                        p.supprimer(id_comm);
+                        
+                        
+                }
+            });
     }
+   
+    public float getPrix() {
+        return prix;
+    }
+
+    public void setPrix(float prix) {
+        this.prix = prix;
+    }
+
+    public String getTitre() {
+        return titre;
+    }
+
+    public void setTitre(String titre) {
+        this.titre = titre;
+    }
+    
+    
 
     @Override
     public int hashCode() {
