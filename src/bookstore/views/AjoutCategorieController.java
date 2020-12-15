@@ -5,8 +5,10 @@
  */
 package bookstore.views;
 
+import bookstore.Testing.Cache;
 import bookstore.entities.Categorie;
 import bookstore.services.CategorieService;
+import bookstore.viewsControllers.BaseController;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -16,6 +18,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 
 /**
@@ -23,8 +28,14 @@ import javax.swing.JOptionPane;
  *
  * @author user
  */
-public class AjoutCategorieController implements Initializable {
+public class AjoutCategorieController extends BaseController implements Initializable {
 
+    public AjoutCategorieController(ViewFactory vf, String fxmlName) {
+        super(vf, fxmlName);
+    }
+
+    
+    
     @FXML
     private AnchorPane tfAjouCat;
     @FXML
@@ -33,7 +44,78 @@ public class AjoutCategorieController implements Initializable {
     private Label tfLabel;
     @FXML
     private Button tfAjout;
-
+    @FXML
+    private Button tfmodcat;
+    @FXML
+    private Button tfSuppCat;
+    @FXML
+    private Button btnOverview;
+    @FXML
+    private Button btnOrders;
+    @FXML
+    private Button btnCustomers;
+    @FXML
+    private Button btnMenus;
+    @FXML
+    private Button btnPackages;
+    @FXML
+    private Button btnSettings;
+    @FXML
+    private Button logOut;
+  
+      @FXML
+    private Button btn_panier;
+    @FXML
+    private Pane pnlCustomer;
+    @FXML
+    private Pane pnlOrders;
+    @FXML
+    private Pane pnlMenus;
+    @FXML
+    private Pane pnlOverview;
+    @FXML
+    private VBox pnItems;
+    @FXML
+    private Button myAccountButton;
+@FXML
+    void logOutAction() {
+    	Cache.client = null ;
+    	Stage stage = (Stage) logOut.getScene().getWindow();
+    	vf.closeStage(stage);
+    	vf.showLoginWindow();
+    }
+    /*
+    void myAccountAction() {
+        vf.showAccountEditWindow();
+        Stage stage = (Stage) logOut.getScene().getWindow();
+  	    vf.closeStage(stage);
+    }
+    */
+    @FXML
+    void ShowKidsSpace() {
+        vf.ShowKidsSpace();
+    }
+     @FXML
+    private void goLivre() {
+    
+     vf.showLivre() ;
+    
+           }
+    @FXML
+    private void goBlog(ActionEvent event) {
+        vf.showBlog();
+    }
+    /*
+    @FXML
+    void myAccountAction() {
+        vf.showAccountEditWindow();
+        Stage stage = (Stage) logOut.getScene().getWindow();
+  	    vf.closeStage(stage);
+    }*/
+     @FXML
+    void panier(ActionEvent event) {
+        vf.showPanier();
+    }
     /**
      * Initializes the controller class.
      */
@@ -49,6 +131,26 @@ public class AjoutCategorieController implements Initializable {
      Cs.ajouter(new Categorie (a,tfLabel.getText()));
      JOptionPane.showMessageDialog(null,"Categorie ajouté!");
      
+    }
+
+    @FXML
+    private void ModifierCategorie(ActionEvent event) {
+    }
+
+    @FXML
+    private void SupprimerCategorie(ActionEvent event) {
+    }
+
+    @FXML
+    private void handleClicks(ActionEvent event) {
+    }
+
+    @FXML
+    private void logOutAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void AjouterUneCategorie(MouseEvent event) {
     }
     
 }

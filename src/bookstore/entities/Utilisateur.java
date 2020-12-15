@@ -7,7 +7,6 @@
 package bookstore.entities;
 
 
-
 /**
  *
  * @author PC-Hamouda
@@ -69,8 +68,8 @@ public class Utilisateur {
 		this.tel = tel;
 		this.adress = adress;
 	}
-
-
+	
+	
 	public Utilisateur(int id_user, String nom, String prenom, String username, String email, String tel,
 			String password,String adress) {
 	
@@ -83,10 +82,11 @@ public class Utilisateur {
 		this.password = password;
 		this.adress = adress;
 	}
+        public Utilisateur(String passsword){
+         this.password = passsword;
+        }
 	
-	
-	
-	
+
 	public int getId_user() {
 		return id_user;
 	}

@@ -14,25 +14,26 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author user
+ * @author Mehdi
  */
-public class ajoutLivreFXMain extends Application {
-    
+public class ZayTestGUI extends Application {
+
     @Override
     public void start(Stage primaryStage) throws IOException {
-      FXMLLoader loader = new FXMLLoader (getClass().getResource("../views/AjoutLivre.fxml"));
-      Parent root = loader.load() ;
-      Scene scene =new Scene (root) ;
-      primaryStage.setTitle("projet BookStore");
-      primaryStage.setScene(scene);
-      primaryStage.show();
+
+        DBConnection.getInstance().getCnx();
+        
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/AAnnoncesView.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        primaryStage.setTitle("BookStore : Toute les annonces");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+        
     }
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         launch(args);
     }
-    
+
 }

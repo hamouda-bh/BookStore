@@ -29,14 +29,14 @@ public class MainWindowController extends BaseController {
 	@FXML
 	    private TreeView<?> treeView;
 	@FXML
-    private MenuItem myAccountButton;
+        private MenuItem myAccountButton;
     
-	@FXML
-    void myAccountAction() {
+	//@FXML
+    /*void myAccountAction() {
         vf.showAccountWindow();
         Stage stage = (Stage) logOut.getScene().getWindow();
   	    vf.closeStage(stage);
-    }
+    }*/
 	
 
     @FXML
@@ -44,7 +44,7 @@ public class MainWindowController extends BaseController {
     	Cache.client = null ;
     	Stage stage = (Stage) logOut.getScene().getWindow();
     	vf.closeStage(stage);
-    	vf.showLoginWindow();
+    	vf.showUI();
 
     }
 }

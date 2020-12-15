@@ -41,6 +41,17 @@ public class LoginWindowController extends BaseController {
    @FXML
     private Button registerField;
 
+   
+    @FXML
+    private Button forgotenButton;
+    public static int id;
+    @FXML
+     void forgetButtonAction(ActionEvent event) throws Exception {
+
+            vf.showMailWindow();
+                   
+    }
+
 
    @FXML
    void loginButton(ActionEvent evt) {
@@ -56,7 +67,7 @@ public class LoginWindowController extends BaseController {
    	
    	
    	try {
-   		    Statement st = cnx.createStatement();			  
+                        Statement st = cnx.createStatement();			  
 			ResultSet res = st.executeQuery(verifyLogin);
 			ClientService cs = new ClientService();
 			if(res.next() ) {
@@ -105,7 +116,7 @@ public class LoginWindowController extends BaseController {
 	   		
 	           	  
 	               	System.out.println("succes"); 
-	               	Cache.client =  new Client(res.getInt("id_client"),res.getString("nom"),res.getString("prenom"),res.getString("email"),res.getString("username"),res.getString("tel"),res.getString("password"),res.getString("adresse"));
+	               	Cache.client =  new Client(res.getInt("id_client"),res.getString("nom"),res.getString("prenom"),res.getString("username"),res.getString("email"),res.getString("tel"),res.getString("password"),res.getString("adresse"));
 	               	vf.showMainWindow();
 	               	Stage stage = (Stage) emailField.getScene().getWindow();
 	               	vf.closeStage(stage);

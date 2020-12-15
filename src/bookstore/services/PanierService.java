@@ -68,7 +68,7 @@ public class PanierService {
         }
     }
 
-    public List<Panier_livre> afficher() {
+  /*  public List<Panier_livre> afficher() {
         List<Panier_livre> list = new ArrayList<>();
         String req = "SELECT * from panier_livre ";
         try {
@@ -84,36 +84,33 @@ public class PanierService {
             e.printStackTrace();
         }
         return list;
-    }
+    }*/
     
-     public List<Panier_livre> afficherActivite1() {
+   /*  public List<Panier_livre> afficherActivite1() {
         ArrayList<Panier_livre> panierList = new ArrayList<>();
+        String requete4 = "SELECT * FROM panier_livre";
         try {
 
-            String requete4 = "SELECT * FROM activites";
-            PreparedStatement pst = cnx.prepareStatement(requete4);
-            ResultSet rs = pst.executeQuery();
+            
+            Statement pst = cnx.createStatement();
+            ResultSet rs = pst.executeQuery(requete4);
 
             while (rs.next()) {
 
                 Panier_livre a = new Panier_livre();
-
                 a.setId_comm(rs.getInt(1));
                 a.setQuantite_ajouter(rs.getInt(2));
-            
-
-                
                 panierList.add(a);
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
         return panierList;
-    }
+    }*/
     
     public void affichage() {
 
-            List<Panier_livre> panier = this.afficher();
+            List<Panier_livre> panier = this.afficherL();
             for (Panier_livre a : panier) {
                 
                 System.out.println(a.toString());
@@ -136,4 +133,31 @@ public class PanierService {
         }
         return 0;
     }
+    
+    
+    public List<Panier_livre> afficherL() {
+        List<Panier_livre> list = new ArrayList<>();
+        String req = "SELECT p.* from panier_livre p ";
+        try {
+           
+            Statement st = cnx.createStatement();
+            ResultSet res = st.executeQuery(req);
+                       
+            while (res.next()) {
+                            
+                list.add(new Panier_livre(res.getInt("id_panier"), res.getInt("id_client"),res.getInt("id_livre"), res.getFloat("quantite_ajouter"), res.getInt("somme_ajouter"),  res.getString("titre"), res.getFloat("prix")));
+                       
+            }
+            System.out.println("p recupere");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+    
+    
+    
+    
+    
 }

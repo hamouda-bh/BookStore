@@ -6,29 +6,47 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="291.0" prefWidth="562.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.views.AjoutLivreController">
+<AnchorPane id="AnchorPane" blendMode="MULTIPLY" depthTest="DISABLE" prefHeight="291.0" prefWidth="562.0" style="-fx-background-color: linear-gradient(to top right,  #152f72, #89a4d0);" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="39.0" layoutY="94.0" text="Catégorie" />
-      <Label layoutX="140.0" layoutY="94.0" text="Titre" />
-      <Label layoutX="224.0" layoutY="94.0" text="Auteur" />
-      <Label layoutX="331.0" layoutY="94.0" text="Genre" />
-      <Label layoutX="424.0" layoutY="94.0" text="Prix" />
-      <Label layoutX="502.0" layoutY="94.0" text="Image" />
+      <Label layoutX="35.0" layoutY="102.0" text="Catégorie" textFill="#c6c4b4">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <Label layoutX="137.0" layoutY="102.0" text="Titre" textFill="#c6c4b4">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <Label layoutX="230.0" layoutY="103.0" text="Auteur" textFill="#c6c4b4">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <Label layoutX="328.0" layoutY="102.0" text="Genre" textFill="#c6c4b4">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <Label layoutX="424.0" layoutY="103.0" text="Prix" textFill="#c6c4b4">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <Label layoutX="499.0" layoutY="102.0" text="Image" textFill="#c6c4b4">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
       <TextField fx:id="tfLabelCat" layoutX="26.0" layoutY="123.0" prefHeight="25.0" prefWidth="71.0" />
       <TextField fx:id="tfTitre" layoutX="116.0" layoutY="123.0" prefHeight="25.0" prefWidth="71.0" />
       <TextField fx:id="tfAuteur" layoutX="209.0" layoutY="123.0" prefHeight="25.0" prefWidth="78.0" />
       <TextField fx:id="tfGenre" layoutX="311.0" layoutY="123.0" prefHeight="25.0" prefWidth="71.0" />
       <TextField fx:id="tfPrix" layoutX="405.0" layoutY="123.0" prefHeight="25.0" prefWidth="58.0" />
       <TextField fx:id="tfImage" layoutX="489.0" layoutY="123.0" prefHeight="25.0" prefWidth="58.0" />
-      <Button fx:id="tfENV" layoutX="277.0" layoutY="200.0" mnemonicParsing="false" onAction="#Ajouterunlivre" prefHeight="25.0" prefWidth="78.0" text="Confirmer" />
+      <Button fx:id="tfENV" layoutX="277.0" layoutY="200.0" mnemonicParsing="false" onAction="#Ajouterunlivre" prefHeight="25.0" prefWidth="78.0" stylesheets="@../css/style.css" text="Confirmer" />
       <Label layoutX="65.0" layoutY="27.0">
          <font>
             <Font name="Bodoni MT Black Italic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="14.0" layoutY="11.0" prefHeight="32.0" prefWidth="227.0" text="Ajouter votre  livre ! " textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS" wrapText="true">
+      <Label layoutX="14.0" layoutY="11.0" prefHeight="32.0" prefWidth="227.0" text="Ajouter votre  livre ! " textAlignment="CENTER" textFill="#c6c4b4" textOverrun="LEADING_ELLIPSIS" wrapText="true">
          <font>
-            <Font name="Book Antiqua" size="15.0" />
+            <Font name="Book Antiqua Bold" size="16.0" />
          </font>
       </Label>
    </children>

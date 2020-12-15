@@ -4,32 +4,31 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="editAnchorPane" prefHeight="500.0" prefWidth="500.0" stylesheets="@../css/editaccount.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="66.0" layoutY="114.0" prefHeight="18.0" prefWidth="55.0" text="Nom" />
-      <Label layoutX="64.0" layoutY="150.0" prefHeight="18.0" prefWidth="55.0" text="Prenom" />
-      <Label layoutX="66.0" layoutY="185.0" prefHeight="18.0" prefWidth="55.0" text="Username" />
-      <Label layoutX="66.0" layoutY="220.0" prefHeight="18.0" prefWidth="55.0" text="Email" />
-      <Label layoutX="66.0" layoutY="258.0" prefHeight="18.0" prefWidth="55.0" text="Tel" />
-      <Label layoutX="64.0" layoutY="297.0" prefHeight="18.0" prefWidth="55.0" text="Adress" />
-      <TextField fx:id="nameField" layoutX="163.0" layoutY="110.0" prefHeight="26.0" prefWidth="276.0" style="-fx-background-color: CFD8DF;" />
-      <TextField fx:id="prenomField" layoutX="163.0" layoutY="146.0" prefHeight="26.0" prefWidth="276.0" style="-fx-background-color: CFD8DF;" />
-      <TextField fx:id="userNameField" layoutX="163.0" layoutY="181.0" prefHeight="26.0" prefWidth="276.0" style="-fx-background-color: CFD8DF;" />
-      <TextField fx:id="emailField" layoutX="163.0" layoutY="216.0" prefHeight="26.0" prefWidth="276.0" style="-fx-background-color: CFD8DF;" />
-      <TextField fx:id="telField" layoutX="163.0" layoutY="254.0" prefHeight="26.0" prefWidth="276.0" style="-fx-background-color: CFD8DF;" />
-      <TextField fx:id="adressField" layoutX="163.0" layoutY="294.0" prefHeight="26.0" prefWidth="276.0" style="-fx-background-color: CFD8DF;" />
-      <AnchorPane layoutX="-1.0" prefHeight="87.0" prefWidth="500.0" style="-fx-background-color: CFD8DF;">
-         <children>
-            <Label layoutX="167.0" layoutY="16.0" prefHeight="54.0" prefWidth="189.0" style="-fx-background-color: CFD8DF;" text="EDIT">
-               <font>
-                  <Font size="36.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
-      <Button fx:id="editButton" layoutX="342.0" layoutY="345.0" mnemonicParsing="false" onAction="#editButtonAction" prefHeight="26.0" prefWidth="97.0" style="-fx-background-color: CFD8DF;" text="Confirmer" />
-      <Button fx:id="cancelButton" layoutX="232.0" layoutY="345.0" mnemonicParsing="false" onAction="#cancelButtonAction" prefHeight="26.0" prefWidth="97.0" style="-fx-background-color: CFD8DF;" text="Cancel" />
+      <TextField fx:id="nameField" layoutX="163.0" layoutY="110.0" prefHeight="26.0" prefWidth="276.0" />
+      <TextField fx:id="prenomField" layoutX="163.0" layoutY="146.0" prefHeight="26.0" prefWidth="276.0" />
+      <TextField fx:id="userNameField" layoutX="163.0" layoutY="181.0" prefHeight="26.0" prefWidth="276.0" />
+      <TextField fx:id="emailField" layoutX="163.0" layoutY="216.0" prefHeight="26.0" prefWidth="276.0" />
+      <TextField fx:id="telField" layoutX="163.0" layoutY="254.0" prefHeight="26.0" prefWidth="276.0" />
+      <TextField fx:id="adressField" layoutX="163.0" layoutY="294.0" prefHeight="26.0" prefWidth="276.0" />
+      <Button fx:id="editButton" layoutX="342.0" layoutY="345.0" mnemonicParsing="false" onAction="#editButtonAction" prefHeight="26.0" prefWidth="97.0" text="Confirm" />
+      <Button fx:id="cancelButton" layoutX="232.0" layoutY="345.0" mnemonicParsing="false" onAction="#cancelButtonAction" prefHeight="26.0" prefWidth="97.0" text="Cancel" />
+      <Line endX="175.00003051757812" endY="0.399993896484375" layoutX="264.0" layoutY="136.0" startX="-100.0" />
+      <Line endX="175.00003051757812" endY="0.399993896484375" layoutX="264.0" layoutY="172.0" startX="-100.0" />
+      <Line endX="175.00003051757812" endY="0.399993896484375" layoutX="264.0" layoutY="207.0" startX="-100.0" />
+      <Line endX="175.00003051757812" endY="0.399993896484375" layoutX="264.0" layoutY="242.0" startX="-100.0" />
+      <Line endX="175.00003051757812" endY="0.399993896484375" layoutX="264.0" layoutY="280.0" startX="-100.0" />
+      <Line endX="175.00003051757812" endY="0.399993896484375" layoutX="264.0" layoutY="320.0" startX="-100.0" />
+      <Button fx:id="deleteButton" layoutX="342.0" layoutY="393.0" mnemonicParsing="false" onAction="#deleteButtonAction" prefHeight="26.0" prefWidth="97.0" text="Delete" />
+      <Label layoutX="29.0" layoutY="33.0" prefHeight="17.0" prefWidth="196.0" text="Edit" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Line endX="34.399986267089844" endY="-0.40000152587890625" layoutX="44.0" layoutY="59.0" startX="-14.999975204467773" startY="-0.40000152587890625" />
    </children>
 </AnchorPane>

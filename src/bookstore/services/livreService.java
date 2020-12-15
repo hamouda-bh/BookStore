@@ -18,7 +18,7 @@ public class  livreService{
 Connection cnx = DBConnection.getInstance().getCnx();
 
 public void ajouter (Livre l) {
-	 String req ="INSERT INTO Livre (id_livre,label_cat ,titre,auteur,genre,prix,image) VALUES ('"+l.getId_livre()+","+l.getLabel_cat()+","+l.getTitre()+","+l.getAuteur()+","+l.getGenre()+","+l.getPrix()+","+l.getImage()+")";
+	 String req ="INSERT INTO Livre (label_cat ,titre,auteur,genre,prix,image) VALUES ('"+l.getLabel_cat()+","+l.getTitre()+","+l.getAuteur()+","+l.getGenre()+","+l.getPrix()+","+l.getImage()+")";
 try {
 	
 	Statement st = cnx.createStatement();
@@ -50,7 +50,8 @@ System.out.println("Livre modifié");
 
 public List<Livre> afficher ( ) {
 	List<Livre> list= new ArrayList<>();
-	 String req = "SELECT * from Livre";
+	 String req = "SELECT c.Label,l.titre,l.auteur,l.genre,l.prix,l.image FROM livre l INNER join categorie c on l.idCategorie = c.idCategorie";
+                 //"SELECT * from Livre";
 try {
 	
 	Statement st = cnx.createStatement();
@@ -63,6 +64,25 @@ System.out.println("Livre recupere");
 }
 return list;
 }
+/*
+public List<Livre> afficherL() {
+        List<Livre> list = new ArrayList<>();
+        String req = "SELECT * from livre ";
+        try {
+
+            Statement st = cnx.createStatement();
+            ResultSet res = st.executeQuery(req);
+            while (res.next()) {
+                list.add(new Livre(res.getInt("id_livre"), res.getInt("id_categorie"),res.getString("titre"), res.getString("auteur"), res.getString("genre"), res.getFloat("prix"), res.getString("image")));
+            }
+            System.out.println("p recupere");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }*/
+
 }
 
     

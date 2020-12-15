@@ -61,7 +61,10 @@ public class PDFutil {
         //document.add(new Paragraph("test\n  test")); 
     //    doc.add(image);  
         doc.add(new Paragraph("   "));
-        doc.add(new Paragraph("   facture :  "));
+         doc.add(new Paragraph("   "));
+          doc.add(new Paragraph("   "));
+           doc.add(new Paragraph("   "));
+        doc.add(new Paragraph("                   Votre facture :  "));
         doc.add(new Paragraph("   "));
         
         PdfPTable table = new PdfPTable(6);
