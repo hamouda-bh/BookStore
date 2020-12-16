@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="460.0" prefWidth="600.0" style="-fx-background-color: #152f72;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.views.MesAnnoncesViewController">
+<AnchorPane id="AnchorPane" prefHeight="460.0" prefWidth="600.0" style="-fx-background-color: #152f72;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Button fx:id="modifierUneAnnonce" layoutX="402.0" layoutY="193.0" mnemonicParsing="false" onAction="#modifierAnnonce" prefHeight="30.0" prefWidth="152.0" style="-fx-background-radius: 30;" text="Modifier une annonce" />
       <Button fx:id="AjouterUneAnnonce" layoutX="403.0" layoutY="254.0" mnemonicParsing="false" onAction="#ajouterAnnonce" prefHeight="30.0" prefWidth="152.0" style="-fx-background-radius: 30;" text="Ajouter une annonce" />
@@ -18,16 +18,15 @@
             <Font size="26.0" />
          </font>
       </Label>
-      <TextField fx:id="findannonce" layoutX="402.0" layoutY="143.0" onAction="#afficherBy" prefHeight="25.0" prefWidth="100.0" promptText="nom,genre,prix..." style="-fx-background-radius: 30;" />
+      <TextField fx:id="findAnnonce" layoutX="402.0" layoutY="143.0" prefHeight="25.0" prefWidth="100.0" promptText="nom,genre,prix..." style="-fx-background-radius: 30;" />
       <Label layoutX="402.0" layoutY="115.0" text="Chercher une annonce :" textFill="#fffdfd" />
       <Button fx:id="btnChercher" layoutX="504.0" layoutY="143.0" mnemonicParsing="false" onAction="#afficherAnnonce" style="-fx-background-radius: 30;" text="Chercher" />
-      <TableView layoutX="30.0" layoutY="90.0" prefHeight="328.0" prefWidth="347.0">
+      <TableView fx:id="tvMesAnnonces" layoutX="30.0" layoutY="90.0" prefHeight="328.0" prefWidth="347.0">
         <columns>
-          <TableColumn fx:id="titre" prefWidth="64.0" text="Titre" />
-          <TableColumn fx:id="auteur" prefWidth="70.0" text="Auteur" />
-            <TableColumn fx:id="genre" prefWidth="75.0" text="Genre" />
-            <TableColumn fx:id="etat_de_livre" prefWidth="65.0" text="Etat" />
-            <TableColumn fx:id="prix" prefWidth="71.0" text="Prix" />
+          <TableColumn fx:id="txDatePublication" prefWidth="124.0" text="Date de publication" />
+            <TableColumn fx:id="tcPrix" prefWidth="63.0" text="Prix" />
+            <TableColumn fx:id="txEtat" prefWidth="63.0" text="Etat" />
+            <TableColumn fx:id="tcDateAchat" prefWidth="96.0" text="Date d'achat" />
         </columns>
       </TableView>
    </children>

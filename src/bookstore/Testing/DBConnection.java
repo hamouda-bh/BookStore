@@ -27,10 +27,10 @@ public class DBConnection {
     private String password = "";
 
     private Connection cnx;
-    private static DBConnection Instance; 
-    private final String USERNAME = "root";
-    private final String PASSWORD = "root";
-    private final String URL = "jdbc:mysql://localhost:3306/books?serverTimezone=UTC";
+  //  private static DBConnection Instance; 
+  //  private final String USERNAME = "root";
+  //  private final String PASSWORD = "root";
+  //  private final String URL = "jdbc:mysql://localhost:3306/books?serverTimezone=UTC";
     //?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
 
     static DBConnection instance;

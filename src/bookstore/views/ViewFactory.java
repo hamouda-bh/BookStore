@@ -6,6 +6,7 @@
 
 package bookstore.views;
 
+import bookstore.viewsControllers.AAnnoncesViewController;
 import bookstore.viewsControllers.CommandeFaiteController;
 import bookstore.viewsControllers.KidsSpaceController;
 import bookstore.viewsControllers.BaseController;
@@ -175,6 +176,23 @@ public class ViewFactory {
                     BaseController user = new DetailsController(this, "UserDetails.fxml");
                      initializeStage(user);
                  }
+                 
+                 public void showAnnonces() {
+                     BaseController annonce = new AAnnoncesViewController(this, "AAnnoncesView.fxml");
+                     initializeStage(annonce);
+                 }
+                 
+                 public void showAjoutAnnonces() {
+                     BaseController ajoutAnnonce = new AAjoutAnnonceViewController(this, "AAjoutAnnonceView.fxml");
+                     initializeStage(ajoutAnnonce);
+                 }
+                 
+                 public void showMesAnnonces() {
+                     BaseController mesAnnonces = new AMesAnnoncesViewController(this, "AMesAnnoncesView.fxml");
+                     initializeStage(mesAnnonces);
+                 }
+                 
+                 
                  
                  
                  

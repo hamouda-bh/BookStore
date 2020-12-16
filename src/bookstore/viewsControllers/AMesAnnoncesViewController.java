@@ -3,9 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package bookstore.views;
+package bookstore.viewsControllers;
 
 import bookstore.entities.Annonce;
+import bookstore.services.ServiceAnnonce;
+import bookstore.views.ViewFactory;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -13,15 +15,21 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
  * FXML Controller class
  *
  * @author Mehdi
  */
-public class MesAnnoncesViewController implements Initializable {
+public class AMesAnnoncesViewController extends BaseController implements Initializable {
 
+    public AMesAnnoncesViewController(ViewFactory vf, String fxmlName) {
+       super(vf, fxmlName);
+    }
+    
     @FXML
     private Button modifierUneAnnonce;
     @FXML
@@ -29,26 +37,29 @@ public class MesAnnoncesViewController implements Initializable {
     @FXML
     private Button SupprimerUneAnnonce;
     @FXML
-    private TextField findannonce;
+    private TextField findAnnonce;
     @FXML
     private Button btnChercher;
     @FXML
-    private TableColumn<Annonce, String> titre;
+    private TableView<Annonce> tvMesAnnonces;
     @FXML
-    private TableColumn<Annonce, String> auteur;
+    private TableColumn<Annonce, String> tcDatePublication;
     @FXML
-    private TableColumn<Annonce, String> genre;
+    private TableColumn<Annonce, Float> tcPrix;
     @FXML
-    private TableColumn<Annonce, String> etat_de_livre;
+    private TableColumn<Annonce, String> tcEtat;
     @FXML
-    private TableColumn<Annonce, String> prix;
-
-    /**
-     * Initializes the controller class.
-     */
+    private TableColumn<Annonce, String> tcDateAchat;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
+        tcDatePublication.setCellValueFactory(new PropertyValueFactory<>("date_publication"));
+        tcPrix.setCellValueFactory(new PropertyValueFactory<>("prix"));
+        tcEtat.setCellValueFactory(new PropertyValueFactory<>("etat"));
+        tcDateAchat.setCellValueFactory(new PropertyValueFactory<>("date_achat"));
+        ServiceAnnonce sa = new ServiceAnnonce();
+        tvMesAnnonces.setItems(sa.afficherMesAnnonces());
     }    
 
     @FXML
@@ -61,10 +72,6 @@ public class MesAnnoncesViewController implements Initializable {
 
     @FXML
     private void supprimerAnnonce(ActionEvent event) {
-    }
-
-    @FXML
-    private void afficherBy(ActionEvent event) {
     }
 
     @FXML
