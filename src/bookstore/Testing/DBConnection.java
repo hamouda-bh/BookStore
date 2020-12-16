@@ -14,10 +14,17 @@ public class DBConnection {
     private String password = "root";
 
     private Connection cnx;
+<<<<<<< HEAD
     private static DBConnection Instance; 
     private final String USERNAME = "root";
     private final String PASSWORD = "root";
     private final String URL = "jdbc:mysql://localhost:3306/books?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+=======
+  //  private static DBConnection Instance; 
+  //  private final String USERNAME = "root";
+  //  private final String PASSWORD = "root";
+  //  private final String URL = "jdbc:mysql://localhost:3306/books?serverTimezone=UTC";
+>>>>>>> b39cf7cb77404b728d1fccf391c60ea06a7a6093
     //?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
 
     static DBConnection instance;

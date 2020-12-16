@@ -1,20 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="519.0" prefWidth="494.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.views.AnnoncesViewController">
+<AnchorPane id="AnchorPane" prefHeight="519.0" prefWidth="494.0" style="-fx-background-color: #152f72;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button fx:id="AjouterUneNouvelleAnnonce" layoutX="138.0" layoutY="461.0" mnemonicParsing="false" onAction="#ajouterAnnonce" prefHeight="36.0" prefWidth="195.0" text="Ajouter une nouvelle annonce" />
-      <TableView fx:id="fxTableAnnonces" layoutX="18.0" layoutY="21.0" prefHeight="428.0" prefWidth="459.0">
+      <Button fx:id="AjouterUneNouvelleAnnonce" layoutX="41.0" layoutY="461.0" mnemonicParsing="false" onAction="#ajouterAnnonce" prefHeight="36.0" prefWidth="186.0" style="-fx-background-radius: 30;" text="Ajouter une nouvelle annonce" />
+      <TableView fx:id="fxTableAnnonces" layoutX="54.0" layoutY="63.0" prefHeight="371.0" prefWidth="385.0" style="-fx-background-color: #557de1;">
         <columns>
-          <TableColumn fx:id="datepublicationcell" prefWidth="143.0" text="Date de publication" />
-            <TableColumn fx:id="prixcell" minWidth="0.0" prefWidth="101.0" text="Prix" />
-            <TableColumn fx:id="etatcell" minWidth="0.0" prefWidth="94.0" text="Etat" />
-          <TableColumn fx:id="dateachatcell" prefWidth="120.0" text="Date d'achat" />
+          <TableColumn fx:id="datepublicationcell" prefWidth="127.0" text="Date de publication" />
+            <TableColumn fx:id="prixcell" minWidth="0.0" prefWidth="72.0" text="Prix" />
+            <TableColumn fx:id="etatcell" minWidth="0.0" prefWidth="85.0" text="Etat" />
+          <TableColumn fx:id="dateachatcell" prefWidth="106.0" text="Date d'achat" />
         </columns>
       </TableView>
+      <Button fx:id="fxmesannonces" layoutX="244.0" layoutY="461.0" mnemonicParsing="false" onAction="#mesAnnonces" prefHeight="36.0" prefWidth="103.0" style="-fx-background-radius: 30;" text="Mes annonces" />
+      <Button fx:id="fxActualiser" layoutX="361.0" layoutY="461.0" mnemonicParsing="false" onAction="#actualiser" prefHeight="36.0" prefWidth="78.0" style="-fx-background-radius: 30;" text="Actualiser" />
+      <ToggleButton fx:id="btnMailing" layoutX="353.0" layoutY="22.0" mnemonicParsing="false" onAction="#activeMail" prefHeight="5.0" prefWidth="78.0" text="Oui" />
+      <Label layoutX="63.0" layoutY="26.0" prefHeight="17.0" prefWidth="274.0" text="Recevoir les notifications de futurs annonces ?" textFill="#e8e2e2">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

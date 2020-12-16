@@ -3,14 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package bookstore.views;
+package bookstore.viewsControllers;
 
 import bookstore.Testing.Cache;
 import bookstore.entities.Annonce;
+import bookstore.entities.Client;
 import bookstore.viewsControllers.BaseController;
+import bookstore.services.ServiceAnnonce;
+import bookstore.utils.JavaMailZay;
+import bookstore.views.ViewFactory;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -26,22 +32,29 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javax.mail.MessagingException;
 
 /**
  * FXML Controller class
  *
  * @author Mehdi
  */
-public class AnnoncesViewController extends BaseController implements Initializable {
+public class AAnnoncesViewController extends BaseController implements Initializable {
 
-    public AnnoncesViewController(ViewFactory vf, String fxmlName) {
+    public AAnnoncesViewController(ViewFactory vf, String fxmlName) {
         super(vf, fxmlName);
     }
-
+    
+    @FXML
+    private Button btnMailing;
+    @FXML
+    private Button fxmesannonces;
     @FXML
     private Button AjouterUneNouvelleAnnonce;
     @FXML
-    private TableView<?> fxTableAnnonces;
+    private Button fxActualiser;
+    @FXML
+    private TableView<Annonce> fxTableAnnonces;
     @FXML
     private TableColumn<Annonce, String> datepublicationcell;
     @FXML
@@ -51,9 +64,7 @@ public class AnnoncesViewController extends BaseController implements Initializa
     @FXML
     private TableColumn<Annonce, String> dateachatcell;
 
-    private ObservableList<Annonce> ob;
-    
-      @FXML
+    @FXML
     private Button btnOverview;
     @FXML
     private Button btnOrders;
@@ -63,8 +74,8 @@ public class AnnoncesViewController extends BaseController implements Initializa
     private Button btnMenus;
     @FXML
     private Button btnPackages;
-  
-      @FXML
+
+    @FXML
     private Button btn_panier;
     @FXML
     private Button logOut;
@@ -80,34 +91,73 @@ public class AnnoncesViewController extends BaseController implements Initializa
     private VBox pnItems;
     @FXML
     private Button myAccountButton;
-@FXML
-    void logOutAction() {
-    	Cache.client = null ;
-    	Stage stage = (Stage) logOut.getScene().getWindow();
-    	vf.closeStage(stage);
-    	vf.showLoginWindow();
+
+    public void initialize(URL url, ResourceBundle rb) {
+        
+        datepublicationcell.setCellValueFactory(new PropertyValueFactory<>("date_publication"));
+        prixcell.setCellValueFactory(new PropertyValueFactory<>("prix"));
+        etatcell.setCellValueFactory(new PropertyValueFactory<>("etat_de_livre"));
+        dateachatcell.setCellValueFactory(new PropertyValueFactory<>("date_achat"));  
+        ServiceAnnonce sa = new ServiceAnnonce();
+        fxTableAnnonces.setItems(sa.afficherAnnonces());
+
     }
+
+    @FXML
+    private void ajouterAnnonce(ActionEvent event) throws IOException {
+        vf.showAjoutAnnonces();
+    }
+
+    @FXML
+    private void mesAnnonces(ActionEvent event) throws IOException {
+        vf.showMesAnnonces();
+    }
+    
+    @FXML
+    private void actualiser(ActionEvent event) throws IOException {
+       ServiceAnnonce sa = new ServiceAnnonce();
+       //fxTableAnnonces.refresh();
+       fxTableAnnonces.getItems().clear();
+       fxTableAnnonces.setItems(sa.afficherAnnonces()); 
+    }
+    
+    @FXML
+    private void activeMailing(ActionEvent event) throws Exception {
+            JavaMailZay.mailSending("hgvhgv@gmail.com");
+    }
+
+    @FXML
+    void logOutAction() {
+        Cache.client = null;
+        Stage stage = (Stage) logOut.getScene().getWindow();
+        vf.closeStage(stage);
+        vf.showLoginWindow();
+    }
+
     /*
     void myAccountAction() {
         vf.showAccountEditWindow();
         Stage stage = (Stage) logOut.getScene().getWindow();
   	    vf.closeStage(stage);
     }
-    */
+     */
     @FXML
     void ShowKidsSpace() {
         vf.ShowKidsSpace();
     }
-     @FXML
+
+    @FXML
     private void goLivre() {
-    
-     vf.showLivre() ;
-    
-           }
+
+        vf.showLivre();
+
+    }
+
     @FXML
     private void goBlog(ActionEvent event) {
         vf.showBlog();
     }
+
     /*
     @FXML
     void myAccountAction() {
@@ -115,37 +165,9 @@ public class AnnoncesViewController extends BaseController implements Initializa
         Stage stage = (Stage) logOut.getScene().getWindow();
   	    vf.closeStage(stage);
     }*/
-     @FXML
+    @FXML
     void panier(ActionEvent event) {
         vf.showPanier();
     }
-    
-    
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
 
-        ob = FXCollections.observableArrayList();
-        
-        datepublicationcell.setCellValueFactory(new PropertyValueFactory<>("date_publication"));
-        prixcell.setCellValueFactory(new PropertyValueFactory<>("prix"));
-        etatcell.setCellValueFactory(new PropertyValueFactory<>("etat_de_livre"));
-        dateachatcell.setCellValueFactory(new PropertyValueFactory<>("date_achat"));
-        
-        fxTableAnnonces.setItems(null);
-    }    
-
-    @FXML
-    private void ajouterAnnonce(ActionEvent event) throws IOException {
-        try {
-        Parent root = FXMLLoader.load(getClass().getResource("AAjoutAnnonceView.fxml"));
-        Stage st = new Stage();
-        st.setTitle("BookStore : Toute les annonces");
-        st.setScene(new Scene(root,450,450));
-        st.show();
-        }
-        catch(IOException ex) {
-            System.out.println(ex.getMessage());
-        }
-    }
-    
 }

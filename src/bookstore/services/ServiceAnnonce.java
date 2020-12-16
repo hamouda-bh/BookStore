@@ -14,6 +14,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 
 /**
@@ -66,10 +68,10 @@ public class ServiceAnnonce {
             System.out.println(ex.getMessage());
         }
     }
-
-       
-    public List<Annonce> afficherAnnonces() {
-        List<Annonce> list = new ArrayList<>();
+  
+    public ObservableList<Annonce> afficherAnnonces() {
+        ObservableList<Annonce> list = FXCollections.observableArrayList();
+        //List<Annonce> list = new ArrayList<>();
         try {
             String req = "SELECT date_publication,prix,etat_de_livre,date_achat FROM annonce";
             Statement st = cnx.createStatement();
@@ -84,4 +86,21 @@ public class ServiceAnnonce {
         }
         return list;
     }    
+    
+    public ObservableList<Annonce> afficherMesAnnonces(){
+        ObservableList<Annonce> list = FXCollections.observableArrayList();
+        try {
+            String req = "SELECT date_publication,prix,etat_de_livre,date_achat FROM annonce WHERE id_client=";
+            Statement st = cnx.createStatement();
+            ResultSet res = st.executeQuery(req);
+            while(res.next()) {
+                list.add(new Annonce(res.getString(1),res.getFloat(2),res.getString(3),res.getString(4)));
+            }
+            System.out.println("Annonces récupérées !");
+        }
+        catch(SQLException ex) {
+            System.out.println(ex.getMessage());
+        } 
+        return list;
+    }
 }

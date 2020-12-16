@@ -5,11 +5,9 @@
  */
 package bookstore.Testing;
 
-import java.io.IOException;
+import bookstore.views.ViewFactory;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+import static javafx.application.Application.launch;
 import javafx.stage.Stage;
 
 /**
@@ -18,22 +16,19 @@ import javafx.stage.Stage;
  */
 public class ZayTestGUI extends Application {
 
-    @Override
-    public void start(Stage primaryStage) throws IOException {
+	public static void main(String[] args) {
+		launch(args);
+                
+	}
 
-        DBConnection.getInstance().getCnx();
-        
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/AAnnoncesView.fxml"));
-        Parent root = loader.load();
-        Scene scene = new Scene(root);
-        primaryStage.setTitle("BookStore : Toute les annonces");
-        primaryStage.setScene(scene);
-        primaryStage.show();
-        
+	@Override
+	public void start(Stage stage)   {
+		try {    
+			ViewFactory vf = new ViewFactory();
+                        vf.showAnnonces();
+		}
+                catch(Exception e) {			
+			e.printStackTrace();
+        }	
     }
-
-    public static void main(String[] args) {
-        launch(args);
-    }
-
 }
