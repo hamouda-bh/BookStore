@@ -64,6 +64,25 @@ System.out.println("Livre recupere");
 }
 return list;
 }
+/*
+public List<Livre> afficherL() {
+        List<Livre> list = new ArrayList<>();
+        String req = "SELECT * from livre ";
+        try {
+
+            Statement st = cnx.createStatement();
+            ResultSet res = st.executeQuery(req);
+            while (res.next()) {
+                list.add(new Livre(res.getInt("id_livre"), res.getInt("id_categorie"),res.getString("titre"), res.getString("auteur"), res.getString("genre"), res.getFloat("prix"), res.getString("image")));
+            }
+            System.out.println("p recupere");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }*/
+
 }
 
     

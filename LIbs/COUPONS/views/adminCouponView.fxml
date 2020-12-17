@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.booklab.views.AdminCouponViewController">
+   <children>
+      <TextField fx:id="tfCoupon" layoutX="687.0" layoutY="232.0" prefHeight="44.0" prefWidth="286.0" promptText="Coupon ..." />
+      <TextField fx:id="tfPercentOff" layoutX="687.0" layoutY="300.0" prefHeight="54.0" prefWidth="286.0" promptText="Percent off" />
+      <Button fx:id="btn_useCoupon" layoutX="747.0" layoutY="475.0" mnemonicParsing="false" onAction="#create" text="ADD COUPON" />
+      <TableView fx:id="table_couponAdmin" layoutX="62.0" layoutY="225.0" prefHeight="350.0" prefWidth="591.0">
+        <columns>
+          <TableColumn fx:id="col_coupon" prefWidth="317.0" text="Coupon" />
+          <TableColumn fx:id="col_percentOff" prefWidth="130.0" text="Percent Off" />
+            <TableColumn fx:id="col_duration" prefWidth="143.0" text="Duration" />
+        </columns>
+      </TableView>
+      <RadioButton fx:id="once" layoutX="687.0" layoutY="379.0" mnemonicParsing="false" text="once">
+         <toggleGroup>
+            <ToggleGroup fx:id="duration" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="repeating" layoutX="760.0" layoutY="379.0" mnemonicParsing="false" text="repeating" toggleGroup="$duration" />
+      <RadioButton fx:id="forever" layoutX="882.0" layoutY="379.0" mnemonicParsing="false" text="forever" toggleGroup="$duration" />
+      <TextField fx:id="tf_duration_in_months" layoutX="687.0" layoutY="413.0" prefHeight="54.0" prefWidth="286.0" promptText="If repeating add how many months " />
+      <Button fx:id="btn_remove" layoutX="478.0" layoutY="591.0" mnemonicParsing="false" onAction="#removeCoupon" text="Remove Coupon" />
+      <Button fx:id="btn_update" layoutX="282.0" layoutY="591.0" mnemonicParsing="false" text="Update Coupon " />
+   </children>
+</AnchorPane>

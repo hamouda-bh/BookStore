@@ -3,7 +3,16 @@ package bookstore.viewsControllers;
 import bookstore.Testing.Cache;
 import bookstore.services.FactureService;
 import bookstore.views.ViewFactory;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.stripe.Stripe;
+import com.stripe.exception.StripeException;
+import com.stripe.model.*;
+import static com.stripe.param.checkout.SessionCreateParams.ShippingAddressCollection.AllowedCountry.SC;
 import java.net.URL;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,6 +23,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javax.swing.JOptionPane;
 
 public class PaiementController extends BaseController implements Initializable{
     public PaiementController(ViewFactory vf, String fxmlName){
@@ -148,5 +158,55 @@ public class PaiementController extends BaseController implements Initializable{
             vf.showCommandeFaite();
          //   FactureService f = new FactureService();
         //    f.ajouter(p, c);
+    }
+    
+    private void pay() {
+        try{
+            Stripe.apiKey = "sk_test_4eC39HqLyjWDarjtT1zdp7dc";
+            Customer a = Customer.retrieve("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
+            Map <String, Object> cardParam = new HashMap<String, Object>();
+            if(!(card_number.getText().equals("") || exp_month.getText().equals("") || exp_year.getText().equals("") || cvc.getText().equals(""))){
+                cardParam.put("number", card_number.getText());
+                cardParam.put("exp_month", Integer.parseInt(exp_month.getText()));
+                cardParam.put("exp_year", Integer.parseInt(exp_year.getText()));
+                cardParam.put("cvc", cvc.getText());
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "Please check your card information!");
+                return;
+            }
+            Map <String, Object> tokenParam = new HashMap<String, Object>();
+            tokenParam.put("card", cardParam);
+            
+            Token token = Token.create(tokenParam);
+            
+            Map<String, Object> source = new HashMap<String, Object>();
+            source.put("source", token.getId());
+            
+            //a.getSources().create(source);
+            
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            System.out.println(gson.toJson(token));
+            
+            Map<String,Object> chargeParam = new HashMap<String, Object>();
+            chargeParam.put("amount", Integer.parseInt(sum_total.getText().substring(0, sum_total.getText().length()-3)));
+            chargeParam.put("currency", "usd");
+            chargeParam.put("source", token.getId());
+            
+            Charge.create(chargeParam);
+            NotificationAPI.notifInfo("Payment", "Your payment was successful!");
+            // Create Order
+            ServicesOrder so = new ServicesOrder();
+            
+            SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
+            Date date = new Date(System.currentTimeMillis());
+            Order O = new Order(SC, true, date);
+            createOrder();
+            
+        }catch(StripeException e){
+            System.out.println(e.getMessage());   
+            NotificationAPI.notif("Payment", "An error has occured with your Payment!");
+        }
     }
 }
