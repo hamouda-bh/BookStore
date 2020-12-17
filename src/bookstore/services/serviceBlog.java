@@ -15,31 +15,42 @@ import java.util.List;
 import bookstore.entities.Blog;
 import bookstore.Testing.DBConnection;
 import bookstore.entities.Blog;
+import java.sql.PreparedStatement;
 
 public class  serviceBlog {
 Connection cnx = DBConnection.getInstance().getCnx();
 
 public void ajouter (Blog b) {
-	 String req ="INSERT INTO blog (id_blog, id_client,categorie_blog,description) VALUES ('"+b.getId_blog()+"', '"+b.getId_client()+"', '"+b.getCategorie_blog()+"', '"+b.getDescription()+"')"; 
 try {
-	
-	Statement st = cnx.createStatement();
-st.executeUpdate(req);
-System.out.println("blog ajoutée");
-} catch (SQLException e) {
-	e.printStackTrace();
-}
+            String sql = "INSERT INTO Blog values (?,?,?,?) ";
+            PreparedStatement st = cnx.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
+            st.setInt(1, b.getId_blog());
+            st.setInt(2, b.getId_client());
+            st.setString(3,b.getCategorie_blog());
+            st.setString(4,b.getDescription());
+
+            st.executeUpdate();
+            ResultSet rs = st.getGeneratedKeys();
+            System.out.println("blog ajoute");
+            while(rs.next()){
+                System.out.println(rs.getInt(1));
+            }
+            
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
 }
 public void supprimer (Blog b) {
-	 String req ="DELETE From blog WHERE id="+b.getId_blog();
 try {
-	
-	Statement st = cnx.createStatement();
-st.executeUpdate(req);
-System.out.println("blog supprimée");
-} catch (SQLException e) {
-	e.printStackTrace();
-}
+            String sql = "DELETE FROM Blog where id_blog = ?";
+            PreparedStatement st = cnx.prepareStatement(sql);
+            st.setInt(1,b.getId_blog());
+            st.executeUpdate();
+            System.out.println("blog Supprimer");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 }
 public void modifier (Blog b) {
 	 String req ="UPDATE blog SET description='"+b.getDescription()+"' WHERE id="+b.getId_blog();
@@ -53,21 +64,17 @@ System.out.println("blog modifiée");
 }
 }
 
-public List<Blog> afficher ( ) {
-	List<Blog> list= new ArrayList<>();
-	 String req = "SELECT * from blog";
-try {
-	
-	Statement st = cnx.createStatement();
-ResultSet res =st.executeQuery(req);
-while (res.next()) {
-	list.add(new Blog(res.getInt("id_blog"),res.getInt("id_client"),res.getString("categorie_blog"),res.getString("description")));
-}
-System.out.println("blog recupere");
-} catch (SQLException e) {
-	e.printStackTrace();
-}
-return list;
+public void afficherBlog (Blog b ) {
+ try {
+            String sql = "SELECT * FROM blog";
+            PreparedStatement st = cnx.prepareStatement(sql);
+            ResultSet rs = st.executeQuery();
+            while(rs.next()){
+                System.out.println(rs);
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 }
 }
 

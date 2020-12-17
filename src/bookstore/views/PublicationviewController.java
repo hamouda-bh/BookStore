@@ -83,9 +83,9 @@ public class PublicationviewController extends BaseController implements Initial
                 int b = Integer.parseInt(tfidc.getText());
 
         servicePublication sp = new servicePublication();
-        sp.ajouter(new Publication(a,b,c,tfcontenue.getText(),tfcommentaire.getText()));
+        sp.ajouter(new Publication(c,a,b,tfcontenue.getText(),tfcommentaire.getText()));
         JOptionPane.showMessageDialog(null, "Publication ajoutée !");
-        
+        /*
         FXMLLoader loader = new FXMLLoader(getClass().getResource("detailsPublication.fxml"));
         
         Parent root = loader.load();
@@ -100,6 +100,7 @@ public class PublicationviewController extends BaseController implements Initial
 
         dpc.setLbcontenue(tfcontenue.getText());
         dpc.setLbcommentaire(tfcommentaire.getText());
+*/
     }
 
     @FXML

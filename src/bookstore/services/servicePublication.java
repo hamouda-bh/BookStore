@@ -15,31 +15,42 @@ import java.util.List;
 import bookstore.entities.Publication;
 import bookstore.Testing.DBConnection;
 import bookstore.entities.Publication;
+import java.sql.PreparedStatement;
 
 public class  servicePublication {
 Connection cnx = DBConnection.getInstance().getCnx();
 
 public void ajouter (Publication p) {
-	 String req ="INSERT INTO publication(id_publication,id_blog,id_client,contenue,commentaire) VALUES ('"+p.getId_publication()+"', '"+p.getId_blog()+"', '"+p.getId_client()+"', '"+p.getContenue()+"', '"+p.getCommentaire()+"')"; 
-try {
-	
-	Statement st = cnx.createStatement();
-st.executeUpdate(req);
-System.out.println("publication ajoutée");
-} catch (SQLException e) {
-	e.printStackTrace();
-}
+	try {
+            String sql = "INSERT INTO publication values (?,?,?,?,?) ";
+            PreparedStatement st = cnx.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
+            st.setInt(1, p.getId_publication());
+            st.setInt(2, p.getId_blog());
+            st.setInt(3, p.getId_client());
+            st.setString(4,p.getContenue());
+            st.setString(5,p.getCommentaire());
+
+            st.executeUpdate();
+            ResultSet rs = st.getGeneratedKeys();
+            System.out.println("pub ajoute");
+            while(rs.next()){
+                System.out.println(rs.getInt(1));
+            }
+            
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 }
 public void supprimer (Publication p) {
-	 String req ="DELETE From publication WHERE id="+p.getId_publication();
 try {
-	
-	Statement st = cnx.createStatement();
-st.executeUpdate(req);
-System.out.println("publication supprimée");
-} catch (SQLException e) {
-	e.printStackTrace();
-}
+            String sql = "DELETE FROM Blog where id_blog = ?";
+            PreparedStatement st = cnx.prepareStatement(sql);
+            st.setInt(1,p.getId_publication());
+            st.executeUpdate();
+            System.out.println("blog Supprimer");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 }
 public void modifier (Publication p) {
 	 String req ="UPDATE publication SET contenue='"+p.getContenue()+"' WHERE id="+p.getId_publication();
