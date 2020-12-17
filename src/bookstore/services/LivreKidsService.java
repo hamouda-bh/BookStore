@@ -39,7 +39,7 @@ public class LivreKidsService{
     public void ajouterLivreKids(LivreKids c) {
         
         try {
-            String sql = "INSERT INTO livrekids (titre,description,image) values (?,?,?) ";
+            String sql = "INSERT INTO livrekids (id_categorie_kids,titre,description,image) values (2,?,?,?) ";
             PreparedStatement st = cnx.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
             st.setString(1, c.getTitre());
             st.setString(2,c.getDescription());

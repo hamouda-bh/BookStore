@@ -34,7 +34,8 @@ public class MainProgGUI extends Application {
 			ViewFactory vf = new ViewFactory();
 			//vf.ShowKidsSpace();
                         //vf.ShowKidsSpace();
-                        vf.showConsulterLesLivresKids();
+                        //vf.showConsulterLesLivresKids();
+                        vf.ShowAjouterLivreKids();
                         //vf.showUI();
                         //vf.showMainWindow();
                         //vf.showPanier();

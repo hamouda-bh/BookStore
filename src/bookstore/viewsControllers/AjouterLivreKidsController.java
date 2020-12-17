@@ -15,15 +15,21 @@ import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
@@ -39,6 +45,7 @@ public class AjouterLivreKidsController extends BaseController implements Initia
     public AjouterLivreKidsController (ViewFactory vf,String fxmlName){
         super(vf, fxmlName);
     }
+    String imageLink;
 @FXML
     private TextField Titre;
 
@@ -90,6 +97,8 @@ public class AjouterLivreKidsController extends BaseController implements Initia
     private ObservableList<CategorieKids> cats;
     
     private ArrayList<String> lstFile;
+    @FXML
+    private ImageView imageView;
 
     
     
@@ -149,10 +158,12 @@ public class AjouterLivreKidsController extends BaseController implements Initia
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        /*
         lstFile = new ArrayList<>();
         lstFile.add("*.jpg");
         lstFile.add("*.jpeg");
         lstFile.add("*.png");
+        */
         cats = FXCollections.observableArrayList();
         CategorieKidsService as = new CategorieKidsService();
         as.afficherLesCategorieKids(cats);
@@ -175,6 +186,24 @@ public class AjouterLivreKidsController extends BaseController implements Initia
         
     }
     @FXML
+    private void BrowseFile() {
+        lstFile = new ArrayList<>();
+        lstFile.add("*.jpg");
+        lstFile.add("*.jpeg");
+        lstFile.add("*.png");
+     FileChooser fc = new FileChooser(); 
+     fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image Files", lstFile));
+     File f = fc.showOpenDialog(null);
+        if (f!=null){
+          imageLink=f.getAbsolutePath();
+            File file = new File(imageLink);
+            Image image = new Image(file.toURI().toString());
+            imageView.setImage(image);
+        }else
+          imageLink=".";
+    }
+    /*
+    @FXML
     void BrowseFile() {
         FileChooser fc = new FileChooser();
         fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image Files", lstFile));
@@ -183,16 +212,68 @@ public class AjouterLivreKidsController extends BaseController implements Initia
             Path.setText(f.getPath());
         }
     }
-    
+    */
+    private boolean validateTitre(){
+        Pattern p = Pattern.compile("[a-zA-Z]+");
+        Matcher m = p.matcher(Titre.getText());
+        if(m.find() && m.group().equals(Titre.getText())){
+            return true;
+        }else{
+                Alert alert = new Alert(AlertType.WARNING);
+                alert.setTitle("Validate titre");
+                alert.setHeaderText(null);
+                alert.setContentText("Please Enter Valid titre and not empty");
+                alert.showAndWait();
+            
+            return false;            
+        }
+    }
+    private boolean validateDescription(){
+        Pattern p = Pattern.compile("[a-zA-Z]+");
+        Matcher m = p.matcher(Description.getText());
+        if(m.find() && m.group().equals(Description.getText())){
+            return true;
+        }else{
+                Alert alert = new Alert(AlertType.WARNING);
+                alert.setTitle("Validate Description");
+                alert.setHeaderText(null);
+                alert.setContentText("Please Enter Valid Description and not empty");
+                alert.showAndWait();
+            
+            return false;            
+        }
+    }
+    private boolean validateAuteur(){
+        Pattern p = Pattern.compile("[a-zA-Z]+");
+        Matcher m = p.matcher(auteur.getText());
+        if(m.find() && m.group().equals(auteur.getText())){
+            return true;
+        }else{
+                Alert alert = new Alert(AlertType.WARNING);
+                alert.setTitle("Validate auteur");
+                alert.setHeaderText(null);
+                alert.setContentText("Please Enter Valid auteur Name and not empty");
+                alert.showAndWait();
+            
+            return false;            
+        }
+    }
     @FXML
     void AjouterLivreBD(ActionEvent event) {
+        
         LivreKids L1 = new LivreKids();
-        L1.setTitre(Titre.getText());
+        if (validateTitre()&&validateAuteur()&&validateDescription()){
+        L1.setTitre(Titre.getText());        
         L1.setDescription(Description.getText());
-        L1.setImage(Path.getText());
+        //L1.setImage(Path.getText());
+        L1.setImage(imageLink);
         LivreKidsService s1 = new LivreKidsService();
         s1.ajouterLivreKids(L1);
+        }
     }
-    
-    
+    @FXML
+    void selectCategorie (ActionEvent event){
+        System.out.println("hello");
+        categorie.valueProperty().addListener(observable -> System.out.printf("Valeur sélectionnée: %s", categorie.getValue().getNomCategorie()).println());
+    }
 }   
