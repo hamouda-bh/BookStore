@@ -25,9 +25,9 @@ public class MainProg {
           //  service.modifier(20, 1);
                   float i=          service.afficherp();
          System.out.println(i);*/
-        Commande c = new Commande ("2020-12-10",1,10);
-                    CommandeService cs = new CommandeService();
-                    cs.ajouter(c);
+       // Commande c = new Commande ("2020-12-10",1,10);
+                   // CommandeService cs = new CommandeService();
+                   // cs.ajouter(c);
           
             /*Facture fact = new Facture(5,5,"2020-12-10",15);
             FactureService serv= new FactureService ();

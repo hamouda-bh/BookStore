@@ -29,7 +29,7 @@ public class MainProgGUI extends Application {
 			ViewFactory vf = new ViewFactory();
 			//vf.showUI();
                         //vf.showMainWindow();
-                     vf.showPanier();
+                        vf.showPanier();
                         
                         /* 
                             nour.benhadjyahia@esprit.tn

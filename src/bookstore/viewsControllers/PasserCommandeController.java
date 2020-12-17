@@ -132,13 +132,7 @@ public class PasserCommandeController extends BaseController implements Initiali
     	vf.closeStage(stage);
     	vf.showLoginWindow();
     }
-    /*
-    void myAccountAction() {
-        vf.showAccountEditWindow();
-        Stage stage = (Stage) logOut.getScene().getWindow();
-  	    vf.closeStage(stage);
-    }
-    */
+   
     @FXML
     void ShowKidsSpace() {
         vf.ShowKidsSpace();
@@ -158,13 +152,6 @@ public class PasserCommandeController extends BaseController implements Initiali
         Stage stage = (Stage) btn_panier.getScene().getWindow();
 	vf.closeStage(stage);
     }
-    /*
-    @FXML
-    void myAccountAction() {
-        vf.showAccountEditWindow();
-        Stage stage = (Stage) logOut.getScene().getWindow();
-  	    vf.closeStage(stage);
-    }*/
      @FXML
     void panier(ActionEvent event) {
         vf.showPanier();
@@ -182,7 +169,6 @@ public class PasserCommandeController extends BaseController implements Initiali
 
     @FXML
     void onCliqConfirmer(ActionEvent event) throws SQLException {
-       // Date date=java.util.Calendar.getInstance().getTime();
         java.util.Date date_util = new java.util.Date();
         java.sql.Date date_sql = new java.sql.Date(date_util.getTime());
     
@@ -195,7 +181,6 @@ public class PasserCommandeController extends BaseController implements Initiali
              Stage stage = (Stage) btn_panier.getScene().getWindow();
 	     vf.closeStage(stage);
              cs.ajouter(c);
-             
              cs.vider();
         }
         else if (check1_id.isSelected())
@@ -286,41 +271,22 @@ public class PasserCommandeController extends BaseController implements Initiali
             affSumid.isDisable();
            btn_code_id.isDisable();
         } else if (code == 20) {
-           /* ServicesShoppingCart sc=new ServicesShoppingCart();
-            ShoppingCart a=new ShoppingCart();
-            a=sc.setActiveCart(a);
-            sc.setDiscount(a,code);
-            JOptionPane.showMessageDialog(null, "Coupon Used");*/
+            
             prixF=String.valueOf(  Float.parseFloat(affSumid.getText())-((Float.parseFloat(affSumid.getText())*20)/100));
             affSumid.setText(prixF);       
             affSumid.isDisable();
             btn_code_id.isDisable();
         }else if (code == 30) {
-           /* ServicesShoppingCart sc=new ServicesShoppingCart();
-            ShoppingCart a=new ShoppingCart();
-            a=sc.setActiveCart(a);
-            sc.setDiscount(a,code);
-            JOptionPane.showMessageDialog(null, "Coupon Used");*/
             prixF=String.valueOf(  Float.parseFloat(affSumid.getText())-((Float.parseFloat(affSumid.getText())*30)/100));
             affSumid.setText(prixF);       
             affSumid.isDisable();
             btn_code_id.isDisable();
         }else if (code == 40) {
-           /* ServicesShoppingCart sc=new ServicesShoppingCart();
-            ShoppingCart a=new ShoppingCart();
-            a=sc.setActiveCart(a);
-            sc.setDiscount(a,code);
-            JOptionPane.showMessageDialog(null, "Coupon Used");*/
-            prixF=String.valueOf(  Float.parseFloat(affSumid.getText())-((Float.parseFloat(affSumid.getText())*40)/100));
+           prixF=String.valueOf(  Float.parseFloat(affSumid.getText())-((Float.parseFloat(affSumid.getText())*40)/100));
             affSumid.setText(prixF);       
             affSumid.isDisable();
             btn_code_id.isDisable();
         }else if (code == 50) {
-           /* ServicesShoppingCart sc=new ServicesShoppingCart();
-            ShoppingCart a=new ShoppingCart();
-            a=sc.setActiveCart(a);
-            sc.setDiscount(a,code);
-            JOptionPane.showMessageDialog(null, "Coupon Used");*/
             prixF=String.valueOf(  Float.parseFloat(affSumid.getText())-((Float.parseFloat(affSumid.getText())*50)/100));
             affSumid.setText(prixF);       
             affSumid.isDisable();

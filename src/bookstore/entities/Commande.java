@@ -104,9 +104,6 @@ public class Commande {
     }
     public void confirmerCommande ()
     {
-      /* Panier_livre p = new Panier_livre();
-        int i= p.getId_comm();
-        Facture f = new Facture(id_commande, id_client,i,date_commande);*/
     }
     
 }

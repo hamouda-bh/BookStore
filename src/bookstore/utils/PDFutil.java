@@ -7,6 +7,7 @@ package bookstore.utils;
 
 import bookstore.Testing.DBConnection;
 import bookstore.entities.Facture;
+import bookstore.services.FactureService;
 import com.lowagie.text.Document;
 import com.lowagie.text.DocumentException;
 import com.lowagie.text.Element;
@@ -66,6 +67,7 @@ public class PDFutil {
            doc.add(new Paragraph("   "));
         doc.add(new Paragraph("                   Votre facture :  "));
         doc.add(new Paragraph("   "));
+      //  doc.add( new FactureService ().affichage());
         
         PdfPTable table = new PdfPTable(6);
         table.setWidthPercentage(100);

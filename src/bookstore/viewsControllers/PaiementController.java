@@ -113,13 +113,7 @@ public class PaiementController extends BaseController implements Initializable{
     	vf.closeStage(stage);
     	vf.showLoginWindow();
     }
-    /*
-    void myAccountAction() {
-        vf.showAccountEditWindow();
-        Stage stage = (Stage) logOut.getScene().getWindow();
-  	    vf.closeStage(stage);
-    }
-    */
+   
     @FXML
     void ShowKidsSpace() {
         vf.ShowKidsSpace();
@@ -139,13 +133,6 @@ public class PaiementController extends BaseController implements Initializable{
         Stage stage = (Stage) btn_panier.getScene().getWindow();
 	vf.closeStage(stage);
     }
-    /*
-    @FXML
-    void myAccountAction() {
-        vf.showAccountEditWindow();
-        Stage stage = (Stage) logOut.getScene().getWindow();
-  	    vf.closeStage(stage);
-    }*/
      @FXML
     void panier(ActionEvent event) {
         vf.showPanier();
@@ -162,7 +149,7 @@ public class PaiementController extends BaseController implements Initializable{
     }
  @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+
     }    
   @FXML
     void onCliqAnnuler(ActionEvent event) {
@@ -171,11 +158,6 @@ public class PaiementController extends BaseController implements Initializable{
 	     vf.closeStage(stage);
     }
 
-  /*  void onCliqPayer(ActionEvent event) {
-            vf.showCommandeFaite();
-         //   FactureService f = new FactureService();
-        //    f.ajouter(p, c);
-    }*/
      @FXML
     private void onCliqPayer() throws AWTException {
         try{
@@ -201,14 +183,9 @@ public class PaiementController extends BaseController implements Initializable{
             Map<String, Object> source = new HashMap<String, Object>();
             source.put("source", token.getId());
             
-            //a.getSources().create(source);
-            
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             System.out.println(gson.toJson(token));
             
-            
-            
-            //Integer.parseInt(sum_total.getText().substring(0, sum_total.getText().length()-3))
             Map<String,Object> chargeParam = new HashMap<String, Object>();
             chargeParam.put("amount", 0.50);
             chargeParam.put("currency", "usd");
@@ -227,7 +204,6 @@ public class PaiementController extends BaseController implements Initializable{
 	     vf.closeStage(stage);
         }catch(StripeException e){
             System.out.println(e.getMessage());   
-        //    NotificationAPI.notif("Payment", "An error has occured with your Payment!");
         }
     }
 }

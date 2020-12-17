@@ -1,4 +1,5 @@
 package bookstore.services;
+import bookstore.Testing.Cache;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,12 +17,13 @@ public class CommandeService {
 Connection cnx = DBConnection.getInstance().getCnx();
 
 public void ajouter (Commande p) throws SQLException {
-         String requete1 = "INSERT INTO commande (  date_commande, prix_Totale) VALUES (?,?)";
+         String requete1 = "INSERT INTO commande (  date_commande,id_client, prix_Totale) VALUES (?,?,?)";
         PreparedStatement pst = cnx.prepareStatement(requete1);
 
     
         pst.setString(1, String.valueOf(p.getDate_commande()));
-        pst.setFloat(2, p.getPrixTotale());
+        pst.setInt(2, Cache.client.getId_user());
+        pst.setFloat(3, p.getPrixTotale());
         pst.executeUpdate();
         System.out.println("p ajoutée");
         try {
@@ -70,12 +72,6 @@ public void vider () {
 	e.printStackTrace();
 }
 }
-
-
-
-
-
-
 
 
 public List<Commande> afficher ( ) {

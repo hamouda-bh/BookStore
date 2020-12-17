@@ -51,6 +51,8 @@ public class GererPanierController extends BaseController implements Initializab
     
          @FXML
     private Button btnOverview;
+         @FXML
+    private Button update;
 
     @FXML
     private Button btnOrders;
@@ -122,13 +124,7 @@ public class GererPanierController extends BaseController implements Initializab
         Stage stage = (Stage) passerC_btn_id.getScene().getWindow();
 	               	vf.closeStage(stage);
     }
-    /*
-    @FXML
-    void myAccountAction() {
-        vf.showAccountEditWindow();
-        Stage stage = (Stage) logOut.getScene().getWindow();
-  	    vf.closeStage(stage);
-    }*/
+    
      @FXML
     void panier(ActionEvent event) {
          vf.showPanier();
@@ -143,21 +139,22 @@ public class GererPanierController extends BaseController implements Initializab
     private TableColumn<Panier_livre, String> prix;
 
     @FXML
-    private TableColumn<Panier_livre, TextField> Quantite;
+    private TableColumn<Panier_livre, String> Quantite;
     
-    @FXML
-    private TableColumn<Panier_livre, Button> updateQuantite;
 
     @FXML
     private TableColumn<Panier_livre, Button> supprimer;
     
-        private ObservableList<Panier_livre> data;
+    private ObservableList<Panier_livre> data;
 
 
         
     @FXML
-    void onCliqPasserCommande(ActionEvent event) {
-      
+    void onCliqPasserCommande(ActionEvent event) throws SQLException {
+     
+        if (validateFields())
+        {PanierService ps = new PanierService();
+            ps.modifier(String.valueOf(Quantite.getText().toString()),nomlivre_id.getText().toString());}
         vf.showCommandeForm();
         	Stage stage = (Stage) passerC_btn_id.getScene().getWindow();
 	               	vf.closeStage(stage);
@@ -179,32 +176,17 @@ private void intiCols()
 {   
     nomlivre_id.setCellValueFactory(new PropertyValueFactory<>("titre"));   
     prix.setCellValueFactory(new PropertyValueFactory<>("prix"));  
-    Quantite.setCellValueFactory(new PropertyValueFactory<>("quantite_ajouter"));  
-    updateQuantite.setCellValueFactory(new PropertyValueFactory<>("update")); 
-    
+    Quantite.setCellFactory(TextFieldTableCell.forTableColumn());
+   // updateQuantite.setCellValueFactory(new PropertyValueFactory<>("update")); 
+     Quantite.setEditable(true);
+    table_panier.setEditable(true);
     supprimer.setCellValueFactory(new PropertyValueFactory<>("supprimer"));  
 
     
   affichage();
- //editableCols();
 
 }
 
-
-
-public void editableCols()
-{
-   /* nomlivre_id.setCellFactory(TextFieldTableCell.forTableColumn());
-    nomlivre_id.setOnEditCommit(e ->{ 
-        e.getTableView().getItems().get(e.getTablePosition().getRow()).setTitre(String.valueOf(e.getNewValue()));
-    });
-   
-   Quantite.setCellFactory(TextFieldTableCell.forTableColumn());
-    Quantite.setOnEditCommit(e ->{ 
-        e.getTableView().getItems().get(e.getTablePosition().getRow()).setQuantite_ajouter(Integer.parseInt(String.valueOf(e.getNewValue())));
-    });
-   table_panier.setEditable(true);*/
-}
 private void loadData()
 {
     ObservableList<Panier_livre> data= FXCollections.observableArrayList();
@@ -213,10 +195,13 @@ private void loadData()
             List<Panier_livre> panier = new ArrayList<>();
             panier = a.afficherL();
             for (Panier_livre p : panier) {
-             p.toString();           
+               p.toString();           
                System.out.println("tttttt");               
                data.add(p);
             }
+             table_panier.setEditable(true);
+    Quantite.setEditable(true);
+   
     table_panier.setItems(data); 
       
 }
@@ -230,68 +215,62 @@ private void loadData()
         });
     nomlivre_id.setCellValueFactory(new PropertyValueFactory<>("titre"));   
     prix.setCellValueFactory(new PropertyValueFactory<>("prix"));  
-    Quantite.setCellValueFactory(new PropertyValueFactory<>("quantite_ajouter"));  
-    updateQuantite.setCellValueFactory(new PropertyValueFactory<>("update")); 
+   // Quantite.setCellValueFactory(new PropertyValueFactory<>("quantite_ajouter"));  
+    Quantite.setCellFactory(TextFieldTableCell.forTableColumn());
     supprimer.setCellValueFactory(new PropertyValueFactory<>("supprimer"));  
-
+    table_panier.setEditable(true);
+    Quantite.setEditable(true);
+   
         table_panier.setItems(null);
         table_panier.setItems(data);
 
     }
  
  
- Connection cnx = DBConnection.getInstance().getCnx();
+Connection cnx = DBConnection.getInstance().getCnx();
 
  public void supprimer(int i) {
         String req = "DELETE From panier_livre WHERE panier_livre.id_livre=?";
         try {
- PreparedStatement pst2 = cnx.prepareStatement(req);
+        PreparedStatement pst2 = cnx.prepareStatement(req);
             pst2.setInt(1, i);
             pst2.executeUpdate();
           
             System.out.println("p supprimée");
              vf.showPanier();
-		    Stage stage = (Stage) logOut.getScene().getWindow();
+             Stage stage = (Stage) logOut.getScene().getWindow();
     	    vf.closeStage(stage);
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
  
- 
- void update( String i) {
-    	
+ @FXML
+ public void update( ) throws SQLException {
+     
+     ObservableList<Panier_livre> datarows = FXCollections.observableArrayList();
+    	for (Panier_livre p : data)
+        {
     	if (validateFields())	
-        { String requete5 = "UPDATE panier_livre SET quantite_ajouter = ?  WHERE titre = ?";
-
-        try {
-
-            PreparedStatement pst2 = cnx.prepareStatement(requete5);
-            pst2.setString(1, Quantite.getText());
-            pst2.setString(2, i); 
-            pst2.executeUpdate();
-            System.out.println("panier updated");
-            
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        }
+       { 
+           datarows.add(p);
+            PanierService ps = new PanierService();
+            ps.modifier(String.valueOf(p.getQuantite_ajouter().toString()),p.getTitre());
+         }
+      }
     }
  
  
     private boolean validateFields() {   	
-    	if ((Quantite.getText().isEmpty()) && (Quantite.getText().length()<=2)&&(Quantite.getText().length()>1))
+    	if (!(Quantite.getText().isEmpty()) && (Quantite.getText().length()<=2)&&(Quantite.getText().length()>1))
         {Alert alert = new Alert(AlertType.WARNING);
     		alert.setTitle("Validate fields");
     		alert.setHeaderText(null);
     		alert.setContentText("Please Enter into fields ");
     		alert.showAndWait();
     		
-    		return false;
-    	}else
     		return true;
+    	}else
+    		return false;
     }
 }
-
-
