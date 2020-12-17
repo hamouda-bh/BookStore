@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #557de1;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TableView fx:id="livreClient" layoutY="1.0" prefHeight="400.0" prefWidth="428.0" style="-fx-background-color: linear-gradient(to top right,  #152f72, #89a4d0);">
+        <columns>
+          <TableColumn fx:id="Titre" prefWidth="75.0" text="Titre" />
+          <TableColumn fx:id="Auteur" prefWidth="75.0" text="Auteur" />
+            <TableColumn fx:id="Prix" prefWidth="75.0" text="Prix" />
+            <TableColumn fx:id="Image" prefWidth="75.0" text="Image" />
+        </columns>
+      </TableView>
+      <Button fx:id="tfSupp" layoutX="486.0" layoutY="121.0" mnemonicParsing="false" onAction="#Supprimerunlivre" text="Supprimer" />
+     
+   </children>
+</AnchorPane>

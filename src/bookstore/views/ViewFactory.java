@@ -5,9 +5,9 @@
  */
 
 package bookstore.views;
-
+import bookstore.views.ClientLivreController;
 import bookstore.viewsControllers.CommandeFaiteController;
-import bookstore.viewsControllers.LivreKidsController;
+import bookstore.viewsControllers.KidsSpaceController;
 import bookstore.viewsControllers.BaseController;
 import bookstore.viewsControllers.GererPanierController;
 import bookstore.viewsControllers.*;
@@ -50,7 +50,7 @@ public class ViewFactory {
 	    }
     
     public void showCategoriesWindowFromLivre(){
-        BaseController cat = new LivreKidsController(this, "CategorieKidsView.fxml");
+        BaseController cat = new KidsSpaceController(this, "CategorieKidsView.fxml");
         initializeStage(cat);
     }
     public void displayCategories(){
@@ -76,11 +76,16 @@ public class ViewFactory {
 	    	stageToClose.close();
 	    	st.remove(stageToClose);
 	    }
-	    public void showAccountWindow(){
+             public void showCommandeFaite(){
+			BaseController cmdfaite = new CommandeFaiteController(this, "commandeFaite.fxml");
+			initializeStage(cmdfaite);
+	    }
+	    
+	    /*public void showAccountWindow(){
 	    	System.out.println("show account window called");
 			BaseController accountController = new AccountWindowController(this, "AccountWindow.fxml");
 			initializeStage(accountController);
-	    }
+	    }*/
 	    public void showAccountEditWindow(){
 	    	System.out.println("show account edit window called");
 			BaseController editAccountController = new EditAccountController(this, "EditAccountWindow.fxml");
@@ -89,33 +94,99 @@ public class ViewFactory {
 		
 		public void showCommandeForm(  )
 		{
+                        System.out.println("Formulaire commande appelé");
 			BaseController b= new PasserCommandeController(this, "PasserCommande.fxml");
 			 initializeStage(b);
 		}
 		 public void showPanier(  )
 		{
+                        System.out.println("Panier appelé");
 			BaseController b2= new GererPanierController(this, "GererPanier.fxml");
 			 initializeStage(b2);
 		}
                  public void showPaiement(){
+                     System.out.println("Paiment appelé");
                      BaseController paiement = new PaiementController(this, "Paiement.fxml");
                      initializeStage(paiement);
                  } 
+                 public void showPublication(){
+                     BaseController publication = new PublicationviewController(this, "publicationview.fxml");
+                     initializeStage(publication);
+                 } 
+                 public void showBlog(){
+                     BaseController blog = new BlogviewController(this, "blogview.fxml");
+                     initializeStage(blog);
+                 } 
+                 /*public void showDetailsBlog(){
+                     BaseController blog = new BlogviewController(this, "detailsBlog.fxml");
+                     initializeStage(blog);
+                 } */
                  /*
                 public void showCommandeFaite(){
                     BaseController b3= new CommandeFaiteController(this, "commandeFaite.fxml");
                     initializeStage(b3);
                 }
                 */
+
+                public void ShowKidsSpace() {
+                    BaseController enterKidsSpace = new KidsSpaceController(this, "KidsSpaceView.fxml");
+                    initializeStage(enterKidsSpace);
+                }
+
+                public void ShowLivreKids() {
+                    BaseController enterLivreKids = new LivreKidsViewController(this, "LivreKidsView.fxml");
+                    initializeStage(enterLivreKids);
+                }
+                public void ShowAjouterLivreKids(){
+                    BaseController ajouterLivre = new AjouterLivreKidsController(this, "AjouterLivreKids.fxml");
+                    initializeStage(ajouterLivre);
+                }
                   public void showAjoutLivre(){
                      BaseController ajoutlivre = new AjoutLivreController(this, "AjoutLivre.fxml");
                      initializeStage(ajoutlivre);
-                 
-		
                   }
-                  public void showLivre(){
+                 public void showPasswordWindow(){
+                     BaseController psw = new PasswordController(this, "Password.fxml");
+                     initializeStage(psw);
+                 } 
+                 public void showMailWindow(){
+                     BaseController mail = new MailWindowController(this, "MailWindow.fxml");
+                     initializeStage(mail);
+                 } 
+                 
+                 public void showUI(){
+                    BaseController mail = new LoginController(this, "loginUi.fxml");
+                     initializeStage(mail);
+                 }
+                 
+                 public void showMainUI(){
+                  
+                    BaseController home = new HomeController(this, "Home.fxml");
+                     initializeStage(home);
+                 }
+                 public void showLivre(){
                      BaseController livre = new LivreController(this, "Livre.fxml");
                      initializeStage(livre);
+					}
+                  
+                  
+                 public void showUserDetails(){
+                  
+                    BaseController user = new DetailsController(this, "UserDetails.fxml");
+                     initializeStage(user);
+                 }
 
-    
-}}
+                  public void showClientLivre() {
+                     BaseController clientLivre = new ClientLivreController(this, "ClientLivre.fxml");
+                     initializeStage(clientLivre);
+                  }
+                  public void showSupprimerunlivre(){
+                     BaseController supprimerlivre = new ClientLivreController(this, "ClientLivre.fxml");
+                     initializeStage(supprimerlivre);
+                  }
+}
+                 
+                 
+                 
+                 
+		

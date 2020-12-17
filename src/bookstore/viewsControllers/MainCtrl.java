@@ -37,8 +37,9 @@ public class MainCtrl extends BaseController implements Initializable {
     private Button btnMenus;
     @FXML
     private Button btnPackages;
-    @FXML
-    private Button btnSettings;
+  
+      @FXML
+    private Button btn_panier;
     @FXML
     private Button logOut;
     @FXML
@@ -51,7 +52,47 @@ public class MainCtrl extends BaseController implements Initializable {
     private Pane pnlOverview;
     @FXML
     private VBox pnItems;
-
+    @FXML
+    private Button myAccountButton;
+@FXML
+    void logOutAction() {
+    	Cache.client = null ;
+    	Stage stage = (Stage) logOut.getScene().getWindow();
+    	vf.closeStage(stage);
+    	vf.showLoginWindow();
+    }
+    /*
+    void myAccountAction() {
+        vf.showAccountEditWindow();
+        Stage stage = (Stage) logOut.getScene().getWindow();
+  	    vf.closeStage(stage);
+    }
+    */
+    @FXML
+    void ShowKidsSpace() {
+        vf.ShowKidsSpace();
+    }
+     @FXML
+    private void goLivre() {
+    
+     vf.showLivre() ;
+    
+           }
+    @FXML
+    private void goBlog(ActionEvent event) {
+        vf.showBlog();
+    }
+    /*
+    @FXML
+    void myAccountAction() {
+        vf.showAccountEditWindow();
+        Stage stage = (Stage) logOut.getScene().getWindow();
+  	    vf.closeStage(stage);
+    }*/
+     @FXML
+    void panier(ActionEvent event) {
+        vf.showPanier();
+    }
     /**
      * Initializes the controller class.
      */
@@ -61,19 +102,10 @@ public class MainCtrl extends BaseController implements Initializable {
     }    
 
     @FXML
-    private void handleClicks(ActionEvent event) {
+    private void handleClicks() {
     }
-    @FXML
-    void logOutAction() {
-    	Cache.client = null ;
-    	Stage stage = (Stage) logOut.getScene().getWindow();
-    	vf.closeStage(stage);
-    	vf.showLoginWindow();
-    }
-     @FXML
-    private void goLivre(ActionEvent event) {
     
-     vf.showLivre() ;
     
-           }
+    
+    
 }

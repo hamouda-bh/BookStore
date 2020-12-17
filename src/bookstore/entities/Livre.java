@@ -9,7 +9,7 @@ import javafx.scene.control.TextField;
  */
 public class Livre {
     private int id_livre;
-    private String label_cat ;
+    private int id_categorie ;
     private String titre ;
     private String auteur ;
     private String genre;
@@ -19,25 +19,32 @@ public class Livre {
     public Livre() {
     }
 
-    public Livre(int id_livre, String label_cat, String titre, String auteur, String genre,float prix,String image) {
+    public Livre(int id_livre, int id_categorie, String titre, String auteur, String genre,float prix,String image) {
         this.id_livre = id_livre;
-        this.label_cat = label_cat;
+        this.id_categorie = id_categorie;
         this.titre = titre;
         this.auteur = auteur;
-        this.genre=genre;
+        this.prix = prix;
+        this.image = image;
+    }
+    
+
+    public Livre( int id_categorie,String titre, String auteur, float prix, String image) {
+        this.id_categorie = id_categorie;
+        this.titre = titre;
+        this.auteur = auteur;
         this.prix = prix;
         this.image = image;
     }
 
-    public Livre(String label_cat, String titre, String auteur, String genre, float prix, String image) {
-        this.label_cat = label_cat;
+    public Livre(String titre, String auteur, float prix, String image) {
         this.titre = titre;
         this.auteur = auteur;
-        this.genre = genre;
         this.prix = prix;
         this.image = image;
     }
 
+    
     
    
     
@@ -50,12 +57,12 @@ public class Livre {
         this.id_livre = id_livre;
     }
 
-    public String getLabel_cat() {
-        return label_cat;
+    public int getId_categorie() {
+        return id_categorie;
     }
 
-    public void setLabel_cat(String label_cat) {
-        this.label_cat = label_cat;
+    public void setId_categorie(int id_categorie) {
+        this.id_categorie = id_categorie;
     }
 
     public String getTitre() {
@@ -100,7 +107,7 @@ public class Livre {
 
     @Override
     public String toString() {
-        return "Livre{" + "idLivre=" + id_livre + ", Label=" + label_cat + ", titre=" + titre + ", nomAuteur=" + auteur + ", genre=" + genre + ",  prix=" + prix + ", Image=" + image + '}';
+        return "Livre{" + "idLivre=" + id_livre + ", Label=" + id_categorie + ", titre=" + titre + ", nomAuteur=" + auteur + ", genre=" + genre + ",  prix=" + prix + ", Image=" + image + '}';
     }
     
 
@@ -108,7 +115,7 @@ public class Livre {
     public int hashCode() {
         int hash = 5;
         hash = 41 * hash + this.id_livre;
-        hash = 41 * hash + Objects.hashCode(this.label_cat);
+        hash = 41 * hash + Objects.hashCode(this.id_categorie);
         hash = 41 * hash + Objects.hashCode(this.titre);
         hash = 41 * hash + Objects.hashCode(this.auteur);
         hash = 41 * hash + Float.floatToIntBits(this.prix);
