@@ -28,6 +28,7 @@ import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 import bookstore.services.CommandeService;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.ResourceBundle;
@@ -41,8 +42,6 @@ import javafx.scene.text.Text;
 import javax.swing.JOptionPane;
 
 
-
-
 public class PasserCommandeController extends BaseController implements Initializable {
     public PasserCommandeController(ViewFactory vf, String fxmlName){
         super(vf, fxmlName);
@@ -52,9 +51,11 @@ public class PasserCommandeController extends BaseController implements Initiali
 
     @FXML
     private TextField inputId;
+    
     @FXML
     private CheckBox check1_id;
-      @FXML
+    
+    @FXML
     private Button btnOverview;
 
     @FXML
@@ -77,12 +78,16 @@ public class PasserCommandeController extends BaseController implements Initiali
     
     @FXML
     private CheckBox check2_id;
+    
     @FXML
     private Button confirm_btn_id;
+    
     @FXML
     private Button annuler_btn_id;
+    
     @FXML
     private ToggleButton btn_code_id;
+    
     @FXML
     private Text affSumid;
   
@@ -91,15 +96,21 @@ public class PasserCommandeController extends BaseController implements Initiali
    
     @FXML
     private Pane pnlCustomer;
+    
     @FXML
     private Pane pnlOrders;
+    
     public String prixF;
+    
     @FXML
     private Pane pnlMenus;
+    
     @FXML
     private Pane pnlOverview;
+    
     @FXML
     private VBox pnItems;
+    
     @FXML
     private Button myAccountButton;
      
@@ -131,16 +142,21 @@ public class PasserCommandeController extends BaseController implements Initiali
     @FXML
     void ShowKidsSpace() {
         vf.ShowKidsSpace();
+        Stage stage = (Stage) btn_panier.getScene().getWindow();
+	vf.closeStage(stage);
     }
      @FXML
     private void goLivre() {
     
      vf.showLivre() ;
-    
+    Stage stage = (Stage) btn_panier.getScene().getWindow();
+	vf.closeStage(stage);
            }
     @FXML
     private void goBlog(ActionEvent event) {
         vf.showBlog();
+        Stage stage = (Stage) btn_panier.getScene().getWindow();
+	vf.closeStage(stage);
     }
     /*
     @FXML
@@ -152,29 +168,49 @@ public class PasserCommandeController extends BaseController implements Initiali
      @FXML
     void panier(ActionEvent event) {
         vf.showPanier();
+        Stage stage = (Stage) btn_panier.getScene().getWindow();
+	vf.closeStage(stage);
     }
     
 
     @FXML
     void onCliqAnnuler(ActionEvent event) {
             vf.showPanier();
+            Stage stage = (Stage) btn_panier.getScene().getWindow();
+	    vf.closeStage(stage);
     }
 
     @FXML
-    void onCliqConfirmer(ActionEvent event) {
-        
-        
+    void onCliqConfirmer(ActionEvent event) throws SQLException {
+       // Date date=java.util.Calendar.getInstance().getTime();
+        java.util.Date date_util = new java.util.Date();
+        java.sql.Date date_sql = new java.sql.Date(date_util.getTime());
+    
+        Commande c = new Commande ( String.valueOf(date_sql) ,Float.parseFloat(prixF));
+        CommandeService cs = new CommandeService();
+      
         if (check2_id.isSelected())
         {
             vf.showPaiement();
+             Stage stage = (Stage) btn_panier.getScene().getWindow();
+	     vf.closeStage(stage);
+             cs.ajouter(c);
+             
+             cs.vider();
         }
         else if (check1_id.isSelected())
         {
             vf.showCommandeFaite();
+             Stage stage = (Stage) btn_panier.getScene().getWindow();
+	     vf.closeStage(stage);
+             cs.ajouter(c);
+             cs.vider();
         }else if ((!check1_id.isSelected())&&(!check1_id.isSelected()))
         {
          JOptionPane.showMessageDialog(null, "check mode de paiement ");
          vf.showCommandeForm();
+         Stage stage = (Stage) btn_panier.getScene().getWindow();
+	 vf.closeStage(stage);
         }
     }
     
@@ -207,8 +243,7 @@ public class PasserCommandeController extends BaseController implements Initiali
         
     ObservableList<Panier_livre> data= FXCollections.observableArrayList();
     PanierService a = new PanierService();
-    
-            List<Panier_livre> panier = new ArrayList<>();
+         List<Panier_livre> panier = new ArrayList<>();
             panier = a.afficherL();
 
          for (Panier_livre p : panier) {
@@ -257,6 +292,36 @@ public class PasserCommandeController extends BaseController implements Initiali
             sc.setDiscount(a,code);
             JOptionPane.showMessageDialog(null, "Coupon Used");*/
             prixF=String.valueOf(  Float.parseFloat(affSumid.getText())-((Float.parseFloat(affSumid.getText())*20)/100));
+            affSumid.setText(prixF);       
+            affSumid.isDisable();
+            btn_code_id.isDisable();
+        }else if (code == 30) {
+           /* ServicesShoppingCart sc=new ServicesShoppingCart();
+            ShoppingCart a=new ShoppingCart();
+            a=sc.setActiveCart(a);
+            sc.setDiscount(a,code);
+            JOptionPane.showMessageDialog(null, "Coupon Used");*/
+            prixF=String.valueOf(  Float.parseFloat(affSumid.getText())-((Float.parseFloat(affSumid.getText())*30)/100));
+            affSumid.setText(prixF);       
+            affSumid.isDisable();
+            btn_code_id.isDisable();
+        }else if (code == 40) {
+           /* ServicesShoppingCart sc=new ServicesShoppingCart();
+            ShoppingCart a=new ShoppingCart();
+            a=sc.setActiveCart(a);
+            sc.setDiscount(a,code);
+            JOptionPane.showMessageDialog(null, "Coupon Used");*/
+            prixF=String.valueOf(  Float.parseFloat(affSumid.getText())-((Float.parseFloat(affSumid.getText())*40)/100));
+            affSumid.setText(prixF);       
+            affSumid.isDisable();
+            btn_code_id.isDisable();
+        }else if (code == 50) {
+           /* ServicesShoppingCart sc=new ServicesShoppingCart();
+            ShoppingCart a=new ShoppingCart();
+            a=sc.setActiveCart(a);
+            sc.setDiscount(a,code);
+            JOptionPane.showMessageDialog(null, "Coupon Used");*/
+            prixF=String.valueOf(  Float.parseFloat(affSumid.getText())-((Float.parseFloat(affSumid.getText())*50)/100));
             affSumid.setText(prixF);       
             affSumid.isDisable();
             btn_code_id.isDisable();

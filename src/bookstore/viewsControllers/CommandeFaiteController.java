@@ -29,6 +29,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import javax.print.Doc;
 import javax.print.DocFlavor;
 import javax.print.DocPrintJob;
@@ -160,6 +161,8 @@ public class CommandeFaiteController extends BaseController implements Initializ
 @FXML
     void onCliqRetour(ActionEvent event) {
             vf.showPanier();
+            Stage stage = (Stage) bt_envoi_id.getScene().getWindow();
+	               	vf.closeStage(stage);
     }
 
 }

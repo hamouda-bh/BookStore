@@ -24,8 +24,9 @@
         <columns>
           <TableColumn fx:id="nomlivre_id" prefWidth="183.0" text="Nom livre" />
           <TableColumn fx:id="prix" prefWidth="102.0" text="prix" />
-            <TableColumn fx:id="Quantite" prefWidth="119.0" text="Quantité" />
-            <TableColumn fx:id="supprimer" prefWidth="159.0" text="Supprimer" />
+            <TableColumn fx:id="Quantite" prefWidth="94.0" text="Quantité" />
+            <TableColumn fx:id="updateQuantite" prefWidth="76.0" text="mettre à jour" />
+            <TableColumn fx:id="supprimer" prefWidth="108.0" text="supprimer" />
         </columns>
       </TableView>
       <VBox alignment="TOP_CENTER" layoutY="-6.0" prefHeight="601.0" prefWidth="256.0" style="-fx-background-color: #557de1;">

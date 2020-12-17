@@ -16,13 +16,12 @@ public class CommandeService {
 Connection cnx = DBConnection.getInstance().getCnx();
 
 public void ajouter (Commande p) throws SQLException {
-         String requete1 = "INSERT INTO commande (id_commande,  date_commande, id_client, prix_Totale) VALUES (?,?,?,?)";
+         String requete1 = "INSERT INTO commande (  date_commande, prix_Totale) VALUES (?,?)";
         PreparedStatement pst = cnx.prepareStatement(requete1);
 
-        pst.setInt(1, p.getId_commande());
-        pst.setDate(2, (Date) p.getDate_commande());
-        pst.setInt(3, p.getId_client());
-        pst.setFloat(4, p.getPrixTotale());
+    
+        pst.setString(1, String.valueOf(p.getDate_commande()));
+        pst.setFloat(2, p.getPrixTotale());
         pst.executeUpdate();
         System.out.println("p ajoutée");
         try {
@@ -32,7 +31,7 @@ public void ajouter (Commande p) throws SQLException {
           
 }
 
-
+    
 public void supprimer (int i) {
 	 String req = "DELETE From commande WHERE commande.id_commande=?";
         try {
@@ -59,7 +58,18 @@ System.out.println("c modifiée");
 }
 */
 
-
+public void vider () {
+	 String req = "TRUNCATE TABLE panier_livre";
+        try {
+ PreparedStatement pst2 = cnx.prepareStatement(req);
+           
+            pst2.executeUpdate();
+          
+            System.out.println("panier vidé");
+} catch (SQLException e) {
+	e.printStackTrace();
+}
+}
 
 
 
@@ -76,7 +86,7 @@ public List<Commande> afficher ( ) {
             Statement st = cnx.createStatement();
             ResultSet res = st.executeQuery(req);
             while (res.next()) {
-                list.add(new Commande(res.getInt("id_commande"), res.getDate("date_commande"),res.getInt("id_client"), res.getFloat("prix_Totale")));
+                list.add(new Commande(res.getInt("id_commande"), res.getString("date_commande"),res.getInt("id_client"), res.getFloat("prix_Totale")));
             }
             System.out.println("p recupere");
 

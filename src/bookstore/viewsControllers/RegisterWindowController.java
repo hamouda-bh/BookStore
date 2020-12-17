@@ -62,10 +62,7 @@ public class RegisterWindowController extends BaseController {
     	
     	if (validateEmail() & validateNom() & validatePassword() & validatePrenom() & validateTel() & validateFields())	
     	
-    	//----------------------------------------------------------------
-    	
-    	
-    	try {
+   	try {
     		Connection cnx = DBConnection.getInstance().getCnx();
         	String req = "INSERT INTO client (nom, prenom, username, email, tel,password, adresse) VALUES ('"+nameField.getText()+"','"+prenomField.getText()+"','"+userNameField.getText()+"','"+emailField.getText()+"','"+telField.getText()+"','"+BCrypt.hashpw(passwordField.getText(),BCrypt.gensalt ())+"','"+adressField.getText()+"')";
     		Statement st = cnx.createStatement();	  		  

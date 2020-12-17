@@ -123,16 +123,21 @@ public class PaiementController extends BaseController implements Initializable{
     @FXML
     void ShowKidsSpace() {
         vf.ShowKidsSpace();
+        Stage stage = (Stage) btn_panier.getScene().getWindow();
+	vf.closeStage(stage);
     }
      @FXML
     private void goLivre() {
     
      vf.showLivre() ;
-    
+    Stage stage = (Stage) btn_panier.getScene().getWindow();
+    vf.closeStage(stage);
            }
     @FXML
     private void goBlog(ActionEvent event) {
         vf.showBlog();
+        Stage stage = (Stage) btn_panier.getScene().getWindow();
+	vf.closeStage(stage);
     }
     /*
     @FXML
@@ -144,16 +149,16 @@ public class PaiementController extends BaseController implements Initializable{
      @FXML
     void panier(ActionEvent event) {
         vf.showPanier();
+        Stage stage = (Stage) btn_panier.getScene().getWindow();
+	vf.closeStage(stage);
     }
 
     @FXML
     void handleClicks(ActionEvent event) {
-
     }
 
     @FXML
     void logOutAction(ActionEvent event) {
-
     }
  @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -162,9 +167,10 @@ public class PaiementController extends BaseController implements Initializable{
   @FXML
     void onCliqAnnuler(ActionEvent event) {
             vf.showPanier();
+             Stage stage = (Stage) btn_panier.getScene().getWindow();
+	     vf.closeStage(stage);
     }
 
-   
   /*  void onCliqPayer(ActionEvent event) {
             vf.showCommandeFaite();
          //   FactureService f = new FactureService();
@@ -207,7 +213,6 @@ public class PaiementController extends BaseController implements Initializable{
             chargeParam.put("amount", 0.50);
             chargeParam.put("currency", "usd");
             chargeParam.put("source", token.getId());
-             System.err.println("notiff 9ballllllllll ");
              
              if (SystemTray.isSupported()) {
             TrayIconDemo td = new TrayIconDemo();
@@ -215,21 +220,11 @@ public class PaiementController extends BaseController implements Initializable{
             System.err.println("notiff paie ");
         } else {
             System.err.println("Erreur!!!!");
-        }
-             
+        }             
           Charge.create(chargeParam);
-                      System.err.println("notiff 9ballll ");
-
-          
-          /* NotificationAPI.notifInfo("Payment", "Your payment was successful!");
-            // Create Order
-            ServicesOrder so = new ServicesOrder();
-            
-            SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
-            Date date = new Date(System.currentTimeMillis());
-            Order O = new Order(SC, true, date);
-            createOrder();*/
-            
+             vf.showCommandeFaite();
+             Stage stage = (Stage) btn_panier.getScene().getWindow();
+	     vf.closeStage(stage);
         }catch(StripeException e){
             System.out.println(e.getMessage());   
         //    NotificationAPI.notif("Payment", "An error has occured with your Payment!");

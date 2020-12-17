@@ -1,6 +1,7 @@
 package bookstore.entities;
 
 import bookstore.services.PanierService;
+import bookstore.viewsControllers.GererPanierController;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -8,6 +9,7 @@ import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 
 public class Panier_livre extends Panier{
 
@@ -17,8 +19,9 @@ private int id_comm;
 private float prix;
 private String titre;
 private float somme_ajoute ;
-private int quantite_ajouter;
+private TextField quantite_ajouter;
 private Button supprimer;
+private Button update;
 
     
 
@@ -42,41 +45,53 @@ private Button supprimer;
         this.somme_ajoute = somme_ajouté;
     }
 
-    public int getQuantite_ajouter() {
+    public TextField getQuantite_ajouter() {
         return quantite_ajouter;
     }
 
-    public void setQuantite_ajouter(int quantite_ajouter) {
+    public void setQuantite_ajouter(TextField quantite_ajouter) {
         this.quantite_ajouter = quantite_ajouter;
     }
 
-    public Panier_livre( int id_user, int id_comm, float somme_ajoute, int quantite_ajouter) {
+    public Panier_livre( int id_user, int id_comm, float somme_ajoute, String quantite_ajouter) {
         this.id_user = id_user;
         this.id_comm = id_comm;
         this.somme_ajoute = somme_ajoute;
-        this.quantite_ajouter = quantite_ajouter;
+        this.quantite_ajouter = new TextField(quantite_ajouter);
         this.supprimer = new Button ("supprimer");
          supprimer.setOnAction(new EventHandler<ActionEvent>(){
 
                 @Override
                 public void handle(ActionEvent t) {
 
-                        PanierService p = new PanierService();
+                        GererPanierController p = new GererPanierController();
                         p.supprimer(id_comm);
+                   }
+            });
+         
+         this.update = new Button( "update");
+                 update.setOnAction(new EventHandler<ActionEvent>(){
+
+                @Override
+                public void handle(ActionEvent t) {
+
+                        GererPanierController p = new GererPanierController();
                         
-                        
-                }
+                   }
             });
     }
+    
+    
+    
 
-    public Panier_livre(int id_panier, int id_user, int id_comm, float somme_ajoute, int quantite_ajouter, String titre, float prix) {
+    public Panier_livre(int id_panier, int id_user, int id_comm, float somme_ajoute, String quantite_ajouter, String titre, float prix) {
         this.id_panier = id_panier;
         this.id_user = id_user;
         this.id_comm = id_comm;
         this.prix= prix;
         this.titre=titre;
         this.somme_ajoute = somme_ajoute;
-        this.quantite_ajouter = quantite_ajouter;
+        this.quantite_ajouter = new TextField(quantite_ajouter);
          this.supprimer = new Button ("supprimer");
           supprimer.setOnAction(new EventHandler<ActionEvent>(){
 
@@ -90,6 +105,16 @@ private Button supprimer;
                         
                         
                 }
+            });
+          this.update = new Button( "update");
+                 update.setOnAction(new EventHandler<ActionEvent>(){
+
+                @Override
+                public void handle(ActionEvent t) {
+
+                        GererPanierController p = new GererPanierController();
+                        
+                   }
             });
     }
     
@@ -113,6 +138,16 @@ private Button supprimer;
                         
                 }
             });
+          this.update = new Button( "update");
+                 update.setOnAction(new EventHandler<ActionEvent>(){
+
+                @Override
+                public void handle(ActionEvent t) {
+
+                        GererPanierController p = new GererPanierController();
+                        
+                   }
+            });
     }
    
     public float getPrix() {
@@ -130,9 +165,16 @@ private Button supprimer;
     public void setTitre(String titre) {
         this.titre = titre;
     }
-    
-    
 
+    public Button getUpdate() {
+        return update;
+    }
+
+    public void setUpdate(Button update) {
+        this.update = update;
+    }
+    
+  
     @Override
     public int hashCode() {
         int hash = 7;
@@ -201,11 +243,11 @@ private Button supprimer;
     public int modifierQuantité(ArrayList<Livre> list) {
        
         PanierService ps = new PanierService();
-    try {
+ /*   try {
         ps.modifier(this.quantite_ajouter,this.id_comm);
     } catch (SQLException ex) {
         Logger.getLogger(Panier_livre.class.getName()).log(Level.SEVERE, null, ex);
-    }
+    }*/
         return ps.afficherQ();
     
     }

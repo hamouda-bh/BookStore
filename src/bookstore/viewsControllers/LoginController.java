@@ -113,7 +113,6 @@ public class LoginController extends BaseController{
 	   	}catch(Exception e){
 	   		e.printStackTrace();
 	   		e.getCause();
-	   		
 	   	}
 	   }
    }
@@ -122,9 +121,7 @@ public class LoginController extends BaseController{
                          vf.showMailWindow();
                          Stage stage = (Stage) userTextF.getScene().getWindow();
    	                 vf.closeStage(stage);
-                         
-
-    }
+             }
     @FXML
    void registerButtonAction() {
    	vf.showRegisterWindow();
