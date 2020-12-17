@@ -122,7 +122,7 @@ public class KidsSpaceController extends BaseController implements Initializable
 
     @FXML
     void showCategoriesKids() {
-        
+        vf.showCategoriesKids();
     }
 
     @FXML
@@ -141,7 +141,6 @@ public class KidsSpaceController extends BaseController implements Initializable
         Stage stage = (Stage) logOut.getScene().getWindow();
   	    vf.closeStage(stage);
     }
-	
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         

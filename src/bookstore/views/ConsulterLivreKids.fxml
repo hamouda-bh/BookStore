@@ -3,17 +3,15 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="615.0" prefWidth="1079.0" style="-fx-background-color: linear-gradient(to top right,  #152f72, #89a4d0);" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1">
+<AnchorPane id="AnchorPane" prefHeight="615.0" prefWidth="1079.0" style="-fx-background-color: linear-gradient(to top right,  #152f72, #89a4d0);" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <VBox alignment="TOP_CENTER" prefHeight="615.0" prefWidth="261.0" style="-fx-background-color: #557de1;">
          <children>
@@ -137,24 +135,17 @@
             </Button>
          </children>
       </VBox>
-      <TableView layoutX="302.0" layoutY="134.0" prefHeight="439.0" prefWidth="739.0">
-        <columns>
-          <TableColumn prefWidth="110.0" text="Titre" />
-          <TableColumn prefWidth="101.0" text="Categorie" />
-            <TableColumn prefWidth="125.0" text="Description" />
-        </columns>
-      </TableView>
-      <TextField layoutX="800.0" layoutY="72.0" prefHeight="32.0" prefWidth="241.0" promptText="Rechercher">
+      <TextField layoutX="800.0" layoutY="65.0" prefHeight="32.0" prefWidth="241.0" promptText="Rechercher">
          <font>
             <Font size="17.0" />
          </font>
       </TextField>
-      <ImageView fitHeight="23.0" fitWidth="27.0" layoutX="1012.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="23.0" fitWidth="27.0" layoutX="1012.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/icons8_Search_52px.png" />
          </image>
       </ImageView>
-      <Button fx:id="btnOverview1" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutX="302.0" layoutY="63.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="148.0" style="-fx-background-color: #a2b8ee;" stylesheets="@style.css" text="Retour" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
+      <Button fx:id="retourBtn" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutX="302.0" layoutY="63.0" mnemonicParsing="false" onAction="#retourALivreKids" prefHeight="42.0" prefWidth="148.0" stylesheets="@style.css" text="Retour" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -170,5 +161,6 @@
             <Image url="@../images/angle-double-left-solid.png" />
          </image>
       </ImageView>
+      <TilePane fx:id="tilepane" layoutX="299.0" layoutY="147.0" prefHeight="452.0" prefWidth="742.0" />
    </children>
 </AnchorPane>

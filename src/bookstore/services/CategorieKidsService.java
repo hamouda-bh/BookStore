@@ -13,6 +13,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Observable;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -56,13 +58,17 @@ public class CategorieKidsService {
             System.out.println(e.getMessage());
         }
     }
-    public void afficherLesCategorieKids(){
+    public void afficherLesCategorieKids(ObservableList<CategorieKids> categories){
         try {
-            String sql = "SELECT * FROM categoriekids";
+            String sql = "SELECT nom_categorie,description FROM categoriekids";
             PreparedStatement st = cnx.prepareStatement(sql);
             ResultSet rs = st.executeQuery();
+            
             while(rs.next()){
-                System.out.println(rs);
+                CategorieKids cat1 = new CategorieKids();
+                cat1.setNomCategorie(rs.getString(1));
+                cat1.setDescription(rs.getString(2));
+                categories.add(cat1);
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());

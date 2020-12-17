@@ -1,6 +1,7 @@
 package bookstore.services;
 
 import bookstore.Testing.DBConnection;
+import bookstore.entities.CategorieKids;
 import bookstore.entities.Livre;
 import bookstore.entities.LivreKids;
 import java.sql.Connection;
@@ -36,13 +37,13 @@ public class LivreKidsService{
     
     //methode qui permet d'jouter un livre à la BD
     public void ajouterLivreKids(LivreKids c) {
+        
         try {
-            String sql = "INSERT INTO livrekids () values (?,?,?,?) ";
+            String sql = "INSERT INTO livrekids (titre,description,image) values (?,?,?) ";
             PreparedStatement st = cnx.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
-            st.setString(1,c.getDescription());
-            st.setString(2,c.getImage());
-            st.setString(3,c.getSon());
-            st.setString(4,c.getVideo());
+            st.setString(1, c.getTitre());
+            st.setString(2,c.getDescription());
+            st.setString(3,c.getImage());
             st.executeUpdate();
             ResultSet rs = st.getGeneratedKeys();
             System.out.println("Livre ajoute");
@@ -56,33 +57,32 @@ public class LivreKidsService{
     }
     
     //methode qui permet d'afficher tous les livres ainsi que leur categorie
-    public void afficherLesLivresKids(){
+    public ArrayList<LivreKids> afficherLesLivresKids(){
         //List<LivreKids> list = new ArrayList<>();
+        ArrayList<LivreKids> listlivre = new ArrayList<>();
         try {
             String sql = "SELECT l.titre,c.nom_categorie,l.description,l.image FROM livrekids l INNER join categoriekids c on l.id_categorie_kids = c.id_categorie_kids";
             PreparedStatement st = cnx.prepareStatement(sql);
             ResultSet rs = st.executeQuery();
+            
             while(rs.next()){
-                String titreLivre = rs.getString(1);
-                String nom_categorie = rs.getString(2);
-                String description = rs.getString(3);
-                String image = rs.getString(4);
-                //list.add(new LivreKids(rs.getInt(1),rs.getInt(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6)));
-                // int idlivrekids = rs.getInt(1);
-                // int idcategoriekids = rs.getInt(2);
-                // String descriptionLivreKids = rs.getString(3);
-                // String Image = rs.getString(4);
-                // String Video = rs.getString(5);
-                // String Son = rs.getString(6);
-                // int idcategoriekids2 = rs.getInt(7);
-                // String descriptionCategorieKids = rs.getString(8);
-                //System.out.println(idlivrekids + " " + idcategoriekids + " " + descriptionLivreKids + " " + Image + " " + Video + " " + Son + " " + idcategoriekids2 + " " + descriptionCategorieKids);
-                System.out.println(titreLivre +" "+ nom_categorie +" "+ description +" "+ image);
+                LivreKids livre1 = new LivreKids();
+                livre1.setTitre(rs.getString(1));
+                CategorieKids cat1 = new CategorieKids();
+                cat1.setNomCategorie(rs.getString(2));
+                livre1.setCat(cat1);
+                livre1.setDescription(rs.getString(3));
+                livre1.setImage(rs.getString(4));
+                listlivre.add(livre1);
             }
+                //String titreLivre = rs.getString(1);
+                //String nom_categorie = rs.getString(2);
+                //String description = rs.getString(3);
+              
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        //return list;
+        return listlivre;
     }
     
     //methode d'afficher un livre en lisant son titre en parametre

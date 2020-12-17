@@ -176,7 +176,14 @@ public class ViewFactory {
                      initializeStage(user);
                  }
                  
-                 
+                 public void showCategoriesKids(){
+                     BaseController cate = new CategorieKidsController(this, "CategorieKidsView.fxml");
+                     initializeStage(cate);
+                 }
+                 public void showConsulterLesLivresKids(){
+                     BaseController b = new ConsulterLivreKidsController(this, "ConsulterLivreKids.fxml");
+                     initializeStage(b);
+                 }
                  
                  
 		

@@ -65,9 +65,14 @@ public class LivreKidsViewController extends BaseController implements Initializ
     private Pane pnlOverview;
     @FXML
     private VBox pnItems;
+    
     @FXML
     private Button myAccountButton;
-@FXML
+    @FXML
+    private Button retour;
+    
+    
+    @FXML
     void logOutAction() {
     	Cache.client = null ;
     	Stage stage = (Stage) logOut.getScene().getWindow();
@@ -128,11 +133,15 @@ public class LivreKidsViewController extends BaseController implements Initializ
     
     @FXML
     void ConsulterLesLivres( ) {
+        vf.showConsulterLesLivresKids();
         
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-    
+    @FXML
+    void returnToKidsSpace(ActionEvent event) {
+        vf.ShowKidsSpace();
+    }
 }

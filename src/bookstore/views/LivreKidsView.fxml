@@ -159,7 +159,7 @@
             </Button>
          </children>
       </VBox>
-      <Button fx:id="btnOverview1" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutX="287.0" layoutY="34.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="148.0" style="-fx-background-color: #a2b8ee;" stylesheets="@style.css" text="Retour" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
+      <Button fx:id="retour" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutX="287.0" layoutY="34.0" mnemonicParsing="false" onAction="#returnToKidsSpace" prefHeight="42.0" prefWidth="148.0" style="-fx-background-color: #a2b8ee;" stylesheets="@style.css" text="Retour" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>

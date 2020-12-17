@@ -13,34 +13,42 @@ import java.util.Objects;
  */
 public class LivreKids {
     private int idLivreKids;
-    private int idCategorie;
+
     private String titre;
     private String Description;
     private String Image;
-    private String Video;
-    private String Son;
+    private CategorieKids cat;
+    
+    
+    public LivreKids(){
+    }
 
-    public LivreKids(int idLivreKids, int idCategorie, String titre, String Description, String Image, String Video, String Son) {
+    public LivreKids(int idLivreKids, String titre, String Description, String Image  ) {
         this.idLivreKids = idLivreKids;
-        this.idCategorie = idCategorie;
+
         this.titre = titre;
         this.Description = Description;
         this.Image = Image;
-        this.Video = Video;
-        this.Son = Son;
     }
     
-    public LivreKids(String titre, String Description, String Image, String Video, String Son) {
+    public LivreKids(String titre, String Description, String Image) {
         this.titre = titre;
         this.Description = Description;
         this.Image = Image;
-        this.Video = Video;
-        this.Son = Son;
+
     }
 
     public LivreKids(String titre, String Description) {
         this.titre = titre;
         this.Description = Description;
+    }
+
+    public CategorieKids getCat() {
+        return cat;
+    }
+
+    public void setCat(CategorieKids cat) {
+        this.cat = cat;
     }
     
 
@@ -70,37 +78,20 @@ public class LivreKids {
         this.Image = Image;
     }
 
-    public String getVideo() {
-        return Video;
+    public String getTitre() {
+        return titre;
     }
 
-    public void setVideo(String Video) {
-        this.Video = Video;
-    }
-
-    public String getSon() {
-        return Son;
-    }
-
-    public void setSon(String Son) {
-        this.Son = Son;
+    public void setTitre(String titre) {
+        this.titre = titre;
     }
 
     @Override
     public String toString() {
-        return "LivreKids{" + "idLivreKids=" + idLivreKids + ", Description=" + Description + ", Image=" + Image + ", Video=" + Video + ", Son=" + Son + '}';
+        return "LivreKids{" + "idLivreKids=" + idLivreKids + ", titre=" + titre + ", Description=" + Description + ", Image=" + Image + ", cat=" + cat + '}';
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 97 * hash + this.idLivreKids;
-        hash = 97 * hash + Objects.hashCode(this.Description);
-        hash = 97 * hash + Objects.hashCode(this.Image);
-        hash = 97 * hash + Objects.hashCode(this.Video);
-        hash = 97 * hash + Objects.hashCode(this.Son);
-        return hash;
-    }
+   
 
     @Override
     public boolean equals(Object obj) {
@@ -115,18 +106,6 @@ public class LivreKids {
         }
         final LivreKids other = (LivreKids) obj;
         if (this.idLivreKids != other.idLivreKids) {
-            return false;
-        }
-        if (!Objects.equals(this.Description, other.Description)) {
-            return false;
-        }
-        if (!Objects.equals(this.Image, other.Image)) {
-            return false;
-        }
-        if (!Objects.equals(this.Video, other.Video)) {
-            return false;
-        }
-        if (!Objects.equals(this.Son, other.Son)) {
             return false;
         }
         return true;
