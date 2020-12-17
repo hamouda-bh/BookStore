@@ -12,32 +12,27 @@
          <font>
             <Font name="System Bold" size="13.0" />
          </font></Label>
-      <Label layoutX="137.0" layoutY="102.0" text="Titre" textFill="#c6c4b4">
+      <Label layoutX="146.0" layoutY="102.0" text="Titre" textFill="#c6c4b4">
          <font>
             <Font name="System Bold" size="13.0" />
          </font></Label>
-      <Label layoutX="230.0" layoutY="103.0" text="Auteur" textFill="#c6c4b4">
+      <Label layoutX="248.0" layoutY="102.0" text="Auteur" textFill="#c6c4b4">
          <font>
             <Font name="System Bold" size="13.0" />
          </font></Label>
-      <Label layoutX="328.0" layoutY="102.0" text="Genre" textFill="#c6c4b4">
+      <Label layoutX="358.0" layoutY="102.0" text="Prix" textFill="#c6c4b4">
          <font>
             <Font name="System Bold" size="13.0" />
          </font></Label>
-      <Label layoutX="424.0" layoutY="103.0" text="Prix" textFill="#c6c4b4">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font></Label>
-      <Label layoutX="499.0" layoutY="102.0" text="Image" textFill="#c6c4b4">
+      <Label layoutX="441.0" layoutY="102.0" text="Image" textFill="#c6c4b4">
          <font>
             <Font name="System Bold" size="13.0" />
          </font></Label>
       <TextField fx:id="tfLabelCat" layoutX="26.0" layoutY="123.0" prefHeight="25.0" prefWidth="71.0" />
-      <TextField fx:id="tfTitre" layoutX="116.0" layoutY="123.0" prefHeight="25.0" prefWidth="71.0" />
-      <TextField fx:id="tfAuteur" layoutX="209.0" layoutY="123.0" prefHeight="25.0" prefWidth="78.0" />
-      <TextField fx:id="tfGenre" layoutX="311.0" layoutY="123.0" prefHeight="25.0" prefWidth="71.0" />
-      <TextField fx:id="tfPrix" layoutX="405.0" layoutY="123.0" prefHeight="25.0" prefWidth="58.0" />
-      <TextField fx:id="tfImage" layoutX="489.0" layoutY="123.0" prefHeight="25.0" prefWidth="58.0" />
+      <TextField fx:id="tfTitre" layoutX="131.0" layoutY="123.0" prefHeight="25.0" prefWidth="71.0" />
+      <TextField fx:id="tfAuteur" layoutX="230.0" layoutY="123.0" prefHeight="25.0" prefWidth="78.0" />
+      <TextField fx:id="tfPrix" layoutX="341.0" layoutY="123.0" prefHeight="25.0" prefWidth="58.0" />
+      <TextField fx:id="tfImage" layoutX="431.0" layoutY="123.0" prefHeight="25.0" prefWidth="58.0" />
       <Button fx:id="tfENV" layoutX="277.0" layoutY="200.0" mnemonicParsing="false" onAction="#Ajouterunlivre" prefHeight="25.0" prefWidth="78.0" stylesheets="@../css/style.css" text="Confirmer" />
       <Label layoutX="65.0" layoutY="27.0">
          <font>

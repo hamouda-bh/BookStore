@@ -5,11 +5,13 @@ import bookstore.services.livreService;
 import bookstore.viewsControllers.BaseController;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
@@ -123,15 +125,34 @@ public class AjoutLivreController extends BaseController{
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-
-    @FXML
-    void Ajouterunlivre(ActionEvent event) throws IOException {
-       // int a=Integer.parseInt(tfId.getText());
-        //float f = Float.parseFloat(tfPrix.getText());
-     livreService ls = new livreService ();
-     ls.ajouter(new Livre (tfLabelCat.getText(),tfTitre.getText(),tfAuteur.getText(),tfGenre.getText(),tfPrix.getLength(),tfImage.getText()));
-     JOptionPane.showMessageDialog(null,"Livre ajouté!");
+   
+Alert alert=new Alert(Alert.AlertType.INFORMATION);
     
+    @FXML
+    void Ajouterunlivre(ActionEvent event) throws IOException, SQLException {
+        int a = 0;
+        float f = 0 ;
+        String str = "N/A";
+        try {
+          a=Integer.parseInt(tfLabelCat.getText());
+         f = Float.parseFloat(tfPrix.getText());
+        } catch (NumberFormatException ex){
+        }
+    if((!"".equals(a))&&(!"".equals(tfTitre.getText()))&&(!"".equals(tfAuteur.getText()))&&(!"".equals(f))&&(!"".equals(tfImage.getText()))){
+     livreService ls = new livreService ();
+     ls.ajouter(new Livre (a,tfTitre.getText(),tfAuteur.getText(),f,tfImage.getText()));
+     
+     JOptionPane.showMessageDialog(null,"Livre ajouté!");
+        }
+        else if(("".equals(a))||("".equals(tfTitre.getText()))||("".equals(tfAuteur.getText()))||("".equals(f))||("".equals(tfImage.getText()))){
+        {
+            alert.setTitle("information");
+            alert.setHeaderText(null);
+            alert.setContentText("type valide information !");
+            alert.showAndWait();
+        }
+        }
+    }
 //FXMLLoader loader = new FXMLLoader (getClass().getResource("DetailsLivre.fxml"));
 //Parent root = loader.load();
 //tfId.getScene().setRoot(root);
@@ -146,20 +167,22 @@ public class AjoutLivreController extends BaseController{
         //dlc.setLbPrix(tfPrix.getLength());
         //dlc.setLbImage(tfImage.getText());
         
-    }
-    private void Modifierunlivre (ActionEvent event) throws IOException {
+        
+        
+   /* private void Modifierunlivre (ActionEvent event) throws IOException {
         int a=Integer.parseInt(tfId.getText());
         float f = Float.parseFloat(tfPrix.getText());
      livreService ls = new livreService ();
      ls.modifier(new Livre (a,tfLabelCat.getText(),tfTitre.getText(),tfAuteur.getText(),tfGenre.getText(),f,tfImage.getText()));
      JOptionPane.showMessageDialog(null,"Livre modifié !");
-    }
+    }*/
+    /*@FXML
     private void Supprimerunlivre (ActionEvent event) throws IOException {
         int a=Integer.parseInt(tfId.getText());
         float f = Float.parseFloat(tfPrix.getText());
      livreService ls = new livreService ();
-     ls.supprimer(new Livre (a,tfLabelCat.getText(),tfTitre.getText(),tfAuteur.getText(),tfGenre.getText(),f,tfImage.getText()));
+     ls.Supprimer(new Livre (a,tfTitre.getText(),tfAuteur.getText(),f,tfImage.getText()));
      JOptionPane.showMessageDialog(null,"Livre supprimé !");
     }
-    
+  */
 }

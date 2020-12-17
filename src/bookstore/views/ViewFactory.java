@@ -5,7 +5,7 @@
  */
 
 package bookstore.views;
-
+import bookstore.views.ClientLivreController;
 import bookstore.viewsControllers.CommandeFaiteController;
 import bookstore.viewsControllers.KidsSpaceController;
 import bookstore.viewsControllers.BaseController;
@@ -175,9 +175,18 @@ public class ViewFactory {
                     BaseController user = new DetailsController(this, "UserDetails.fxml");
                      initializeStage(user);
                  }
+
+                  public void showClientLivre() {
+                     BaseController clientLivre = new ClientLivreController(this, "ClientLivre.fxml");
+                     initializeStage(clientLivre);
+                  }
+                  public void showSupprimerunlivre(){
+                     BaseController supprimerlivre = new ClientLivreController(this, "ClientLivre.fxml");
+                     initializeStage(supprimerlivre);
+                  }
+}
                  
                  
                  
                  
 		
-}

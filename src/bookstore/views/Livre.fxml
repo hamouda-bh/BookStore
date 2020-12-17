@@ -20,8 +20,6 @@
          </font>
       </Label>
       <Button fx:id="tfAjouut" layoutX="332.0" layoutY="173.0" mnemonicParsing="false" onAction="#ajoute" text="Ajouter" textFill="#281313" />
-      <Button fx:id="tfModif" layoutX="336.0" layoutY="237.0" mnemonicParsing="false" onAction="#Modifierunlivre" text="Editer" />
-      <Button fx:id="tfSupp" layoutX="316.0" layoutY="288.0" mnemonicParsing="false" onAction="#Supprimerunlivre" text="Supprimer" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="184.0" layoutX="383.0" layoutY="145.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #908080;" width="134.0" />
       <Label layoutX="427.0" layoutY="227.0" prefHeight="17.0" prefWidth="47.0" text="BOOK">
          <font>
@@ -150,5 +148,6 @@
             </Button>
          </children>
       </VBox>
+      <Button fx:id="tfAffich" layoutX="284.0" layoutY="98.0" mnemonicParsing="false" onAction="#afficherLivre" text="Afficher les détails des livres " />
    </children>
 </AnchorPane>
