@@ -121,10 +121,10 @@ public class ViewFactory {
                      BaseController blog = new BlogviewController(this, "blogview.fxml");
                      initializeStage(blog);
                  } 
-                 /*public void showDetailsBlog(){
-                     BaseController blog = new BlogviewController(this, "detailsBlog.fxml");
-                     initializeStage(blog);
-                 } */
+                 public void showAblog(){
+                     BaseController Ablog = new BlogviewController(this, "Ablog.fxml");
+                     initializeStage(Ablog);
+                 } 
                  /*
                 public void showCommandeFaite(){
                     BaseController b3= new CommandeFaiteController(this, "commandeFaite.fxml");

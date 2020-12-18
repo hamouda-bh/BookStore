@@ -6,6 +6,8 @@ public class Blog {
     private String categorie_blog;
     private String description;
 
+  
+
     public int getId_blog() {
         return id_blog;
     }
@@ -66,6 +68,11 @@ public class Blog {
     }
 
     public Blog() {
+    }
+    public Blog( String categorie_blog, String description) {
+      
+        this.categorie_blog = categorie_blog;
+        this.description = description;
     }
 
     public Blog(int id_blog, int id_client, String categorie_blog, String description) {

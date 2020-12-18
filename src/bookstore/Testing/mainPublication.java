@@ -18,7 +18,7 @@ import javafx.*;
 import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-public class mainBLOG extends Application {
+public class mainPublication extends Application {
     
     
 
@@ -29,15 +29,12 @@ public class mainBLOG extends Application {
 	public void start(Stage stage)   {
 		try {    
 			ViewFactory vf = new ViewFactory();
-			vf.showBlog();
+			vf.showAblog();
+                              
+                       // vf.showDetailsBlog();
 		}catch(Exception e) {			
 			e.printStackTrace();
         }	
     }
 }
-
-
-
-
-    
 

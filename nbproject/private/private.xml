@@ -34,6 +34,11 @@
             <file>file:/C:/BookStore/src/bookstore/viewsControllers/ConsulterLivreKidsController.java</file>
             <file>file:/C:/BookStore/src/bookstore/Testing/MainProgGUI.java</file>
             <file>file:/C:/BookStore/src/bookstore/views/AAnnoncesView.fxml</file>
+            <file>file:/C:/BookStore/src/bookstore/Testing/mainBLOG.java</file>
+            <file>file:/C:/BookStore/src/bookstore/entities/Blog.java</file>
+            <file>file:/C:/BookStore/src/bookstore/views/BlogviewController.java</file>
+            <file>file:/C:/BookStore/src/bookstore/views/AblogController.java</file>
+            <file>file:/C:/BookStore/src/bookstore/services/serviceBlog.java</file>
         </group>
     </open-files>
 </project-private>

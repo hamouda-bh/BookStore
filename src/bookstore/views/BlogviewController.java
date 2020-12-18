@@ -134,6 +134,8 @@ public class BlogviewController extends BaseController implements Initializable 
         sb.ajouter(new Blog(a,b,tfcategorie.getText(),tfdescription.getText()));
         
         JOptionPane.showMessageDialog(null, "blog ajouté");
+      // vf.showAblog();
+        /*
         
         FXMLLoader loader = new FXMLLoader(getClass().getResource("detailsBlog.fxml"));
         
@@ -147,7 +149,8 @@ public class BlogviewController extends BaseController implements Initializable 
         dbc.setLbidc(b);
         dbc.setLbcategorie(tfcategorie.getText());
         dbc.setLbdescription(tfdescription.getText());
-    }
+vf.showDetailsBlog();*/
+}
 
     @FXML
     private void modifierBlog(ActionEvent event) {
