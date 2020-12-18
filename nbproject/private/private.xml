@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+        <file>
+            <url>src/com/almasb/paint/PaintController.java</url>
+            <bookmark id="1">
+                <name/>
+                <line>25</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/BookStore/src/bookstore/viewsControllers/PasserCommandeController.java</file>
@@ -13,6 +22,13 @@
             <file>file:/C:/BookStore/src/bookstore/views/MesAnnoncesViewController.java</file>
             <file>file:/C:/BookStore/src/bookstore/Testing/ZayTestGUI.java</file>
             <file>file:/C:/BookStore/src/bookstore/services/ServiceAnnonce.java</file>
+            <file>file:/C:/BookStore/src/bookstore/viewsControllers/KidsSpaceController.java</file>
+            <file>file:/C:/BookStore/src/bookstore/viewsControllers/ConsulterCategoriesKidsController.java</file>
+            <file>file:/C:/BookStore/src/bookstore/viewsControllers/AjouterCategorieKidsViewController.java</file>
+            <file>file:/C:/BookStore/src/bookstore/viewsControllers/AjouterLivreKidsController.java</file>
+            <file>file:/C:/BookStore/src/bookstore/views/PaintController.java</file>
+            <file>file:/C:/BookStore/src/bookstore/viewsControllers/ConsulterLivreKidsController.java</file>
+            <file>file:/C:/BookStore/src/bookstore/Testing/MainProgGUI.java</file>
         </group>
     </open-files>
 </project-private>

@@ -16,9 +16,17 @@ import java.util.Objects;
 public class CategorieKids {
     
     private int idCategorieKids;
+    private String NomCategorie;
     private String Description;
 
+    public String getNomCategorie() {
+        return NomCategorie;
+    }
 
+    public void setNomCategorie(String NomCategorie) {
+        this.NomCategorie = NomCategorie;
+    }
+    
     public CategorieKids() {
     }
 
@@ -47,18 +55,16 @@ public class CategorieKids {
     public void setDescription(String Description) {
         this.Description = Description;
     }
-    
 
     @Override
     public String toString() {
-        return "CategorieKids{" + "idCategorieKids=" + idCategorieKids + ", Description=" + Description + '}';
+        return "CategorieKids{" + "idCategorieKids=" + idCategorieKids + ", NomCategorie=" + NomCategorie + ", Description=" + Description + '}';
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 13 * hash + this.idCategorieKids;
-        hash = 13 * hash + Objects.hashCode(this.Description);
+        hash = 73 * hash + this.idCategorieKids;
         return hash;
     }
 
@@ -79,4 +85,7 @@ public class CategorieKids {
         }
         return true;
     }
+    
+
+
 }

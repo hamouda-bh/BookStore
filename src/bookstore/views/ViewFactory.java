@@ -6,11 +6,14 @@
 
 package bookstore.views;
 
+import bookstore.viewsControllers.ConsulterCategoriesKidsController;
+import bookstore.viewsControllers.AjouterCategorieKidsViewController;
 import bookstore.viewsControllers.CommandeFaiteController;
 import bookstore.viewsControllers.KidsSpaceController;
 import bookstore.viewsControllers.BaseController;
 import bookstore.viewsControllers.GererPanierController;
 import bookstore.viewsControllers.*;
+import bookstore.views.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -176,8 +179,26 @@ public class ViewFactory {
                      initializeStage(user);
                  }
                  
-                 
-                 
+                 public void showConsulterCategoriesKids(){
+                     BaseController cate = new ConsulterCategoriesKidsController(this, "ConsulterCategoriesKids.fxml");
+                     initializeStage(cate);
+                 }
+                 public void showConsulterLesLivresKids(){
+                     BaseController b = new ConsulterLivreKidsController(this, "ConsulterLivreKids.fxml");
+                     initializeStage(b);
+                 }
+                 public void showCategoriesKids(){
+                     BaseController categoriekids = new CategorieKidsController(this, "CategorieKidsView.fxml");
+                     initializeStage(categoriekids);
+                 }
+                 public void showAjouterCategorieKids(){
+                     BaseController ajoutCategorieKids = new AjouterCategorieKidsViewController(this, "AjouterCategorieKidsView.fxml");
+                     initializeStage(ajoutCategorieKids);
+                 }
+                 public void showColorationKids(){
+                     BaseController colorationKids = new PaintController (this, "paint.fxml");
+                     initializeStage(colorationKids);
+                 }
                  
 		
 }

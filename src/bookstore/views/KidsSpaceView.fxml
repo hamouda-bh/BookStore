@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="579.0" prefWidth="721.0" style="-fx-background-color: linear-gradient(to top right,  #152f72, #89a4d0);" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="605.0" prefWidth="951.0" style="-fx-background-color: linear-gradient(to top right,  #152f72, #89a4d0);" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Button fx:id="ShowLivreKids" alignment="BASELINE_LEFT" contentDisplay="TOP" graphicTextGap="22.0" layoutX="361.0" layoutY="160.0" mnemonicParsing="false" onAction="#showLivreKids" prefHeight="67.0" prefWidth="241.0" style="-fx-font-family: Roboto; -fx-background-color: #a2b8ee;" stylesheets="@style.css" text="Livre Kids" textAlignment="CENTER" textFill="WHITE">
          <padding>

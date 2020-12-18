@@ -69,7 +69,7 @@ public class MailApi {
         });
 
         //Prepare email message
-        Message message = message(session, myAccountEmail, recepient ,x);
+        Message message = message(session, myAccountEmail, recepient,x );
 
         //Send mail
         Transport.send(message);

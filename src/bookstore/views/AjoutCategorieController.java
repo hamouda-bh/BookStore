@@ -128,8 +128,9 @@ public class AjoutCategorieController extends BaseController implements Initiali
     private void AjouterUneCategorie(ActionEvent event) {
         CategorieService Cs = new CategorieService ();
         int a=Integer.parseInt(tfIdCategorie.getText());
-     Cs.ajouter(new Categorie (a,tfLabel.getText()));
-     JOptionPane.showMessageDialog(null,"Categorie ajouté!");
+        Cs.ajouter(new Categorie (a,tfLabel.getText()));
+        JOptionPane.showMessageDialog(null,"Categorie ajouté!");
+        
      
     }
 
