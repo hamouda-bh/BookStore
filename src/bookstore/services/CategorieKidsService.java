@@ -42,9 +42,9 @@ public class CategorieKidsService {
     }
     public void ajouterCategorieKids(CategorieKids cat) {
         try {
-            String sql = "INSERT INTO categoriekids values (?,?) ";
+            String sql = "INSERT INTO categoriekids (nom_categorie,description) values (?,?) ";
             PreparedStatement st = cnx.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
-            st.setInt(1, cat.getIdCategorieKids());
+            st.setString(1, cat.getNomCategorie());
             st.setString(2,cat.getDescription());
 
             st.executeUpdate();

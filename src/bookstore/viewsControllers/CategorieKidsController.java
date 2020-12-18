@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -65,19 +66,28 @@ public class CategorieKidsController extends BaseController implements Initializ
     
     @FXML
     private TableView<CategorieKids> Table_categorie;
+    
+    @FXML
+    private Button retour;
 
     @FXML
     void ShowKidsSpace() {
-        vf.ShowKidsSpace(); 
+        Stage stage = (Stage) logOut.getScene().getWindow();
+	vf.closeStage(stage);
+        vf.ShowKidsSpace();
     }
 
     @FXML
     void goBlog() {
+        Stage stage = (Stage) logOut.getScene().getWindow();
+	vf.closeStage(stage);
         vf.showBlog();
     }
 
     @FXML
     void goLivre() {
+        Stage stage = (Stage) logOut.getScene().getWindow();
+	vf.closeStage(stage);
         vf.showLivre(); 
     }
 
@@ -91,6 +101,8 @@ public class CategorieKidsController extends BaseController implements Initializ
 
     @FXML
     void panier() {
+        Stage stage = (Stage) logOut.getScene().getWindow();
+	vf.closeStage(stage);
         vf.showPanier();
     }
     /**
@@ -99,18 +111,27 @@ public class CategorieKidsController extends BaseController implements Initializ
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-        ObservableList<CategorieKids> categorie_list = FXCollections.observableArrayList();
-        System.out.println(categorie_list);
-        CategorieKidsService bs = new CategorieKidsService();
-        bs.afficherLesCategorieKids(categorie_list);
-        System.out.println(categorie_list);
-        nom_categorie.setCellValueFactory(new PropertyValueFactory<>("NomCategorie"));
-        description.setCellValueFactory(new PropertyValueFactory<>("Description"));
-        Table_categorie.setItems(categorie_list);
-        //Table_categorie.getItems().addAll(categorie_list);
+
         
     }
-            
+    @FXML
+    void AjouterNouvelleCategorie(ActionEvent event) {
+        Stage stage = (Stage) logOut.getScene().getWindow();
+	vf.closeStage(stage);
+        vf.showAjouterCategorieKids();
+    }
 
+    @FXML
+    void ConsulterLesCategoriesKids(ActionEvent event) {
+        Stage stage = (Stage) logOut.getScene().getWindow();
+	vf.closeStage(stage);
+        vf.showConsulterCategoriesKids();
+    }
+        @FXML
+    void returnToKidsSpace(ActionEvent event) {
+        Stage stage = (Stage) logOut.getScene().getWindow();
+	vf.closeStage(stage);
+        vf.ShowKidsSpace();
+    }
     
 }

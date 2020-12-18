@@ -17,6 +17,7 @@ public class CategorieKids {
     
     private int idCategorieKids;
     private String NomCategorie;
+    private String Description;
 
     public String getNomCategorie() {
         return NomCategorie;
@@ -25,9 +26,7 @@ public class CategorieKids {
     public void setNomCategorie(String NomCategorie) {
         this.NomCategorie = NomCategorie;
     }
-    private String Description;
-
-
+    
     public CategorieKids() {
     }
 

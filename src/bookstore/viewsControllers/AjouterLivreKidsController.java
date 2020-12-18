@@ -6,6 +6,9 @@
 package bookstore.viewsControllers;
 
 import bookstore.Testing.Cache;
+import static bookstore.Testing.Cache.client;
+import bookstore.Testing.LivreKidsMailApi;
+import bookstore.Testing.NotificationAPI;
 import bookstore.entities.CategorieKids;
 import bookstore.entities.LivreKids;
 import bookstore.services.CategorieKidsService;
@@ -35,7 +38,6 @@ import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.StringConverter;
-
 /**
  * FXML Controller class
  *
@@ -119,16 +121,23 @@ public class AjouterLivreKidsController extends BaseController implements Initia
     @FXML
     void ShowKidsSpace() {
         vf.ShowKidsSpace();
+        Stage stage = (Stage) logOut.getScene().getWindow();
+	vf.closeStage(stage);
+        
     }
      @FXML
     private void goLivre() {
-    
-     vf.showLivre() ;
-    
-           }
+        vf.showLivre() ;
+        Stage stage = (Stage) logOut.getScene().getWindow();
+	vf.closeStage(stage);
+        
+    }
     @FXML
     private void goBlog(ActionEvent event) {
         vf.showBlog();
+        Stage stage = (Stage) logOut.getScene().getWindow();
+	vf.closeStage(stage);
+        
     }
     /*
     @FXML
@@ -141,18 +150,24 @@ public class AjouterLivreKidsController extends BaseController implements Initia
      @FXML
     void panier(ActionEvent event) {
         vf.showPanier();
+        Stage stage = (Stage) logOut.getScene().getWindow();
+	vf.closeStage(stage);
+        
     }
     
     @FXML
     void AfficherPageLivreKids(ActionEvent event) {
         vf.ShowLivreKids();
+        Stage stage = (Stage) logOut.getScene().getWindow();
+	vf.closeStage(stage);
+        
     }
 
     @FXML
     void myAccountAction() {
         vf.showAccountEditWindow();
         Stage stage = (Stage) logOut.getScene().getWindow();
-  	    vf.closeStage(stage);
+  	vf.closeStage(stage);
     }
 	
 
@@ -164,6 +179,7 @@ public class AjouterLivreKidsController extends BaseController implements Initia
         lstFile.add("*.jpeg");
         lstFile.add("*.png");
         */
+        
         cats = FXCollections.observableArrayList();
         CategorieKidsService as = new CategorieKidsService();
         as.afficherLesCategorieKids(cats);
@@ -183,7 +199,13 @@ public class AjouterLivreKidsController extends BaseController implements Initia
 
             }
         });
-        
+        categorie.setOnAction((event1) -> {
+        int selectedIndex = categorie.getSelectionModel().getSelectedIndex();
+        Object selectedItem = categorie.getSelectionModel().getSelectedItem();
+
+        System.out.println("Selection made: [" + selectedIndex + "] " + selectedItem);
+        System.out.println("   ComboBox.getValue(): " + categorie.getValue());
+        });
     }
     @FXML
     private void BrowseFile() {
@@ -214,7 +236,7 @@ public class AjouterLivreKidsController extends BaseController implements Initia
     }
     */
     private boolean validateTitre(){
-        Pattern p = Pattern.compile("[a-zA-Z]+");
+        Pattern p = Pattern.compile("[a-z A-Z]+");
         Matcher m = p.matcher(Titre.getText());
         if(m.find() && m.group().equals(Titre.getText())){
             return true;
@@ -222,14 +244,14 @@ public class AjouterLivreKidsController extends BaseController implements Initia
                 Alert alert = new Alert(AlertType.WARNING);
                 alert.setTitle("Validate titre");
                 alert.setHeaderText(null);
-                alert.setContentText("Please Enter Valid titre and not empty");
+                alert.setContentText("Veuiller Entrer un titre valide");
                 alert.showAndWait();
             
             return false;            
         }
     }
     private boolean validateDescription(){
-        Pattern p = Pattern.compile("[a-zA-Z]+");
+        Pattern p = Pattern.compile("[a-z A-Z]+");
         Matcher m = p.matcher(Description.getText());
         if(m.find() && m.group().equals(Description.getText())){
             return true;
@@ -237,14 +259,14 @@ public class AjouterLivreKidsController extends BaseController implements Initia
                 Alert alert = new Alert(AlertType.WARNING);
                 alert.setTitle("Validate Description");
                 alert.setHeaderText(null);
-                alert.setContentText("Please Enter Valid Description and not empty");
+                alert.setContentText("Veuillez Entrer une description");
                 alert.showAndWait();
             
             return false;            
         }
     }
     private boolean validateAuteur(){
-        Pattern p = Pattern.compile("[a-zA-Z]+");
+        Pattern p = Pattern.compile("[a-z A-Z]+");
         Matcher m = p.matcher(auteur.getText());
         if(m.find() && m.group().equals(auteur.getText())){
             return true;
@@ -252,14 +274,14 @@ public class AjouterLivreKidsController extends BaseController implements Initia
                 Alert alert = new Alert(AlertType.WARNING);
                 alert.setTitle("Validate auteur");
                 alert.setHeaderText(null);
-                alert.setContentText("Please Enter Valid auteur Name and not empty");
+                alert.setContentText("Veuiller entrer un nom d'auteur");
                 alert.showAndWait();
             
             return false;            
         }
     }
     @FXML
-    void AjouterLivreBD(ActionEvent event) {
+    void AjouterLivreBD(ActionEvent event) throws Exception {
         
         LivreKids L1 = new LivreKids();
         if (validateTitre()&&validateAuteur()&&validateDescription()){
@@ -269,11 +291,20 @@ public class AjouterLivreKidsController extends BaseController implements Initia
         L1.setImage(imageLink);
         LivreKidsService s1 = new LivreKidsService();
         s1.ajouterLivreKids(L1);
+        LivreKidsMailApi.sendMail(client.getEmail());
+        NotificationAPI.notifInfo("livre", "to livre est ajouté avec succés au BD");
         }
     }
+    
     @FXML
     void selectCategorie (ActionEvent event){
         System.out.println("hello");
-        categorie.valueProperty().addListener(observable -> System.out.printf("Valeur sélectionnée: %s", categorie.getValue().getNomCategorie()).println());
+        //categorie.valueProperty().addListener(observable -> System.out.printf("Valeur sélectionnée: %s", categorie.getValue().getNomCategorie()).println());
+        categorie.setOnAction((event1) -> {
+        int selectedIndex = categorie.getSelectionModel().getSelectedIndex();
+        Object selectedItem = categorie.getSelectionModel().getSelectedItem();
+        System.out.println("Selection made: [" + selectedIndex + "] " + selectedItem);
+        System.out.println("   ComboBox.getValue(): " + categorie.getValue());
+});
     }
 }   

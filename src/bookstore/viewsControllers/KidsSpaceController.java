@@ -57,9 +57,7 @@ public class KidsSpaceController extends BaseController implements Initializable
 
     @FXML
     private Button showKidsColoration;
-
-  
-      @FXML
+    @FXML
     private Button btn_panier;
     @FXML
     private Pane pnlCustomer;
@@ -84,22 +82,28 @@ public class KidsSpaceController extends BaseController implements Initializable
     void myAccountAction() {
         vf.showAccountEditWindow();
         Stage stage = (Stage) logOut.getScene().getWindow();
-  	    vf.closeStage(stage);
+  	vf.closeStage(stage);
     }
     */
     @FXML
-    void ShowKidsSpace() {
+    void ShowKidsSpace() {  
         vf.ShowKidsSpace();
+        Stage stage = (Stage) logOut.getScene().getWindow();
+  	vf.closeStage(stage);
+        
     }
      @FXML
     private void goLivre() {
-    
-     vf.showLivre() ;
-    
-           }
+        vf.showLivre() ;
+        Stage stage = (Stage) logOut.getScene().getWindow();
+        vf.closeStage(stage);
+    }
     @FXML
-    private void goBlog(ActionEvent event) {
+    private void goBlog(ActionEvent event) {        
         vf.showBlog();
+        Stage stage = (Stage) logOut.getScene().getWindow();
+  	vf.closeStage(stage);
+        
     }
     /*
     @FXML
@@ -111,6 +115,8 @@ public class KidsSpaceController extends BaseController implements Initializable
      @FXML
     void panier(ActionEvent event) {
         vf.showPanier();
+        Stage stage = (Stage) btnCustomers.getScene().getWindow();
+	vf.closeStage(stage);
     }
     
    
@@ -123,23 +129,33 @@ public class KidsSpaceController extends BaseController implements Initializable
     @FXML
     void showCategoriesKids() {
         vf.showCategoriesKids();
+        Stage stage = (Stage) btnCustomers.getScene().getWindow();
+	vf.closeStage(stage);
+        
     }
 
     @FXML
     void showKidsColoration() {
-
+        vf.showColorationKids();
+        Stage stage = (Stage) btnCustomers.getScene().getWindow();
+	vf.closeStage(stage);
+        
     }
 
     @FXML
-    void showLivreKids() {
+    void showLivreKids() {        
         vf.ShowLivreKids();
+        Stage stage = (Stage) btnCustomers.getScene().getWindow();
+	vf.closeStage(stage);
+        
     }
 
     @FXML
     void myAccountAction() {
         vf.showAccountEditWindow();
         Stage stage = (Stage) logOut.getScene().getWindow();
-  	    vf.closeStage(stage);
+  	vf.closeStage(stage);
+        
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {

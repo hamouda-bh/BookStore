@@ -220,21 +220,33 @@ public class ConsulterLivreKidsController extends BaseController implements Init
     @FXML
     private void goBlog( ) {
         vf.showBlog();
+        Stage stage = (Stage) logOut.getScene().getWindow();
+	vf.closeStage(stage);
+        
     }
 
     @FXML
     private void goLivre( ) {
         vf.showLivre() ;
+        Stage stage = (Stage) logOut.getScene().getWindow();
+	vf.closeStage(stage);
+        
     }
 
     @FXML
     private void panier( ) {
         vf.showPanier();
+        Stage stage = (Stage) logOut.getScene().getWindow();
+	vf.closeStage(stage);
+        
     }
 
     @FXML
     private void ShowKidsSpace( ) {
         vf.showCategoriesKids();
+        Stage stage = (Stage) logOut.getScene().getWindow();
+	vf.closeStage(stage);
+        
     }
 
     @FXML
@@ -247,5 +259,8 @@ public class ConsulterLivreKidsController extends BaseController implements Init
     @FXML
     private void retourALivreKids(){
         vf.ShowLivreKids();
+        Stage stage = (Stage) logOut.getScene().getWindow();
+	vf.closeStage(stage);
+        
     }
 }

@@ -21,6 +21,8 @@ import javafx.scene.input.MouseDragEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TouchEvent;
 import javafx.stage.Stage;
+import bookstore.Testing.Cache;
+import static bookstore.Testing.Cache.client;
 
 public class LoginController extends BaseController{
     

@@ -88,16 +88,20 @@ public class LivreKidsViewController extends BaseController implements Initializ
     */
     @FXML
     void ShowKidsSpace() {
+        Stage stage = (Stage) logOut.getScene().getWindow();
+	vf.closeStage(stage);
         vf.ShowKidsSpace();
     }
      @FXML
     private void goLivre() {
-    
-     vf.showLivre() ;
-    
-           }
+        Stage stage = (Stage) logOut.getScene().getWindow();
+	vf.closeStage(stage);
+        vf.showLivre() ;
+    }
     @FXML
     private void goBlog(ActionEvent event) {
+        Stage stage = (Stage) logOut.getScene().getWindow();
+	vf.closeStage(stage);
         vf.showBlog();
     }
     /*
@@ -109,12 +113,16 @@ public class LivreKidsViewController extends BaseController implements Initializ
     }*/
      @FXML
     void panier(ActionEvent event) {
+        Stage stage = (Stage) logOut.getScene().getWindow();
+	vf.closeStage(stage);
         vf.showPanier();
     }
     
 
     @FXML
     void AjouterNouveauLivreKids( ) {
+        Stage stage = (Stage) logOut.getScene().getWindow();
+	vf.closeStage(stage);
         vf.ShowAjouterLivreKids();
     }
 
@@ -133,6 +141,8 @@ public class LivreKidsViewController extends BaseController implements Initializ
     
     @FXML
     void ConsulterLesLivres( ) {
+        Stage stage = (Stage) logOut.getScene().getWindow();
+	vf.closeStage(stage);
         vf.showConsulterLesLivresKids();
         
     }
@@ -142,6 +152,8 @@ public class LivreKidsViewController extends BaseController implements Initializ
     }    
     @FXML
     void returnToKidsSpace(ActionEvent event) {
+        Stage stage = (Stage) logOut.getScene().getWindow();
+	vf.closeStage(stage);
         vf.ShowKidsSpace();
     }
 }

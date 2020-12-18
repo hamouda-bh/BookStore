@@ -48,7 +48,7 @@ public class ClientService {
         }
     }*/
 	public boolean authentification(String email, String pass) {
-
+            
 	       String password = "";
 	       try {
 	           String req = "SELECT password FROM client WHERE email = '"+email+"'" ;

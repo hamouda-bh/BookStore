@@ -30,16 +30,18 @@ public class MainProgGUI extends Application {
 
 	@Override
 	public void start(Stage stage)   {
-		try {    
+		try {   
 			ViewFactory vf = new ViewFactory();
 			//vf.ShowKidsSpace();
                         //vf.ShowKidsSpace();
                         //vf.showConsulterLesLivresKids();
-                        vf.ShowAjouterLivreKids();
+                        //vf.showCategoriesKids();
                         //vf.showUI();
                         //vf.showMainWindow();
                         //vf.showPanier();
-                        
+                        //vf.ShowAjouterLivreKids();
+                        //vf.showUI();                        
+                        vf.showColorationKids();
                         /* 
                             nour.benhadjyahia@esprit.tn
                             Nour123nour@

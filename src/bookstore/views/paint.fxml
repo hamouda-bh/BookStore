@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="600.0" prefWidth="600.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+
+    <top>
+        <VBox prefHeight="52.0" prefWidth="879.0" style="-fx-background-color: linear-gradient(to top right,  #152f72, #89a4d0);">
+
+            <ToolBar>
+                <HBox alignment="CENTER" spacing="5" style="-fx-background-color: linear-gradient(to top right,  #152f72, #89a4d0);">
+                    <TextField fx:id="brushSize" text="18" />
+                    <ColorPicker fx:id="colorPicker" style="-fx-background-color: #a2b8ee;" />
+                    <CheckBox fx:id="eraser" style="-fx-background-color: #a2b8ee;" text="Eraser" />
+               <Button fx:id="Save" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#onSave" prefHeight="42.0" prefWidth="224.0" style="-fx-background-color: #a2b8ee;" stylesheets="@style.css" text="Enregistrer" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
+                  <opaqueInsets>
+                     <Insets />
+                  </opaqueInsets>
+                  <padding>
+                     <Insets left="50.0" />
+                  </padding>
+                  <font>
+                     <Font size="21.0" />
+                  </font>
+                  <graphic>
+                     <ImageView fitHeight="23.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@../images/save-solid.png" />
+                        </image>
+                     </ImageView>
+                  </graphic>
+               </Button>
+               <Button fx:id="retour" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#onRetour" prefHeight="42.0" prefWidth="225.0" style="-fx-background-color: #a2b8ee;" stylesheets="@style.css" text="Retour" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
+                  <opaqueInsets>
+                     <Insets />
+                  </opaqueInsets>
+                  <padding>
+                     <Insets left="50.0" />
+                  </padding>
+                  <font>
+                     <Font size="21.0" />
+                  </font>
+                  <graphic>
+                     <ImageView fitHeight="23.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@../images/angle-double-left-solid.png" />
+                        </image>
+                     </ImageView>
+                  </graphic>
+               </Button>
+                </HBox>
+            </ToolBar>
+         <MenuBar />
+        </VBox>
+    </top>
+
+    <center>
+        <Canvas fx:id="canvas" height="600" width="819.0" />
+    </center>
+
+</BorderPane>

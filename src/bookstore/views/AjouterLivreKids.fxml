@@ -202,7 +202,7 @@
             <Font size="17.0" />
          </font>
       </Label>
-      <ComboBox fx:id="categorie" layoutX="474.0" layoutY="310.0" onAction="#selectCategorie" prefHeight="26.0" prefWidth="362.0" />
+      <ComboBox fx:id="categorie" layoutX="474.0" layoutY="310.0" prefHeight="26.0" prefWidth="362.0" />
       <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="200.0" layoutX="668.0" layoutY="437.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>
