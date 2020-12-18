@@ -5,6 +5,7 @@
  */
 package bookstore.viewsControllers;
 
+import static bookstore.Testing.Cache.client;
 import bookstore.entities.Annonce;
 import bookstore.services.ServiceAnnonce;
 import bookstore.views.ViewFactory;
@@ -18,6 +19,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
+import javax.swing.JOptionPane;
 
 /**
  * FXML Controller class
@@ -36,16 +39,25 @@ public class AMesAnnoncesViewController extends BaseController implements Initia
     private Button AjouterUneAnnonce;
     @FXML
     private Button SupprimerUneAnnonce;
+    
     @FXML
     private TextField findAnnonce;
     @FXML
-    private Button btnChercher;
+    private TextField txtDatePublication;
+    @FXML
+    private TextField txtPrix;
+    @FXML
+    private TextField txtEtat;
+    @FXML
+    private TextField txtDateAchat;
+    
     @FXML
     private TableView<Annonce> tvMesAnnonces;
+    
     @FXML
     private TableColumn<Annonce, String> tcDatePublication;
     @FXML
-    private TableColumn<Annonce, Float> tcPrix;
+    private TableColumn<Annonce, String> tcPrix;
     @FXML
     private TableColumn<Annonce, String> tcEtat;
     @FXML
@@ -54,28 +66,47 @@ public class AMesAnnoncesViewController extends BaseController implements Initia
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-        tcDatePublication.setCellValueFactory(new PropertyValueFactory<>("date_publication"));
-        tcPrix.setCellValueFactory(new PropertyValueFactory<>("prix"));
-        tcEtat.setCellValueFactory(new PropertyValueFactory<>("etat"));
-        tcDateAchat.setCellValueFactory(new PropertyValueFactory<>("date_achat"));
+        tcDatePublication.setCellValueFactory(new PropertyValueFactory<Annonce,String>("date_publication"));
+        tcPrix.setCellValueFactory(new PropertyValueFactory<Annonce,String>("prix"));
+        tcEtat.setCellValueFactory(new PropertyValueFactory<Annonce,String>("etat_de_livre"));
+        tcDateAchat.setCellValueFactory(new PropertyValueFactory<Annonce,String>("date_achat"));  
         ServiceAnnonce sa = new ServiceAnnonce();
-        tvMesAnnonces.setItems(sa.afficherMesAnnonces());
-    }    
+        tvMesAnnonces.setItems(sa.afficherAnnonces());
+        
+        
+    }   
+    
+    int index = -1;
+    @FXML
+    private void getSelected(MouseEvent event) {
+        index = tvMesAnnonces.getSelectionModel().getSelectedIndex();
+        if(index<=-1){
+            return;
+        }
+        txtDatePublication.setText(tcDatePublication.getCellData(index).toString());
+        txtPrix.setText(tcPrix.getCellData(index).toString());
+        txtEtat.setText(tcEtat.getCellData(index).toString());
+        txtDateAchat.setText(tcDateAchat.getCellData(index).toString());
+    }
 
     @FXML
     private void modifierAnnonce(ActionEvent event) {
+        ServiceAnnonce sa = new ServiceAnnonce();
+        sa.modifierAnnonce(new Annonce(txtDatePublication.getText(),txtPrix.getText(),txtEtat.getText(),txtDateAchat.getText()));
+        JOptionPane.showMessageDialog(null,"Annonce modifiée !");
     }
 
     @FXML
     private void ajouterAnnonce(ActionEvent event) {
+        vf.showAjoutAnnonces();
     }
 
     @FXML
     private void supprimerAnnonce(ActionEvent event) {
+        ServiceAnnonce sa = new ServiceAnnonce();
+        sa.supprimerAnnonce(new Annonce(txtDatePublication.getText(),txtPrix.getText(),txtEtat.getText(),txtDateAchat.getText()));
+        JOptionPane.showMessageDialog(null,"Annonce Supprimée !");
     }
 
-    @FXML
-    private void afficherAnnonce(ActionEvent event) {
-    }
     
 }

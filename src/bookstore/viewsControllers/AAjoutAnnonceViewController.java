@@ -55,10 +55,8 @@ public class AAjoutAnnonceViewController extends BaseController implements Initi
 
     @FXML
     private void ajouterUneNouvelleAnnonce(ActionEvent event) {
-        
         ServiceAnnonce sa = new ServiceAnnonce();
-        sa.ajouterAnnonce(new Annonce(tfdate_publication.getValue().toString(),tfprix.getLength(),tfetat.getText(),tfdateachat.getValue().toString()));
-        
+        sa.ajouterAnnonce(new Annonce(tfdate_publication.getValue().toString(),tfprix.getText(),tfetat.getText(),tfdateachat.getValue().toString()));
         JOptionPane.showMessageDialog(null,"Annonce ajoutée !");
         
     }

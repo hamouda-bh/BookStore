@@ -5,7 +5,6 @@
  */
 package bookstore.entities;
 
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -20,7 +19,7 @@ public class Annonce {
     private String date_publication;
     private int id_client;
     private int id_livre;
-    private float prix;
+    private String prix;
     private String etat_de_livre;
     private String date_achat;
     
@@ -32,7 +31,7 @@ public class Annonce {
     
     public void supprimerLivre(){}
 
-    public Annonce(int id_annonce, String date_publication, int id_client, int id_livre, float prix, String etat_de_livre, String date_achat) {
+    public Annonce(int id_annonce, String date_publication, int id_client, int id_livre, String prix, String etat_de_livre, String date_achat) {
         this.id_annonce = id_annonce;
         this.date_publication = date_publication;
         this.id_client = id_client;
@@ -45,7 +44,7 @@ public class Annonce {
     public Annonce() {
     }
 
-    public Annonce(String date_publication, float prix, String etat_de_livre, String date_achat) {
+    public Annonce(String date_publication, String prix, String etat_de_livre, String date_achat) {
         this.date_publication = date_publication;
         this.prix = prix;
         this.etat_de_livre = etat_de_livre;
@@ -53,7 +52,7 @@ public class Annonce {
     }
 
     
-    public Annonce(String date_publication, int id_client, int id_livre, float prix, String etat_de_livre, String date_achat) {
+    public Annonce(String date_publication, int id_client, int id_livre, String prix, String etat_de_livre, String date_achat) {
         this.date_publication = date_publication;
         this.id_client = id_client;
         this.id_livre = id_livre;
@@ -94,11 +93,11 @@ public class Annonce {
         this.id_livre = id_livre;
     }
 
-    public float getPrix() {
+    public String getPrix() {
         return prix;
     }
 
-    public void setPrix(float prix) {
+    public void setPrix(String prix) {
         this.prix = prix;
     }
 
@@ -125,7 +124,7 @@ public class Annonce {
         hash = 29 * hash + Objects.hashCode(this.date_publication);
         hash = 29 * hash + this.id_client;
         hash = 29 * hash + this.id_livre;
-        hash = 29 * hash + Float.floatToIntBits(this.prix);
+        hash = 29 * hash + Objects.hashCode(this.prix);
         hash = 29 * hash + Objects.hashCode(this.etat_de_livre);
         hash = 29 * hash + Objects.hashCode(this.date_achat);
         return hash;
@@ -152,7 +151,7 @@ public class Annonce {
         if (this.id_livre != other.id_livre) {
             return false;
         }
-        if (Float.floatToIntBits(this.prix) != Float.floatToIntBits(other.prix)) {
+        if (!Objects.equals(this.prix, other.prix)) {
             return false;
         }
         if (!Objects.equals(this.etat_de_livre, other.etat_de_livre)) {

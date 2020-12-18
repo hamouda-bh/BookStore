@@ -5,8 +5,10 @@
  */
 package bookstore.services;
 
+import bookstore.Testing.Cache;
 import bookstore.Testing.DBConnection;
 import bookstore.entities.Annonce;
+import bookstore.entities.Client;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -31,7 +33,7 @@ public class ServiceAnnonce {
             String req = "INSERT INTO annonce(date_publication,prix,etat_de_livre,date_achat) values (?,?,?,?)";
             PreparedStatement st = cnx.prepareStatement(req,Statement.RETURN_GENERATED_KEYS);
             st.setString(1,a.getDate_publication());
-            st.setFloat(2,a.getPrix());
+            st.setString(2,a.getPrix());
             st.setString(3,a.getEtat_de_livre());
             st.setString(4,a.getDate_achat());
             st.executeUpdate();
@@ -77,7 +79,7 @@ public class ServiceAnnonce {
             Statement st = cnx.createStatement();
             ResultSet res = st.executeQuery(req);
             while(res.next()) {
-                list.add(new Annonce(res.getString(1),res.getFloat(2),res.getString(3),res.getString(4)));
+                list.add(new Annonce(res.getString(1),res.getString(2),res.getString(3),res.getString(4)));
             }
             System.out.println("Annonces récupérées !");
         }
@@ -87,14 +89,14 @@ public class ServiceAnnonce {
         return list;
     }    
     
-    public ObservableList<Annonce> afficherMesAnnonces(){
+    public ObservableList<Annonce> afficherMesAnnonces(int id){
         ObservableList<Annonce> list = FXCollections.observableArrayList();
         try {
-            String req = "SELECT date_publication,prix,etat_de_livre,date_achat FROM annonce WHERE id_client=";
+            String req = "SELECT date_publication,prix,etat_de_livre,date_achat FROM annonce WHERE id_client="+id;
             Statement st = cnx.createStatement();
             ResultSet res = st.executeQuery(req);
             while(res.next()) {
-                list.add(new Annonce(res.getString(1),res.getFloat(2),res.getString(3),res.getString(4)));
+                list.add(new Annonce(res.getString(1),res.getString(2),res.getString(3),res.getString(4)));
             }
             System.out.println("Annonces récupérées !");
         }

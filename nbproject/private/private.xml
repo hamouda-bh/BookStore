@@ -3,21 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/BookStore/src/bookstore/viewsControllers/PasserCommandeController.java</file>
-            <file>file:/C:/BookStore/src/bookstore/services/ServicesShoppingCart.java</file>
-            <file>file:/C:/BookStore/src/bookstore/viewsControllers/PaiementController.java</file>
-=======
             <file>file:/C:/BookStore/src/bookstore/viewsControllers/AMesAnnoncesViewController.java</file>
+            <file>file:/C:/BookStore/src/bookstore/entities/Annonce.java</file>
+            <file>file:/C:/BookStore/src/bookstore/Testing/DBConnection.java</file>
             <file>file:/C:/BookStore/src/bookstore/viewsControllers/AAnnoncesViewController.java</file>
             <file>file:/C:/BookStore/src/bookstore/entities/Utilisateur.java</file>
             <file>file:/C:/BookStore/src/bookstore/viewsControllers/AAjoutAnnonceViewController.java</file>
-            <file>file:/C:/BookStore/src/bookstore/entities/Client.java</file>
-            <file>file:/C:/BookStore/src/bookstore/utils/JavamailUtil.java</file>
+            <file>file:/C:/BookStore/src/bookstore/Testing/Cache.java</file>
             <file>file:/C:/BookStore/src/bookstore/Testing/ZayTestGUI.java</file>
-            <file>file:/C:/BookStore/src/bookstore/utils/JavaMailZay.java</file>
-            <file>file:/C:/BookStore/src/bookstore/views/ViewFactory.java</file>
->>>>>>> b39cf7cb77404b728d1fccf391c60ea06a7a6093
+            <file>file:/C:/BookStore/src/bookstore/services/ServiceAnnonce.java</file>
+            <file>file:/C:/BookStore/src/bookstore/views/AAnnoncesView.fxml</file>
         </group>
     </open-files>
 </project-private>

@@ -12,6 +12,8 @@ package bookstore.entities;
  */
 public class Client extends Utilisateur {
     
+    
+    private int id_client;
 	
 	public Client() {
 		super();
