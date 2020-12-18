@@ -3,20 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/BookStore/src/bookstore/viewsControllers/PasserCommandeController.java</file>
-            <file>file:/C:/BookStore/src/bookstore/viewsControllers/BaseController.java</file>
-            <file>file:/C:/BookStore/src/bookstore/Testing/ajoutCategorie.java</file>
-            <file>file:/C:/BookStore/src/bookstore/views/Livre.fxml</file>
-            <file>file:/C:/BookStore/src/bookstore/views/LivreController.java</file>
-            <file>file:/C:/BookStore/src/bookstore/services/livreService.java</file>
-            <file>file:/C:/BookStore/src/bookstore/viewsControllers/MainCtrl.java</file>
+            <file>file:/C:/BookStore/src/bookstore/views/AjoutCategorieController.java</file>
             <file>file:/C:/BookStore/src/bookstore/views/ClientLivreController.java</file>
-            <file>file:/C:/BookStore/src/bookstore/views/ClientLivre.fxml</file>
-            <file>file:/C:/BookStore/src/bookstore/viewsControllers/BaseController.java</file>
-            <file>file:/C:/BookStore/src/bookstore/views/LivreController.java</file>
-            <file>file:/C:/BookStore/src/bookstore/services/livreService.java</file>
+            <file>file:/C:/BookStore/src/bookstore/views/AjoutLivreController.java</file>
+            <file>file:/C:/BookStore/src/bookstore/entities/Categorie.java</file>
+            <file>file:/C:/BookStore/src/bookstore/Testing/ajoutCategorie.java</file>
+            <file>file:/C:/BookStore/src/bookstore/views/DetailsCategorieController.java</file>
             <file>file:/C:/BookStore/src/bookstore/views/ViewFactory.java</file>
             <file>file:/C:/BookStore/src/bookstore/Testing/LivreFXMain.java</file>
+            <file>file:/C:/BookStore/src/bookstore/services/CategorieService.java</file>
         </group>
     </open-files>
 </project-private>

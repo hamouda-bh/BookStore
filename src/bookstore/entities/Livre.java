@@ -27,6 +27,16 @@ public class Livre {
         this.prix = prix;
         this.image = image;
     }
+    public Livre(  String titre, String auteur, float prix,String image,int id_livre) {
+     
+        this.titre = titre;
+        this.auteur = auteur;
+        this.prix = prix;
+        this.image = image;
+        this.id_livre = id_livre;
+    }
+    
+    
     
 
     public Livre( int id_categorie,String titre, String auteur, float prix, String image) {

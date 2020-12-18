@@ -10,6 +10,8 @@ import bookstore.services.livreService;
 import bookstore.viewsControllers.BaseController;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -32,11 +34,6 @@ public class ClientLivreController extends BaseController implements Initializab
     public ClientLivreController(ViewFactory vf, String fxmlName){
         super(vf, fxmlName);
     }
-
-
-    
-    
-    
  
     @FXML
     private TableView<Livre> livreClient;
@@ -44,8 +41,8 @@ public class ClientLivreController extends BaseController implements Initializab
     private TableColumn<Livre, String> Titre;
     @FXML
     private TableColumn<Livre, String> Auteur;
-    //@FXML
-   // private TableColumn<Livre, String> label;
+    @FXML
+   private TableColumn<Livre, String> Id_livre;
     @FXML
     private TableColumn<Livre, String> Prix;
     @FXML
@@ -53,7 +50,15 @@ public class ClientLivreController extends BaseController implements Initializab
     @FXML
     private Button tfSupp ;
      @FXML
-    private Button tfUp ;
+    private Button tfmodif ;
+      
+     public void UpdateTable(){
+         livreService ls = new livreService ();
+         List<Livre> ab =new ArrayList<>();
+         ab = ls.afficher();
+         ObservableList<Livre>list=FXCollections.observableArrayList();
+         livreClient.setItems(list);
+     }
 
     /**
      * Initializes the controller class.
@@ -82,11 +87,12 @@ public class ClientLivreController extends BaseController implements Initializab
     livreService us = new livreService();
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+       
         Prix.setCellValueFactory(l -> new SimpleStringProperty(String.valueOf(l.getValue().getPrix())));
         Titre.setCellValueFactory(l -> new SimpleStringProperty(l.getValue().getTitre()));
         Auteur.setCellValueFactory(l -> new SimpleStringProperty(l.getValue().getAuteur()));
        Image.setCellValueFactory(l -> new SimpleStringProperty(l.getValue().getImage()));
+       Id_livre.setCellValueFactory(l -> new SimpleStringProperty(String.valueOf(l.getValue().getId_livre())));
         //Prix.setCellValueFactory(l-> new SimpleStringProperty(c.getValue().getPrix()));
     
 
@@ -94,13 +100,31 @@ public class ClientLivreController extends BaseController implements Initializab
         System.out.println(clientData);
         livreClient.setItems(clientData);
 }
-
+    
 @FXML
     private void Supprimerunlivre (ActionEvent event) throws IOException {
         Livre orderSelected= livreClient.getSelectionModel().getSelectedItem();
         livreService ls = new livreService ();
        ls.Supprimer(orderSelected);
-     JOptionPane.showMessageDialog(null,"Livre supprimé !");
+      // UpdateTable();
+       //JOptionPane.showMessageDialog(null,"Livre supprimé !");
+       livreClient.getItems().clear();
+     Prix.setCellValueFactory(l -> new SimpleStringProperty(String.valueOf(l.getValue().getPrix())));
+        Titre.setCellValueFactory(l -> new SimpleStringProperty(l.getValue().getTitre()));
+        Auteur.setCellValueFactory(l -> new SimpleStringProperty(l.getValue().getAuteur()));
+       Image.setCellValueFactory(l -> new SimpleStringProperty(l.getValue().getImage()));
+       Id_livre.setCellValueFactory(l -> new SimpleStringProperty(String.valueOf(l.getValue().getId_livre())));
+        //Prix.setCellValueFactory(l-> new SimpleStringProperty(c.getValue().getPrix()));
+         clientData.addAll(us.afficher());
+        System.out.println(clientData);
+        livreClient.setItems(clientData);
     }
-    
+    @FXML
+     private void modunlivre (ActionEvent event) throws IOException {
+        Livre orderSelected= livreClient.getSelectionModel().getSelectedItem();
+        livreService ls = new livreService ();
+       ls.modifier(orderSelected);
+       UpdateTable();
+     JOptionPane.showMessageDialog(null,"Livre modifié !");
+    }
 }

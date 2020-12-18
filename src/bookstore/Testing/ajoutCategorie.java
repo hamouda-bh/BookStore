@@ -5,8 +5,10 @@
  */
 package bookstore.Testing;
 
+import bookstore.views.ViewFactory;
 import java.io.IOException;
 import javafx.application.Application;
+import static javafx.application.Application.launch;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -20,7 +22,9 @@ import javafx.stage.Stage;
  *
  * @author user
  */
-public class ajoutCategorie extends Application {
+
+
+/*public class ajoutCategorie extends Application {
     
     @Override
     public void start(Stage primaryStage) throws IOException {
@@ -35,8 +39,26 @@ public class ajoutCategorie extends Application {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         launch(args);
     }
     
+}*/
+public class ajoutCategorie extends Application {
+    
+    public static void main(String[] args) {
+		launch(args);
+	}
+
+    @Override
+    
+	public void start(Stage stage)   {
+            DBConnection.getInstance().getCnx();
+		try {    
+			ViewFactory vf = new ViewFactory();
+			vf.showAjouterUneCategorie();
+		}catch(Exception e) {			
+			e.printStackTrace();
+        }	
+    }
 }

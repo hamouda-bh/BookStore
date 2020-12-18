@@ -21,22 +21,25 @@ Connection cnx = DBConnection.getInstance().getCnx();
 
     
      
-public void ajouter (Livre l) throws SQLException {
-         String requete1 = "INSERT INTO Livre (id_categorie,titre,auteur,prix,image) VALUES (?,?,?,?,?)";
-        PreparedStatement pst =  cnx.prepareStatement(requete1);
+public void ajouter (Livre l)  {
+    try {
+         String sql = "INSERT INTO Livre(Id_categorie,Titre,Auteur,Prix,Image) VALUES (?,?,?,?,?)";
+        PreparedStatement pst =  cnx.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
 
-       pst.setInt(1, l.getId_categorie());
+        pst.setInt(1, l.getId_categorie());
         pst.setString(2,l.getTitre());
         pst.setString(3,l.getAuteur());
         pst.setFloat(4,l.getPrix());
         pst.setString(5,l.getImage());
         System.out.println(l);
         pst.executeUpdate();
+        ResultSet rs = pst.getGeneratedKeys();
         System.out.println("Livre ajoutée");
-        try {
-            pst = cnx.prepareStatement(requete1);
+         while(rs.next()){
+           System.out.println(rs.getInt(1));
+         }
         } catch (SQLException e) {
-        e.printStackTrace();        }
+        System.out.println(e.getMessage());       }
           
 }
      
@@ -61,11 +64,10 @@ System.out.println("Livre supprimé");
 } catch (SQLException e) {
 }
 } */
-public void Supprimer (Livre c){
+public void Supprimer (Livre l){
         try {
-            String sql = "DELETE FROM Livre where id_livre = ?";
+            String sql = "DELETE FROM livre WHERE id_livre= "+l.getId_livre();
             PreparedStatement st = cnx.prepareStatement(sql);
-            st.setInt(1,c.getId_livre());
             st.executeUpdate();
             System.out.println("Livre Supprimé");
         } catch (Exception e) {
@@ -108,16 +110,16 @@ public boolean rechercheTitre(String titre){
         return false;
     }
     
-public List<Livre> afficher ( ) {
+public List<Livre> afficher () {
 	List<Livre> list= new ArrayList<>();
-	 String req = "SELECT l.titre,l.auteur,c.Label,l.prix,l.image FROM livre l INNER join categorie c on l.id_Categorie = c.id_Categorie";
+	 String req = "SELECT l.titre,l.auteur,c.Label,l.prix,l.image,l.Id_livre FROM livre l INNER join categorie c on l.id_Categorie = c.id_Categorie";
                  //"SELECT * from Livre";
 try {
 	
 	Statement st = cnx.createStatement();
 ResultSet res =st.executeQuery(req);
 while (res.next()) {
-	list.add(new Livre(res.getString("titre"),res.getString("auteur"),res.getFloat("prix"),res.getString("image")));
+	list.add(new Livre(res.getString("titre"),res.getString("auteur"),res.getFloat("prix"),res.getString("image"),res.getInt("Id_livre")));
 }
 System.out.println("Livre recupere");
 } catch (SQLException e) {

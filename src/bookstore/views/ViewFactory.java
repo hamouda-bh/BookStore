@@ -184,9 +184,28 @@ public class ViewFactory {
                      BaseController supprimerlivre = new ClientLivreController(this, "ClientLivre.fxml");
                      initializeStage(supprimerlivre);
                   }
+                   public void showmodunlivre(){
+                     BaseController modifierlivre = new ClientLivreController(this, "ClientLivre.fxml");
+                     initializeStage(modifierlivre);
+                  }
+                    public void showAjouterUneCategorie(){
+                     BaseController ajoutcat = new AjoutCategorieController(this, "AjoutCategorie.fxml");
+                     initializeStage(ajoutcat);
+                  }
+                    public void showDetailsCategorie() {
+                     BaseController detailscategorie = new DetailsCategorieController(this, "detailsCategorie.fxml");
+                     initializeStage(detailscategorie);
+                  }
+
+   
+                 public void showajoutCategorie() {
+                     BaseController ajoutCat = new AjoutCategorieController(this, "AjoutCategorie.fxml");
+                     initializeStage(ajoutCat);
+                  }
+                 public void showsupprimerCategorie(){
+                     BaseController supprimercat = new DetailsCategorieController(this, "detailsCategorie.fxml");
+                     initializeStage(supprimercat);
+                  }
 }
-                 
-                 
-                 
                  
 		

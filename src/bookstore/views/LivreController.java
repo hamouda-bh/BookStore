@@ -62,6 +62,8 @@ public class LivreController extends BaseController implements Initializable {
     private Button myAccountButton;
     @FXML
     private Button tfAffich;
+     @FXML
+    private Button MesCategories;
    
     
 @FXML
@@ -126,14 +128,14 @@ public class LivreController extends BaseController implements Initializable {
     private void afficherLivre(){
         vf.showClientLivre();
     }
-
     @FXML
-    private void Modifierunlivre() {
-        
+    private void accesCat(){
+        vf.showajoutCategorie();
     }
+    
 
-    @FXML
-    private void Supprimerunlivre() {
-    }
+   
+
+   
     
 }

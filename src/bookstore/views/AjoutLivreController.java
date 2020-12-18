@@ -141,8 +141,6 @@ Alert alert=new Alert(Alert.AlertType.INFORMATION);
     if((!"".equals(a))&&(!"".equals(tfTitre.getText()))&&(!"".equals(tfAuteur.getText()))&&(!"".equals(f))&&(!"".equals(tfImage.getText()))){
      livreService ls = new livreService ();
      ls.ajouter(new Livre (a,tfTitre.getText(),tfAuteur.getText(),f,tfImage.getText()));
-     
-     JOptionPane.showMessageDialog(null,"Livre ajouté!");
         }
         else if(("".equals(a))||("".equals(tfTitre.getText()))||("".equals(tfAuteur.getText()))||("".equals(f))||("".equals(tfImage.getText()))){
         {
@@ -151,7 +149,9 @@ Alert alert=new Alert(Alert.AlertType.INFORMATION);
             alert.setContentText("type valide information !");
             alert.showAndWait();
         }
+        
         }
+    JOptionPane.showMessageDialog(null,"Livre ajouté!");
     }
 //FXMLLoader loader = new FXMLLoader (getClass().getResource("DetailsLivre.fxml"));
 //Parent root = loader.load();
