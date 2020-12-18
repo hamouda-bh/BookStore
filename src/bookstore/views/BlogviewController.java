@@ -8,8 +8,11 @@ package bookstore.views;
 import bookstore.Testing.Cache;
 import bookstore.entities.Blog;
 import bookstore.services.serviceBlog;
+import bookstore.utils.TrayIconDemo;
 import bookstore.viewsControllers.BaseController;
 import bookstore.viewsControllers.DetailsBlogController;
+import java.awt.AWTException;
+import java.awt.SystemTray;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -126,7 +129,7 @@ public class BlogviewController extends BaseController implements Initializable 
     }    
 
     @FXML
-    private void ajouterBlog(ActionEvent event) throws IOException {
+    private void ajouterBlog(ActionEvent event) throws IOException, AWTException {
         int a = Integer.parseInt(tfid.getText());
                 int b = Integer.parseInt(tfidc.getText());
 
@@ -134,6 +137,13 @@ public class BlogviewController extends BaseController implements Initializable 
         sb.ajouter(new Blog(a,b,tfcategorie.getText(),tfdescription.getText()));
         
         JOptionPane.showMessageDialog(null, "blog ajouté");
+         if (SystemTray.isSupported()) {
+            TrayIconDemo td = new TrayIconDemo();
+            td.displayTrayblog();
+            System.err.println("notiiiifff");
+        } else {
+            System.err.println("Erreur!!!!");
+        }
       // vf.showAblog();
         /*
         

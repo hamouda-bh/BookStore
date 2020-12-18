@@ -12,32 +12,11 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/BookStore/src/bookstore/viewsControllers/PasserCommandeController.java</file>
-            <file>file:/C:/BookStore/src/bookstore/services/ServicesShoppingCart.java</file>
-            <file>file:/C:/BookStore/src/bookstore/viewsControllers/PaiementController.java</file>
-            <file>file:/C:/BookStore/src/bookstore/views/blogview.fxml</file>
-            <file>file:/C:/BookStore/src/bookstore/views/AAjoutAnnonceViewController.java</file>
-            <file>file:/C:/BookStore/src/bookstore/viewsControllers/AMesAnnoncesViewController.java</file>
-            <file>file:/C:/BookStore/src/bookstore/entities/Annonce.java</file>
-            <file>file:/C:/BookStore/src/bookstore/Testing/DBConnection.java</file>
-            <file>file:/C:/BookStore/src/bookstore/viewsControllers/AAnnoncesViewController.java</file>
-            <file>file:/C:/BookStore/src/bookstore/entities/Utilisateur.java</file>
-            <file>file:/C:/BookStore/src/bookstore/viewsControllers/AAjoutAnnonceViewController.java</file>
-            <file>file:/C:/BookStore/src/bookstore/Testing/Cache.java</file>
-            <file>file:/C:/BookStore/src/bookstore/Testing/ZayTestGUI.java</file>
-            <file>file:/C:/BookStore/src/bookstore/services/ServiceAnnonce.java</file>
-            <file>file:/C:/BookStore/src/bookstore/viewsControllers/KidsSpaceController.java</file>
-            <file>file:/C:/BookStore/src/bookstore/viewsControllers/ConsulterCategoriesKidsController.java</file>
-            <file>file:/C:/BookStore/src/bookstore/viewsControllers/AjouterCategorieKidsViewController.java</file>
-            <file>file:/C:/BookStore/src/bookstore/viewsControllers/AjouterLivreKidsController.java</file>
-            <file>file:/C:/BookStore/src/bookstore/views/PaintController.java</file>
-            <file>file:/C:/BookStore/src/bookstore/viewsControllers/ConsulterLivreKidsController.java</file>
-            <file>file:/C:/BookStore/src/bookstore/Testing/MainProgGUI.java</file>
-            <file>file:/C:/BookStore/src/bookstore/views/AAnnoncesView.fxml</file>
             <file>file:/C:/BookStore/src/bookstore/Testing/mainBLOG.java</file>
             <file>file:/C:/BookStore/src/bookstore/entities/Blog.java</file>
             <file>file:/C:/BookStore/src/bookstore/views/BlogviewController.java</file>
             <file>file:/C:/BookStore/src/bookstore/views/AblogController.java</file>
+            <file>file:/C:/BookStore/src/bookstore/utils/TrayIconDemo.java</file>
             <file>file:/C:/BookStore/src/bookstore/services/serviceBlog.java</file>
         </group>
     </open-files>
