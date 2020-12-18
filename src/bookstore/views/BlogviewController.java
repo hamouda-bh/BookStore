@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package bookstore.views;
+import javafx.scene.control.Alert;
 
 import bookstore.Testing.Cache;
 import bookstore.entities.Blog;
@@ -130,7 +131,7 @@ public class BlogviewController extends BaseController implements Initializable 
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-    
+    /*
     private boolean validatecategorie(){
         Pattern p = Pattern.compile("[a-z A-Z]+");
         Matcher m = p.matcher(tfcategorie.getText());
@@ -161,15 +162,56 @@ public class BlogviewController extends BaseController implements Initializable 
             return false;            
         }
     }
+     
+      private boolean validateidb(){
+        Pattern p = Pattern.compile("[0-9]+");
+        Matcher m = p.matcher(tfidc.getText());
+        if(m.find() && m.group().equals(tfdescription.getText())){
+            return true;
+        }else{
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Validate categorie");
+                alert.setHeaderText(null);
+                alert.setContentText("Veuiller Entrer une categorie valide");
+                alert.showAndWait();
+            
+            return false;            
+        }
+    }
+      
+       private boolean validateidc(){
+        Pattern p = Pattern.compile("[0-9]+");
+        Matcher m = p.matcher(tfid.getText());
+        if(m.find() && m.group().equals(tfdescription.getText())){
+            return true;
+        }else{
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Validate categorie");
+                alert.setHeaderText(null);
+                alert.setContentText("Veuiller Entrer une categorie valide");
+                alert.showAndWait();
+            
+            return false;            
+        }
+    }*/
+    Alert alert=new Alert(Alert.AlertType.INFORMATION);
+
     @FXML
     private void ajouterBlog(ActionEvent event) throws IOException, AWTException {
-        int a = Integer.parseInt(tfid.getText());
-                int b = Integer.parseInt(tfidc.getText());
+        int a=0;
+        int b=0;
+      try{   a = Integer.parseInt(tfid.getText());
+                 b = Integer.parseInt(tfidc.getText());
+      } catch (NumberFormatException ex){
+        }
+      
+          if((!"".equals(a))&&(!"".equals(b))&&(!"".equals(tfcategorie.getText()))&&(!"".equals(tfdescription.getText()))){
 
         serviceBlog sb = new serviceBlog();
         sb.ajouter(new Blog(a,b,tfcategorie.getText(),tfdescription.getText()));
+                                          JOptionPane.showMessageDialog(null, "blog ajouté");
+
         
-        JOptionPane.showMessageDialog(null, "blog ajouté");
          if (SystemTray.isSupported()) {
             TrayIconDemo td = new TrayIconDemo();
             td.displayTrayblog();
@@ -177,6 +219,18 @@ public class BlogviewController extends BaseController implements Initializable 
         } else {
             System.err.println("Erreur!!!!");
         }
+         }
+        else if(("".equals(a))||("".equals(b))||("".equals(tfcategorie.getText()))||("".equals(tfdescription.getText()))){
+        {
+            alert.setTitle("information");
+            alert.setHeaderText(null);
+            alert.setContentText("type valide information !");
+            alert.showAndWait();
+        }
+
+        }
+
+    }
       // vf.showAblog();
         /*
         
@@ -193,7 +247,7 @@ public class BlogviewController extends BaseController implements Initializable 
         dbc.setLbcategorie(tfcategorie.getText());
         dbc.setLbdescription(tfdescription.getText());
 vf.showDetailsBlog();*/
-}
+
 
     @FXML
     private void modifierBlog(ActionEvent event) {
