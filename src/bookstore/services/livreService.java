@@ -23,7 +23,7 @@ Connection cnx = DBConnection.getInstance().getCnx();
      
 public void ajouter (Livre l)  {
     try {
-         String sql = "INSERT INTO Livre(Id_categorie,Titre,Auteur,Prix,Image) VALUES (?,?,?,?,?)";
+         String sql =  "INSERT INTO Livre(Id_categorie,Titre,Auteur,Prix,Image) VALUES (?,?,?,?,?)";
         PreparedStatement pst =  cnx.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
 
         pst.setInt(1, l.getId_categorie());
