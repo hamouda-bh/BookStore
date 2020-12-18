@@ -2,7 +2,10 @@
 import bookstore.Testing.Cache;
 import bookstore.entities.Livre;
 import bookstore.services.livreService;
+import bookstore.utils.TrayIconDemo;
 import bookstore.viewsControllers.BaseController;
+import java.awt.AWTException;
+import java.awt.SystemTray;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -129,7 +132,7 @@ public class AjoutLivreController extends BaseController{
 Alert alert=new Alert(Alert.AlertType.INFORMATION);
     
     @FXML
-    void Ajouterunlivre(ActionEvent event) throws IOException, SQLException {
+    void Ajouterunlivre(ActionEvent event) throws IOException, SQLException, AWTException {
         int a = 0;
         float f = 0 ;
         String str = "N/A";
@@ -141,7 +144,17 @@ Alert alert=new Alert(Alert.AlertType.INFORMATION);
     if((!"".equals(a))&&(!"".equals(tfTitre.getText()))&&(!"".equals(tfAuteur.getText()))&&(!"".equals(f))&&(!"".equals(tfImage.getText()))){
      livreService ls = new livreService ();
      ls.ajouter(new Livre (a,tfTitre.getText(),tfAuteur.getText(),f,tfImage.getText()));
+       
+    
+    if (SystemTray.isSupported()) {
+            TrayIconDemo td = new TrayIconDemo();
+            td.displayTrayajout();
+            System.err.println("notiiiifff");
+        } else {
+            System.err.println("Erreur!!!!");
         }
+    
+    }
         else if(("".equals(a))||("".equals(tfTitre.getText()))||("".equals(tfAuteur.getText()))||("".equals(f))||("".equals(tfImage.getText()))){
         {
             alert.setTitle("information");

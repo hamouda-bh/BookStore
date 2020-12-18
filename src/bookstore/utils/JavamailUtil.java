@@ -33,8 +33,8 @@ public class JavamailUtil {
         Properties properties = new Properties();
         
         
-        String myAccountEmail ="amin.benmoussa@esprit.tn";
-        String password ="araestemdacord";
+        String myAccountEmail ="a@mail.com";
+        String password ="mdp";
         
         properties.put("com.hof.email.starttime","20170519094544");
         properties.put("mail.smtp.auth","true");
