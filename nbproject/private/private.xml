@@ -39,6 +39,7 @@
             <file>file:/C:/BookStore/src/bookstore/entities/Blog.java</file>
             <file>file:/C:/BookStore/src/bookstore/views/BlogviewController.java</file>
             <file>file:/C:/BookStore/src/bookstore/views/AblogController.java</file>
+            <file>file:/C:/BookStore/src/bookstore/utils/TrayIconDemo.java</file>
             <file>file:/C:/BookStore/src/bookstore/services/serviceBlog.java</file>
             <file>file:/C:/BookStore/src/bookstore/utils/PDFutil.java</file>
         </group>
