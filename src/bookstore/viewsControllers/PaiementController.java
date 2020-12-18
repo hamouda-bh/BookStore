@@ -2,6 +2,7 @@ package bookstore.viewsControllers;
 
 import bookstore.Testing.Cache;
 import bookstore.services.FactureService;
+import bookstore.utils.TrayIconDemo;
 import bookstore.views.ViewFactory;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -9,6 +10,8 @@ import com.stripe.Stripe;
 import com.stripe.exception.StripeException;
 import com.stripe.model.*;
 import static com.stripe.param.checkout.SessionCreateParams.ShippingAddressCollection.AllowedCountry.SC;
+import java.awt.AWTException;
+import java.awt.SystemTray;
 import java.net.URL;
 import java.util.Date;
 import java.util.HashMap;
@@ -29,6 +32,14 @@ public class PaiementController extends BaseController implements Initializable{
     public PaiementController(ViewFactory vf, String fxmlName){
         super(vf, fxmlName);
     }
+@FXML
+    private TextField cvc;
+
+@FXML
+    private TextField date_month;
+
+    @FXML
+    private TextField date_year;
 
     @FXML
     private TextField nom_id;
@@ -102,73 +113,61 @@ public class PaiementController extends BaseController implements Initializable{
     	vf.closeStage(stage);
     	vf.showLoginWindow();
     }
-    /*
-    void myAccountAction() {
-        vf.showAccountEditWindow();
-        Stage stage = (Stage) logOut.getScene().getWindow();
-  	    vf.closeStage(stage);
-    }
-    */
+   
     @FXML
     void ShowKidsSpace() {
         vf.ShowKidsSpace();
+        Stage stage = (Stage) btn_panier.getScene().getWindow();
+	vf.closeStage(stage);
     }
      @FXML
     private void goLivre() {
     
      vf.showLivre() ;
-    
+    Stage stage = (Stage) btn_panier.getScene().getWindow();
+    vf.closeStage(stage);
            }
     @FXML
     private void goBlog(ActionEvent event) {
         vf.showBlog();
+        Stage stage = (Stage) btn_panier.getScene().getWindow();
+	vf.closeStage(stage);
     }
-    /*
-    @FXML
-    void myAccountAction() {
-        vf.showAccountEditWindow();
-        Stage stage = (Stage) logOut.getScene().getWindow();
-  	    vf.closeStage(stage);
-    }*/
      @FXML
     void panier(ActionEvent event) {
         vf.showPanier();
+        Stage stage = (Stage) btn_panier.getScene().getWindow();
+	vf.closeStage(stage);
     }
 
     @FXML
     void handleClicks(ActionEvent event) {
-
     }
 
     @FXML
     void logOutAction(ActionEvent event) {
-
     }
  @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+
     }    
   @FXML
     void onCliqAnnuler(ActionEvent event) {
             vf.showPanier();
+             Stage stage = (Stage) btn_panier.getScene().getWindow();
+	     vf.closeStage(stage);
     }
 
-    @FXML
-    void onCliqPayer(ActionEvent event) {
-            vf.showCommandeFaite();
-         //   FactureService f = new FactureService();
-        //    f.ajouter(p, c);
-    }
-    
-    private void pay() {
+     @FXML
+    private void onCliqPayer() throws AWTException {
         try{
             Stripe.apiKey = "sk_test_4eC39HqLyjWDarjtT1zdp7dc";
             Customer a = Customer.retrieve("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
             Map <String, Object> cardParam = new HashMap<String, Object>();
-            if(!(card_number.getText().equals("") || exp_month.getText().equals("") || exp_year.getText().equals("") || cvc.getText().equals(""))){
-                cardParam.put("number", card_number.getText());
-                cardParam.put("exp_month", Integer.parseInt(exp_month.getText()));
-                cardParam.put("exp_year", Integer.parseInt(exp_year.getText()));
+            if(!(num_compte_id.getText().equals("") || date_month.getText().equals("") || date_year.getText().equals("") || cvc.getText().equals(""))){
+                cardParam.put("number", num_compte_id.getText());
+                cardParam.put("exp_month", Integer.parseInt(date_month.getText()));
+                cardParam.put("exp_year", Integer.parseInt(date_year.getText()));
                 cardParam.put("cvc", cvc.getText());
             }
             else
@@ -184,29 +183,27 @@ public class PaiementController extends BaseController implements Initializable{
             Map<String, Object> source = new HashMap<String, Object>();
             source.put("source", token.getId());
             
-            //a.getSources().create(source);
-            
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             System.out.println(gson.toJson(token));
             
             Map<String,Object> chargeParam = new HashMap<String, Object>();
-            chargeParam.put("amount", Integer.parseInt(sum_total.getText().substring(0, sum_total.getText().length()-3)));
+            chargeParam.put("amount", 0.50);
             chargeParam.put("currency", "usd");
             chargeParam.put("source", token.getId());
-            
-            Charge.create(chargeParam);
-            NotificationAPI.notifInfo("Payment", "Your payment was successful!");
-            // Create Order
-            ServicesOrder so = new ServicesOrder();
-            
-            SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
-            Date date = new Date(System.currentTimeMillis());
-            Order O = new Order(SC, true, date);
-            createOrder();
-            
+             
+             if (SystemTray.isSupported()) {
+            TrayIconDemo td = new TrayIconDemo();
+            td.displayTraypaie();
+            System.err.println("notiff paie ");
+        } else {
+            System.err.println("Erreur!!!!");
+        }             
+          Charge.create(chargeParam);
+             vf.showCommandeFaite();
+             Stage stage = (Stage) btn_panier.getScene().getWindow();
+	     vf.closeStage(stage);
         }catch(StripeException e){
             System.out.println(e.getMessage());   
-            NotificationAPI.notif("Payment", "An error has occured with your Payment!");
         }
     }
 }

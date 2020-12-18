@@ -1,5 +1,6 @@
 package bookstore.services;
 
+import bookstore.Testing.Cache;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -22,10 +23,10 @@ public class PanierService {
         String requete1 = "INSERT INTO panier_livre (id_client, id_livre, somme_ajouter,quantite_ajouter) VALUES (?,?,?,?)";
         PreparedStatement pst = cnx.prepareStatement(requete1);
 
-        pst.setInt(1, p.getId_user());
+        pst.setInt(1, Cache.client.getId_user());
         pst.setInt(2, p.getId_comm());
         pst.setFloat(3, p.getSomme_ajoute());
-        pst.setInt(4, p.getQuantite_ajouter());
+        pst.setString(4, String.valueOf(p.getQuantite_ajouter()));
         pst.executeUpdate();
         System.out.println("p ajoutée");
         try {
@@ -44,21 +45,18 @@ public class PanierService {
             pst2.executeUpdate();
           
             System.out.println("p supprimée");
+            
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    public void modifier(int qte, int id_livre) throws SQLException {
-        
-        
-        String requete5 = "UPDATE panier_livre SET quantite_ajouter = ?  WHERE id_livre = ?";
-
+    public void modifier(String ch, String id) throws SQLException {
+        String requete5 = "UPDATE panier_livre SET quantite_ajouter = ?  WHERE titre = ?";
         try {
-
             PreparedStatement pst2 = cnx.prepareStatement(requete5);
-            pst2.setInt(1, qte);
-            pst2.setInt(2, id_livre); 
+            pst2.setString(1, ch);
+            pst2.setString(2, id); 
             pst2.executeUpdate();
             System.out.println("panier updated");
             
@@ -86,27 +84,7 @@ public class PanierService {
         return list;
     }*/
     
-   /*  public List<Panier_livre> afficherActivite1() {
-        ArrayList<Panier_livre> panierList = new ArrayList<>();
-        String requete4 = "SELECT * FROM panier_livre";
-        try {
 
-            
-            Statement pst = cnx.createStatement();
-            ResultSet rs = pst.executeQuery(requete4);
-
-            while (rs.next()) {
-
-                Panier_livre a = new Panier_livre();
-                a.setId_comm(rs.getInt(1));
-                a.setQuantite_ajouter(rs.getInt(2));
-                panierList.add(a);
-            }
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
-        }
-        return panierList;
-    }*/
     
     public void affichage() {
 
@@ -135,6 +113,28 @@ public class PanierService {
     }
     
     
+    public float afficherp() {
+        List<Panier_livre> list = new ArrayList<>();
+        String req = "SELECT p.prix from panier_livre p ";
+        try {
+            Statement st = cnx.createStatement();
+            ResultSet res = st.executeQuery(req);
+            float x,i=0;
+            while (res.next()) {
+                
+                x= res.getFloat("prix");
+               i=i+x;
+            }
+            System.out.println("prix recuperé");
+            return i;
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+    
+    
     public List<Panier_livre> afficherL() {
         List<Panier_livre> list = new ArrayList<>();
         String req = "SELECT p.* from panier_livre p ";
@@ -145,7 +145,7 @@ public class PanierService {
                        
             while (res.next()) {
                             
-                list.add(new Panier_livre(res.getInt("id_panier"), res.getInt("id_client"),res.getInt("id_livre"), res.getFloat("quantite_ajouter"), res.getInt("somme_ajouter"),  res.getString("titre"), res.getFloat("prix")));
+                list.add(new Panier_livre(res.getInt("id_panier"), res.getInt("id_client"),res.getInt("id_livre"), res.getFloat("somme_ajouter"), res.getString("quantite_ajouter"),  res.getString("titre"), res.getFloat("prix")));
                        
             }
             System.out.println("p recupere");

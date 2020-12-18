@@ -12,8 +12,9 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/BookStore/src/bookstore/viewsControllers/CommandeFaiteController.java</file>
             <file>file:/C:/BookStore/src/bookstore/viewsControllers/PasserCommandeController.java</file>
-            <file>file:/C:/BookStore/src/bookstore/services/ServicesShoppingCart.java</file>
+            <file>file:/C:/BookStore/src/bookstore/services/FactureService.java</file>
             <file>file:/C:/BookStore/src/bookstore/viewsControllers/PaiementController.java</file>
             <file>file:/C:/BookStore/src/bookstore/views/blogview.fxml</file>
             <file>file:/C:/BookStore/src/bookstore/views/AAjoutAnnonceViewController.java</file>
@@ -39,6 +40,7 @@
             <file>file:/C:/BookStore/src/bookstore/views/BlogviewController.java</file>
             <file>file:/C:/BookStore/src/bookstore/views/AblogController.java</file>
             <file>file:/C:/BookStore/src/bookstore/services/serviceBlog.java</file>
+            <file>file:/C:/BookStore/src/bookstore/utils/PDFutil.java</file>
         </group>
     </open-files>
 </project-private>

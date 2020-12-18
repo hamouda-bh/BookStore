@@ -1,4 +1,5 @@
 package bookstore.services;
+import bookstore.Testing.Cache;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -29,7 +30,7 @@ public void ajouter (Facture p) throws IOException, SQLException {
 
         pst.setInt(1, p.getIdFacture());
         pst.setInt(2, p.getIdCommande());
-        pst.setInt(3, p.getId_client());
+        pst.setInt(3, Cache.client.getId_user());
         pst.setString(4, p.getDate_fact());
         pst.setFloat(5, p.getPrix_totale() );
         pst.executeUpdate();

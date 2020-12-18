@@ -3,6 +3,7 @@ package bookstore.entities;
 
 import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.logging.Logger;
 
 public class Commande {
@@ -27,9 +28,8 @@ public class Commande {
         this.prixTotale = prixTotale;
     }
      public Commande( String date_commande,float prixTotale) {
-        Client c = null;   
+      
         this.date_commande = date_commande;
-        this.id_client = c.getId_user();
         this.prixTotale = prixTotale;
     }
 
@@ -104,9 +104,6 @@ public class Commande {
     }
     public void confirmerCommande ()
     {
-      /* Panier_livre p = new Panier_livre();
-        int i= p.getId_comm();
-        Facture f = new Facture(id_commande, id_client,i,date_commande);*/
     }
     
 }

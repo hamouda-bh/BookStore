@@ -24,10 +24,6 @@ public class Utilisateur {
 	  private String adress; 
 	  
 	  
-	  
-	  
-	  
-	  
 	public Utilisateur() {
 		
 	}

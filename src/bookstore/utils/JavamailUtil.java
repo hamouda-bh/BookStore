@@ -17,16 +17,6 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author Dimassi Abdelhak
- */
 public class JavamailUtil {
     public static void sendMail(String recepient) throws Exception{
         System.out.println("Preparing to send:");
@@ -34,7 +24,7 @@ public class JavamailUtil {
         
         
         String myAccountEmail ="amin.benmoussa@esprit.tn";
-        String password ="araestemdacord";
+        String password ="araestemdacord25001";
         
         properties.put("com.hof.email.starttime","20170519094544");
         properties.put("mail.smtp.auth","true");

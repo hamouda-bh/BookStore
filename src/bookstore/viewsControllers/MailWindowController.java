@@ -97,16 +97,21 @@ public class MailWindowController extends BaseController implements Initializabl
     @FXML
     void ShowKidsSpace() {
         vf.ShowKidsSpace();
+        Stage stage = (Stage) logOut.getScene().getWindow();
+    	vf.closeStage(stage);
     }
      @FXML
     private void goLivre() {
     
      vf.showLivre() ;
-    
+    Stage stage = (Stage) logOut.getScene().getWindow();
+    	vf.closeStage(stage);
            }
     @FXML
     private void goBlog(ActionEvent event) {
         vf.showBlog();
+        Stage stage = (Stage) logOut.getScene().getWindow();
+    	vf.closeStage(stage);
     }
     /*
     @FXML
@@ -118,6 +123,8 @@ public class MailWindowController extends BaseController implements Initializabl
      @FXML
     void panier(ActionEvent event) {
         vf.showPanier();
+        Stage stage = (Stage) logOut.getScene().getWindow();
+    	vf.closeStage(stage);
     }
     
     /**

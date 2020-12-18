@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package bookstore.viewsControllers;
 
 import bookstore.services.FactureService;
@@ -29,6 +25,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import javax.print.Doc;
 import javax.print.DocFlavor;
 import javax.print.DocPrintJob;
@@ -42,11 +39,6 @@ import javax.print.attribute.standard.OrientationRequested;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.printing.PDFPageable;
 
-/**
- * FXML Controller class
- *
- * @author PC-Hamouda
- */
 public class CommandeFaiteController extends BaseController implements Initializable {
 
     public CommandeFaiteController(ViewFactory vf, String fxmlName) {
@@ -103,7 +95,6 @@ public class CommandeFaiteController extends BaseController implements Initializ
         PrintRequestAttributeSet aset = new HashPrintRequestAttributeSet();
         PrintService[] services = PrintServiceLookup.lookupPrintServices(psInFormat, aset);
          
-        // this step is necessary because I have several printers configured
         PrintService myPrinter = null;
         for (int i = 0; i < services.length; i++){
             String svcName = services[i].toString();           
@@ -132,10 +123,8 @@ public class CommandeFaiteController extends BaseController implements Initializ
 
         try {
             JavamailUtil mail = new JavamailUtil();
-            
-            
-            
-            mail.sendMail("amin.benmoussa@esprit.tn");
+           
+            mail.sendMail("nour.benhadjyahia@esprit.tn");
             System.out.println("email envoyé");
              if (SystemTray.isSupported()) {
             TrayIconDemo td = new TrayIconDemo();
@@ -149,17 +138,15 @@ public class CommandeFaiteController extends BaseController implements Initializ
             Logger.getLogger(CommandeFaiteController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
-    /**
-     * Initializes the controller class.
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+       
     }
 @FXML
     void onCliqRetour(ActionEvent event) {
             vf.showPanier();
+            Stage stage = (Stage) bt_envoi_id.getScene().getWindow();
+	               	vf.closeStage(stage);
     }
 
 }

@@ -5,6 +5,7 @@ import bookstore.views.ViewFactory;
 
 
 public abstract class BaseController {
+        public float sum=0 ;
     protected ViewFactory vf;
     private String fxmlName;
     public BaseController(){
