@@ -30,7 +30,6 @@ public class mainBLOG extends Application {
 		try {    
 			ViewFactory vf = new ViewFactory();
 			vf.showBlog();
-                       // vf.showDetailsBlog();
 		}catch(Exception e) {			
 			e.printStackTrace();
         }	

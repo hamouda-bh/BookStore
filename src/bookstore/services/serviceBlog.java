@@ -16,6 +16,8 @@ import bookstore.entities.Blog;
 import bookstore.Testing.DBConnection;
 import bookstore.entities.Blog;
 import java.sql.PreparedStatement;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class  serviceBlog {
 Connection cnx = DBConnection.getInstance().getCnx();
@@ -64,9 +66,28 @@ System.out.println("blog modifiée");
 }
 }
 
-public void afficherBlog (Blog b ) {
- try {
-            String sql = "SELECT * FROM blog";
+
+  public ObservableList<Blog> afficherBlog() {
+        ObservableList<Blog> list = FXCollections.observableArrayList();
+        try {
+            String req = "SELECT categorie_blog,description FROM blog";
+            Statement st = cnx.createStatement();
+            ResultSet res = st.executeQuery(req);
+            while(res.next()) {
+                list.add(new Blog(res.getString(1),res.getString(2)));
+
+            }
+            System.out.println("blog récupérées !");
+        }
+        catch(SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return list;
+    }    
+    /*
+    public void afficherBlog(){
+        try {
+            String sql = "SELECT categorie_blog,description FROM blog";
             PreparedStatement st = cnx.prepareStatement(sql);
             ResultSet rs = st.executeQuery();
             while(rs.next()){
@@ -75,6 +96,7 @@ public void afficherBlog (Blog b ) {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+    }*/
 }
-}
+
 

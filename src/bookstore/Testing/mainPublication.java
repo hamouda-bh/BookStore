@@ -29,7 +29,7 @@ public class mainPublication extends Application {
 	public void start(Stage stage)   {
 		try {    
 			ViewFactory vf = new ViewFactory();
-			vf.showPublication();
+			vf.showAblog();
                               
                        // vf.showDetailsBlog();
 		}catch(Exception e) {			
