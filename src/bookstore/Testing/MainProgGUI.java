@@ -37,6 +37,11 @@ public class MainProgGUI extends Application {
                         //vf.ShowAjouterLivreKids();
                         //vf.showUI();                        
                         //vf.showColorationKids();
+                        vf.showUI();
+			            //vf.showUI();
+                        //vf.showMainWindow();
+                        
+                        
                         /* 
                             nour.benhadjyahia@esprit.tn
                             Nour123nour@

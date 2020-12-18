@@ -17,9 +17,13 @@
             <file>file:/C:/BookStore/src/bookstore/viewsControllers/PaiementController.java</file>
             <file>file:/C:/BookStore/src/bookstore/views/blogview.fxml</file>
             <file>file:/C:/BookStore/src/bookstore/views/AAjoutAnnonceViewController.java</file>
+            <file>file:/C:/BookStore/src/bookstore/viewsControllers/AMesAnnoncesViewController.java</file>
             <file>file:/C:/BookStore/src/bookstore/entities/Annonce.java</file>
-            <file>file:/C:/BookStore/src/bookstore/views/AnnoncesViewController.java</file>
-            <file>file:/C:/BookStore/src/bookstore/views/MesAnnoncesViewController.java</file>
+            <file>file:/C:/BookStore/src/bookstore/Testing/DBConnection.java</file>
+            <file>file:/C:/BookStore/src/bookstore/viewsControllers/AAnnoncesViewController.java</file>
+            <file>file:/C:/BookStore/src/bookstore/entities/Utilisateur.java</file>
+            <file>file:/C:/BookStore/src/bookstore/viewsControllers/AAjoutAnnonceViewController.java</file>
+            <file>file:/C:/BookStore/src/bookstore/Testing/Cache.java</file>
             <file>file:/C:/BookStore/src/bookstore/Testing/ZayTestGUI.java</file>
             <file>file:/C:/BookStore/src/bookstore/services/ServiceAnnonce.java</file>
             <file>file:/C:/BookStore/src/bookstore/viewsControllers/KidsSpaceController.java</file>
@@ -29,6 +33,7 @@
             <file>file:/C:/BookStore/src/bookstore/views/PaintController.java</file>
             <file>file:/C:/BookStore/src/bookstore/viewsControllers/ConsulterLivreKidsController.java</file>
             <file>file:/C:/BookStore/src/bookstore/Testing/MainProgGUI.java</file>
+            <file>file:/C:/BookStore/src/bookstore/views/AAnnoncesView.fxml</file>
         </group>
     </open-files>
 </project-private>

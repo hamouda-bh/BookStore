@@ -104,7 +104,9 @@ public class MainCtrl extends BaseController implements Initializable {
     @FXML
     private void handleClicks() {
     }
-    
+    public void goAnnonce(){
+        vf.showAnnonces();
+    }
     
     
     

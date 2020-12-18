@@ -37,66 +37,59 @@ import java.text.SimpleDateFormat;
  * @author AMINE
  */
 public class PDFutil {
-    
+
     Connection cn2;
     Statement ste;
 
     public PDFutil() {
         cn2 = DBConnection.getInstance().getCnx();
     }
-    
-    
-    
+
     Document doc = new Document();
-        
-    public void factPDF() throws SQLException,FileNotFoundException,DocumentException,IOException 
-    {  
-        ste=cn2.createStatement();
-        ResultSet rs=ste.executeQuery("SELECT * from facture");
+
+    public void factPDF() throws SQLException, FileNotFoundException, DocumentException, IOException {
+        ste = cn2.createStatement();
+        ResultSet rs = ste.executeQuery("SELECT * from facture");
         PdfWriter.getInstance(doc, new FileOutputStream("./facture.pdf"));
-        
+
         doc.open();
-        
-    //    Image image = Image.getInstance ("C:\\Users\\AMINE\\Desktop\\logo1.png"); 
+
+        //    Image image = Image.getInstance ("C:\\Users\\AMINE\\Desktop\\logo1.png"); 
         //document.add(new Paragraph("test\n  test")); 
-    //    doc.add(image);  
+        //    doc.add(image);  
         doc.add(new Paragraph("   "));
-         doc.add(new Paragraph("   "));
-          doc.add(new Paragraph("   "));
-           doc.add(new Paragraph("   "));
+        doc.add(new Paragraph("   "));
+        doc.add(new Paragraph("   "));
+        doc.add(new Paragraph("   "));
         doc.add(new Paragraph("                   Votre facture :  "));
         doc.add(new Paragraph("   "));
-        
+
         PdfPTable table = new PdfPTable(6);
         table.setWidthPercentage(100);
         PdfPCell cell;
-        
-        cell = new PdfPCell(new Phrase("id",FontFactory.getFont("Comic Sans MS",12)));
+
+        cell = new PdfPCell(new Phrase("id", FontFactory.getFont("Comic Sans MS", 12)));
         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
         cell.setBackgroundColor(WebColors.getRGBColor("#f6beb9"));
         table.addCell(cell);
-        
-        
-        
-        while (rs.next()) {                
-            
-                Facture a = new Facture();
-                a.setIdFacture(rs.getInt(1));
-               /*DateFormat df = new SimpleDateFormat("hh:mm:ss");
+
+        while (rs.next()) {
+
+            Facture a = new Facture();
+            a.setIdFacture(rs.getInt(1));
+            /*DateFormat df = new SimpleDateFormat("hh:mm:ss");
                String rec = df.format(a.getId());
                 String rank = Integer.toString(a.getId());*/
-               
-               
-               cell = new PdfPCell(new Phrase(String.valueOf(a.getIdFacture()),FontFactory.getFont("Comic Sans MS",12)));
-               cell.setHorizontalAlignment(Element.ALIGN_CENTER);
-               cell.setBackgroundColor(WebColors.getRGBColor("#b9cfed"));
-               table.addCell(cell);
-               
-              
+
+            cell = new PdfPCell(new Phrase(String.valueOf(a.getIdFacture()), FontFactory.getFont("Comic Sans MS", 12)));
+            cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+            cell.setBackgroundColor(WebColors.getRGBColor("#b9cfed"));
+            table.addCell(cell);
+
         }
-        
-            doc.add(table);
-            doc.close();
-            Desktop.getDesktop().open(new File ("./facture.pdf"));
-            }
+
+        doc.add(table);
+        doc.close();
+        Desktop.getDesktop().open(new File("./facture.pdf"));
+    }
 }

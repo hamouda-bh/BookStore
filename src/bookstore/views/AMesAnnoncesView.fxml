@@ -8,27 +8,27 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="460.0" prefWidth="600.0" style="-fx-background-color: #152f72;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.views.MesAnnoncesViewController">
+<AnchorPane id="AnchorPane" prefHeight="501.0" prefWidth="600.0" style="-fx-background-color: #152f72;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button fx:id="modifierUneAnnonce" layoutX="402.0" layoutY="193.0" mnemonicParsing="false" onAction="#modifierAnnonce" prefHeight="30.0" prefWidth="152.0" style="-fx-background-radius: 30;" text="Modifier une annonce" />
-      <Button fx:id="AjouterUneAnnonce" layoutX="403.0" layoutY="254.0" mnemonicParsing="false" onAction="#ajouterAnnonce" prefHeight="30.0" prefWidth="152.0" style="-fx-background-radius: 30;" text="Ajouter une annonce" />
-      <Button fx:id="SupprimerUneAnnonce" layoutX="403.0" layoutY="316.0" mnemonicParsing="false" onAction="#supprimerAnnonce" prefHeight="30.0" prefWidth="152.0" style="-fx-background-radius: 30;" text="Supprimer une annonce" />
+      <Button fx:id="modifierUneAnnonce" layoutX="403.0" layoutY="405.0" mnemonicParsing="false" onAction="#modifierAnnonce" prefHeight="30.0" prefWidth="152.0" style="-fx-background-radius: 30;" text="Modifier une annonce" />
+      <Button fx:id="AjouterUneAnnonce" layoutX="403.0" layoutY="297.0" mnemonicParsing="false" onAction="#ajouterAnnonce" prefHeight="30.0" prefWidth="152.0" style="-fx-background-radius: 30;" text="Ajouter une annonce" />
+      <Button fx:id="SupprimerUneAnnonce" layoutX="403.0" layoutY="348.0" mnemonicParsing="false" onAction="#supprimerAnnonce" prefHeight="30.0" prefWidth="152.0" style="-fx-background-radius: 30;" text="Supprimer une annonce" />
       <Label layoutX="203.0" layoutY="20.0" prefHeight="39.0" prefWidth="189.0" text="Mes annonces :" textFill="#27f55e">
          <font>
             <Font size="26.0" />
          </font>
       </Label>
-      <TextField fx:id="findannonce" layoutX="402.0" layoutY="143.0" onAction="#afficherBy" prefHeight="25.0" prefWidth="100.0" promptText="nom,genre,prix..." style="-fx-background-radius: 30;" />
-      <Label layoutX="402.0" layoutY="115.0" text="Chercher une annonce :" textFill="#fffdfd" />
-      <Button fx:id="btnChercher" layoutX="504.0" layoutY="143.0" mnemonicParsing="false" onAction="#afficherAnnonce" style="-fx-background-radius: 30;" text="Chercher" />
-      <TableView layoutX="30.0" layoutY="90.0" prefHeight="328.0" prefWidth="347.0">
+      <TableView fx:id="tvMesAnnonces" layoutX="30.0" layoutY="90.0" onMouseClicked="#getSelected" prefHeight="360.0" prefWidth="347.0">
         <columns>
-          <TableColumn fx:id="titre" prefWidth="64.0" text="Titre" />
-          <TableColumn fx:id="auteur" prefWidth="70.0" text="Auteur" />
-            <TableColumn fx:id="genre" prefWidth="75.0" text="Genre" />
-            <TableColumn fx:id="etat_de_livre" prefWidth="65.0" text="Etat" />
-            <TableColumn fx:id="prix" prefWidth="71.0" text="Prix" />
+          <TableColumn fx:id="tcDatePublication" prefWidth="124.0" text="Date de publication" />
+            <TableColumn fx:id="tcPrix" prefWidth="63.0" text="Prix" />
+            <TableColumn fx:id="tcEtat" prefWidth="63.0" text="Etat" />
+            <TableColumn fx:id="tcDateAchat" prefWidth="96.0" text="Date d'achat" />
         </columns>
       </TableView>
+      <TextField fx:id="txtDatePublication" layoutX="405.0" layoutY="105.0" promptText="Date de publication" />
+      <TextField fx:id="txtPrix" layoutX="405.0" layoutY="152.0" promptText="Prix" />
+      <TextField fx:id="txtEtat" layoutX="405.0" layoutY="200.0" promptText="Etat du livre" />
+      <TextField fx:id="txtDateAchat" layoutX="405.0" layoutY="251.0" promptText="Date d'achat" />
    </children>
 </AnchorPane>

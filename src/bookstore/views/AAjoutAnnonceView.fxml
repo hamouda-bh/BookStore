@@ -6,7 +6,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="497.0" prefWidth="466.0" style="-fx-background-color: #152f72;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.views.AAjoutAnnonceViewController">
+<AnchorPane id="AnchorPane" prefHeight="497.0" prefWidth="466.0" style="-fx-background-color: #152f72;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
    <children>
       <Button fx:id="btnAjouter" layoutX="189.0" layoutY="345.0" mnemonicParsing="false" onAction="#ajouterUneNouvelleAnnonce" prefHeight="10.0" prefWidth="88.0" style="-fx-background-radius: 30;" text="Ajouter" />
       <TextField fx:id="tfprix" layoutX="234.0" layoutY="151.0" style="-fx-background-radius: 30;" />

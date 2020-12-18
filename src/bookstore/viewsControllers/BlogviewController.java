@@ -36,19 +36,19 @@ public class BlogviewController extends BaseController implements Initializable 
 
     @FXML
     private TextField tfid;
-    
+
     @FXML
     private TextField tfidc;
-    
+
     @FXML
     private TextField tfcategorie;
-    
+
     @FXML
     private TextField tfdescription;
     @FXML
     private Button btn;
-    
-      @FXML
+
+    @FXML
     private Button btnOverview;
     @FXML
     private Button btnOrders;
@@ -58,8 +58,8 @@ public class BlogviewController extends BaseController implements Initializable 
     private Button btnMenus;
     @FXML
     private Button btnPackages;
-  
-      @FXML
+
+    @FXML
     private Button btn_panier;
     @FXML
     private Button logOut;
@@ -75,34 +75,39 @@ public class BlogviewController extends BaseController implements Initializable 
     private VBox pnItems;
     @FXML
     private Button myAccountButton;
-@FXML
+
+    @FXML
     void logOutAction() {
-    	Cache.client = null ;
-    	Stage stage = (Stage) logOut.getScene().getWindow();
-    	vf.closeStage(stage);
-    	vf.showLoginWindow();
+        Cache.client = null;
+        Stage stage = (Stage) logOut.getScene().getWindow();
+        vf.closeStage(stage);
+        vf.showLoginWindow();
     }
+
     /*
     void myAccountAction() {
         vf.showAccountEditWindow();
         Stage stage = (Stage) logOut.getScene().getWindow();
   	    vf.closeStage(stage);
     }
-    */
+     */
     @FXML
     void ShowKidsSpace() {
         vf.ShowKidsSpace();
     }
-     @FXML
+
+    @FXML
     private void goLivre() {
-    
-     vf.showLivre() ;
-    
-           }
+
+        vf.showLivre();
+
+    }
+
     @FXML
     private void goBlog(ActionEvent event) {
         vf.showBlog();
     }
+
     /*
     @FXML
     void myAccountAction() {
@@ -110,66 +115,61 @@ public class BlogviewController extends BaseController implements Initializable 
         Stage stage = (Stage) logOut.getScene().getWindow();
   	    vf.closeStage(stage);
     }*/
-     @FXML
+    @FXML
     void panier(ActionEvent event) {
         vf.showPanier();
     }
 
-    /**
-     * Initializes the controller class.
-     * @param url
-     * @param rb
-     */
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+    }
 
     @FXML
     private void ajouterBlog(ActionEvent event) throws IOException {
         int a = Integer.parseInt(tfid.getText());
-                int b = Integer.parseInt(tfidc.getText());
+        int b = Integer.parseInt(tfidc.getText());
 
         serviceBlog sb = new serviceBlog();
-        sb.ajouter(new Blog(a,b,tfcategorie.getText(),tfdescription.getText()));
-        
+        sb.ajouter(new Blog(a, b, tfcategorie.getText(), tfdescription.getText()));
+
         JOptionPane.showMessageDialog(null, "blog ajouté");
-        
+
         FXMLLoader loader = new FXMLLoader(getClass().getResource("detailsBlog.fxml"));
-        
+
         Parent root = loader.load();
-        
+
         tfid.getScene().setRoot(root);
-        
+
         DetailsBlogController dbc = loader.getController();
-     
+
         dbc.setLbid(a);
         dbc.setLbidc(b);
         dbc.setLbcategorie(tfcategorie.getText());
         dbc.setLbdescription(tfdescription.getText());
     }
 
-     private void modifierBlog(ActionEvent event) throws IOException {
+    private void modifierBlog(ActionEvent event) throws IOException {
 
         int a = Integer.parseInt(tfid.getText());
-                int b = Integer.parseInt(tfidc.getText());
-            serviceBlog sb = new serviceBlog();
-        sb.modifier(new Blog(a,b,tfcategorie.getText(),tfdescription.getText()));
+        int b = Integer.parseInt(tfidc.getText());
+        serviceBlog sb = new serviceBlog();
+        sb.modifier(new Blog(a, b, tfcategorie.getText(), tfdescription.getText()));
 
     }
-     private void suppressionBlog(ActionEvent event) throws IOException {
+
+    private void suppressionBlog(ActionEvent event) throws IOException {
         int a = Integer.parseInt(tfid.getText());
-                int b = Integer.parseInt(tfidc.getText());
-            serviceBlog sb = new serviceBlog();
-        sb.supprimer(new Blog(a,b,"",""));
+        int b = Integer.parseInt(tfidc.getText());
+        serviceBlog sb = new serviceBlog();
+        sb.supprimer(new Blog(a, b, "", ""));
     }
-     
-     @FXML
-     private void anonce(ActionEvent event) throws IOException {
-         Parent root = FXMLLoader.load(getClass().getResource("../views/AAnnonceView.fxml"));
-         Stage st = new Stage();
-         Scene sc = new Scene(root);
-         st.setTitle("BookStore : Toute les annonces");
-         st.setScene(sc);
-         st.show();
-     }
+
+    @FXML
+    private void anonce(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("../views/AAnnonceView.fxml"));
+        Stage st = new Stage();
+        Scene sc = new Scene(root);
+        st.setTitle("BookStore : Toute les annonces");
+        st.setScene(sc);
+        st.show();
+    }
 }

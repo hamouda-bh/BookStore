@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package bookstore.views;
+package bookstore.viewsControllers;
 
 import bookstore.entities.Annonce;
 import bookstore.services.ServiceAnnonce;
+import bookstore.views.ViewFactory;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -27,7 +28,11 @@ import javax.swing.JOptionPane;
  *
  * @author Mehdi
  */
-public class AAjoutAnnonceViewController implements Initializable {
+public class AAjoutAnnonceViewController extends BaseController implements Initializable {
+    
+    public AAjoutAnnonceViewController(ViewFactory vf, String fxmlName) {
+       super(vf, fxmlName);
+    }
 
     @FXML
     private Button btnAjouter;
@@ -50,10 +55,8 @@ public class AAjoutAnnonceViewController implements Initializable {
 
     @FXML
     private void ajouterUneNouvelleAnnonce(ActionEvent event) {
-        
         ServiceAnnonce sa = new ServiceAnnonce();
-        sa.ajouterAnnonce(new Annonce(tfdate_publication.getValue().toString(),tfprix.getLength(),tfetat.getText(),tfdateachat.getValue().toString()));
-        
+        sa.ajouterAnnonce(new Annonce(tfdate_publication.getValue().toString(),tfprix.getText(),tfetat.getText(),tfdateachat.getValue().toString()));
         JOptionPane.showMessageDialog(null,"Annonce ajoutée !");
         
     }
