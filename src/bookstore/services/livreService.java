@@ -17,7 +17,31 @@ import bookstore.Testing.DBConnection;
 public class  livreService{
 Connection cnx = DBConnection.getInstance().getCnx();
 
-public void ajouter (Livre l) {
+    
+     
+public void ajouter (Livre l)  {
+    try {
+         String sql =  "INSERT INTO Livre(Id_categorie,Titre,Auteur,Prix,Image) VALUES (?,?,?,?,?)";
+        PreparedStatement pst =  cnx.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
+
+        pst.setInt(1, l.getId_categorie());
+        pst.setString(2,l.getTitre());
+        pst.setString(3,l.getAuteur());
+        pst.setFloat(4,l.getPrix());
+        pst.setString(5,l.getImage());
+        System.out.println(l);
+        pst.executeUpdate();
+        ResultSet rs = pst.getGeneratedKeys();
+        System.out.println("Livre ajoutée");
+         while(rs.next()){
+           System.out.println(rs.getInt(1));
+         }
+        } catch (SQLException e) {
+        System.out.println(e.getMessage());       }
+          
+}
+     
+/*public void ajouter (Livre l) {
 	 String req ="INSERT INTO Livre (label_cat ,titre,auteur,genre,prix,image) VALUES ('"+l.getLabel_cat()+","+l.getTitre()+","+l.getAuteur()+","+l.getGenre()+","+l.getPrix()+","+l.getImage()+")";
 try {
 	

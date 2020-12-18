@@ -132,6 +132,19 @@ public class AjoutLivreController extends BaseController{
      ls.ajouter(new Livre (tfLabelCat.getText(),tfTitre.getText(),tfAuteur.getText(),tfGenre.getText(),tfPrix.getLength(),tfImage.getText()));
      JOptionPane.showMessageDialog(null,"Livre ajouté!");
     
+    }
+        else if(("".equals(a))||("".equals(tfTitre.getText()))||("".equals(tfAuteur.getText()))||("".equals(f))||("".equals(tfImage.getText()))){
+        {
+            alert.setTitle("information");
+            alert.setHeaderText(null);
+            alert.setContentText("type valide information !");
+            alert.showAndWait();
+        }
+        
+        }
+    JOptionPane.showMessageDialog(null,"Livre ajouté!");
+    }
+
 //FXMLLoader loader = new FXMLLoader (getClass().getResource("DetailsLivre.fxml"));
 //Parent root = loader.load();
 //tfId.getScene().setRoot(root);
@@ -161,5 +174,6 @@ public class AjoutLivreController extends BaseController{
      ls.supprimer(new Livre (a,tfLabelCat.getText(),tfTitre.getText(),tfAuteur.getText(),tfGenre.getText(),f,tfImage.getText()));
      JOptionPane.showMessageDialog(null,"Livre supprimé !");
     }
-    
+  */
 }
+
