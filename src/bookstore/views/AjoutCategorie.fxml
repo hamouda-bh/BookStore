@@ -10,22 +10,21 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="tfAjouCat" onDragDetected="#AjouterUneCategorie" prefHeight="431.0" prefWidth="647.0" style="-fx-background-color: linear-gradient(to top right,  #152f72, #89a4d0);" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" >
+<AnchorPane id="AnchorPane" fx:id="tfAjouCat" onDragDetected="#AjouterUneCategorie" prefHeight="431.0" prefWidth="647.0" style="-fx-background-color: linear-gradient(to top right,  #152f72, #89a4d0);" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label fx:id="tfIdCategorie" layoutX="288.0" layoutY="192.0" text="IdCategorie" textFill="#2073ab">
+      <Label layoutX="288.0" layoutY="192.0" text="IdCategorie" textFill="#eef0f2">
          <font>
             <Font name="System Bold" size="13.0" />
          </font></Label>
-      <Label fx:id="tfLabel" layoutX="319.0" layoutY="289.0" text="Label" textFill="#2073ab">
+      <Label layoutX="319.0" layoutY="289.0" text="Label" textFill="#f3f4f5">
          <font>
             <Font name="System Bold" size="13.0" />
          </font></Label>
-      <TextField layoutX="380.0" layoutY="189.0" />
-      <TextField layoutX="380.0" layoutY="286.0" />
+      
       <Button fx:id="tfAjout" layoutX="408.0" layoutY="391.0" mnemonicParsing="false" onAction="#AjouterUneCategorie" style="-fx-background-color: #2073ab;" text="Ajouter une categorie" />
       <Button fx:id="tfmodcat" layoutX="575.0" layoutY="391.0" mnemonicParsing="false" onAction="#ModifierCategorie" style="-fx-background-color: #2073ab;" text="Editer" />
       <Button fx:id="tfSuppCat" layoutX="299.0" layoutY="391.0" mnemonicParsing="false" onAction="#SupprimerCategorie" prefHeight="25.0" prefWidth="73.0" style="-fx-background-color: #2073ab;" text="Supprimer" />
-      <Label layoutX="261.0" layoutY="93.0" prefHeight="17.0" prefWidth="149.0" text="Mes Catégories" textFill="#2073ab">
+      <Label layoutX="261.0" layoutY="93.0" prefHeight="17.0" prefWidth="149.0" text="Mes Catégories" textFill="#fafbfc">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -137,5 +136,9 @@
             </Button>
          </children>
       </VBox>
+      <Button fx:id="affCat" layoutX="385.0" layoutY="342.0" mnemonicParsing="false" onAction="#afficherCategorie" style="-fx-background-color: #2073ab;" text="Afficher mes catégories" />
+      <TextField fx:id="tfIdCategorie" layoutX="385.0" layoutY="189.0" />
+      <TextField fx:id="tfLabel" layoutX="385.0" layoutY="286.0" />
+      
    </children>
 </AnchorPane>

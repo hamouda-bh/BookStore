@@ -54,16 +54,18 @@ public class LivreController extends BaseController implements Initializable {
     @FXML
     private Button tfAjouut;
     @FXML
-    private Button tfModif;
-    @FXML
-    private Button tfSupp;
-    @FXML
     private Pane pnlCustomer;
   
       @FXML
     private Button btn_panier;
     @FXML
     private Button myAccountButton;
+    @FXML
+    private Button tfAffich;
+     @FXML
+    private Button MesCategories;
+   
+    
 @FXML
     void logOutAction() {
     	Cache.client = null ;
@@ -121,14 +123,19 @@ public class LivreController extends BaseController implements Initializable {
     private void ajoute() {
         vf.showAjoutLivre();
     }
-
+   
     @FXML
-    private void Modifierunlivre() {
-        
+    private void afficherLivre(){
+        vf.showClientLivre();
     }
-
     @FXML
-    private void Supprimerunlivre() {
+    private void accesCat(){
+        vf.showajoutCategorie();
     }
+    
+
+   
+
+   
     
 }

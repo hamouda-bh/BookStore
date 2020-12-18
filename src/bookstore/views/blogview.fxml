@@ -31,36 +31,17 @@
       <Label layoutX="222.0" layoutY="186.0" text="catégorie" />
       <Label layoutX="218.0" layoutY="233.0" text="description" />
 
-      <AnchorPane prefHeight="409.0" prefWidth="179.0" style="-fx-background-color: #433dae;" />
-      <Label layoutX="235.0" layoutY="95.0" text="id_blog" textFill="#f6f6f8" />
-      <Label layoutX="231.0" layoutY="138.0" text="id_client" textFill="#fcf7f7" />
-      <Label layoutX="237.0" layoutY="186.0" text="catégorie" textFill="#fffdfd" />
-      <Label layoutX="240.0" layoutY="233.0" text="description" textFill="#f8f5f5" />
-      <Button fx:id="btn" layoutX="469.0" layoutY="397.0" mnemonicParsing="false" onAction="#newPub" text="nouvelle publication" />
-      <VBox alignment="TOP_CENTER" layoutX="-28.0" layoutY="-2.0" prefHeight="601.0" prefWidth="256.0" style="-fx-background-color: #557de1;">
+      <AnchorPane prefHeight="409.0" prefWidth="179.0" style="-fx-background-color: #433dae;">
          <children>
-            <ImageView fitHeight="73.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/jimmy-fallon.png" />
-               </image>
-               <VBox.margin>
-                  <Insets bottom="10.0" top="50.0" />
-               </VBox.margin>
-            </ImageView>
-            <Label text="Jimmy Fallon" textFill="WHITE">
-               <VBox.margin>
-                  <Insets bottom="20.0" />
-               </VBox.margin>
-               <font>
-                  <Font size="22.0" />
-               </font>
-            </Label>
-            <Button fx:id="btnOverview" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="259.0" style="-fx-background-color: #a2b8ee;" stylesheets="@style.css" text="Home" textFill="WHITE">
-               <graphic>
-                  <ImageView fitHeight="23.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+            <VBox alignment="TOP_CENTER" layoutX="-11.0" layoutY="-3.0" prefHeight="596.0" prefWidth="190.0" style="-fx-background-color: #557de1;">
+               <children>
+                  <ImageView fitHeight="73.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/icons8_Home_32px.png" />
+                        <Image url="@../images/jimmy-fallon.png" />
                      </image>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="50.0" />
+                     </VBox.margin>
                   </ImageView>
                   <Label text="Jimmy Fallon">
                      <VBox.margin>

@@ -16,11 +16,14 @@ import java.awt.SystemTray;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
@@ -127,7 +130,37 @@ public class BlogviewController extends BaseController implements Initializable 
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-
+    
+    private boolean validatecategorie(){
+        Pattern p = Pattern.compile("[a-z A-Z]+");
+        Matcher m = p.matcher(tfcategorie.getText());
+        if(m.find() && m.group().equals(tfcategorie.getText())){
+            return true;
+        }else{
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Validate categorie");
+                alert.setHeaderText(null);
+                alert.setContentText("Veuiller Entrer une categorie valide");
+                alert.showAndWait();
+            
+            return false;            
+        }
+    }
+     private boolean validatedescription(){
+        Pattern p = Pattern.compile("[a-z A-Z]+");
+        Matcher m = p.matcher(tfdescription.getText());
+        if(m.find() && m.group().equals(tfdescription.getText())){
+            return true;
+        }else{
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Validate categorie");
+                alert.setHeaderText(null);
+                alert.setContentText("Veuiller Entrer une categorie valide");
+                alert.showAndWait();
+            
+            return false;            
+        }
+    }
     @FXML
     private void ajouterBlog(ActionEvent event) throws IOException, AWTException {
         int a = Integer.parseInt(tfid.getText());

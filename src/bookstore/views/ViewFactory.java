@@ -59,8 +59,31 @@ public class ViewFactory {
     }
     public void displayCategories(){
         
-    }
-    
+    }       
+            public void showajoutCategorie() {
+                     BaseController ajoutCat = new AjoutCategorieController(this, "AjoutCategorie.fxml");
+                     initializeStage(ajoutCat);
+                  }
+            public void showClientLivre() {
+                     BaseController clientLivre = new ClientLivreController(this, "ClientLivre.fxml");
+                     initializeStage(clientLivre);
+                     
+             }
+            public void showAjouterUneCategorie(){
+                     BaseController ajoutcat = new AjoutCategorieController(this, "AjoutCategorie.fxml");
+                     initializeStage(ajoutcat);
+                  }
+                    public void showDetailsCategorie() {
+                     BaseController detailscategorie = new DetailsCategorieController(this, "detailsCategorie.fxml");
+                     initializeStage(detailscategorie);
+                  }
+
+   
+
+                 public void showsupprimerCategorie(){
+                     BaseController supprimercat = new DetailsCategorieController(this, "detailsCategorie.fxml");
+                     initializeStage(supprimercat);
+                  }
             public void showLoginWindow() {
 	        System.out.println("show login window called");
 			BaseController loginController = new LoginWindowController(this, "LoginWindow.fxml");

@@ -10,27 +10,27 @@ package bookstore.entities;
  * @author user
  */
 public class Categorie {
-    private int idCategorie ;
+    private int id_categorie ;
     private String Label ;
 
     public Categorie() {
     }
 
-    public Categorie(int idCategorie, String Label) {
-        this.idCategorie = idCategorie;
+    public Categorie(int id_categorie, String Label) {
+        this.id_categorie = id_categorie;
         this.Label = Label;
     }
 
-    public int getIdCategorie() {
-        return idCategorie;
+    public int getId_categorie() {
+        return id_categorie;
     }
 
     public String getLabel() {
         return Label;
     }
 
-    public void setIdCategorie(int idCategorie) {
-        this.idCategorie = idCategorie;
+    public void setId_categorie(int id_categorie) {
+        this.id_categorie = id_categorie;
     }
 
     public void setLabel(String Label) {
@@ -42,7 +42,7 @@ public class Categorie {
 
     @Override
     public String toString() {
-        return "Categorie{" + "idCategorie=" + idCategorie + ", Label=" + Label + '}';
+        return "Categorie{" + "idCategorie=" + id_categorie + ", Label=" + Label + '}';
     }
     
 }

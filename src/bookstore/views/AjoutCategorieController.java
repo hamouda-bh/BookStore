@@ -12,16 +12,15 @@ import bookstore.viewsControllers.BaseController;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
+import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import bookstore.views.ViewFactory;
 
 /**
  * FXML Controller class
@@ -35,48 +34,77 @@ public class AjoutCategorieController extends BaseController implements Initiali
     }
 
     
-    
+
     @FXML
     private AnchorPane tfAjouCat;
+
     @FXML
-    private Label tfIdCategorie;
+    private TextField tfIdCategorie;
+
     @FXML
-    private Label tfLabel;
+    private TextField tfLabel;
+
     @FXML
     private Button tfAjout;
+
     @FXML
     private Button tfmodcat;
+
     @FXML
     private Button tfSuppCat;
+
     @FXML
     private Button btnOverview;
+
     @FXML
     private Button btnOrders;
+
     @FXML
     private Button btnCustomers;
+
     @FXML
     private Button btnMenus;
+
     @FXML
     private Button btnPackages;
+
     @FXML
     private Button btnSettings;
+
     @FXML
     private Button logOut;
-  
-      @FXML
-    private Button btn_panier;
+
     @FXML
-    private Pane pnlCustomer;
+    private Button affCat;
+
+
     @FXML
-    private Pane pnlOrders;
+    void ModifierCategorie(ActionEvent event) {
+
+    }
+
     @FXML
-    private Pane pnlMenus;
+    void SupprimerCategorie(ActionEvent event) {
+
+    }
+
     @FXML
-    private Pane pnlOverview;
+    void handleClicks(ActionEvent event) {
+
+    }
+
     @FXML
-    private VBox pnItems;
+    void logOutAction(ActionEvent event) {
+
+    }
+    
     @FXML
-    private Button myAccountButton;
+    private void afficherCategorie(ActionEvent event){
+        vf.showDetailsCategorie();
+    }
+
+
+
 @FXML
     void logOutAction() {
     	Cache.client = null ;
@@ -116,6 +144,9 @@ public class AjoutCategorieController extends BaseController implements Initiali
     void panier(ActionEvent event) {
         vf.showPanier();
     }
+   
+    
+    
     /**
      * Initializes the controller class.
      */
@@ -123,35 +154,32 @@ public class AjoutCategorieController extends BaseController implements Initiali
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-
+   
+Alert alert=new Alert(Alert.AlertType.INFORMATION);
     @FXML
     private void AjouterUneCategorie(ActionEvent event) {
+        int a = 0;
+        String str = "N/A";
+        try {
+          a=Integer.parseInt(tfIdCategorie.getText());
+        } catch (NumberFormatException ex){
+        }
+      if((!"".equals(a))&&(!"".equals(tfLabel.getText()))){
         CategorieService Cs = new CategorieService ();
-        int a=Integer.parseInt(tfIdCategorie.getText());
-        Cs.ajouter(new Categorie (a,tfLabel.getText()));
-        JOptionPane.showMessageDialog(null,"Categorie ajouté!");
-        
-     
+     Cs.ajouter(new Categorie (a,tfLabel.getText()));
+     JOptionPane.showMessageDialog(null,"Categorie ajouté!");
     }
-
-    @FXML
-    private void ModifierCategorie(ActionEvent event) {
-    }
-
-    @FXML
-    private void SupprimerCategorie(ActionEvent event) {
-    }
-
-    @FXML
-    private void handleClicks(ActionEvent event) {
-    }
-
-    @FXML
-    private void logOutAction(ActionEvent event) {
-    }
-
-    @FXML
-    private void AjouterUneCategorie(MouseEvent event) {
-    }
+    else if(("".equals(a))||("".equals(tfLabel.getText()))){
+        {
+            alert.setTitle("information");
+            alert.setHeaderText(null);
+            alert.setContentText("type valide information !");
+            alert.showAndWait();
+        }
+        }
     
+    }
+ 
+    
+
 }

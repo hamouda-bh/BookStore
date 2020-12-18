@@ -16,6 +16,7 @@ import bookstore.Testing.DBConnection;
 import java.sql.PreparedStatement;
 
 public class  livreService{
+    
 Connection cnx = DBConnection.getInstance().getCnx();
 
     
@@ -61,54 +62,67 @@ st.executeUpdate(req);
 System.out.println("Livre supprimé");
 } catch (SQLException e) {
 }
-}
+} */
+public void Supprimer (Livre l){
+        try {
+            String sql = "DELETE FROM livre WHERE id_livre= "+l.getId_livre();
+            PreparedStatement st = cnx.prepareStatement(sql);
+            st.executeUpdate();
+            System.out.println("Livre Supprimé");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
 public void modifier (Livre l) {
-	 String req ="UPDATE Livre SET Prix='"+l.getPrix()+"' WHERE id="+l.getId_livre();
-try {
-	
-	Statement st = cnx.createStatement();
+   try{
+    String req ="UPDATE Livre SET Prix=?, Auteur=? ,Titre=? , Image=? WHERE id_livre=?";
+    PreparedStatement st = cnx.prepareStatement(req);
+    
+        st.setString(2,l.getTitre());
+        st.setString(3,l.getAuteur());
+        st.setFloat(4,l.getPrix());
+        st.setString(5,l.getImage());
 st.executeUpdate(req);
 System.out.println("Livre modifié");
 } catch (SQLException e) {
 }
 }
 
-public List<Livre> afficher ( ) {
+public boolean rechercheTitre(String titre){
+        try {
+            String sql = "SELECT titre from Livre where UPPER(?)=UPPER(titre)";
+            PreparedStatement st = cnx.prepareStatement(sql);
+            st.setString(1, titre);
+            ResultSet rs = st.executeQuery();
+            while(rs.next()){
+                    if((rs.getString(1)).equals(titre)){
+                    System.out.println("Livre Trouvé");
+                    return true;
+                }
+            }
+            
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        
+        return false;
+    }
+    
+public List<Livre> afficher () {
 	List<Livre> list= new ArrayList<>();
-	 String req = "SELECT c.Label,l.titre,l.auteur,l.genre,l.prix,l.image FROM livre l INNER join categorie c on l.idCategorie = c.idCategorie";
+	 String req = "SELECT l.titre,l.auteur,c.Label,l.prix,l.image,l.Id_livre FROM livre l INNER join categorie c on l.id_Categorie = c.id_Categorie";
                  //"SELECT * from Livre";
 try {
 	
 	Statement st = cnx.createStatement();
 ResultSet res =st.executeQuery(req);
 while (res.next()) {
-	list.add(new Livre(res.getString("label_cat"),res.getString("titre"),res.getString("auteur"),res.getString("genre"),res.getFloat("prix"),res.getString("image")));
+	list.add(new Livre(res.getString("titre"),res.getString("auteur"),res.getFloat("prix"),res.getString("image"),res.getInt("Id_livre")));
 }
 System.out.println("Livre recupere");
 } catch (SQLException e) {
 }
 return list;
 }
-/*
-public List<Livre> afficherL() {
-        List<Livre> list = new ArrayList<>();
-        String req = "SELECT * from livre ";
-        try {
-
-            Statement st = cnx.createStatement();
-            ResultSet res = st.executeQuery(req);
-            while (res.next()) {
-                list.add(new Livre(res.getInt("id_livre"), res.getInt("id_categorie"),res.getString("titre"), res.getString("auteur"), res.getString("genre"), res.getFloat("prix"), res.getString("image")));
-            }
-            System.out.println("p recupere");
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return list;
-    }*/
-
 }
-
-    
-

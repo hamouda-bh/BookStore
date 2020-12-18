@@ -74,10 +74,8 @@ public class MainCtrl extends BaseController implements Initializable {
     }
      @FXML
     private void goLivre() {
-    
-     vf.showLivre() ;
-    
-           }
+    vf.showLivre();
+    }
     @FXML
     private void goBlog(ActionEvent event) {
         vf.showBlog();
