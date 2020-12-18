@@ -166,6 +166,7 @@ Alert alert=new Alert(Alert.AlertType.INFORMATION);
         }
     JOptionPane.showMessageDialog(null,"Livre ajouté!");
     }
+
 //FXMLLoader loader = new FXMLLoader (getClass().getResource("DetailsLivre.fxml"));
 //Parent root = loader.load();
 //tfId.getScene().setRoot(root);
@@ -199,3 +200,4 @@ Alert alert=new Alert(Alert.AlertType.INFORMATION);
     }
   */
 }
+
