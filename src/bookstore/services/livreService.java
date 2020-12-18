@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import bookstore.entities.Livre;
 import bookstore.Testing.DBConnection;
+import java.sql.PreparedStatement;
 
 public class  livreService{
 Connection cnx = DBConnection.getInstance().getCnx();
