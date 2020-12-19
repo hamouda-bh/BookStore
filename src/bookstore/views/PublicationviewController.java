@@ -4,12 +4,16 @@
  * and open the template in the editor.
  */
 package bookstore.views;
+import javafx.scene.control.Alert;
 
 import bookstore.Testing.Cache;
 import bookstore.entities.Publication;
 import bookstore.services.servicePublication;
+import bookstore.utils.TrayIconDemo;
 import bookstore.viewsControllers.BaseController;
 import bookstore.viewsControllers.DetailsPublicationController;
+import java.awt.AWTException;
+import java.awt.SystemTray;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -127,17 +131,41 @@ public class PublicationviewController extends BaseController implements Initial
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+    Alert alert=new Alert(Alert.AlertType.INFORMATION);
 
     @FXML
-    private void ajouterPublication(ActionEvent event) throws IOException {
-          int a = Integer.parseInt(tfidb.getText());
-                  int c = Integer.parseInt(tfidp.getText());
+    private void ajouterPublication(ActionEvent event) throws IOException, AWTException {
+         int a=0;
+         int b=0;
+         int c=0;
+        
+        try{  a = Integer.parseInt(tfidb.getText());
+                   c = Integer.parseInt(tfidp.getText());
 
-                int b = Integer.parseInt(tfidc.getText());
+                 b = Integer.parseInt(tfidc.getText());
+         }catch (NumberFormatException ex){
+        }
+                  if((!"".equals(c))&&(!"".equals(a))&&(!"".equals(b))&&(!"".equals(tfcontenue.getText()))&&(!"".equals(tfcommentaire.getText()))){
 
         servicePublication sp = new servicePublication();
         sp.ajouter(new Publication(c,a,b,tfcontenue.getText(),tfcommentaire.getText()));
         JOptionPane.showMessageDialog(null, "Publication ajoutée !");
+        if (SystemTray.isSupported()) {
+            TrayIconDemo td = new TrayIconDemo();
+            td.displayTraypublication();
+            System.err.println("notiiiifff");
+        } else {
+            System.err.println("Erreur!!!!");
+        }
+                  }
+         else if(("".equals(c))||("".equals(a))||("".equals(b))||("".equals(tfcontenue.getText()))||("".equals(tfcommentaire.getText()))){
+        {
+            alert.setTitle("information");
+            alert.setHeaderText(null);
+            alert.setContentText("type valide information !");
+            alert.showAndWait();
+        }
+         }
         /*
         FXMLLoader loader = new FXMLLoader(getClass().getResource("detailsPublication.fxml"));
         

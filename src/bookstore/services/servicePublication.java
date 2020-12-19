@@ -43,11 +43,11 @@ public void ajouter (Publication p) {
 }
 public void supprimer (Publication p) {
 try {
-            String sql = "DELETE FROM Blog where id_blog = ?";
+            String sql = "DELETE FROM publication where id_publication = ?";
             PreparedStatement st = cnx.prepareStatement(sql);
             st.setInt(1,p.getId_publication());
             st.executeUpdate();
-            System.out.println("blog Supprimer");
+            System.out.println("publication Supprimer");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
