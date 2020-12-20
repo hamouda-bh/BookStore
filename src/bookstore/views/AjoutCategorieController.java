@@ -100,7 +100,10 @@ public class AjoutCategorieController extends BaseController implements Initiali
     
     @FXML
     private void afficherCategorie(ActionEvent event){
+        
         vf.showDetailsCategorie();
+        Stage stage = (Stage) logOut.getScene().getWindow();
+    	vf.closeStage(stage);
     }
 
 
