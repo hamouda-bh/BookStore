@@ -125,16 +125,22 @@ public class AjoutCategorieController extends BaseController implements Initiali
     @FXML
     void ShowKidsSpace() {
         vf.ShowKidsSpace();
+        Stage stage = (Stage) logOut.getScene().getWindow();
+    	vf.closeStage(stage);
     }
      @FXML
     private void goLivre() {
     
      vf.showLivre() ;
+        Stage stage = (Stage) logOut.getScene().getWindow();
+    	vf.closeStage(stage);
     
            }
     @FXML
     private void goBlog(ActionEvent event) {
         vf.showBlog();
+            	Stage stage = (Stage) logOut.getScene().getWindow();
+    	vf.closeStage(stage);
     }
     /*
     @FXML
@@ -146,6 +152,8 @@ public class AjoutCategorieController extends BaseController implements Initiali
      @FXML
     void panier(ActionEvent event) {
         vf.showPanier();
+            	Stage stage = (Stage) logOut.getScene().getWindow();
+    	vf.closeStage(stage);
     }
    
     

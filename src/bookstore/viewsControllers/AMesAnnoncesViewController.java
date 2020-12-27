@@ -20,6 +20,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 
 /**
@@ -99,6 +100,8 @@ public class AMesAnnoncesViewController extends BaseController implements Initia
     @FXML
     private void ajouterAnnonce(ActionEvent event) {
         vf.showAjoutAnnonces();
+        Stage stage = (Stage) txtPrix.getScene().getWindow();
+    	vf.closeStage(stage);
     }
 
     @FXML

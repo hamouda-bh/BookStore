@@ -94,8 +94,6 @@ public class ClientLivreController extends BaseController implements Initializab
        Image.setCellValueFactory(l -> new SimpleStringProperty(l.getValue().getImage()));
        Id_livre.setCellValueFactory(l -> new SimpleStringProperty(String.valueOf(l.getValue().getId_livre())));
         //Prix.setCellValueFactory(l-> new SimpleStringProperty(c.getValue().getPrix()));
-    
-
         clientData.addAll(us.afficher());
         System.out.println(clientData);
         livreClient.setItems(clientData);

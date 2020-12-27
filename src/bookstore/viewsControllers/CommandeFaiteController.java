@@ -146,7 +146,7 @@ public class CommandeFaiteController extends BaseController implements Initializ
     void onCliqRetour(ActionEvent event) {
             vf.showPanier();
             Stage stage = (Stage) bt_envoi_id.getScene().getWindow();
-	               	vf.closeStage(stage);
+	    vf.closeStage(stage);
     }
 
 }

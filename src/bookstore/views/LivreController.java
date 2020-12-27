@@ -83,16 +83,22 @@ public class LivreController extends BaseController implements Initializable {
     @FXML
     void ShowKidsSpace() {
         vf.ShowKidsSpace();
+            	Stage stage = (Stage) logOut.getScene().getWindow();
+    	vf.closeStage(stage);
     }
      @FXML
     private void goLivre() {
     
      vf.showLivre() ;
+         	Stage stage = (Stage) logOut.getScene().getWindow();
+    	vf.closeStage(stage);
     
            }
     @FXML
     private void goBlog(ActionEvent event) {
         vf.showBlog();
+            	Stage stage = (Stage) logOut.getScene().getWindow();
+    	vf.closeStage(stage);
     }
     /*
     @FXML
@@ -104,6 +110,8 @@ public class LivreController extends BaseController implements Initializable {
      @FXML
     void panier(ActionEvent event) {
         vf.showPanier();
+            	Stage stage = (Stage) logOut.getScene().getWindow();
+    	vf.closeStage(stage);
     }
 
     /**
@@ -122,15 +130,21 @@ public class LivreController extends BaseController implements Initializable {
     @FXML
     private void ajoute() {
         vf.showAjoutLivre();
+            	Stage stage = (Stage) logOut.getScene().getWindow();
+    	vf.closeStage(stage);
     }
    
     @FXML
     private void afficherLivre(){
         vf.showClientLivre();
+            	Stage stage = (Stage) logOut.getScene().getWindow();
+    	vf.closeStage(stage);
     }
     @FXML
     private void accesCat(){
         vf.showajoutCategorie();
+            	Stage stage = (Stage) logOut.getScene().getWindow();
+    	vf.closeStage(stage);
     }
     
 

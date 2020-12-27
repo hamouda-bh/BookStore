@@ -267,6 +267,8 @@ vf.showDetailsBlog();*/
 @FXML
     private void newPub(ActionEvent event) {
         vf.showPublication();
+        Stage stage = (Stage) logOut.getScene().getWindow();
+    	vf.closeStage(stage);
     }
     @FXML
     private void handleClicks(ActionEvent event) {

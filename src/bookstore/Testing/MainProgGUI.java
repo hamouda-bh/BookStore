@@ -31,8 +31,8 @@ public class MainProgGUI extends Application {
                         //vf.ShowKidsSpace();
                         //vf.showConsulterLesLivresKids();
                         //vf.showCategoriesKids();
-                        //vf.showUI();
-                        vf.showMainWindow();
+                        vf.showUI();
+                        //vf.showMainWindow();
                         //vf.showPanier();
                         //vf.ShowAjouterLivreKids();
                         //vf.showUI();                        

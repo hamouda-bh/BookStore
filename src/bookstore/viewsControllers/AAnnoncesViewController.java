@@ -114,10 +114,14 @@ public class AAnnoncesViewController extends BaseController implements Initializ
     @FXML
     private void ajouterAnnonce(ActionEvent event) throws IOException {
         vf.showAjoutAnnonces();
+        Stage stage = (Stage) logOut.getScene().getWindow();
+    	vf.closeStage(stage);
     }
     @FXML
     private void mesAnnonces(ActionEvent event) throws IOException {
         vf.showMesAnnonces();
+        Stage stage = (Stage) logOut.getScene().getWindow();
+    	vf.closeStage(stage);
         }
     @FXML
     private void actualiser(ActionEvent event) throws IOException {
@@ -144,15 +148,21 @@ public class AAnnoncesViewController extends BaseController implements Initializ
     @FXML
     void ShowKidsSpace() {
         vf.ShowKidsSpace();
+        Stage stage = (Stage) logOut.getScene().getWindow();
+    	vf.closeStage(stage);
     }
     @FXML
     private void goLivre() {
 
         vf.showLivre();
+        Stage stage = (Stage) logOut.getScene().getWindow();
+    	vf.closeStage(stage);
     }
     @FXML
     private void goBlog(ActionEvent event) {
         vf.showBlog();
+        Stage stage = (Stage) logOut.getScene().getWindow();
+    	vf.closeStage(stage);
     }
 //    @FXML
 //    void myAccountAction() {
@@ -163,6 +173,8 @@ public class AAnnoncesViewController extends BaseController implements Initializ
     @FXML
     void panier(ActionEvent event) {
         vf.showPanier();
+        Stage stage = (Stage) logOut.getScene().getWindow();
+    	vf.closeStage(stage);
     }
 
 }
