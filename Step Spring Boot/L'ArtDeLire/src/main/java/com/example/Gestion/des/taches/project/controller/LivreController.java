@@ -52,5 +52,10 @@ public class LivreController {
 
 		return "views/products/add-livre";
 	}
+	@GetMapping("details-livre")
+	public String detailTasks(@RequestParam("idLivre") Long id, Model model) {
+		model.addAttribute("livreDB", livreService.findOne(id).get());
+		return "views/products/details-livre";
+	}
 }
 	

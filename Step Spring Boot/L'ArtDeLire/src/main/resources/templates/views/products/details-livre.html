@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layouts/layout}">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Title</title>
+</head>
+
+<body>
+	<th:block layout:fragment="content">
+		<!-- Page Heading -->
+		<div class="d-sm-flex align-items-center justify-content-between mb-4">
+			<h1 class="h3 mb-0 text-gray-800">Detail of book</h1>
+		</div>
+		<div class="col-lg-12">
+			<div class="card shadow mb-4">
+				<!-- Card Header - Dropdown -->
+				<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+					<h6 class="m-0 font-weight-bold text-primary" >Name</h6>
+				</div>
+				<!-- Card Body -->
+				<div class="card-body" th:text="${livreDB.name}">.</div>
+			</div>
+			<div class="card shadow mb-4">
+				<!-- Card Header - Dropdown -->
+				<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+					<h6 class="m-0 font-weight-bold text-primary" >Description</h6>
+				</div>
+				<!-- Card Body -->
+				<div class="card-body" th:text="${livreDB.description}">.</div>
+			</div>
+			<div class="card shadow mb-4">
+				<!-- Card Header - Dropdown -->
+				<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+					<h6 class="m-0 font-weight-bold text-primary" >Photo</h6>
+				</div>
+				<!-- Card Body -->
+				<div class="card-body" th:text="${livreDB.photo}">.</div>
+			</div>
+			<div class="card shadow mb-4">
+				<!-- Card Header - Dropdown -->
+				<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+					<h6 class="m-0 font-weight-bold text-primary" >Categorie</h6>
+				</div>
+				<!-- Card Body -->
+				<div class="card-body" th:text="${livreDB.categorie?.name}">.</div>
+			</div>
+			
+			</div>
+
+		</div>
+
+
+
+	</th:block>
+</body>
