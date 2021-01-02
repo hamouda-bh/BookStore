@@ -20,5 +20,5 @@ public interface UserService {
 	
 	void delete(User user);
 
-
+    User findByEmail(String email  );
 }

@@ -77,6 +77,12 @@ public class User {
 	public void setCarte_paie(String carte_paie) {
 		this.carte_paie = carte_paie;
 	}
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", email=" + email + ", name=" + name + ", password=" + password + ", active="
+				+ active + ", last_name=" + last_name + ", tel=" + tel + ", carte_paie=" + carte_paie + ", role=" + role
+				+ "]";
+	}
     
     
 

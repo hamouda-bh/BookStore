@@ -1,5 +1,7 @@
 package com.example.Gestion.des.taches.project.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -65,6 +67,26 @@ public class UserController {
 		return "redirect:/list-user";
 	}
 	
+	@GetMapping("profile")
+	public String profile(){
+		return "views/users/profile";
+	}
+	
+	@GetMapping("update-password")
+	public String showPasswordUpdate(Model model) {
+		model.addAttribute("user", new User());
+		return "views/users/password";
+	}
+	
+	@PostMapping("update-password")
+	public String passwordUpdate(Model model, User user, HttpServletRequest request) {
+
+		User userConnected = (User) request.getSession().getAttribute("userDB");
+		userConnected.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+		userService.save(userConnected);
+		return "redirect:/profile";
+	}
+
 	
 	
 
