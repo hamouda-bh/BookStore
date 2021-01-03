@@ -14,7 +14,6 @@ public class CommandeServiceImlp implements CommandeService {
 	@Autowired
 	CommandeRepository repository ;
 	
-	
 	@Override
 	public Optional<Commande> findOne(int id) {
 		// TODO Auto-generated method stub

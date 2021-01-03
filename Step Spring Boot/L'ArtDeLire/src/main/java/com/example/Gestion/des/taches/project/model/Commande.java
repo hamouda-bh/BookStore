@@ -4,6 +4,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 import lombok.Data;
 
@@ -15,22 +16,17 @@ public class Commande {
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
 		private int id_commande; 
 	    private String date_commande;
-	    private int id_client;
 	    private float prixTotale ;
-
+	    @OneToOne
+	    private Facture facture;
+	    @OneToOne
+	    private Panier panier;
 	    public Commande() {
 	    }
 
-	    public Commande(int id_commande, String date_commande, int id_client, float prixTotale) {
+	    public Commande(int id_commande, String date_commande,  float prixTotale) {
 	        this.id_commande = id_commande;
 	        this.date_commande = date_commande;
-	        this.id_client = id_client;
-	        this.prixTotale = prixTotale;
-	    }
-	    
-	    public Commande(String date_commande, int id_client, float prixTotale) {
-	        this.date_commande = date_commande;
-	        this.id_client = id_client;
 	        this.prixTotale = prixTotale;
 	    }
 	     public Commande( String date_commande,float prixTotale) {
@@ -39,7 +35,23 @@ public class Commande {
 	        this.prixTotale = prixTotale;
 	    }
 
-	    public int getId_commande() {
+	    public Facture getFacture() {
+			return facture;
+		}
+
+		public void setFacture(Facture facture) {
+			this.facture = facture;
+		}
+
+		public Panier getPanier() {
+			return panier;
+		}
+
+		public void setPanier(Panier panier) {
+			this.panier = panier;
+		}
+
+		public int getId_commande() {
 	        return id_commande;
 	    }
 
@@ -53,14 +65,6 @@ public class Commande {
 
 	    public void setDate_commande(String date_commande) {
 	        this.date_commande = date_commande;
-	    }
-
-	    public int  getId_client() {
-	        return id_client;
-	    }
-
-	    public void setId_client(int id_client) {
-	        this.id_client = id_client;
 	    }
 
 

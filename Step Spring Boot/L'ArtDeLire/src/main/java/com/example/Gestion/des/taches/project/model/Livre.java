@@ -23,6 +23,7 @@ public class Livre {
    
     @ManyToOne
     private Categorie categorie;
+    
 	public Long getId() {
 		return id;
 	}

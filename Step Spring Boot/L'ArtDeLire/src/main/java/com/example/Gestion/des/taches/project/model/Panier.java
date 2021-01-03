@@ -1,12 +1,15 @@
 package com.example.Gestion.des.taches.project.model;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import lombok.Data;
-
 
 @Data
 @Entity
@@ -15,12 +18,20 @@ public class Panier {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id_panier;
-	private int id_user;
-	private int id_comm;
 	private float somme_ajoute ;
 	private int quantite_ajouter;
+	@OneToMany(cascade = CascadeType.ALL)
+	private Set<Livre> livre;
+	
+    public Set<Livre> getLivre() {
+		return livre;
+	}
 
-    public float getSomme_ajoute() {
+	public void setLivre(Set<Livre> livre) {
+		this.livre = livre;
+	}
+
+	public float getSomme_ajoute() {
         return somme_ajoute;
     }
 
@@ -59,7 +70,17 @@ public class Panier {
     
     }*/
 
-  /*  @Override
+  
+    public int getId_panier() {
+        return id_panier;
+    }
+
+    public void setId_panier(int id_panier) {
+        this.id_panier = id_panier;
+    }
+
+   
+    /*  @Override
     public int hashCode() {
         int hash = 7;
         hash = 97 * hash + this.id_panier;
@@ -93,29 +114,7 @@ public class Panier {
         return "Panier{" + "id_panier=" + id_panier + ", id_user=" + id_user + ", id_comm=" + id_comm + ", somme=" + somme_ajoute + ", quantité ajouté"+ quantite_ajouter+'}';
     }
 */
-    public int getId_panier() {
-        return id_panier;
-    }
-
-    public void setId_panier(int id_panier) {
-        this.id_panier = id_panier;
-    }
-
-    public int getId_user() {
-        return id_user;
-    }
-
-    public void setId_user(int id_user) {
-        this.id_user = id_user;
-    }
-
-    public int getId_comm() {
-        return id_comm;
-    }
-
-    public void setId_comm(int id_comm) {
-        this.id_comm = id_comm;
-    }
+    
 /*
     @Override
     public void retirerLivre(Livre b) {
