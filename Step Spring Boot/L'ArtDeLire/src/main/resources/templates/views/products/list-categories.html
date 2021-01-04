@@ -37,7 +37,7 @@
                                     <tbody>
                                         <tr th:each="categorie: ${categories}">
 									       <td th:text="${categorie.name}"></td>							
-									       <td th:text="${categorie.description}"></td>
+									       <td th:text="${categorie.description}">   </td>
 									       
 									       <td>
 									       <a th:href="@{/edit-categorie?idCategorie=}+${categorie.id}" class="fas fa-edit" title="edit"></a>					      

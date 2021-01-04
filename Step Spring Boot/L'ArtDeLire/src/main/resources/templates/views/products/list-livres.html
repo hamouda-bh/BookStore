@@ -31,7 +31,8 @@
                                             <th>Description</th>
                                             <th>Photo</th> 
                                             <th>Categorie</th> 
-                                            <th style="width:45px">Actions</th>                                         
+                                            <th style="width:45px">Actions</th>  
+                                            <th style="width:45px">add to the basket</th>                                         
                                         </tr>
                                     </thead>
                                     
@@ -66,9 +67,36 @@
 												</div>
 											</div>
 										</div></td>
-                                           
-										
-									    </tr> 
+                                            
+                                         
+                                            
+                                            <td>				      
+										   <a class="fas fa-shopping-basket"  th:attr="data-target='#modal-add'+${livre.id}" data-rel="tooltip" title="add" data-toggle="modal"></a>					   
+										   
+										   
+										   <div th:id="modal-add+${livre.id}" class="modal fade" >
+											<div class="modal-dialog">
+												<div class="modal-content">
+													<div class="modal-header no-padding">
+														<div class="table-header">add book</div>
+													</div>
+													<div class="modal-body no-padding">are you sure to add this book in the basket</div>
+													<div class="modal-footer no-margin-top">
+														<button class="btn btn-sm btn-danger pull-left" data-dismiss="modal">
+															<i class="ace-icon fa fa-times"></i> Close
+														</button>
+														<a class="btn btn-sm  pull-right" th:href="@{/panierTableL?idLivre=}+${livre.id}"> <i
+															class="ace-icon fa fa-times">add</i>
+														</a>
+													</div>
+												</div>
+											</div>
+										</div></td>
+
+                                            
+                                            
+                                         
+									     </tr> 
                                         
                                     </tbody>
                                 </table>

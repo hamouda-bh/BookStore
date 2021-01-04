@@ -3,20 +3,23 @@ package com.example.Gestion.des.taches.project.service;
 import java.util.List;
 import java.util.Optional;
 
+import com.example.Gestion.des.taches.project.model.Livre;
 import com.example.Gestion.des.taches.project.model.Panier;
 
 public interface PanierService {
 	
-	Optional<Panier> findOne(int id);
+	Optional<Panier> findOne(Long id);
 	
-	List<Panier> findAll();
+	Iterable<Panier> findAll();
 	
 	void update(Panier panier);
 	
 	void save (Panier panier);
 	
-	void delete(int id);
+	void delete(Long id);
 	
-	//void delete(Panier panier);
+	public void addLivre(Panier panier);
+	
+	void delete(Panier panier);
 
 }

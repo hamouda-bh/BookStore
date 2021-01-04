@@ -53,16 +53,15 @@
             </li>
             
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsebasket"
+                    aria-expanded="true" aria-controls="collapsebasket">
                     <i class="fas fa-user"></i>
                     <span>basket</span>
                 </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div id="collapsebasket" class="collapse" aria-labelledby="headingbasket" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         
-                        <a class="collapse-item" th:href="@{/panierTable}">tab panier</a>
-                     
+                     <a class="collapse-item" th:href="@{/panierTable}">list basket</a>
                     </div>
                 </div>
             </li>
@@ -76,7 +75,7 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                       
-                        <a class="collapse-item" th:href="@{/list-livres}">List</a>
+                        <a class="collapse-item" th:href="@{/list-livres}">List Books</a>
                         <a class="collapse-item" th:href="@{/add-livre}">Add</a>
                       
                     </div>
@@ -93,7 +92,7 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                       
-                        <a class="collapse-item" th:href="@{/list-categories}">List</a>
+                        <a class="collapse-item" th:href="@{/list-categories}">List category</a>
                         <a class="collapse-item" th:href="@{/add-categorie}">Add</a>
                       
                     </div>

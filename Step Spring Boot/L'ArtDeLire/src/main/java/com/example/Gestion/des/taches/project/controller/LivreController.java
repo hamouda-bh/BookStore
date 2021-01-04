@@ -8,9 +8,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.Gestion.des.taches.project.model.Livre;
+import com.example.Gestion.des.taches.project.model.Panier;
 import com.example.Gestion.des.taches.project.model.Task;
 import com.example.Gestion.des.taches.project.service.CategorieService;
 import com.example.Gestion.des.taches.project.service.LivreService;
+import com.example.Gestion.des.taches.project.service.PanierService;
 import com.example.Gestion.des.taches.project.service.RoleService;
 
 
@@ -20,6 +22,8 @@ public class LivreController {
 	private LivreService livreService ;
 	@Autowired
 	private CategorieService categorieService;
+	@Autowired
+	private PanierService panierService;
 	
 	@GetMapping("list-livres")
 	public String listTasks(Model model) {
@@ -39,6 +43,19 @@ public class LivreController {
 		livreService.save(livre);
 		return "redirect:/list-livres";
 	}
+
+	@GetMapping("panierTableL")
+	public String addPanier(Model model) {
+		model.addAttribute("livres", new Livre());
+		return "views/products/list-livres";
+	}
+	
+	@PostMapping("panierTableL")
+	public String addPanier(Model model,Panier p) {
+		panierService.addLivre(p);
+		return "redirect:/panierTable";
+	}
+	
 	@GetMapping("delete-livre")
 	public String deleteTask(@RequestParam("idLivre") Long id) {
 		livreService.delete(id);

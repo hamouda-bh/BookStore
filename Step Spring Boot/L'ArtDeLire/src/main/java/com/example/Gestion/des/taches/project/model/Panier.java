@@ -17,17 +17,17 @@ public class Panier {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id_panier;
+	private Long id_panier;
 	private float somme_ajoute ;
 	private int quantite_ajouter;
-	@OneToMany(cascade = CascadeType.ALL)
-	private Set<Livre> livre;
-	
-    public Set<Livre> getLivre() {
+	@ManyToOne
+    private Livre livre;
+    
+    public Livre getLivre() {
 		return livre;
 	}
 
-	public void setLivre(Set<Livre> livre) {
+	public void setLivre(Livre livre) {
 		this.livre = livre;
 	}
 
@@ -71,11 +71,11 @@ public class Panier {
     }*/
 
   
-    public int getId_panier() {
+    public Long getId_panier() {
         return id_panier;
     }
 
-    public void setId_panier(int id_panier) {
+    public void setId_panier(Long id_panier) {
         this.id_panier = id_panier;
     }
 

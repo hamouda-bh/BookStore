@@ -10,7 +10,7 @@
 <body>
 	<th:block layout:fragment="content">
 		<div class="d-sm-flex align-items-center justify-content-between mb-4">
-			<h1 class="h3 mb-0 text-gray-800">panier</h1>
+			<h1 class="h3 mb-0 text-gray-800">basket</h1>
 		</div>
 
 		<div class="row">
@@ -23,25 +23,23 @@
                                     <thead>
                                         <tr>
                                             <th>Name</th>
-                                            <th>quantity</th>
                                             <th>price</th>
+                                            <th>quantity</th>
                                             <th style="width:45px">Actions</th>                                         
                                         </tr>
                                     </thead>
                                     
                                     <tbody>
                                         <tr th:each="panier: ${paniers}">
-									/* save lel livres  */       <td th:text="${panier.name}"></td>							
-									/* textfield ou scroll */       <td th:text="${panier.quantite_ajouter}"></td>
-									       <td th:text="${panier.somme_ajoute}"></td>
+									   	<td th:text="${panier.livre?.name}"></td>							
+									       <td th:text="${panier.livre?.prix}"></td>
+									        <td th:text="${panier.quantite_ajouter}"></td>
 									       <td>
-									/* edit panier/ edit categorie*/       <a th:href="@{/edit-panier?id_panier=}+${panier.id}" class="fas fa-edit" title="edit"></a>					      
-										   <a class="fas fa-trash"  th:attr="data-target='#modal-delete'+${panier.id}" data-rel="tooltip" title="delete" data-toggle="modal"></a>					   
+									 <a th:href="@{/edit-panier?id_panier=}+${panier.id_panier}" class="fas fa-edit" title="edit"></a>					      
+										   <a class="fas fa-trash"  th:attr="data-target='#modal-delete'+${panier.id_panier}" data-rel="tooltip" title="delete" data-toggle="modal"></a>					   
 										   
 										   
-										   
-										   
-										   <div th:id="modal-delete+${panier.id}" class="modal fade" tabindex="-1">
+										   <div th:id="modal-delete+${panier.id_panier}" class="modal fade" tabindex="-1">
 											<div class="modal-dialog">
 												<div class="modal-content">
 													<div class="modal-header no-padding">
@@ -52,7 +50,7 @@
 														<button class="btn btn-sm btn-danger pull-left" data-dismiss="modal">
 															<i class="ace-icon fa fa-times"></i> Close
 														</button>
-										/* delete panier*/				<a class="btn btn-sm btn-danger pull-right" th:href="@{/delete-panier?id_panier=}+${panier.id}"> <i
+														<a class="btn btn-sm btn-danger pull-right" th:href="@{/delete-panier?id_panier=}+${panier.id_panier}"> <i
 															class="ace-icon fa fa-times">delete</i>
 														</a>
 													</div>
@@ -65,7 +63,7 @@
                                 </table>
                                 
                             </div>
-                            <button type="submit" class="btn btn-primary btn-circle">order</button>
+                            <button type="submit" class="btn btn-primary" >order</button>
                         </div>
                     </div>
 

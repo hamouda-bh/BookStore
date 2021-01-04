@@ -20,10 +20,18 @@ public class Livre {
     private String name;
     private String description ;
     private String photo;
-   
+    private float prix;
     @ManyToOne
     private Categorie categorie;
     
+    
+    public float getPrix() {
+		return prix;
+	}
+	public void setPrix(float prix) {
+		this.prix = prix;
+	}
+	
 	public Long getId() {
 		return id;
 	}

@@ -21,9 +21,8 @@ public class Commande {
 	    private Facture facture;
 	    @OneToOne
 	    private Panier panier;
-	    public Commande() {
-	    }
-
+	    
+	   
 	    public Commande(int id_commande, String date_commande,  float prixTotale) {
 	        this.id_commande = id_commande;
 	        this.date_commande = date_commande;
