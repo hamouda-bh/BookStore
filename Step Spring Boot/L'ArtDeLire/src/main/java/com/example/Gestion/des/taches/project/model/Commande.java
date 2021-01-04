@@ -34,6 +34,11 @@ public class Commande {
 	        this.prixTotale = prixTotale;
 	    }
 
+	     public Commande( ) {
+
+		    }
+
+	     
 	    public Facture getFacture() {
 			return facture;
 		}

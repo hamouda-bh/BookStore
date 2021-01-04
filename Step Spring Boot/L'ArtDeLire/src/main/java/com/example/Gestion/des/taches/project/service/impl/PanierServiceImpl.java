@@ -55,9 +55,9 @@ public class PanierServiceImpl implements PanierService {
 	}
 	
 	@Override
-	public void addLivre(Panier panier) {
+	public void addLivre(Livre l) {
 		
-		repository.insertUser(panier.getId_panier(),panier.getQuantite_ajouter(), panier.getSomme_ajoute(), panier.getLivre().getId());
+		repository.insertUser(1, l.getPrix(),l.getId() );
 	}
 	
 

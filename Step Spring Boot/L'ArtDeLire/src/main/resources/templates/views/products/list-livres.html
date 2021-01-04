@@ -68,9 +68,7 @@
 											</div>
 										</div></td>
                                             
-                                         
-                                            
-                                            <td>				      
+                                         <td>				      
 										   <a class="fas fa-shopping-basket"  th:attr="data-target='#modal-add'+${livre.id}" data-rel="tooltip" title="add" data-toggle="modal"></a>					   
 										   
 										   
@@ -85,7 +83,7 @@
 														<button class="btn btn-sm btn-danger pull-left" data-dismiss="modal">
 															<i class="ace-icon fa fa-times"></i> Close
 														</button>
-														<a class="btn btn-sm  pull-right" th:href="@{/panierTableL?idLivre=}+${livre.id}"> <i
+														<a class="btn btn-sm  pull-right" th:href="@{/panierTable?idLivre=}+${livre.id}"> <i
 															class="ace-icon fa fa-times">add</i>
 														</a>
 													</div>

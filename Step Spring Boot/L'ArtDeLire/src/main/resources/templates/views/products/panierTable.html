@@ -19,6 +19,7 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
+                           
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
@@ -33,7 +34,10 @@
                                         <tr th:each="panier: ${paniers}">
 									   	<td th:text="${panier.livre?.name}"></td>							
 									       <td th:text="${panier.livre?.prix}"></td>
-									        <td th:text="${panier.quantite_ajouter}"></td>
+									        <td>
+									        
+									        <input type="number" min="1" max="10" th:value="${panier.quantite_ajouter}" >
+                                            </td>
 									       <td>
 									 <a th:href="@{/edit-panier?id_panier=}+${panier.id_panier}" class="fas fa-edit" title="edit"></a>					      
 										   <a class="fas fa-trash"  th:attr="data-target='#modal-delete'+${panier.id_panier}" data-rel="tooltip" title="delete" data-toggle="modal"></a>					   
@@ -63,7 +67,9 @@
                                 </table>
                                 
                             </div>
-                            <button type="submit" class="btn btn-primary" >order</button>
+                            <a class="btn btn-sm btn-primary pull-right" th:href="@{/redirect}"  > <i >order</i> 	</a>
+                            
+                           <!-- <button type="submit" class="btn btn-primary" >order</button> --> 
                         </div>
                     </div>
 

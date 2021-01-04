@@ -18,7 +18,7 @@ public interface PanierService {
 	
 	void delete(Long id);
 	
-	public void addLivre(Panier panier);
+	public void addLivre(Livre l);
 	
 	void delete(Panier panier);
 

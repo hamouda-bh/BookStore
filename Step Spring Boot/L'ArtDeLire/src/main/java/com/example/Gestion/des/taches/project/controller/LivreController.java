@@ -47,13 +47,13 @@ public class LivreController {
 	@GetMapping("panierTableL")
 	public String addPanier(Model model) {
 		model.addAttribute("livres", new Livre());
-		return "views/products/list-livres";
+		return "views/products/panierTable";
 	}
 	
 	@PostMapping("panierTableL")
-	public String addPanier(Model model,Panier p) {
+	public String addPanier(Model model,Livre p) {
 		panierService.addLivre(p);
-		return "redirect:/panierTable";
+		return "redirect:/panierTableL";
 	}
 	
 	@GetMapping("delete-livre")

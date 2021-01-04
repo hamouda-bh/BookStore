@@ -9,13 +9,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.Gestion.des.taches.project.model.Commande;
 import com.example.Gestion.des.taches.project.model.Panier;
-import com.example.Gestion.des.taches.project.model.User;
 import com.example.Gestion.des.taches.project.service.CommandeService;
 import com.example.Gestion.des.taches.project.service.LivreService;
 import com.example.Gestion.des.taches.project.service.PanierService;
-
 @Controller
-public class PanierController {
+public class CommandeController {
 
 	@Autowired
 	private PanierService panierService;
@@ -24,31 +22,24 @@ public class PanierController {
 	@Autowired
 	private CommandeService commandeService;
 	
-	@GetMapping("panierTable")
-	public String listTasks(Model model) {
-		model.addAttribute("paniers", panierService.findAll());
-			
-		return "views/products/panierTable";
-	}
 	
-	@GetMapping("add-panier")
+	@GetMapping("addCommande")
 	public String addTasks(Model model) {
-		model.addAttribute("paniers", new Panier());
-		return "views/products/panierTable";
+		model.addAttribute("commandes", new Commande());
+		return "views/products/commande";
 	}
 	
-	@PostMapping("add-panier")
-	public String addTasks(Model model , Panier panier) {
-		panierService.save(panier);
-		return "redirect:/panierTable";
+	@PostMapping("addCommande")
+	public String addTasks(Model model , Commande c) {
+		commandeService.save(c);
+		return "redirect:/commande";
 	}
 	
-	@GetMapping("delete-panier")
+	/*@GetMapping("delete-panier")
 	public String deleteTask(@RequestParam("id_panier") Long id) {
 		panierService.delete(id);
 		return "redirect:/panierTable";
 	}
-
 	@GetMapping("edit-panier")
 	public String editTask(@RequestParam("id_panier") Long id, Model model, Panier panier) {
 	//	model.addAttribute("livres", livreService.findOne(id).get());
@@ -61,11 +52,16 @@ public class PanierController {
 		panierService.update(panier);
 		return "redirect:/panierTable";
 	}
-	
-@GetMapping("redirect")
+	*/
+	@GetMapping("redirectR")
 	public String redirect() {
 
-		return "views/products/commande";
+		return "views/products/panierTable";
+	}
+	@GetMapping("redirectC")
+	public String redirectC() {
+
+		return "views/products/terminer";
 	}
 	
 }
