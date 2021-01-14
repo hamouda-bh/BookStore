@@ -3,21 +3,21 @@ package com.example.Gestion.des.taches.project.service;
 import java.util.List;
 import java.util.Optional;
 
-import com.example.Gestion.des.taches.project.model.Livre;
+import com.example.Gestion.des.taches.project.model.LivreKids;
 
 
 public interface LivreKidsService {
 	
-    Optional<Livre> findOne(Long id);
+    Optional<LivreKids> findOne(Long id);
 	
-	List<Livre> findAll();
+	List<LivreKids> findAll();
 	
-	void update(Livre livre);
+	void update(LivreKids livre);
 	
-	void save (Livre livre);
+	void save (LivreKids livre);
 	
 	void delete(Long id);
 	
-	void delete(Livre livre);
+	void delete(LivreKids livre);
 
 }
