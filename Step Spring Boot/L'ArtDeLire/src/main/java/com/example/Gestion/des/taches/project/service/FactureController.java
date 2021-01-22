@@ -15,13 +15,7 @@ import com.example.Gestion.des.taches.project.model.Facture;
 public class FactureController {
 	
 		@Autowired
-		private PanierService panierService;
-		@Autowired
 		private FactureService factureService ;
-		@Autowired
-		private CommandeService commandeService;
-		
-		
 		
 		@GetMapping(value = "findOneF/{idemp}")
 		   public Optional<Facture> findOne(@PathVariable("idemp")int id) {

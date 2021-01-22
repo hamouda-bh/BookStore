@@ -34,9 +34,5 @@ public class CommandeServiceImlp implements CommandeService {
 		repository.save(Commande);
 	}
 
-	@Override
-	public void delete(int id) {
-		// TODO Auto-generated method stub
-		repository.deleteById(id);
-	}
+	
 }
