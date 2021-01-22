@@ -19,26 +19,22 @@ public class PanierServiceImpl implements PanierService {
 	
 	@Override
 	public Optional<Panier> findOne(Long id) {
-		// TODO Auto-generated method stub
 		return repository.findById(id);
 	}
 
 	@Override
 	public Iterable<Panier> findAll() {
-		// TODO Auto-generated method stub
 		return  repository.findAll();
 	}
 
 	@Override
 	public void update(Panier Panier) {
-		// TODO Auto-generated method stub
 		repository.save(Panier);
 		
 	}
 
 	@Override
 	public void save(Panier Panier) {
-		// TODO Auto-generated method stub
 		repository.save(Panier);
 	}
 
@@ -50,13 +46,11 @@ public class PanierServiceImpl implements PanierService {
 
 	@Override
 	public void delete(Panier panier) {
-		// TODO Auto-generated method stub
 		repository.delete(panier);
 	}
 	
 	@Override
 	public void addLivre(Livre l) {
-		
 		repository.insertUser(1, l.getPrix(),l.getId() );
 	}
 	

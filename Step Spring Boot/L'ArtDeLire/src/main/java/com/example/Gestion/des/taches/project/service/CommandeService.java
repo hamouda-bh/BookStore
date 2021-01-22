@@ -16,7 +16,7 @@ public interface CommandeService {
 	
 	void save (Commande commande);
 	
-	void delete(int id);
+	//void delete(int id);
 	
 	//void delete(Commande commande);
 

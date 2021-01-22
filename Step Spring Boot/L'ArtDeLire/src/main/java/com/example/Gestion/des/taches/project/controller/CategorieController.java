@@ -28,7 +28,6 @@ public class CategorieController {
 	@GetMapping("add-categorie")
 	public String addTasks(Model model) {
 		model.addAttribute("categories", new Categorie());
-		
 		return "views/products/add-categorie";
 	}
 	

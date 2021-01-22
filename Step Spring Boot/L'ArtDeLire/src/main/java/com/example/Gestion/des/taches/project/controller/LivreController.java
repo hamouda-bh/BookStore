@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.Gestion.des.taches.project.model.Livre;
@@ -15,8 +16,8 @@ import com.example.Gestion.des.taches.project.service.LivreService;
 import com.example.Gestion.des.taches.project.service.PanierService;
 import com.example.Gestion.des.taches.project.service.RoleService;
 
-
-@Controller
+import org.springframework.web.bind.annotation.RestController;
+@RestController
 public class LivreController {
 	@Autowired
 	private LivreService livreService ;
@@ -50,10 +51,11 @@ public class LivreController {
 		return "views/products/panierTable";
 	}
 	
-	@PostMapping("panierTableL")
-	public String addPanier(Model model,Livre p) {
+	@PostMapping("/panierTab")
+	public Livre addPanier(@RequestBody Livre p) {
 		panierService.addLivre(p);
-		return "redirect:/panierTableL";
+		//return "redirect:/panierTableL";
+		return p;
 	}
 	
 	@GetMapping("delete-livre")

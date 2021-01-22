@@ -20,10 +20,12 @@ public class User {
     private boolean active;
     private String last_name;
     private String tel ;
-    private String carte_paie ; 
+    private String carte_paie ;
+    
     @ManyToOne //relation entre table 1..*
     private Role role ;
-	public Long getId() {
+    
+    public Long getId() {
 		return id;
 	}
 	public void setId(Long id) {
