@@ -9,7 +9,7 @@ public interface LivreService {
 	
     Optional<Livre> findOne(Long id);
 	
-	List<Livre> findAll();
+	List<Livre> findAll() ;
 	
 	void update(Livre livre);
 	
@@ -18,5 +18,4 @@ public interface LivreService {
 	void delete(Long id);
 	
 	void delete(Livre livre);
-	
 }

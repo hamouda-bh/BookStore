@@ -12,7 +12,6 @@ import com.example.Gestion.des.taches.project.repository.LivreRepository;
 
 import com.example.Gestion.des.taches.project.service.LivreService;
 
-
 @Service
 public class LivreServiceImpl implements LivreService {
 	@Autowired
@@ -40,7 +39,6 @@ public class LivreServiceImpl implements LivreService {
 	public void save(Livre livre) {
 		// TODO Auto-generated method stub
 		repository.save(livre);
-		
 	}
 
 	@Override
