@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="532.0" prefWidth="588.0" style="-fx-background-color: #152f72;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button fx:id="AjouterUneNouvelleAnnonce" layoutX="87.0" layoutY="438.0" mnemonicParsing="false" onAction="#ajouterAnnonce" prefHeight="36.0" prefWidth="186.0" style="-fx-background-radius: 30;" text="Ajouter une nouvelle annonce" />
+      <TableView fx:id="fxTableAnnonces" layoutX="90.0" layoutY="28.0" prefHeight="387.0" prefWidth="385.0" style="-fx-background-color: #557de1;">
+        <columns>
+          <TableColumn fx:id="datepublicationcell" prefWidth="127.0" text="Date de publication" />
+            <TableColumn fx:id="prixcell" minWidth="0.0" prefWidth="72.0" text="Prix" />
+            <TableColumn fx:id="etatcell" minWidth="0.0" prefWidth="85.0" text="Etat" />
+          <TableColumn fx:id="dateachatcell" prefWidth="106.0" text="Date d'achat" />
+        </columns>
+      </TableView>
+      <Button fx:id="fxmesannonces" layoutX="282.0" layoutY="438.0" mnemonicParsing="false" onAction="#mesAnnonces" prefHeight="36.0" prefWidth="103.0" style="-fx-background-radius: 30;" text="Mes annonces" />
+      <Button fx:id="fxActualiser" layoutX="399.0" layoutY="438.0" mnemonicParsing="false" onAction="#actualiser" prefHeight="36.0" prefWidth="78.0" style="-fx-background-radius: 30;" text="Actualiser" />
+      <RadioButton fx:id="btnMailing" layoutX="152.0" layoutY="488.0" mnemonicParsing="false" onAction="#activeMailing" text="Recevoir les notifications de futurs annonces ?" textFill="#f8f4f4">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </RadioButton>
+   </children>
+</AnchorPane>
