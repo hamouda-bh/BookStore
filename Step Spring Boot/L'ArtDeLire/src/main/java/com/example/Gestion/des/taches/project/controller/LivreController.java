@@ -1,56 +1,71 @@
 package com.example.Gestion.des.taches.project.controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.example.Gestion.des.taches.project.model.Livre;
-import com.example.Gestion.des.taches.project.model.Task;
 import com.example.Gestion.des.taches.project.service.CategorieService;
 import com.example.Gestion.des.taches.project.service.LivreService;
-import com.example.Gestion.des.taches.project.service.RoleService;
 
 
-@Controller
+@RestController
 public class LivreController {
+	
 	@Autowired
 	private LivreService livreService ;
 	@Autowired
 	private CategorieService categorieService;
 	
-	@GetMapping("list-livres")
-	public String listTasks(Model model) {
-		model.addAttribute("livres", livreService.findAll());
+	//@GetMapping("list-livres")
+	//public String listLivre(Livre livre) {
+	//livreService("livres", livreService.findAll());
 			
-		return "views/products/list-livres";
-	}
-	@GetMapping("add-livre")
-	public String addTasks(Model model) {
-		model.addAttribute("livres", new Livre());
-		model.addAttribute("categories", categorieService.findAll());
-		return "views/products/add-livre";
+	//}
+	@PostMapping("/savelivre")
+	public Livre save(@RequestBody Livre livre) {
+		livreService.save(livre);
+		return livre ;
 	}
 	
-	@PostMapping("add-livre")
-	public String addTasks(Model model , Livre livre) {
-		livreService.save(livre);
-		return "redirect:/list-livres";
+	@PostMapping("/ajouterlivre")
+	public Livre ajouterLivre(@RequestBody  Livre livre) {
+		livreService.ajouterLivre(livre);
+		return livre ;
 	}
-	@GetMapping("delete-livre")
-	public String deleteTask(@RequestParam("idLivre") Long id) {
-		livreService.delete(id);
+	@GetMapping("/supprimerlivre")
+	public void delete(@PathVariable("idLivre") Long id) {
+		 livreService.delete(id);
+	}
+		 
+		 
+    @GetMapping(value = "findOneL/{idLivre}")
+		   public Optional<Livre> findOne(@PathVariable Long id) {
+				return livreService.findOne(id);
+			}
+    
+    @GetMapping(value = "findAllL")
+	public Iterable<Livre> findAll() {
+		return livreService.findAll();
+	}
 		
-		return "redirect:/list-livres";
-	}
-	@GetMapping("edit-livre")
-	public String editTask(@RequestParam("idLivre") Long id, Model model, Livre livre) {
-		model.addAttribute("livres", livreService.findOne(id).get());
-		model.addAttribute("categories", categorieService.findAll());
+	
+	//@GetMapping("edit-livre")
+	//public String editLivre(@RequestParam("idLivre") Long id, Livre livre) {
+		//model.addAttribute("livres", livreService.findOne(id).get());
+		//model.addAttribute("categories", categorieService.findAll());
 
-		return "views/products/add-livre";
+		//return "views/products/add-livre";
+	//}
+	
+	//@PutMapping(value = "/updateL/{id}/") 
+ 	//@ResponseBody
+	//public void update(@PathVariable("newlivre") Long id, @PathVariable("id") Long idLivre) {
+	//livreService.update(idLivre);}
 	}
-}
 	

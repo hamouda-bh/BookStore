@@ -12,6 +12,8 @@ import com.example.Gestion.des.taches.project.repository.LivreRepository;
 
 import com.example.Gestion.des.taches.project.service.LivreService;
 
+
+
 @Service
 public class LivreServiceImpl implements LivreService {
 	@Autowired
@@ -28,7 +30,10 @@ public class LivreServiceImpl implements LivreService {
 		// TODO Auto-generated method stub
 		return repository.findAll();
 	}
-
+	 @Override
+	    public long ajouterLivre(Livre livre) {
+	        return repository.save(livre).getId();
+	    }
 	@Override
 	public void update(Livre livre) {
 		// TODO Auto-generated method stub
