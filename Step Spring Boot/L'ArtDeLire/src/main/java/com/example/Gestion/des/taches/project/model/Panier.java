@@ -22,8 +22,18 @@ public class Panier {
 	private int quantite_ajouter;
 	@ManyToOne
     private Livre livre;
+	@ManyToOne
+	private User user;
     
-    public Livre getLivre() {
+    public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Livre getLivre() {
 		return livre;
 	}
 

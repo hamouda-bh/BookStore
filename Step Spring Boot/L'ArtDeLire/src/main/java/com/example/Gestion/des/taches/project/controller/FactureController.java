@@ -1,4 +1,4 @@
-package com.example.Gestion.des.taches.project.service;
+package com.example.Gestion.des.taches.project.controller;
 
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.Gestion.des.taches.project.model.Facture;
+import com.example.Gestion.des.taches.project.service.FactureService;
 @RestController
 public class FactureController {
 	

@@ -16,24 +16,30 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class PanierController {
 	//private static final Logger l = Logger.getLogger(PanierController.class);
-
+	
 	@Autowired
 	private PanierService panierService;
 	
 	@GetMapping(value = "findOneP/{idemp}")
+	@ResponseBody
 	   public Optional<Panier> findOne(@PathVariable("idemp")long id) {
 			return panierService.findOne(id);
-		}
+	}
+	
 	@GetMapping(value = "findAllP")
+	@ResponseBody
 	public Iterable<Panier> findAll() {
 		return panierService.findAll();
 	}
+	
 	@PostMapping("/addLivreP/{id_livre}")
+	@ResponseBody
 	public String ajouterLivre(@RequestBody Livre l) {
 		panierService.addLivre(l);
 		return l.getName();
 	}
 	@PostMapping("/saveP")
+	@ResponseBody
 	public long saveP(@RequestBody Panier p) {
 		panierService.save(p);
 		return p.getId_panier();
@@ -46,13 +52,17 @@ public class PanierController {
 			//l.info("article deleted ");}
 			//catch (Exception e) { l.error("Erreur de suppression" + e); }
 	}
-	@PutMapping(value = "/updateP/{id}/{quantite}") 
- 	@ResponseBody
-	public void update(@PathVariable("newemail") int quantite, @PathVariable("id") long id_panier) {
+	@PutMapping(value = "/updateP/{id}") 
+	public void update(@RequestBody int quantite, @PathVariable("id") long id_panier) {
 		Optional<Panier> l =panierService.findOne(id_panier);
-		Panier p =l.get();		
-		p.setQuantite_ajouter(quantite);
-		panierService.update(p);
+		if(l.isPresent()){	
+			Panier p =l.get();	
+			
+			p.setQuantite_ajouter(quantite);
+			panierService.delete(id_panier);
+		panierService.save(p);
+		}
+		
 	}
 	
 /*	@GetMapping("/panierTable")

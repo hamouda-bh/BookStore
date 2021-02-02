@@ -5,13 +5,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
-
 import lombok.Data;
-
 
 @Data
 @Entity
 public class Commande {
+	
 		@Id
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
 		private int id_commande; 
@@ -19,10 +18,9 @@ public class Commande {
 	    private float prixTotale ;
 	    @OneToOne
 	    private Facture facture;
-	    @OneToOne
+	    @ManyToOne
 	    private Panier panier;
 	    
-	   
 	    public Commande(int id_commande, String date_commande,  float prixTotale) {
 	        this.id_commande = id_commande;
 	        this.date_commande = date_commande;
