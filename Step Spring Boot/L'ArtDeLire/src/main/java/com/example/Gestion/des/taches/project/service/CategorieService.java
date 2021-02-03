@@ -19,5 +19,9 @@ Optional<Categorie> findOne(Long id);
 	void delete(Long id);
 	
 	void delete(Categorie categorie);
+	
+	Long countCategorie();
+	
+	
 
 }

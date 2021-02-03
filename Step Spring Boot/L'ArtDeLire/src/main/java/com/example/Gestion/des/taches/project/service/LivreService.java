@@ -19,5 +19,8 @@ public interface LivreService {
 	void delete(Long id);
 	
 	void delete(Livre livre);
-
+	
+	Long countLivre();
+	
+	
 }

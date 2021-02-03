@@ -56,4 +56,10 @@ public class LivreServiceImpl implements LivreService {
 		repository.delete(livre);
 	}
 
+	@Override
+	public Long countLivre() {
+		// TODO Auto-generated method stub
+		return repository.countLivre();
+	}
+
 }

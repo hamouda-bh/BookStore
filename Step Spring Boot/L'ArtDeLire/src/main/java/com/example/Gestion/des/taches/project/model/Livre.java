@@ -2,10 +2,12 @@ package com.example.Gestion.des.taches.project.model;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import lombok.Data;
@@ -21,8 +23,9 @@ public class Livre {
     private String description ;
     private String photo;
    
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.REMOVE)  
     private Categorie categorie;
+    
 	public Long getId() {
 		return id;
 	}

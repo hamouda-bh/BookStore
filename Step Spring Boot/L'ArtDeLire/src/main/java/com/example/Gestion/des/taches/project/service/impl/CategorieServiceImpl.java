@@ -56,4 +56,10 @@ public class CategorieServiceImpl implements CategorieService {
 		repository.delete(categorie);
 	}
 
+	@Override
+	public Long countCategorie() {
+		// TODO Auto-generated method stub
+		return repository.countCategorie();
+	}
+
 }

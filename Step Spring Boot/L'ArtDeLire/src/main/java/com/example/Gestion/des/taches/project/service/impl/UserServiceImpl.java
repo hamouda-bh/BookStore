@@ -59,4 +59,10 @@ public class UserServiceImpl implements UserService {
 		 return repository.findByEmail(email) ;
 	}
 
+	@Override
+	public Long countUser() {
+		// TODO Auto-generated method stub
+		return repository.countUser();
+	}
+
 }

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.example.Gestion.des.taches.project.model.Categorie;
 import com.example.Gestion.des.taches.project.model.Livre;
 import com.example.Gestion.des.taches.project.service.CategorieService;
+import com.example.Gestion.des.taches.project.service.LivreService;
 
 
 @Controller
@@ -17,6 +18,9 @@ public class CategorieController {
 	
 	@Autowired
 	private CategorieService categorieService;
+	
+	@Autowired
+	private LivreService lv ; 
 	
 	@GetMapping("list-categories")
 	public String listTasks(Model model) {
@@ -39,6 +43,7 @@ public class CategorieController {
 	}
 	
 	@GetMapping("delete-categorie")
+	
 	public String deleteTask(@RequestParam("idCategorie") Long id) {
 		categorieService.delete(id);
 		

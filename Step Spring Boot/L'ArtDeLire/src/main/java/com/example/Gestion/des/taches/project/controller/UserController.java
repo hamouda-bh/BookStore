@@ -2,22 +2,29 @@ package com.example.Gestion.des.taches.project.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.MailException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.Gestion.des.taches.project.model.Task;
 import com.example.Gestion.des.taches.project.model.User;
+import com.example.Gestion.des.taches.project.service.NotificationService;
 import com.example.Gestion.des.taches.project.service.RoleService;
 import com.example.Gestion.des.taches.project.service.StateService;
 import com.example.Gestion.des.taches.project.service.TaskService;
 import com.example.Gestion.des.taches.project.service.UserService;
 
+
 @Controller
+
 public class UserController {
 	@Autowired
 	private UserService userService ;
@@ -25,6 +32,11 @@ public class UserController {
 	private RoleService roleService;
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
+	
+	@Autowired
+	private NotificationService notif ; 
+	
+	private Logger logger = LoggerFactory.getLogger(UserController.class);
 	
 	@GetMapping("list-user")
 	public String listTasks(Model model) {
@@ -52,6 +64,8 @@ public class UserController {
 		return "redirect:/list-user";
 	}
 	
+	
+	
 	@GetMapping("add-user")
 	public String addTasks(Model model) {
 		model.addAttribute("user", new User());
@@ -64,6 +78,11 @@ public class UserController {
 		String mdp = bCryptPasswordEncoder.encode(user.getPassword());
 		user.setPassword(mdp);
 		userService.save(user);
+		try {
+		notif.sendNotification(user);
+		}catch(MailException e){
+			logger.info("Error Sending Email: " +e.getMessage());
+		}
 		return "redirect:/list-user";
 	}
 	
@@ -86,8 +105,5 @@ public class UserController {
 		userService.save(userConnected);
 		return "redirect:/profile";
 	}
-
-	
-	
 
 }
