@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.booklab.views.UserCouponViewController">
+   <children>
+      <Label fx:id="lbUseCouponTitle" layoutX="318.0" layoutY="220.0" text="Use Coupon Code">
+         <font>
+            <Font name="System Bold" size="37.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfUseCoupon" layoutX="218.0" layoutY="311.0" prefHeight="54.0" prefWidth="508.0" promptText="Please enter the Coupon code..." />
+      <Button fx:id="btn_useCoupon" layoutX="364.0" layoutY="410.0" mnemonicParsing="false" onAction="#useCoupon" prefHeight="48.0" prefWidth="197.0" style="-fx-background-color: #8EA9BA;" text="Use Coupon" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</AnchorPane>

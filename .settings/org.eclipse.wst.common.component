@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="BookStore">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/Step Spring Boot/L'ArtDeLire/.mvn/wrapper"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/Step Spring Boot/L'ArtDeLire/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/Step Spring Boot/L'ArtDeLire/src/test/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/Step1 and 2/LIbs/controlsfx-jfx-13/controlsfx-samples/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/Step1 and 2/LIbs/controlsfx-jfx-13/controlsfx/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/Step1 and 2/LIbs/controlsfx-jfx-13/controlsfx/src/test/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/Step1 and 2/LIbs/controlsfx-jfx-13/fxsampler/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/Step1 and 2/LIbs/javamail-1.4.4/demo"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/Step1 and 2/LIbs/jBCrypt-0.4/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/Step1 and 2/LIbs/jBCrypt-0.4/test"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/Step1 and 2/src"/>
+        <property name="context-root" value="BookStore"/>
+        <property name="java-output-path" value="/BookStore/bin"/>
+    </wb-module>
+</project-modules>

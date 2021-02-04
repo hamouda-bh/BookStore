@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="bookstore.views.DetailsPublicationController">
+   <children>
+      <Label fx:id="lbidp" layoutX="63.0" layoutY="42.0" text="id_publication" />
+      <Label fx:id="lbidb" layoutX="63.0" layoutY="99.0" text="id_blog" />
+      <Label fx:id="lbidc" layoutX="63.0" layoutY="159.0" text="id_client" />
+      <Label fx:id="lbcontenue" layoutX="63.0" layoutY="228.0" text="contenue" />
+      <Label fx:id="lbcommentaire" layoutX="63.0" layoutY="298.0" text="commentaire" />
+   </children>
+</AnchorPane>
