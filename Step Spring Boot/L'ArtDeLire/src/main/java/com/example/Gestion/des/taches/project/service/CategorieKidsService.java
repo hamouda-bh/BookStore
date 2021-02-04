@@ -6,7 +6,8 @@ import java.util.Optional;
 import com.example.Gestion.des.taches.project.model.CategorieKids;
 
 public interface CategorieKidsService {
-Optional<CategorieKids> findOne(Long id);
+	
+	Optional<CategorieKids> findOne(Long id);
 	
 	List<CategorieKids> findAll();
 	

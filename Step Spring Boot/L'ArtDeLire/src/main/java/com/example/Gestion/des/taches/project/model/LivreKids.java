@@ -1,20 +1,29 @@
 package com.example.Gestion.des.taches.project.model;
 
+import java.io.Serializable;
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 import lombok.Data;
 
 @Data
 @Entity
-public class LivreKids {
+public class LivreKids implements Serializable {
+	
+	@ManyToMany
+	private List<CategorieKids> categorieKids;
+	
+	@Id
 	private Long id ;
     private String name;
     private String description;
     private String photo;
     
-    @ManyToOne
-    private CategorieKids categorieKids;
+
 	public Long getId() {
 		return id;
 	}
@@ -39,10 +48,11 @@ public class LivreKids {
 	public void setPhoto(String photo) {
 		this.photo = photo;
 	}
-	public CategorieKids getCategorieKids() {
+	public List<CategorieKids> getCategorieKids() {
 		return categorieKids;
 	}
-	public void setCategorieKids(CategorieKids categorieKids) {
+	public void setCategorieKids(List<CategorieKids> categorieKids) {
 		this.categorieKids = categorieKids;
 	}
+	
 }

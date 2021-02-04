@@ -1,11 +1,26 @@
 package com.example.Gestion.des.taches.project.model;
 
+import java.io.Serializable;
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+
 import lombok.Data;
 
 @Data
 @Entity
-public class CategorieKids {
+//
+
+public class CategorieKids implements Serializable {
+	
+	
+
+	@ManyToMany(mappedBy="categorieKids")
+	private List<LivreKids> livreKids;
+	
+	@Id
 	private Long id ;
     private String name;
     private String description;
@@ -26,5 +41,11 @@ public class CategorieKids {
 	}
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	public List<LivreKids> getLivreKids() {
+		return livreKids;
+	}
+	public void setLivreKids(List<LivreKids> livreKids) {
+		this.livreKids = livreKids;
 	}
 }
