@@ -22,6 +22,7 @@ public class CommandeController {
 	@Autowired
 	private PanierService panierService;
 
+	//2 3 
 	@GetMapping(value = "findOneC/{idemp}")
 	   public Optional<Commande> findOne(@PathVariable("idemp")int id) {
 			return commandeService.findOne(id);
@@ -36,7 +37,7 @@ public class CommandeController {
 		commandeService.save(c);
 		return c.getId_commande();
 	}
-	
+	//2 3
 	@PostMapping("/insertC")
 	public void insertcommande(@RequestBody long id)
 	{
@@ -50,7 +51,7 @@ public class CommandeController {
 		}
 		commandeService.insertcommande(java.util.Calendar.getInstance().getTime().toString(),f, id);
 	}	
-	
+	// 2 3
 	@GetMapping(path ="/selectnb/{id_user}")
 	public int selectnbcom(@PathVariable("id_user")long id ) {
 		List<Commande> list = commandeService.findAll();

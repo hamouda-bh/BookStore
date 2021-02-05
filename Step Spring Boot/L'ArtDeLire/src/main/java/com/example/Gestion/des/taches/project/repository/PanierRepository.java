@@ -13,8 +13,8 @@ public interface PanierRepository extends JpaRepository<Panier, Long> {
 	
     @Modifying
     @Transactional
-	@Query(value = "INSERT INTO panier (quantite_ajouter, somme_ajoute, livre_id) VALUES (:lowel, :theni, :aa);", nativeQuery = true)
-	void insertLivre(@Param("lowel") Integer quantite, @Param("theni") float somme, @Param("aa")  Long idlivre);
+	@Query(value = "INSERT INTO panier (quantite_ajouter, somme_ajoute, livre_id, user_id) VALUES (:lowel, :theni, :aa, :raba3);", nativeQuery = true)
+	void insertLivre(@Param("lowel") Integer quantite, @Param("theni") float somme, @Param("aa")  Long idlivre, @Param("raba3")  Long id_user );
 
 
     

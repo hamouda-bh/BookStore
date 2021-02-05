@@ -19,8 +19,6 @@ public class Commande {
 	    private float prixTotale ;
 	   @OneToOne(mappedBy="commande")
 	   private Facture facture;
-	   //@ManyToOne(cascade = CascadeType.ALL)
-		//private Panier panier;
 	    @ManyToOne(cascade = CascadeType.ALL)
 		private User user;
 	    
@@ -45,7 +43,7 @@ public class Commande {
 
 		    }
 
-	     /*     
+	         
 	    public Facture getFacture() {
 			return facture;
 		}
@@ -53,7 +51,7 @@ public class Commande {
 		public void setFacture(Facture facture) {
 			this.facture = facture;
 		}
-
+		/* 
 		public Panier getPanier() {
 			return panier;
 		}

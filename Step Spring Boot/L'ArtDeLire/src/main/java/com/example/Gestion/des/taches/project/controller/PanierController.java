@@ -2,6 +2,8 @@ package com.example.Gestion.des.taches.project.controller;
 
 import java.util.List;
 import java.util.Optional;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,14 +20,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class PanierController {
-	//private static final Logger l = Logger.getLogger(PanierController.class);
+//	private static final Logger l = Logger.getLogger(PanierController.class);
 	
 	@Autowired
 	private PanierService panierService;
 
 	@Autowired
 	private LivreService livreS;
-	
+	//4 6 11 12
 	@GetMapping(value = "findOneP/{idemp}")
 	@ResponseBody
 	   public Optional<Panier> findOne(@PathVariable("idemp") long id) {
@@ -36,6 +38,8 @@ public class PanierController {
 	public Iterable<Panier> findAll() {
 		return panierService.findAll();
 	}
+	
+	//3 4 5 6 
 	@PostMapping(path ="/addLivreP/{id_livre}")
 	public String ajouterLivre(@PathVariable("id_livre")long id ) {
 		Optional<Livre> l = livreS.findOne(id);
@@ -46,19 +50,19 @@ public class PanierController {
 		}
 		return null;
 	}
-	
+	//2
 	@GetMapping(value = "prix/{id_user}")
 	@ResponseBody
 	public List<Long> selectprix(@PathVariable("id_user") long id ) {
 			return panierService.selectlesprice(id);
 	}
-	
+	//2
 	@GetMapping(value = "qte/{id_user}")
 	@ResponseBody
 	public  List<Long> selectqte(@PathVariable("id_user") long id ) {
 			return panierService.selectlesqte(id);
 					}
-	
+	//2
 	@GetMapping(value = "prixFinal/{id_user}")
 	@ResponseBody
 	public  float selectprixFinal(@PathVariable("id_user") long id ) {
@@ -79,7 +83,7 @@ public class PanierController {
 		panierService.save(p);
 		return p.getId_panier();
 	}
-	
+	//4 6 11 12
 	@DeleteMapping("/deleteP/{idemp}") 
 	public void delete(@PathVariable("idemp")long id) {
 		//try {
@@ -87,7 +91,7 @@ public class PanierController {
 			//l.info("article deleted ");}
 			//catch (Exception e) { l.error("Erreur de suppression" + e); }
 	}
-	
+	//2 3 
 	@DeleteMapping("/deletePall/{idusr}") 
 	public void deleteall(@PathVariable("idusr")long id) {
 		//try {
@@ -96,7 +100,7 @@ public class PanierController {
 			//catch (Exception e) { l.error("Erreur de suppression" + e); }
 	}
 	
-	
+	// 4 6 '11' 12
 	@PutMapping(value = "/updateP/{id}") 
 	public void update(@RequestBody int quantite, @PathVariable("id") long id_panier) {
 		Optional<Panier> l =panierService.findOne(id_panier);

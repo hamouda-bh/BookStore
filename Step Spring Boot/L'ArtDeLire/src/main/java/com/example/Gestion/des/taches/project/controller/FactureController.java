@@ -18,11 +18,12 @@ public class FactureController {
 		private FactureService factureService ;
 		@Autowired
 		private PanierService panierService ;
-		
+		//1
 		@GetMapping(value = "findOneF/{idemp}")
 		   public Optional<Facture> findOne(@PathVariable("idemp")int id) {
 				return factureService.findOne(id);
 			}
+		
 		@GetMapping(value = "findAllF")
 		public Iterable<Facture> findAll() {
 			return factureService.findAll();
@@ -33,7 +34,7 @@ public class FactureController {
 			factureService.save(f);
 			return f.getIdFacture();
 		}
-		
+		//2 3
 		@PostMapping("/insertF")
 		public void insertcommande(@RequestBody long id)
 		{

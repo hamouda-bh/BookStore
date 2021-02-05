@@ -66,7 +66,7 @@ public class PanierServiceImpl implements PanierService {
 	
 	@Override
 	public void addLivre(Livre l) {
-		repository.insertLivre(1, l.getPrix(), l.getId());
+		repository.insertLivre(1, l.getPrix(), l.getId(),(long) 2);
 	}
 	@Override
 	public List<Long> selectlesprice(long id){
