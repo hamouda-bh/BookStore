@@ -1,5 +1,6 @@
 package com.example.Gestion.des.taches.project.controller;
 
+import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -11,58 +12,100 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.example.Gestion.des.taches.project.model.Livre;
 import com.example.Gestion.des.taches.project.model.Panier;
+import com.example.Gestion.des.taches.project.service.LivreService;
 import com.example.Gestion.des.taches.project.service.PanierService;
 import org.springframework.web.bind.annotation.RestController;
+
 @RestController
 public class PanierController {
 	//private static final Logger l = Logger.getLogger(PanierController.class);
 	
 	@Autowired
 	private PanierService panierService;
+
+	@Autowired
+	private LivreService livreS;
 	
 	@GetMapping(value = "findOneP/{idemp}")
 	@ResponseBody
-	   public Optional<Panier> findOne(@PathVariable("idemp")long id) {
+	   public Optional<Panier> findOne(@PathVariable("idemp") long id) {
 			return panierService.findOne(id);
 	}
-	
 	@GetMapping(value = "findAllP")
 	@ResponseBody
 	public Iterable<Panier> findAll() {
 		return panierService.findAll();
 	}
-	
-	@PostMapping("/addLivreP/{id_livre}")
-	@ResponseBody
-	public String ajouterLivre(@RequestBody Livre l) {
-		panierService.addLivre(l);
-		return l.getName();
+	@PostMapping(path ="/addLivreP/{id_livre}")
+	public String ajouterLivre(@PathVariable("id_livre")long id ) {
+		Optional<Livre> l = livreS.findOne(id);
+		if(l.isPresent()){	
+			Livre p =l.get();	
+			panierService.addLivre(p);
+		return p.getName();
+		}
+		return null;
 	}
+	
+	@GetMapping(value = "prix/{id_user}")
+	@ResponseBody
+	public List<Long> selectprix(@PathVariable("id_user") long id ) {
+			return panierService.selectlesprice(id);
+	}
+	
+	@GetMapping(value = "qte/{id_user}")
+	@ResponseBody
+	public  List<Long> selectqte(@PathVariable("id_user") long id ) {
+			return panierService.selectlesqte(id);
+					}
+	
+	@GetMapping(value = "prixFinal/{id_user}")
+	@ResponseBody
+	public  float selectprixFinal(@PathVariable("id_user") long id ) {
+		float f=0 ;
+		int i;
+		for (i=0; i< panierService.selectlesprice(id).size();i++)
+		{
+		f= 	(float) f+ (panierService.selectlesprice(id).get(i) *panierService.selectlesqte(id).get(i));
+		
+		}
+		return f;
+	}
+	
+	
 	@PostMapping("/saveP")
 	@ResponseBody
 	public long saveP(@RequestBody Panier p) {
 		panierService.save(p);
 		return p.getId_panier();
 	}
+	
 	@DeleteMapping("/deleteP/{idemp}") 
 	public void delete(@PathVariable("idemp")long id) {
-
 		//try {
 			panierService.delete(id);
 			//l.info("article deleted ");}
 			//catch (Exception e) { l.error("Erreur de suppression" + e); }
 	}
+	
+	@DeleteMapping("/deletePall/{idusr}") 
+	public void deleteall(@PathVariable("idusr")long id) {
+		//try {
+			panierService.deleteall(id);
+			//l.info("article deleted ");}
+			//catch (Exception e) { l.error("Erreur de suppression" + e); }
+	}
+	
+	
 	@PutMapping(value = "/updateP/{id}") 
 	public void update(@RequestBody int quantite, @PathVariable("id") long id_panier) {
 		Optional<Panier> l =panierService.findOne(id_panier);
 		if(l.isPresent()){	
 			Panier p =l.get();	
-			
 			p.setQuantite_ajouter(quantite);
 			panierService.delete(id_panier);
 		panierService.save(p);
-		}
-		
+		}	
 	}
 	
 /*	@GetMapping("/panierTable")

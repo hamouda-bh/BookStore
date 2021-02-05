@@ -51,7 +51,13 @@ public class PanierServiceImpl implements PanierService {
 	//	catch (Exception e) { l.error("Erreur de suppression" + e); }
 		
 	}
-
+	
+	@Override
+	public void deleteall( long id)
+	{
+		repository.delete(id);
+	}
+	
 
 	@Override
 	public void delete(Panier panier) {
@@ -60,8 +66,17 @@ public class PanierServiceImpl implements PanierService {
 	
 	@Override
 	public void addLivre(Livre l) {
-		repository.insertLivre(1, l.getPrix(), l.getId() );
+		repository.insertLivre(1, l.getPrix(), l.getId());
 	}
-	
+	@Override
+	public List<Long> selectlesprice(long id){
+		
+		return repository.selectlesprix(id);
+	}
+	@Override
+	public List<Long> selectlesqte(long id){
+		
+		return repository.selectlesqte(id);
+	}
 
 }

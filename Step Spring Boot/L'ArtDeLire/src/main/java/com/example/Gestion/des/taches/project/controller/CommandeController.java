@@ -1,14 +1,17 @@
 package com.example.Gestion.des.taches.project.controller;
 
 import java.util.Optional;
-
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import com.example.Gestion.des.taches.project.model.Commande;
+import com.example.Gestion.des.taches.project.model.Livre;
+import com.example.Gestion.des.taches.project.model.User;
 import com.example.Gestion.des.taches.project.service.CommandeService;
+import com.example.Gestion.des.taches.project.service.PanierService;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -16,6 +19,8 @@ public class CommandeController {
 
 	@Autowired
 	private CommandeService commandeService;
+	@Autowired
+	private PanierService panierService;
 
 	@GetMapping(value = "findOneC/{idemp}")
 	   public Optional<Commande> findOne(@PathVariable("idemp")int id) {
@@ -31,6 +36,35 @@ public class CommandeController {
 		commandeService.save(c);
 		return c.getId_commande();
 	}
+	
+	@PostMapping("/insertC")
+	public void insertcommande(@RequestBody long id)
+	{
+		float f=0 ;
+		int i;
+		List<Long> l1 =panierService.selectlesprice(id);
+		List<Long> l2 =panierService.selectlesqte(id);
+		for (i=0; i< l1.size();i++)
+		{
+		f= 	(float) f+ (l1.get(i) *l2.get(i));
+		}
+		commandeService.insertcommande(java.util.Calendar.getInstance().getTime().toString(),f, id);
+	}	
+	
+	@GetMapping(path ="/selectnb/{id_user}")
+	public int selectnbcom(@PathVariable("id_user")long id ) {
+		List<Commande> list = commandeService.findAll();
+		for (int i=0;i<list.size();i++)
+		{
+			Commande p =list.get(i);
+			User u = p.getUser();
+				long idUser = u.getId();
+				if (idUser== id)
+				   return commandeService.selectnbcom(p);
+		}
+			return 0;
+	}
+	
 	
 	/*
 	@GetMapping("/addCommande")

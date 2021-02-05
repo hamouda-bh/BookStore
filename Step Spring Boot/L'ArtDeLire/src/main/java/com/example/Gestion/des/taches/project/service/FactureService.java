@@ -15,6 +15,9 @@ public interface FactureService {
 	
 	void save (Facture f);
 	
+	void insertcommande(String date, String pdf, long id);
+	
+	
 	//void delete(int id);
 	
 	//void delete(Facture f);

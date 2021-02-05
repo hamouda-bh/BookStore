@@ -1,4 +1,5 @@
 package com.example.Gestion.des.taches.project.model;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,12 +17,20 @@ public class Commande {
 		private int id_commande; 
 	    private String date_commande;
 	    private float prixTotale ;
-	    @OneToOne
-	    private Facture facture;
-	    @ManyToOne
-	    private Panier panier;
+	   @OneToOne(mappedBy="commande")
+	   private Facture facture;
+	   //@ManyToOne(cascade = CascadeType.ALL)
+		//private Panier panier;
+	    @ManyToOne(cascade = CascadeType.ALL)
+		private User user;
 	    
-	    public Commande(int id_commande, String date_commande,  float prixTotale) {
+	    public User getUser() {
+			return user;
+		}
+		public void setUser(User user) {
+			this.user = user;
+		}
+		public Commande(int id_commande, String date_commande,  float prixTotale) {
 	        this.id_commande = id_commande;
 	        this.date_commande = date_commande;
 	        this.prixTotale = prixTotale;
@@ -36,7 +45,7 @@ public class Commande {
 
 		    }
 
-	     
+	     /*     
 	    public Facture getFacture() {
 			return facture;
 		}
@@ -52,7 +61,7 @@ public class Commande {
 		public void setPanier(Panier panier) {
 			this.panier = panier;
 		}
-
+*/
 		public int getId_commande() {
 	        return id_commande;
 	    }

@@ -33,5 +33,13 @@ public class FactureServiceImpl implements FactureService {
 		// TODO Auto-generated method stub
 		repository.save(Facture);
 	}
+	
+	@Override
+	public void insertcommande(String date, String pdf, long id)
+	{
+		
+		repository.insertcommande(date,pdf, id);
+		
+	}
 
 }

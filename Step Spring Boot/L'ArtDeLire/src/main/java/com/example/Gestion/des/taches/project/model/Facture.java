@@ -19,8 +19,8 @@ public class Facture {
 	private int idFacture ;
 	@Column(name="SUPPORT_PDF")
 	private String SupportPDF;
-	
-	@OneToOne(mappedBy="facture")
+	private String date_commande;
+	@OneToOne
 	private Commande commande;
 
 

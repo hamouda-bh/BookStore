@@ -1,6 +1,6 @@
 package com.example.Gestion.des.taches.project.model;
-import java.util.Set;
 
+import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,7 +8,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-
 import lombok.Data;
 
 @Data
@@ -20,9 +19,9 @@ public class Panier {
 	private Long id_panier;
 	private float somme_ajoute ;
 	private int quantite_ajouter;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
     private Livre livre;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	private User user;
     
     public User getUser() {
