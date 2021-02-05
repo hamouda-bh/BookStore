@@ -1,11 +1,13 @@
 package com.example.Gestion.des.taches.project.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.Min;
+
 import lombok.Data;
 
 @Data
@@ -20,35 +22,18 @@ public class Livre {
     private String photo;
     private String author ;
     
-   
+
+
 	@Min(value=0,message="Price should be positive value")
 	private float price;
-	@Min(value=0,message="Total sell should be positive value")
-	private int sold;
+	
 	@Min(value = 0, message = "Total Count should be positive value.")
     private int totalCount;
-
-   
-    
-/*public int getSold(){
-	return sold;}
-	*/
-
-
-	public void setSold(int sold) {
-		this.sold = sold;
-	}
-
-
-	/*public int getTotalCount() {
-		return totalCount;
-	}
-*/
 
 	public void setTotalCount(int totalCount) {
 		this.totalCount = totalCount;
 	}
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.REMOVE)  
     private Categorie categorie;
 	public Long getId() {
 		return id;
@@ -108,12 +93,4 @@ public class Livre {
 	}
 
 
-
-	public int getSold() {
-		
-		return sold;
-	}
-
-
-	
 }

@@ -9,8 +9,10 @@ import com.example.Gestion.des.taches.project.model.Livre;
 
 public interface LivreService {
 	
-    Optional<Livre> findOne(Long id);
+   //Optional<Livre> findOne(Long id);
 	
+    Livre findOne(Long id);
+  
 	List<Livre> findAll() ;
 	
 	void update(Livre livre );
@@ -19,22 +21,33 @@ public interface LivreService {
 	
 	 int getNumberOfBooksById(Long id);
 	 
-	 void sellBook(Long id);
-	 
-	 
 	  void addNewBook(Livre livre);
+	  
+	  //Livre getBookById(Long id);
+	  
+	  List<Livre> findByName(String name); 
+	  
+	  
+	  
+	  List<Livre> getAllBooks();
 
+	  void updatePrice(Livre livre);
 
+	 void save (Livre livre);
 	
-	void save (Livre livre);
+	 void delete(Long id);
 	
-	void delete(Long id);
-	
-	void delete(Livre livre);
+	 void delete(Livre livre);
 	
 	public long ajouterLivre(Livre livre);
 	
-	 List<Livre> getBookByCategoryKeyWord(String keyword, Categorie categorie);
+	 List<Livre> getBookByCategoryKeyWord(String keyword, Long id);
+	 
+	 List<Livre> findByCategorie(Long id );
 
-	 int getNumberOfBooksSoldByCategoryAndKeyword(String keyword, Categorie categorie);
+	 
+
+	Livre getBookById(Long id);
+	
+	 Long countLivre();
 }

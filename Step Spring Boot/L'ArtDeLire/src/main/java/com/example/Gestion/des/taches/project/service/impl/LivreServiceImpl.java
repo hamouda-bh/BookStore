@@ -71,7 +71,7 @@ public class LivreServiceImpl implements LivreService {
 	}
 
 	
-	@Autowired
+	
 	public void addBook(Long id, int quantityToAdd) {
 		//Get the book by id
         Livre livre = repository.findById(id)
@@ -111,47 +111,66 @@ public class LivreServiceImpl implements LivreService {
 	            repository.save(livre); }
 	        }
 
-	@Override
 	
-		public void sellBook(Long id) {
-	        Livre livre = repository.findById(id)
-	                .orElseThrow(() -> new BookNotFoundException("Book with id: " + id + " is not found."));
-	        //Selling one book decreases the amount of book in the store and increases the amount of book sold.
-	        int totalCount = livre.getTotalCount() - 1;
-	        if (totalCount < 0) {
-	            throw new BadRequestException("TotalCount cannot be negative. Not enough book in store to sell.");
-	        }
-	        int sold = livre.getSold() + 1;
-	        LOGGER.info("Setting total amount less by 1 and setting sold to increase by 1.");
-	        livre.setTotalCount(totalCount);
-	        livre.setSold(sold);
-	        repository.save(livre);
-	    }
-
-		
 	
-	@Override
-	public List<Livre> getBookByCategoryKeyWord(String keyword, Categorie categorie) {
+	/*public List<Livre> getBookByCategoryKeyWord(String keyword, Categorie categorie) {
 		
 //if the status is Available, gives list of books which are available
 LOGGER.info("Fetch all the books by category and keyword.");
-List<Livre> livre = repository.findAllBookByCategoryAndKeyword(keyword.toLowerCase(), categorie.getName());
-return  livre;
-}
+List<Livre> livre = repository.findAllBookByCategoryAndKeyword(keyword.toLowerCase(), Categorie.getName());
+return livre;
+}*/
 	
 
-	@Override
-	 public int getNumberOfBooksSoldByCategoryAndKeyword(String keyword,
-             Categorie categorie) {
-LOGGER.info("Total number of books which are sold");
-return (int) repository.countNumberOfBooksSold(keyword.toLowerCase(), categorie.getName());
-}
-	@Override
+	
+	/*@Override
 	public Optional<Livre> findOne(Long id) {
+		return repository.findById(id);
+		}*/
+	public Livre findOne(Long id){
+		return repository.findById(id).get();
+	}
+	
+	@Override
+	public List<Livre> getAllBooks() {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	@Override
+	public void updatePrice( Livre livre) {
+		repository.save(livre);
+	}
+	@Override
+	public Livre getBookById(Long id) {
+		 Livre livre = repository.findById(id)
+	                .orElseThrow(() -> new BookNotFoundException("Book with id:" + id + " is not found."));
+
+	        return livre ;
+	    }
+	
+	@Override
+	public List<Livre> getBookByCategoryKeyWord(String keyword, Long id) {
+		LOGGER.info("Fetch all the books by category and keyword.");
+		List<Livre> livre = repository.findAllBookByCategoryAndKeyword(keyword.toLowerCase(),id);
+		return livre;
+		
+	} 
+	@Override
+    public List<Livre> findByCategorie(Long id) {
+        return  repository.findByCategorie(id);
+
+    }
+	@Override
+	public Long countLivre() {
+		return repository.countLivre();
+	}
+	
+@Override
+public List<Livre> findByName(String name) {
+	return repository.findByName(name);
+}
 
 	
+	
+    }
 
-}
