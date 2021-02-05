@@ -30,6 +30,21 @@ public class Livre {
 	@Min(value = 0, message = "Total Count should be positive value.")
     private int totalCount;
 
+	
+    private int sold;
+    
+
+	
+	public int getSold() {
+		return sold;
+	}
+
+
+	public void setSold(int sold) {
+		this.sold = sold;
+	}
+
+
 	public void setTotalCount(int totalCount) {
 		this.totalCount = totalCount;
 	}

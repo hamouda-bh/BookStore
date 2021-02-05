@@ -19,6 +19,7 @@ public interface LivreService {
 	
 	void addBook(Long id, int quantityToAdd);
 	
+	
 	 int getNumberOfBooksById(Long id);
 	 
 	  void addNewBook(Livre livre);
@@ -44,6 +45,10 @@ public interface LivreService {
 	 List<Livre> getBookByCategoryKeyWord(String keyword, Long id);
 	 
 	 List<Livre> findByCategorie(Long id );
+
+		public List<Livre> getBookSortedByPriceASC();
+
+		public List<Livre> getBookSortedByPriceDESC();
 
 	 
 

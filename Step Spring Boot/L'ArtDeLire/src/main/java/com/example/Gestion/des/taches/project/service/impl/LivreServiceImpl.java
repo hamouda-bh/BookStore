@@ -10,6 +10,7 @@ import com.example.Gestion.des.taches.project.service.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.example.Gestion.des.taches.project.model.Categorie;
@@ -89,12 +90,12 @@ public class LivreServiceImpl implements LivreService {
 	public int getNumberOfBooksById(Long id) {
 		  Optional<Livre> livre = repository.findById(id);
 
-	        //If book is present get Total Count else return 0
+	      
 	        return livre.isPresent() ? livre.get().getTotalCount() : 0;
 	    }
 
 	 public void addNewBook(Livre livre) {
-	        //Check if book is previously present
+	        
 	        Optional<Livre> bookById = repository.findById(livre.getId());
 	        bookById.ifPresent(book -> {
 	            throw new DuplicateResourceException("Book with same id present. " +
@@ -102,15 +103,22 @@ public class LivreServiceImpl implements LivreService {
 	        });
 	        if (!bookById.isPresent()) {
 	            LOGGER.info("No Duplicates found.");
-	            //Map bookDto to book
-	            //Book book = modelMapper.map(bookDto, Book.class);
-	            //Set the status to available
-	           // LOGGER.info("The data are mapped and ready to save.");
+	          
 
 	            //Save to book
 	            repository.save(livre); }
 	        }
 
+	 @Override
+	 public List<Livre> getBookSortedByPriceASC() {
+	 	List<Livre> books = repository.findAll(Sort.by(Sort.Direction.ASC, "price"));
+	 	return books;
+	 }
+	 @Override
+	 public List<Livre> getBookSortedByPriceDESC() {
+	 	List<Livre> books =repository.findAll(Sort.by(Sort.Direction.DESC, "price"));
+	 	return books;
+	 }		
 	
 	
 	/*public List<Livre> getBookByCategoryKeyWord(String keyword, Categorie categorie) {
@@ -169,6 +177,8 @@ return livre;
 public List<Livre> findByName(String name) {
 	return repository.findByName(name);
 }
+
+
 
 	
 	

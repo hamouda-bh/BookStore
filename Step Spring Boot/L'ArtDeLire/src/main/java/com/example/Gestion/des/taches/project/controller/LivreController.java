@@ -85,6 +85,20 @@ public class LivreController {
         return livreService.getNumberOfBooksById(id);
     }
   
+    @GetMapping("/books/sortPriceA")
+	public List<Livre> findAllBooksSortedByPriceA() {
+		
+			return livreService.getBookSortedByPriceASC();
+		
+	}
+
+	@GetMapping("/books/sortPriceD")
+	public List<Livre> findAllBooksSortedByPriceD() {
+		
+			return livreService.getBookSortedByPriceDESC();
+	}
+	
+	
    /* @GetMapping("/books")
     public List<Livre> getBookByCategoryKeyWord(@RequestParam String keyword,
                                                 @RequestParam Long id) {
