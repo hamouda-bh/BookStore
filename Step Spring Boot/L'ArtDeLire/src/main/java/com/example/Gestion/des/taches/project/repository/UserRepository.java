@@ -10,7 +10,7 @@ public interface UserRepository extends JpaRepository<User, Long>{
 	
 	public User findByEmail(String email );
 	
-	@Query("select count(id) from User ")
+	@Query("select count(*) from User ")
 	public Long countUser();
 	
 	

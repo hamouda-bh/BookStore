@@ -1,9 +1,14 @@
 package com.example.Gestion.des.taches.project.model;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import lombok.Data;
 
@@ -23,6 +28,11 @@ public class User {
     private String carte_paie ; 
     @ManyToOne //relation entre table 1..*
     private Role role ;
+     
+    @OneToMany( fetch = FetchType.EAGER ,  mappedBy = "user" , cascade = CascadeType.ALL)
+	private List<Panier> panier;
+    
+    
 	public Long getId() {
 		return id;
 	}
@@ -77,12 +87,15 @@ public class User {
 	public void setCarte_paie(String carte_paie) {
 		this.carte_paie = carte_paie;
 	}
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", email=" + email + ", name=" + name + ", password=" + password + ", active="
-				+ active + ", last_name=" + last_name + ", tel=" + tel + ", carte_paie=" + carte_paie + ", role=" + role
-				+ "]";
+	
+	
+	public List<Panier> getPanier() {
+		return panier;
 	}
+	public void setPanier(List<Panier> panier) {
+		this.panier = panier;
+	}
+	
     
     
 

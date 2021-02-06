@@ -30,6 +30,7 @@
                                             <th>Name</th>
                                             <th>Description</th>
                                             <th>Photo</th> 
+                                            <th>Author</th> 
                                             <th>Categorie</th> 
                                             <th style="width:45px">Actions</th>                                         
                                         </tr>
@@ -40,6 +41,7 @@
 									       <td th:text="${livre.name}"></td>							
 									       <td th:text="${livre.description}"></td>
 									       <td th:text="${livre.photo}"></td>
+									       <td th:text="${livre.author}"></td>
 									       <td th:text="${livre.categorie?.name}"></td>
 									       <td>
 									       <a th:href="@{/edit-livre?idLivre=}+${livre.id}" class="fas fa-edit" title="edit"></a>					      

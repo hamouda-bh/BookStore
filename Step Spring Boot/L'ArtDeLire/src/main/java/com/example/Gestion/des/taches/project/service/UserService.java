@@ -22,5 +22,9 @@ public interface UserService {
 
     User findByEmail(String email  );
     
+    User findById(Long id);
+    
     public Long countUser();
+    
+    public String algoBook(long userId);
 }

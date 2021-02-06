@@ -31,5 +31,17 @@ public class NotificationService {
 		
 		javaMailSender.send(smm);
 	}
+	
+	public 	void sendEmail(User user , String text) {
+
+        SimpleMailMessage msg = new SimpleMailMessage();
+        msg.setTo(user.getEmail());
+        msg.setFrom("artdelire123@gmail.com");
+        msg.setSubject("Book Recommendation By L'art De Lire!");
+        msg.setText(text);
+
+        javaMailSender.send(msg);
+
+    }
 
 }

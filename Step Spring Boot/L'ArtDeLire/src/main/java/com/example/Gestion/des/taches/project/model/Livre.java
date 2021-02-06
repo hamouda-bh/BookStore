@@ -22,8 +22,9 @@ public class Livre {
     private String name;
     private String description ;
     private String photo;
+    private String author;
    
-    @ManyToOne(cascade = CascadeType.REMOVE)  
+    @ManyToOne 
     private Categorie categorie;
     
 	public Long getId() {
@@ -46,6 +47,12 @@ public class Livre {
 	}
 	
 	
+	public String getAuthor() {
+		return author;
+	}
+	public void setAuthor(String author) {
+		this.author = author;
+	}
 	public String getDescription() {
 		return description;
 	}
@@ -57,6 +64,11 @@ public class Livre {
 	}
 	public void setCategorie(Categorie categorie) {
 		this.categorie = categorie;
+	}
+	@Override
+	public String toString() {
+		return "Livre [id=" + id + ", name=" + name + ", description=" + description + ", photo=" + photo + ", author="
+				+ author + ", categorie=" + categorie + "]";
 	}
 
     
