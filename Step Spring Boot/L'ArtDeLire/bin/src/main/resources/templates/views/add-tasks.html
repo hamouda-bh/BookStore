@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layouts/layout}">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Title</title>
+</head>
+
+<body>
+	<th:block layout:fragment="content">
+		<!-- Page Heading -->
+		<div class="d-sm-flex align-items-center justify-content-between mb-4">
+			<h1 class="h3 mb-0 text-gray-800">Add task</h1>
+		
+		</div>
+
+		<div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-11">
+                                    <form role="form" th:object=${task} th:action="@{add-tasks}" method="post">
+                                        <div class="form-group">
+                                            <label>Name</label>
+                                            <input class="form-control" th:field="*{name}" placeholder="Task name">
+                                            
+                                        </div>
+                                        
+                                        
+                                        
+                                        <div class="form-group">
+                                            <label>Description</label>
+                                            <textarea class="form-control" rows="3" th:field="*{description}"></textarea>
+                                        </div>                               
+                                        
+                                        <div class="form-group">
+                                            <label>States</label>
+                                            <select class="form-control"  th:field="*{state}" >
+                                                <option th:each="stateTask: ${states}" th:value="${stateTask.id}" th:text="${stateTask.code}"></option>
+                                                
+                                                
+                                            </select>
+                                        </div>
+                                        
+                                        <input type="hidden" th:field="*{id}">
+                                        <button type="submit" class="btn btn-primary btn-circle">Save</button>
+                                        <button type="reset" class="btn btn-danger btn-circle">Reset</button>
+                                    </form>
+                                </div>
+                                
+                            </div>
+                           
+                        </div>
+                    
+                    </div>
+                 
+                </div>
+          
+            </div>
+
+	</th:block>
+</body>
+
+</html>

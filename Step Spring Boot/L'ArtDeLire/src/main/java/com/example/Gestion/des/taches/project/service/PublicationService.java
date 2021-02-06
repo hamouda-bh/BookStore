@@ -1,3 +1,5 @@
+package com.example.Gestion.des.taches.project.service;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -17,5 +19,7 @@ Optional<Publication> findOne(int id_publication);
 	void delete(int id_publication);
 	
 	void delete(Publication publication);
+
+	long ajouterPublication(Publication publication);
 
 }

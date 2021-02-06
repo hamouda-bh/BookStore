@@ -17,6 +17,14 @@ public class Blog {
     private String categorie_blog;
     private String description;
     
+    private int totalCount;
+
+   	public void setTotalCount(int totalCount) {
+   		this.totalCount = totalCount;
+   	}
+   	public int getTotalCount() {
+		return totalCount;
+	}
     public int getId_blog() {
 		return id_blog;
 	}
@@ -31,12 +39,7 @@ public class Blog {
 			this.id_client = id_client;
 		}
 	
-		 public int getCategorie_blog() {
-				return categorie_blog;
-			}
-			public void setcategorie_blog(int categorie_blog) {
-				this.categorie_blog = categorie_blog;
-			}
+		 
 	public String getDescription() {
 		return description;
 	}

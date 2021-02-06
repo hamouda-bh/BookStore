@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.example.Gestion.des.taches.project.model.Publication;
 
-public interface CategorieRepository extends JpaRepository<Publication, int> {
+public interface PublicationRepository extends JpaRepository<Publication,Long> {
 
 }

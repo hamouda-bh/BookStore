@@ -43,9 +43,7 @@ public class Publication {
 		public String getContenue() {
 			return contenue;
 		}
-		public void setContenue(String contenue) {
-			this.contenue = contenue;
-		}
+		
 		
 		public String getCommentaire() {
 			return commentaire;

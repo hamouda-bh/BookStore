@@ -7,18 +7,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.Gestion.des.taches.project.model.Livre;
-import com.example.Gestion.des.taches.project.service.CategorieService;
-import com.example.Gestion.des.taches.project.service.LivreService;
+import com.example.Gestion.des.taches.project.model.Blog;
+import com.example.Gestion.des.taches.project.service.BlogService;
 
 
 @RestController
 public class BlogController {
 	
 	@Autowired
-	private BlogService blogService ;
+	private BlogService blogservice ;
 	
 	//@GetMapping("list-blogs")
 	//public String listBlog(Blog blog) {
@@ -27,31 +27,49 @@ public class BlogController {
 	//}
 	@PostMapping("/saveBlog")
 	public Blog save(@RequestBody Blog blog) {
-		blogService.save(blog);
+		blogservice.save(blog);
+		return blog ;
+	}
+	/*
+	@GetMapping("/blog/{id}")
+    @ResponseBody
+    public Blog getBlogById(@PathVariable ("id") Long id) {
+        return blogservice.getBlogById(id);
+    }
+    */
+	@PostMapping("/ajouterBlog")
+	public Blog ajouterBlog (@RequestBody  Blog blog) {
+		blogservice.ajouterBlog(blog);
 		return blog ;
 	}
 	
-	@PostMapping("/ajouterBlog")
-	public Blog ajouterBlog (@RequestBody  Blog blog) {
-		blogService.ajouterBlog(blog);
-		return blog ;
-	}
+	
+	
+	
+	
+	
+	
 	@GetMapping("/supprimerBlog")
-	public void delete(@PathVariable("id_blog") int id) {
-		blogService.delete(id);
+	public void delete(@PathVariable("id_blog") int id_blog) {
+		blogservice.delete(id_blog);
 	}
 		 
-		 
-    @GetMapping(value = "findOneL/{id_blog}")
-		   public Optional<Blog> findOne(@PathVariable int id) {
-				return blogService.findOne(id);
+	 
+    @GetMapping(value = "findOne/{id_blog}")
+		   public Blog findOne(@PathVariable int id_blog) {
+				return blogservice.findOne(id_blog);
 			}
     
-    @GetMapping(value = "findAllL")
+    @GetMapping(value = "findAll")
 	public Iterable<Blog> findAll() {
-		return blogService.findAll();
+		return blogservice.findAll();
 	}
-		
+    
+    
+    @GetMapping("/countBlog")
+    public Long countBlog(){
+    	return blogservice.countBlog();
+    }
 	
 	//@GetMapping("edit-blog")
 	//public String editblog(@RequestParam("id_blog") int id, Blog blog) {
