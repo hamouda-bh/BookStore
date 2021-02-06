@@ -1,12 +1,13 @@
 package com.example.Gestion.des.taches.project.model;
 
 import java.io.Serializable;
+import java.sql.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 import lombok.Data;
 
@@ -18,10 +19,14 @@ public class LivreKids implements Serializable {
 	private List<CategorieKids> categorieKids;
 	
 	@Id
-	private Long id ;
-    private String name;
+	private Long id;
+	private String name;
+	private String authorName;
     private String description;
-    private String photo;
+	private String photo;
+	
+	@Temporal(TemporalType.DATE)
+	private Date releaseDate;
     
 
 	public Long getId() {
@@ -54,5 +59,10 @@ public class LivreKids implements Serializable {
 	public void setCategorieKids(List<CategorieKids> categorieKids) {
 		this.categorieKids = categorieKids;
 	}
-	
+	public String getAuthorName() {
+		return authorName;
+	}
+	public void setAuthorName(String authorName) {
+		this.authorName = authorName;
+	}
 }
